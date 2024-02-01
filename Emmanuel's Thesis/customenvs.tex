@@ -1,0 +1,32 @@
+\newenvironment{plainchp}[1]
+    {
+        \newgeometry{left=4.2cm,right=4.2cm}
+        \fancypagestyle{abstractplain}{
+            \fancyhf{}
+            \fancyfootoffset[lh]{0pt}
+            \fancyfoot[C]{\sffamily \thepage}  
+        }
+        \pagestyle{abstractplain}
+        
+        \phantomsection
+        \begin{center}
+            \sffamily \Large \caps{\textbf{\MakeUppercase{#1}}}
+        \end{center}
+        \vspace{0.2cm}
+        \markboth{\MakeUppercase{#1}}{}
+    }
+    {
+        \restoregeometry
+        \pagestyle{fancy}
+    }
+
+\newenvironment{statement}[1]
+    {
+        \vspace{\parskip}
+        \begin{center}\begin{minipage}{0.85\textwidth}
+            {\sffamily \footnotesize \color{cyan}\caps{\MakeUppercase{#1}}}\\\itshape
+    }
+    {
+        \end{minipage}\end{center}
+        \vspace{\parskip}
+    }

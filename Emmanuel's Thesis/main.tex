@@ -1,0 +1,231 @@
+\special{pdf:minorversion 7}
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[11pt,a4paper,twoside]{report}
+
+\usepackage[todonotes={textsize=scriptsize}, final]{changes}
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{layout}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont{XCharter}
+\usepackage{unicode-math}
+\setmathfont{XCharter-Math.otf}
+\setsansfont{IBMPlexSans}[
+    Extension = .otf,
+    UprightFont = *-Regular,
+    BoldFont = *-SemiBold,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-SemiBoldItalic,
+    Scale = MatchLowercase
+]
+\setmonofont{IBMPlexMono}[Scale=MatchLowercase]
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{graphicx}
+% \DeclareGraphicsExtensions{.png,.pdf}
+\DeclareGraphicsExtensions{.pdf,.png}
+\usepackage{tabularx}
+% \usepackage{expl3}
+% \usepackage{calc}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[sf,bf]{titlesec}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{gensymb}
+\usepackage[font=itshape]{quoting}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage[final]{draftwatermark}
+\usepackage{soul}
+\usepackage[
+    style=ieee,
+    citestyle=numeric-comp,
+    urldate=iso]{biblatex}
+% \usepackage{datetime}
+\usepackage{nameref}
+\usepackage{hyperref}
+\definecolor{McGillRed}{cmyk}{0, 1, 0.9, 0}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    anchorcolor=cyan,
+    citecolor=cyan,
+    filecolor=cyan,
+    urlcolor=cyan
+}
+\setdeletedmarkup{\textcolor{McGillRed}{\sout{#1}}}
+% \setdeletedmarkup{\textcolor{McGillRed}{#1}}
+\definechangesauthor[color=violet, name={Emmanuel Duplay}]{ED}
+\definechangesauthor[color=cyan, name={Barry Zandbergen}]{BZ}
+\definechangesauthor[color=McGillRed, name={Andrew Higgins}]{AH}
+
+% \input{titlesec.tex}
+\addbibresource{ref.bib}
+
+\title{Design and Test of a laser-plasma thruster laboratory model}
+\author{Emmanuel Duplay}
+\date{0000-00-00}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}}
+
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+
+\newcommand{\shotsettings}[4]{\texttt{#1}: #2~ms, \textit{f}/#3, ND#4}
+
+\newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\ddi}[2]{\mathrm{d}#1/\mathrm{d}#2}
+
+\newcommand{\blankpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% Track changes commands
+% \newcommand{\change}[1]{\textcolor{McGillRed}{#1}}
+% \newenvironment{changeblock}{\color{McGillRed}}{}
+% \renewcommand{\change}[1]{#1}  % Comment out to suppress changes
+% \renewenvironment{changeblock}{}{}  % Comment out to suppress changes
+
+\fancypagestyle{fancy}{
+    \fancyhf{}
+    \fancyhfinit{\sffamily}
+    \lhead{\leftmark}
+    \rhead{\rightmark}
+    % \lfoot{AE5050}
+    % \rfoot{\thepage}
+    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[RE,LO]{AE5050}
+}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\sffamily \thepage}
+    
+}
+
+\pagestyle{fancy}
+
+\SetWatermarkText{\sffamily \textbf{DRAFT}}
+\SetWatermarkFontSize{2cm}
+\SetWatermarkColor[gray]{0.85}
+    
+\input{lstStyle.tex}
+\input{customenvs.tex}
+
+\sisetup{detect-all}
+
+\begin{document}
+    \setlength{\parindent}{0pt}
+    \setlength{\headheight}{13.6pt}
+    % \includepdf{assets/cover.pdf}
+    \input{title.tex}
+
+    \newpage
+    % \layout*
+    {   \sffamily
+        \thispagestyle{empty}
+        \vspace*{\fill}
+        % Text width: \the\textwidth  \\ % DELETE THIS LINE BEFORE SUBMITTING
+        % Text height: \the\textheight  % DELETE THIS LINE BEFORE SUBMITTING
+
+        The code used for this project (including the \LaTeX\hspace{0.67ex}source) is available on \\ \url{https://github.com/eeduplay/MScThesis} (latest) \\ \url{https://doi.org/10.4121/e0d30ad2-cdca-45a6-84d6-34d95db49b2c} (archive)
+
+        All experimental data associated with this thesis are available on \\
+        \url{https://doi.org/10.4121/04ad8110-e3c4-4971-99ce-8a6c537166d6}\\
+        This includes the list of LSPs, high-speed footage, pressure data, and spectra.
+
+        The author can be contacted by email at \href{mailto:emmanuel.duplay@gmail.com}{emmanuel.duplay@gmail.com}
+
+        Cover image: Composite photograph approximating (with some artistic license) the appearance of the laser-thermal thruster model operating in the laboratory.
+    }
+    \pagenumbering{roman}
+    
+    \input{chapters/0_0_preface.tex}
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+    
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of Figures}
+    
+    \listoftables
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \hypersetup{linkcolor=cyan}
+    
+    \input{chapters/0_1_nomenclature.tex}
+
+    \newpage
+    \input{chapters/0_2_abstract.tex}
+    \afterpage{\blankpage}
+    \newpage
+    \pagenumbering{arabic}
+
+    % \input{chapters/unnumberedchapter.tex}
+    \input{chapters/1_intro.tex}
+    \input{chapters/2_background.tex}
+    \input{chapters/3_design.tex}
+    \input{chapters/4_models.tex}
+    \input{chapters/5_results.tex}
+    \input{chapters/6_conclusion.tex}
+    
+    \clearpage
+    \defbibnote{bibmark}{\markright{}}
+    \printbibliography[
+        heading=bibintoc,
+        title={References},
+        block=ragged,
+        prenote=bibmark
+        ]
+    \newpage
+
+    \appendix
+    \newcommand{\footeronly}{\thispagestyle{fancy}\markboth{}{}}
+    \chapter{YLR-300/3000-QCW-MM-AC calibration report}
+        \label{chp:app_YLR}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/IPGLaser300-3000_calib.pdf}
+    \chapter{P30 collimator calibration report}
+        \label{chp:app_Collimator}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/D30_Collimator_calib.pdf}
+    \chapter{Test section apparatus drawings}
+        The test section used in this thesis was originally designed to study the onset of cavitation in piston-cylinder assemblies. These drawings were drafted by John Kokkalis at McGill University, reproduced here with his permission. Although the apparatus represented here was not the iteration used in his final work, the final iteration of this system can be found in his Master's thesis~\cite{kokkalisOnsetCavitationDynamically2023}.
+        \label{chp:app_CavitatorDrawings}
+        \includepdf[pages=-, landscape=true, pagecommand={\thispagestyle{fancy}}]{assets/appendices/FULL_DRAWINGS_V4.pdf}
+    \chapter{Laser window mount drawings}
+        \label{chp:app_lwmDrawings}
+        \includepdf[pages=-, landscape=true, pagecommand={\thispagestyle{fancy}}]{assets/appendices/LWM_allDrawings.pdf}
+        \includepdf[landscape=true, pagecommand={\thispagestyle{fancy}\label{chp:app_optics}}]{assets/appendices/optics_diagram.pdf}
+    \chapter{Instrumentation datasheets and calibration reports}
+        \label{chp:app_calibration}
+        \includepdf[pages={1}, pagecommand={\thispagestyle{fancy}\label{ds:laserPM}}]{assets/appendices/Gentec-EO_UP55N_PowerMeter_Calibration.pdf}
+        \includepdf[pages={2}, pagecommand={\thispagestyle{fancy}}]{assets/appendices/Gentec-EO_UP55N_PowerMeter_Calibration.pdf}
+        \includepdf[pages=-, pagecommand={\thispagestyle{fancy}\label{ds:pcbPressure}}]{assets/appendices/Calibration-Certificate_113B28-LW41871.pdf}
+    \input{assets/appendices/alpha_calc.tex}
+    \chapter{LSP shot procedure} \label{chp:app_procedure}
+        This procedure was published as a living document on a collaboration platform accessible to personnel associated with this project. It is reproduced here in its most up-to-date state at the time of publication.
+
+        \input{assets/appendices/LSP_procedure.tex}
+    \chapter{Laser Pulse Shapes} \label{chp:app_pulseShapes}
+        \autoref{tab:app_pulseShapes} tabulates the various programmed stepped-pulse shapes used in this project, including their total energy and precise duration.
+        % The following file is generated by the Laser.util.db_to_latex function
+        \input{assets/appendices/pulseDB.tex}
+    \input{assets/appendices/properties.tex}
+
+\end{document}
