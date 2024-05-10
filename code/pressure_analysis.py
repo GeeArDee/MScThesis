@@ -20,7 +20,7 @@ U_DP = 0.4  # kPa, Delta P uncertainty
 Ur_V = 0.037  # relative volume uncertainty
 U_P = 1.0  # kPa, Nominal pressure uncertainty
 
-DEFAULT_SHOT_ID = 'LSP1_PS1'
+DEFAULT_SHOT_ID = 'LSP103_PP13'
 SAVE = 'save' in sys.argv and sys.argv[1] != 'save'
 NOISY = 'noisy' in sys.argv and sys.argv[1] != 'noisy'
 bbox_props = {
