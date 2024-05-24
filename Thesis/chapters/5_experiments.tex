@@ -4,7 +4,7 @@
         
         As was discussed in [DUPLAY], spark ignition was not reliable enough with the available electrode system. 
 
-    \section{Bringing the pulsed power down AND Optics design (move this section)} \label{sec:design_optics}
+    \section{Bringing the pulsed power down and Optical design (move to design)} \label{sec:design_optics}
         
         Pulsed shots at lower power levels revealed a difficulty to ignite the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP ignition in the V1 thruster was possible under this maximum CW power level.
         
@@ -18,12 +18,26 @@
         
         % Graph of 125mm lens
         \includegraphics[width=\textwidth]{assets/5 results/125lens.pdf}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.75\textwidth]{assets/5 results/125mm_focus_threshold.pdf}
+            \caption{125 mm focal length lens}
+        \end{figure}
         
         Ignition at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase ignition reliability.
 
         % Graph of multi-lens
-
         \includegraphics[width=\textwidth]{assets/5 results/500 and 150 lenses.pdf}
 
-        % Section on power meter reading lower pulsed power at these low power settings, like about 200W
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.75\textwidth]{assets/5 results/duallens_focus_threshold.pdf}
+            \caption{Multi-lens system}
+        \end{figure}
 
+        % Section on power meter reading lower pulsed power at these low power settings, like about 200W
+    
+    \section{Cold flow thrust tests}
+
+    A cold flow test was completed to give a baseline measurement of thrust before the hot fire test, and to validate the functioning of all data acquisition systems.
