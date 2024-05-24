@@ -23,3 +23,4 @@ Setpoint
 setpoints
 Saha
 collimated
+Stycast
