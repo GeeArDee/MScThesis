@@ -3,9 +3,9 @@
 # import ChiantiPy.core as ch
 import numpy as np
 import scipy.constants as c
-from constants import PLANCK_h as h
-from constants import BOLTZMANN_kb as kb
-from constants import MASS_ELECTRON as me
+from code.Emmanuel_code.constants import PLANCK_h as h
+from code.Emmanuel_code.constants import BOLTZMANN_kb as kb
+from code.Emmanuel_code.constants import MASS_ELECTRON as me
 
 def deBroglieThermal(temperature):
     LAMBDA = np.sqrt(h**2/(2*np.pi*me*kb*temperature))
