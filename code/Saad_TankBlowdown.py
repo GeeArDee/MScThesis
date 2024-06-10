@@ -13,7 +13,7 @@ plt.figure(1)
 df_cut = df.loc[(df['Relative Time'] > start_time) & (df['Relative Time'] < stop_time)]
 x_exp = df_cut['Relative Time']-start_time # s
 y_exp = df_cut['Bar PCB'] # bar
-plt.errorbar(x_exp, y_exp, yerr=-y_exp*0.01, label='Experimental Data from PCB transducer', fmt='.') # plot in bar
+plt.errorbar(x_exp, y_exp, yerr=-y_exp*0.01, label='Experimental Data from PCB transducer', fmt='.') # plot in bar cool
 plt.xlabel('Time (s)')
 plt.ylabel('Pressure (Bar)')
 plt.title('Saad Tank Blowdown Curve vs Experimental')
