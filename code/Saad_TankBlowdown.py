@@ -48,9 +48,7 @@ for i, p in enumerate(P):
     time[i] = sol_isentropic(x, V, A, T, gamma, R)#+start_time+0.03
 
 plt.figure(1)
-# plt.plot([],[], label = 'Nozzle diameters in mm')
 plt.plot(time, P/1e5 - 0.52664, label=diam_list) # plot in bar
 plt.legend()
-
 
 # %%
