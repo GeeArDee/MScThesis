@@ -4,9 +4,9 @@
 
         \subsection{Spark ignition}
             
-            As was discussed in \cite{duplayArgonLaserPlasmaThruster2024a}, spark ignition was not reliable enough with the available electrode system. 
+            As was discussed in \textcite{duplayArgonLaserPlasmaThruster2024a}, spark ignition was not reliable enough with the available electrode system. 
 
-        \subsection{Bringing the pulsed power down and Optical design (move to design)} \label{sec:design_optics}
+        \subsection{Bringing the pulsed power down and Optical design (move to design)} \label{sec:pulse_power_down_V1}
             
             Pulsed shots at lower power levels revealed a difficulty to ignite the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP ignition in the V1 thruster was possible under this maximum CW power level.
             
@@ -41,6 +41,23 @@
             % Section on power meter reading lower pulsed power at these low power settings, like about 200W
 
             The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to ultimately test CW operation with flowing argon.
+        
+        \subsection{\ce{NO2} seeding}
+            
+            As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to vacuum (how much?) before introducing gas.
+
+            Control LSP shots were undertaken in pure argon. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, were introduced into the chamber. It was then pressurized with argon to 20 bar. With the spark active, LSPs were consistently generated in the seeded atmosphere and their pressure trace from the PCB transducer was recorded with the oscilloscope. This pressure rise was approximately double the one seen in pure argon; see \autoref{fig:NO2_shots_analysis}.
+
+            The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/5 results/NO2_shots_analysis.pdf}
+                \caption{NO2 LSP shots}
+                \label{fig:NO2_shots_analysis}
+            \end{figure}
+
+            Indeed, with as low as (0.5\%?) of \ce{NO2} mixed with argon, nearly double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
 
     \section{V2}
         This section presents the various experiments that were conducted with the V2 thruster.
@@ -60,6 +77,13 @@
             Cold flow tests were completed to give a baseline measurement of thrust before the hot fire test, and to validate the functioning of all data acquisition systems.
             
             % thrust vs pressure graph
+
+        \subsection{Bringing the pulsed power down, again}
+            
+            To prevent the damage to the thruster seen previously, a rear window mount was manufactured. This allows the laser energy that is not absorbed to pass freely through the apparatus, also enabling power meter measurements. The following figures present the LSP ignition attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}. 
+ 
+
+            
 
         
 
