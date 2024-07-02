@@ -80,7 +80,49 @@
 
         \subsection{Bringing the pulsed power down, again}
             
-            To prevent the damage to the thruster seen previously, a rear window mount was manufactured. This allows the laser energy that is not absorbed to pass freely through the apparatus, also enabling power meter measurements. The following figures present the LSP ignition attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}. 
+            To prevent the damage to the thruster seen previously, a rear window mount was manufactured. This allows the laser energy that is not absorbed to pass freely through the apparatus, also enabling power meter measurements. 
+            
+            % Photo of rear window mount and damaged window
+
+            As can be seen above, the window suffered laser damage after this round of testing. However, this damage proved minor as the window was used to align the laser focus with the spark gap, not to measure power absorption.
+            
+            The following figure present the LSP ignition attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/5 results/V2_focus_threshold.pdf}
+                \caption{LSP threshold graph for V2}
+            \end{figure}
+
+            The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (see \autoref{label})
+
+            \begin{figure}[h]
+                \centering
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/5 results/10p 50ms Statistics.png}
+                    \caption{Statistics of 10 \qty{50}{ms} shots at 10\% power}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/5 results/12p 50ms Statistics.png}
+                    \caption{Statistics of 10 \qty{50}{ms} shots at 12\% power}
+                \end{subfigure}
+                \caption{Test}
+            \end{figure}
+            
+            At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}. This validated that the 
+
+        \subsection{First CW LSPs}
+            
+            A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
+
+            % photo of laser on, Spark/LSP ignition, LSP constant, laser off (LSP dying down)
+
+            This was the first CW LSP generated in the lab. No damage was noticed to the apparatus after this test.
+
+        \subsection{CW LSP (hot fire) thrust tests}
  
 
             
