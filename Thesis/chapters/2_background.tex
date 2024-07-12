@@ -18,6 +18,18 @@
     This thesis will focus on the second challenge, as well as constructing a proof of concept 
     
     % , if certain engineering problems can be solved. The main question that remains is how to absorb as much laser energy as possible 
+
+    Increasing the amount of energy deposited by the laser into the working gas remains a topic of active research and is a significant hurdle for the operational use of LTP.
+
+        % Graph of energy loss here (similar but not exactly same as Emmanuel's)
+
+        The two main conversion efficiencies are:
+        \begin{enumerate}
+            \item Absorption of the laser energy by the plasma
+            \item Heat transfer from the plasma to the working gas
+        \end{enumerate}
+
+    As the efficencies chosen are different from source to source, these efficencies will be defined where applicable.
     
     %Russian work: 1960s-2000s?
 
@@ -32,41 +44,9 @@
 
         Work was done under a NASA grant in the 1970s by REF[Shoji and Larson] to design an LTP engine. 
 
-    %Japanese work: 1980s-2020s?
-
-        In the early 2000s, \textcite{toyodaThrustPerformanceCW2002} 
-        
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.35\textwidth]{assets/2 background/Toyoda Apparatus.png}
-            \caption{Model II experimental apparatus from \textcite{toyodaThrustPerformanceCW2002}}
-            \label{fig:Toyoda apparatus}
-        \end{figure}
-
-        More recently, work by Matsui [look into his work here https://scholar.google.com/citations?view_op=list_works&hl=fr&hl=fr&user=eeEONzQAAAAJ&sortby=pubdate]
-
-    %Chinese work: 2020s?
-
-        \textcite{luCharacteristicDiagnosticsLaserStabilized2022a} 
-
-    %Canadian work: 2020s
-
-        This thesis builds directly upon \textcite{duplayArgonLaserPlasmaThruster2024a}'s Master's thesis. 
-
-    \section{Energy deposition}
 
         
-        Increasing the amount of energy deposited by the laser into the working gas remains a topic of active research and is a significant hurdle for the operational use of LTP.
-
-        % Graph of energy loss here (similar but not exactly same as Emmanuel's)
-
-        The two main conversion efficiencies are:
-        \begin{enumerate}
-            \item Absorption of the laser energy by the plasma
-            \item Heat transfer from the plasma to the working gas
-        \end{enumerate}
-
-        There is a problem when comparing efficencies , as the definition of efficencies are different from source to source. (Ex: Toyoda, Matsui, )
+        
 
         Much work on the topic was done in the 1980s. \textcite{keeferPowerAbsorptionLasersustained1986a} studied LSP in a forced convective flow environment. Using a \qty{1.5}{kW} \ce{CO2} laser with power levels of \qtyrange{360}{840}{W} and pressures of \qtyrange{1.3}{2.3}{atm}, with varying flow velocities, the temperature field of the plasma was measured. From the temperature field, and assuming local thermodynamic equilibrium, the power absorbed by the plasma and the power radiated from it can be calculated.
 
@@ -98,6 +78,55 @@
 
         In this study, a preliminary design for a \qty{100}{kW} thruster was presented, with a predicted specific impulse of \qty{1000}{s}, thrust of \qty{4.5}{N} and a conversion efficiency of \qty{80}{\%}.
 
+    %Japanese work: 1980s-2020s?
+
+        In the early 2000s, \textcite{toyodaThrustPerformanceCW2002} built and tested two different thruster models, presented in \autoref{fig:Toyoda apparatus}. These thrusters, using argon or nitrogen, had an LSP core that was powered by a \qty{2}{kW} \ce{CO2} laser. This comparative study showed that confining the plasma in a smaller chamber increased heat transfer and therefore, efficiency. 
+        
+        \authorcite{toyodaThrustPerformanceCW2002} defines the 'energy conversion efficency' as the amount of laser power that is converted into usable kinetic energy for thrust and is calculated as:
+
+        \[ n_e = F^2 - \frac{F^2_{cold}}{2 \dot{m} P}\]
+
+        Where $F$ is the thrust with laser on, $F_{cold}$ is the cold flow thrust (laser off) and $P$ is incident laser power.
+
+        The highest energy conversion efficiency (37\%) and $I_{sp}$ (\qty{113}{s}) were measured with the second model \autoref{fig:Toyoda apparatus} running on argon at a pressure ratio (chamber pressure/nozzle exit pressure) of 420. Heat loss to the walls was measured by a water cooling system as 55\% of incident laser power, with an additional 8\% being 'other loss'. Heat loss to the walls was expected to be recycled with regenerative cooling in a real-world application.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.35\textwidth]{assets/2 background/Toyoda Apparatus model 2.png}
+            \caption{Model II experimental apparatus from \textcite{toyodaThrustPerformanceCW2002}}
+            \label{fig:Toyoda apparatus 2}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=0.35\textwidth]{assets/2 background/Toyoda apparatus model 1.png}
+                \caption{Model I}
+                \label{fig:Toyoda apparatus 1}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=0.35\textwidth]{assets/2 background/Toyoda Apparatus model 2.png}
+                \caption{Model II}
+                \label{fig:Toyoda apparatus 2}
+            \end{subfigure}
+            \caption{Two thruster models from \textcite{toyodaThrustPerformanceCW2002}}
+        \end{figure}
+
+        More recently, work by Matsui [look into his work here https://scholar.google.com/citations?view_op=list_works&hl=fr&hl=fr&user=eeEONzQAAAAJ&sortby=pubdate]
+
+    %Chinese work: 2020s?
+
+        \textcite{luCharacteristicDiagnosticsLaserStabilized2022a} investigated LSP for lighting applictions instead of propulsion.
+
+    %Canadian work: 2020s
+
+        This thesis builds directly upon \textcite{duplayArgonLaserPlasmaThruster2024a}'s Master's thesis. 
+
+
+
        
 
         
@@ -106,7 +135,7 @@
 
         % To change/update: Preliminary work done by the McGill Interstellar Flight Experimental Research Group indicated that with the first generation thruster, about \qty{80}{\%} of the laser energy was being absorbed by the plasma, with approximately \qty{15}{\%}
 
-    \section{Seeding}
+    
 
         Seeding the working gas with another species has been discussed as a way to increase the efficiency of an LTP engine.
 

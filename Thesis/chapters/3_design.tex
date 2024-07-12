@@ -1,7 +1,10 @@
-\chapter{Facility design}
+\chapter{Facility description}
+
     \section{Version 1} \label{sec:design_v1}
 
         The first generation thruster, called Version 1 (V1), was designed by Emmanuel Duplay during his master's project. This process can be found in his thesis \cite{duplayArgonLaserPlasmaThruster2024a}. It proved to be a dependable prototype, repurposed from a previous unrelated experiment. However, it presented problems that required a second generation prototype to be designed and manufactured.
+
+        [Add short description of V1 here]
 
         \subsection{Capabilities}
 
@@ -11,7 +14,7 @@
 
             Too heavy -> too much friction on rail for thrust tests. This was mitigated in part by a rope system.
 
-            Rubber seals were exposed to laser path during continuous lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm}focal length lens would solve this.
+            Critically, rubber seals were exposed to laser path during continuous lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm}focal length lens would solve this.
 
 
 
@@ -25,11 +28,7 @@
 
         \subsection{Requirements}
 
-            The following requirements were developed for the capstone team to lead them in the design of the V2 thruster.
-
-            % Put this in a nice big font
-            Objective: Detect a measurable difference in thrust between an argon cold gas thruster and an argon “hot gas” thruster, heated by a laser supported plasma (LSP).
-            %%%
+            The following requirements were developed for the capstone team to lead them in the design of the V2 thruster. The objective was to detect a measurable difference in thrust between an argon cold gas thruster and an argon “hot gas” thruster, heated by a laser supported plasma (LSP).
 
             \begin{enumerate}
                 \item Laser thruster
@@ -80,60 +79,67 @@
                 \end{enumerate}
             \end{enumerate}
 
+            With these requirements, preliminary geometric dimensions of the V2 thruster could commence. It was expected to be much smaller than V1, as the goal was to isolate the LSP region and increase heat flux to the gas, as was decribed in \
 
-        \subsection{Sizing the double choked LTP thruster}
+        \subsection{Sizing the double choked LTP thruster} 
+
+            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_{in}$ constant, so the increase in pressure chamber can be interpreted as a measure of energy deposition (as was discussed in \autoref{chp:models}).
+            The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked, a classic problem in compressible fluid mechanics.
+            
+            The starting assumptions were the following: a 300 W power input (laser) supplies energy to an LTP experiment that has an internal pressure of 25 bar, with a 50 bar feed pressure. We want the hot gas operation (laser on) to increase the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine together the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
 
             \begin{figure}[h]
             \centering
             \includegraphics[width=0.8\linewidth]{assets/3 design/double choked sizing.png}
-            \caption{\label{fig:frog}Schematic of an LTP thruster.}
+            \caption{\label{fig:double choke sizing}Schematic of a double choked LTP thruster.}
             \end{figure}
             
-            Let's pose that we have a 300 W power input (laser) and want to run the LTP experiment at 25 bar, with a 50 bar feed pressure. We want the hot gas operation (laser on) to increase the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine together the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
             
-            \subsubsection{Cold Ar thruster}
-            $C_0$ choked, without nozzle is speed of sound: $323 \:m/s$ This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, we accelerate the gas by $\approx 2$ times. The $v_{exit}$, which is our main performance parameter, is therefore: 
+            Starting with a cold gas thruster using argon, $C_0$ choked, without nozzle is speed of sound: $323 \:m/s$ This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, we accelerate the gas by $\approx 2$ times. The $v_{exit}$, which is our main performance parameter, is therefore: 
             \[v_{exit} = 646\: m/s\]
             
-            \subsubsection{Hot Ar thuster}
-            Taking the previous $v_{exit}$ and ionizing the whole flow, we hope that our efficiency is doubled. This gives a $v_{exit}\approx 1300\:m/s$. What nozzle throat size is necessary for this $\dot m$ with $p_{chamber} = 25\: bar$? We know that $MW_{Ar} = 40 \: g/mol$. From Fluids 2, the speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4! From Thermo 1:
+            Now, for laser on (hot) operation. Taking the previous $v_{exit}$ and ionizing the whole flow, we hope that our efficiency is doubled. This gives a $v_{exit}\approx 1300\:m/s$. What nozzle throat size is necessary for this $\dot m$ with $p_{chamber} = 25\: bar$? We know that $MW_{Ar} = 40 \: g/mol$. From Fluids 2, the speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4! From Thermo 1:
             \[Power = \dot m (h_2-h_1)
             = \dot m C_p (T_2-T_1)\]
             The $C_p$ of argon is $0.520\:kJ/(kg-K)$ Find the $\dot m$ that we can expect in g/s.\vspace{60mm}
             
-            Again from Fluids 2, we have the mass flow rate (of an isentropic flow) described by Fliegner's formula:
+            Fliegner's formula describes the mass flow rate of an isentropic flow:
             \[\frac{\dot m}{A} = p_0\sqrt{\frac{\gamma}{T_0 R}}\frac{M}{(1+\frac{\gamma-1}{2}M^2)^{(\frac{\gamma+1}{2(\gamma-1)})}}\]
-            We have a $\gamma = \frac{C_p}{C_v} = 1.666$ for Argon and choked flow at the nozzle. Find the area and the diameter of the circular nozzle.\vspace{170 mm}
+            With $\gamma = \frac{C_p}{C_v} = 1.666$ for Argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are [fill in the blank]
             
             We can repeat these calculations for the feed orifice, with the same $\dot m$, a pressure of 50 bar and ambient temperature. This gives us an orifice size of about 0.2 mm, or 10 thou in freedom units.
 
-        \subsection{Capstone team deliverable}
+        \subsection{Capstone team deliverable & integration}
             
-            \subsubsection{Installation}
+            After McGill machinists manufactured the V2 thruster, static pressure testing up to \qty{75}{bar} for \qty{25}{minutes} was completed successfully with the team. 
+        
 
-                Once the 
-
-        \subsection{Improvements on Capstone design}
+        \subsection{Additional V2 systems}
 
             \subsubsection{Electrodes}
-                The \qty{44}{kV} wire having burst during pressure tests, 
-
-                The epoxy chosen was Stycast ES 1001. Molds were 3d printed and Mann Ease Release\texttrademark 300 was applied to all their inside surfaces.
+                The \qty{44}{kV} wire having burst during pressure tests, different electrodes were necessary. Molded dielectric epoxy (Stycast ES 1001 [LINK to website]) around an industrial sewing needle core was chosen, as it was economical and the outer diameter of the electrodes could be precisely controlled by sanding the surface of the set epoxy. Molds were 3d printed and Mann Ease Release\texttrademark 300 was applied to all their inside surfaces.
 
                 \begin{figure}[h]
                     \centering
                     \includegraphics[width=0.75\textwidth]{assets/3 design/Molds.jpg}
                 \end{figure}
 
+
+
                 \begin{figure}[h]
                     \centering
                     \includegraphics[width=0.75\textwidth]{assets/3 design/Mold process.jpg}
                 \end{figure}
 
-                % The TDS recommended 24 hours of cure time, but it was found that 2-3 days of curing permitted the epoxy to adhere to the needle inside. (Maybe just longer mixing needle)
+                The electrodes were then sanded down to fit tightly into Ultra-Torr vacuum connectors [link to swagelok and part number]. Although these connectors were not designed for high pressure, previous experience has shown that they are appropiate up to about \qty{20}{bar} of internal pressure if tightened enough.
+
+                The result is presented in \autoref{fig:Assembled electrode}.
 
                 \begin{figure}[h]
                     \centering
                     \includegraphics[width=0.75\textwidth]{assets/3 design/V2 electrodes.jpg}
                     \caption{Assembled electrodes with Ultra-Torr cap and electrical connectors}
+                    \label{fig:Assembled electrode}
                 \end{figure}
+
+                Once installed in the V2 thruster, the electrodes were pushed into contact with each other and the Ultra-Torr connectors tightened. Statically pressurizing V2 to \qty{20}{bar} was enough to slightly separate the electrodes from one another. [add text for flow testing?]
