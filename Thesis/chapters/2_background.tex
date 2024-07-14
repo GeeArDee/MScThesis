@@ -89,13 +89,6 @@
         Where $F$ is the thrust with laser on, $F_{cold}$ is the cold flow thrust (laser off) and $P$ is incident laser power.
 
         The highest energy conversion efficiency (37\%) and $I_{sp}$ (\qty{113}{s}) were measured with the second model \autoref{fig:Toyoda apparatus} running on argon at a pressure ratio (chamber pressure/nozzle exit pressure) of 420. Heat loss to the walls was measured by a water cooling system as 55\% of incident laser power, with an additional 8\% being 'other loss'. Heat loss to the walls was expected to be recycled with regenerative cooling in a real-world application.
-        
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.35\textwidth]{assets/2 background/Toyoda Apparatus model 2.png}
-            \caption{Model II experimental apparatus from \textcite{toyodaThrustPerformanceCW2002}}
-            \label{fig:Toyoda apparatus 2}
-        \end{figure}
 
         \begin{figure}[h]
             \centering
@@ -119,7 +112,18 @@
 
     %Chinese work: 2020s?
 
-        \textcite{luCharacteristicDiagnosticsLaserStabilized2022a} investigated LSP for lighting applictions instead of propulsion. Therefore, an emphasis was made on 
+        \textcite{luCharacteristicDiagnosticsLaserStabilized2022a} investigated LSP for lighting applictions instead of propulsion. Therefore, an emphasis was made on spectroscopy measurements. A \qty{300}{W} fiber laser at a wavelength of \qty{1080}{nm} was focused to a \qty{50}{um} diameter spot in a high pressure chamber.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.35\textwidth]{assets/2 background/Lu apparatus.png}
+            \caption{Experimental setup from \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}}
+            \label{fig:Lu apparatus}
+        \end{figure}
+
+        Argon pressures between \qtyrange{10}{20}{bar} were used. \ce{N2} was later added between \qtyrange{0.1}{1.0}{\%}. A lower ignition power (\qty{117}{W}) than other studies was achieved at \qty{20}{bar}. This was attributed to the smaller focus delivering a higher photon flux.
+        
+        As expected, increasing the laser power or the gas pressure were found to increase the radiation intensity of the LSP. However, adding \ce{N2} reduced both the electron temperature and electron density of the LSP, reducing its radiation intensity.
 
     %Canadian work: 2020s
 
@@ -133,16 +137,22 @@
 
         % Lubin papers
 
-        % To change/update: Preliminary work done by the McGill Interstellar Flight Experimental Research Group indicated that with the first generation thruster, about \qty{80}{\%} of the laser energy was being absorbed by the plasma, with approximately \qty{15}{\%}
+        % To change/update: Preliminary work done by the McGill Interstellar Flight Experimental Research Group indicated that with the first generation thruster, about \qty{80}{\%} of the laser energy was being absorbed by the plasma, with approximately \qty{15}{\%}    
 
-    
+        Seeding the working gas with another species has been discussed as a way to increase the energy absorption into the working fluid of an LTP engine. Carbon particles have been suggested by [SHOJI, rework these sentences].
 
-        Seeding the working gas with another species has been discussed as a way to increase the efficiency of an LTP engine.
+        Pure methane and methane-seeded gasses have been experimentally investigated by \textcite{kameiMethaneMethaneXenon2020}. The rationale is similar to carbon particles, as the methane dissociates into hydrogen and carbon with the high temperature of the LSP. A \qty{1.1}{kW} diode laser at a wavelength of \qty{940}{nm} was beamed into a high-pressure chamber fitted with arc ignition electrodes. The gap between these electrodes was \qty{1}{mm}. A CCD type spectrometer recorded emission spectra of the ignition arc discharge and of the LSP. LSPs in three different gasses were attempted: pure methane, methane-argon and methane-xenon.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.35\textwidth]{assets/2 background/Kamei apparatus.png}
+            \caption{LSP generation chamber and cross section view from \textcite{kameiMethaneMethaneXenon2020}}
+            \label{fig:Kamei}
+        \end{figure}
 
-        Carbon particles are a candidate explored by many papers. %Which ones?
-
-        Pure methane and methane-seeded xenon have been experimentally investigated by \textcite{kameiMethaneMethaneXenon2020}. % What are conclusions of this? 
-        The rationale is similar to carbon particles, as the methane dissociates into hydrogen and carbon with the high temperature of the LSP.
+        In methane at \qty{0.1}{MPa}, soot formation between the electrodes prevented LSP ignition. The spectrometer confirmed the dissociation of methane, as line spectra of carbon and hydrogen were observed at the ignition arc. Ignition was also unsucessful in argon-methane with a pressure between \qtyrange{0.1}{0.3}{MPa} and a methane volume fraction between \qtyrange{20}{60}{\%}. 
+        
+        LSP was successfully generated in methane-xenon, with a lower threshold power (\qty{850}{W}) than in pure xenon. The partial pressure of methane was between \qtyrange{0.02}{0.6}{MPa}, with a partial pressure of xenon of \qty{0.10}{MPa}.
 
     \section{Summary and direction of work in this thesis}
 
