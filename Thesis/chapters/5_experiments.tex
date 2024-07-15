@@ -1,6 +1,8 @@
 \chapter{Experiments}
 
-    \section{V1}
+    The following chapter will explain the experiments undertaken with both V1 and V2 thrusters, including the improvements made to V2.
+
+    \section{V1 expriments}
 
         \subsection{Spark ignition}
             
@@ -46,6 +48,8 @@
             
             As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to vacuum (how much?) before introducing gas.
 
+            [Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
+
             Control LSP shots were undertaken in pure argon. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, were introduced into the chamber. It was then pressurized with argon to 20 bar. With the spark active, LSPs were consistently generated in the seeded atmosphere and their pressure trace from the PCB transducer was recorded with the oscilloscope. This pressure rise was approximately double the one seen in pure argon; see \autoref{fig:NO2_shots_analysis}.
 
             The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
@@ -59,8 +63,8 @@
 
             Indeed, with as low as (0.5\%?) of \ce{NO2} mixed with argon, nearly double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
 
-    \section{V2}
-        This section presents the various experiments that were conducted with the V2 thruster.
+    \section{V2 experiments and improvements}
+        This section presents the various experiments that were conducted with the V2 thruster, as well as improvements that were made to this thruster along the way.
     
         \subsection{Initial LSP shots}
 
@@ -77,6 +81,10 @@
             Cold flow tests were completed to give a baseline measurement of thrust before the hot fire test, and to validate the functioning of all data acquisition systems.
             
             % thrust vs pressure graph
+
+            To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). However, the same issue 
+
+            A different type of thurst stand (e.g. a rotating arm), could eventually be built to measure thrust in a more repeatable manner.
 
         \subsection{Bringing the pulsed power down, again}
             
@@ -114,13 +122,52 @@
             
             At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}. This validated that the 
 
-        \subsection{First CW LSPs}
+        \subsection{First CW LSP}
             
             A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
 
             % photo of laser on, Spark/LSP ignition, LSP constant, laser off (LSP dying down)
 
             This was the first CW LSP generated in the lab. No damage was noticed to the apparatus after this test.
+
+        \subsection{Window extention tube}
+            
+            After the first CW LSP, more CW and pulsed shots were attempted. As laser alignment was not perfect, these continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that 
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/5 results/window damage.jpg}
+                \caption{Rear window damage on V2}
+            \end{figure}
+
+            The solution chosen was to manufacture a window extention tube, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen.
+
+            [drawing of extention tube]
+
+        \subsection{New nozzle design}
+            
+            To solve the ablation of the aluminium nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified and a new backplate was manufactured to accept graphite nozzle inserts. These cheap, chageable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
+
+            [image of drawing highlighting changes]
+
+        \subsection{CW power test}
+
+            Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
+
+            Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
+
+            [graph of laser power that broke lens]
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/5 results/Shattered 500 mm lens.jpg}
+                \caption{Shattered 500 mm lens}
+            \end{figure}
+
+            This test showed a \qty{316}{W} (?) max CW power.
+
+            Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
+
 
         \subsection{CW LSP (hot fire) thrust tests}
  
