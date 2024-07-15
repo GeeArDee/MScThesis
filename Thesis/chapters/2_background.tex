@@ -1,19 +1,14 @@
 \chapter{Background} \label{chp:background}
 
-    In recent years, the commercialization of space has greatly captured the public's imagination. Access to low Earth orbit has been made much cheaper by new private companies. To access objectives deeper in space, including rapid transit of humans to Mars, the development of novel propulsion technologies is necessary. 
+    In recent years, access to low Earth orbit has been made much cheaper by new private companies. To access objectives deeper in space, including rapid transit of humans to Mars, the development of novel propulsion technologies is necessary. 
     
-    The concept of laser-thermal propulsion (LTP) was first suggested by \textcite{kantrowitzRelevanceSpace1971} as a way to decrease launch costs and continues to be of interest. This method of propulsion uses a ground- or space-based laser to heat a gas on a spacecraft, which is then expelled out of a nozzle to generate the required thrust.
+    The concept of laser-thermal propulsion (LTP) was first suggested by \textcite{kantrowitzRelevanceSpace1971} as a way to decrease launch costs and continues to be of interest. This method of propulsion uses a ground- or space-based laser to heat a gas on a spacecraft, which is then expelled out of a nozzle at the exhaust velocity to generate the required thrust.
 
-    In a conventional chemical rocket engine, the energy source is the oxidizer and the fuel, which are reacted together to release energy. They are transported with the rocket and set the temperature of the combustion reaction (typically \qtyrange{2000}{3000}{K}), which is proportional to the exhaust velocity.
-
-    [Image to show what I mean (compare chemical to LTP rocket)]
+    In a conventional chemical rocket engine, the energy source is the oxidizer and the fuel, which are reacted together to release energy. They are transported with the rocket and set the temperature of the combustion reaction (typically \qtyrange{2000}{3000}{K}), which is directly related to the exhaust velocity.
     
-    Separating the propulsion power source (here, the laser) from the spacecraft itself allows crucial weight savings, either increasing the payload mass fraction or decreasing transit time. Using a laser also allows for much higher thrust chamber temperatures than chemical propulsion, as the temperature of these plasmas is typically \qtyrange{15000}{20000}{K}. This gives in turn higher exhaust velocities. This propulsion method could therefore be an order of magnitude more efficient than our current rocket engines. To be practical for space propulsion, the main engineering challenges that need to be solved are:
+    Separating the power source used for propulsion (here, the laser) from the spacecraft itself allows crucial weight savings, either increasing the payload mass fraction or decreasing transit time. Using a laser also allows for much greater thrust chamber temperatures than chemical propulsion, as the temperature of these plasmas is typically \qtyrange{15000}{20000}{K}. This gives in turn higher exhaust velocities. This propulsion method could therefore be an order of magnitude more efficient than our current rocket engines, if certain engineering problems can be solved.
 
-    \begin{enumerate}
-        \item Building a ground-based laser array powerful and precise enough to beam into orbit
-        \item Increasing thermal efficiency
-    \end{enumerate}
+    % Discussion on inverse Bremsstralung
 
     This thesis will focus on the second challenge, as well as constructing a proof of concept 
     
@@ -32,19 +27,57 @@
     As the efficencies chosen are different from source to source, these efficencies will be defined where applicable.
 
     \subsection{Literature review [structure like this? Put background in intro?]}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.35\textwidth]{assets/2 background/ltp_architecture.pdf}
+        \caption{LTP architecture (\textcite{duplayArgonLaserPlasmaThruster2024a})}
+        \label{fig:LTP architecture}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.35\textwidth]{assets/2 background/chamber.pdf}
+        \caption{Overview of LTP system (\textcite{duplayArgonLaserPlasmaThruster2024a})}
+        \label{fig:Keefer apparatus}
+    \end{figure}
     
     %Russian work: 1960s-2000s?
 
-    The experimental basis of this means of propulsion was developed by \textcite{generalovContinuousOpticalDischarge1970} in 1970. For the first time, an LSP was generated with a \qty{10.6}{μm} CW \ce{CO2} \qty{150}{W} laser. In this case, the LSP was ignited by a second, \qty{10}{kW} pulsed \ce{CO2} laser.
+    The experimental basis of this means of propulsion was developed by \textcite{generalovContinuousOpticalDischarge1970} in 1970. For the first time, an LSP was generated with a \qty{150}{W} \ce{CO2} laser operation at \qty{10.6}{μm} wavelength. In this case, the LSP was ignited by a second, \qty{10}{kW} pulsed \ce{CO2} laser.
     
-    Most studies have used CO2 lasers with a wavelength of 10.6 μm [3] - [6]. However, these concepts were limited by a short focusing range due to their long laser wavelength. 
-    
-    High power fiber lasers emitting near 1 μm (thus, having longer range) have recently become readily available, making laser propulsion more feasible than ever [7].
+    Most studies to date have used \ce{CO2} lasers with a wavelength \qty{10.6}{μm}. However, these concepts were limited by a short focusing range due to their long laser wavelength. This relegated them to ground-to-orbit launch. High power fiber lasers emitting near 1 μm have recently become readily available. Being able to beam energy to low earth orbit, fiber lasers make laser propulsion more feasible.
 
+    [move the following citations under section 2.1 Energy deposition:]
     
     %American work: 1970s-1990s?
 
-        Work was done under a NASA grant in the 1970s by REF[Shoji and Larson] to design an LTP engine. 
+        Work was done under a NASA grant in the mid-1970s by \textcite{shojiLaserheatedRocketThruster1977,shojiPerformanceHeatTransfer1976a} to design a small-scale \qty{10}{kW} and full-scale \qty{5000}{kW} LTP engine. 
+        
+        Carbon-seeded hydrogen was used to capture the plasma's radiation, which was mostly in the UV wavelength 
+        
+        
+        
+        \qty{19}{\%} of the laser power was lost by radiation in the \qty{10}{kW}. 
+        
+        The \qty{5000}{kW} thruster loses \qty{4.5}{\%} of laser power by radiation, 
+
+
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=\textwidth]{assets/2 background/Shoji_assy.png}
+            \caption{\qty{10}{kW} thruster from \textcite{shojiPerformanceHeatTransfer1976a}}
+            \label{fig:Shoji apparatus}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=\textwidth]{assets/2 background/Shoji cross-section.png}
+            \caption{Cross-section drawing of \qty{10}{kW} thruster from \textcite{shojiLaserheatedRocketThruster1977}}
+            \label{fig:Shoji cross-section}
+        \end{figure}
+
+        The \qty{10}{kW} prototype (\autoref{fig:Shoji apparatus}) was built and delivered to NASA at the conclusion of the grant.
 
 
         
@@ -61,9 +94,9 @@
         
         \autoref{fig:Keefer apparatus} shows the apparatus used for these measurements. An inner quartz flow channel contains the plasma, while an outer quartz jacket contains the pressure. Flowing argon comes in from the bottom and into the flow channel. The plasma is initiated by laser heating of a tungsten rod, which was removed after ignition. Downstream, a water-cooled copper beam dump absorbs the laser energy and cools the heated argon flow.
 
-        \Citeauthor{keeferPowerAbsorptionLasersustained1986a} determined that % PUT PERCENTAGES HERE
+        \Citeauthor{keeferPowerAbsorptionLasersustained1986a} determined that [PUT PERCENTAGES HERE]
 
-        In parallel, a group from the University of Illinois (say this differently?), claims absorption approaching \qty{80}{\%} and thermal efficiency
+        In parallel, a group from the University of Illinois [say this differently?], reported absorption approaching \qty{80}{\%} and thermal efficiency[...]
 
         \begin{figure}[h]
             \centering
@@ -72,7 +105,7 @@
             \label{fig:Krier apparatus}
         \end{figure}
 
-        In their later work in 1990, \textcite{zerkleLasersustainedArgonPlasmas1990}, claims absorption from \qtyrange{55}{97}{\%} and thermal efficiency from \qtyrange{11}{46}{\%}. %continue this review, define "thermal efficiency"
+        In their later work in 1990, \textcite{zerkleLasersustainedArgonPlasmas1990}, reported absorption from \qtyrange{55}{97}{\%} and thermal efficiency from \qtyrange{11}{46}{\%}. [continue this review, define "thermal efficiency"]
 
         %LTP research slowed down with the end of high-power laser weapon research in the early 1990s.
 
@@ -158,7 +191,7 @@
 
     \section{Summary and direction of work in this thesis}
 
-        \begin{table}[ht] % TODO - update this table
+        \begin{table}[ht] % TODO - update this table. Column is very narrow and difficult to read. If you cannot make it wider, might consider eliminating this column and instead have this information appear as footnotes below the table, which are much easier to read. Also, since many of the entries are the same "Arc discharge ignition", the same footnote can be used over and over.
             \small
             \centering
             \caption{Summary of a selection of past LSP experiments. $\lambda$: wavelength, $P$: maximum laser power, $p$: pressure, $I_\mathrm{sp}$: maximum specific impulse, $F_\mathrm{T}$: maximum thrust}
@@ -166,27 +199,20 @@
             \begin{tabularx}{\textwidth}{@{}>{\small}X<{\raggedright}llrrlrrr>{\footnotesize}X<{\raggedright}@{}}
             \toprule
             {LSP   Facility}                                                           & Year & Laser         & $\lambda$   [\unit{\um}] & $P$ [kW] & Gas                 & $p$   [atm] & $I_\mathrm{sp}$ [s] & $F_\mathrm{T}$   [N] & {Comments}                                                                   \\ \midrule
-            \textcite{generalovContinuousOpticalDischarge1970}                                                         & 1970 & \ce{CO_2}                  & 10.60             & 0.15               & \ce{Xe}              & 3.0 - 4.0        &           -             &       -       & First   LSP                                                                \\
+            \textcite{generalovContinuousOpticalDischarge1970}                                                         & 1970 & \ce{CO_2}                  & 10.60             & 0.15               & \ce{Xe}              & 3.0 - 4.0        &           -             &       -       & First   LSP                                                              \\
             \textcite{keeferPowerAbsorptionLasersustained1986a}         & 1986 & \ce{CO_2}                  & 10.60             & 0.84        & \ce{Ar}              & 1.3   - 2.3      &            -            &       -       & Specialized   laser beam dump integrated within the converging exit nozzle \\
-            \textcite{blackLaserPropulsion10kW1995}          & 1995 & \ce{CO_2}                  & 10.60             & 10.00              & \ce{Ar},   \ce{H_2}    & 1.0   - 2.7      & 350                    & 3.00         & 15:1   expansion ratio nozzle                                              \\
+            \textcite{blackLaserPropulsion10kW1995}          & 1995 & \ce{CO_2}                  & 10.60             & 10.00              & \ce{Ar},   \ce{H_2}    & 1.0   - 2.7      & 350                    & 3.00         & \footnote{15:1   expansion ratio nozzle}                                              \\
             \\
-            \textcite{toyodaThrustPerformanceCW2002} & 2002 & \ce{CO_2}                  & 10.60             & 2.00               & \ce{Ar},   \ce{N_2}    & 2.0   - 5.5      & 113             & 0.44         & Tungsten   rod ignition                                                    \\
-            \textcite{zimakovInteractionNearIRLaser2016}                                                        & 2016 & Fiber                & 1.07              & 1.50        & \ce{Ar},   \ce{Xe}   & 3.0   - 24.7     & -                      & -            & Arc   discharge ignition                                                   \\
-            \textcite{matsuiGeneratingConditionsArgon2019}                                                          & 2019 & Fiber &      1.07             &        2.00            &           \ce{Ar}           &          1.0 - 64.2        &            -            &       -       & Arc   discharge ignition                                                   \\
-            \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}                                                             & 2022 & Fiber                & 1.08              & 0.30      & \ce{Ar},   \ce{Ar + N_2} & 9.9   - 19.7     & -                      & -            & Arc   discharge ignition                                                   \\ \bottomrule
+            \textcite{toyodaThrustPerformanceCW2002} & 2002 & \ce{CO_2}                  & 10.60             & 2.00               & \ce{Ar},   \ce{N_2}    & 2.0   - 5.5      & 113             & 0.44         & \footnote{Tungsten   rod ignition}                                                    \\
+            \textcite{zimakovInteractionNearIRLaser2016}                                                        & 2016 & Fiber                & 1.07              & 1.50        & \ce{Ar},   \ce{Xe}   & 3.0   - 24.7     & -                      & -            & \footnote{Arc   discharge ignition}                                                   \\
+            \textcite{matsuiGeneratingConditionsArgon2019}                                                          & 2019 & Fiber &      1.07             &        2.00            &           \ce{Ar}           &          1.0 - 64.2        &            -            &       -       & \footnote{Arc   discharge ignition}                                               \\
+            \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}                                                             & 2022 & Fiber                & 1.08              & 0.30      & \ce{Ar},   \ce{N_2} & 9.9   - 19.7     & -                      & -            & \footnote{Arc   discharge ignition}                                                   \\ \bottomrule
             \end{tabularx}
+            
         \end{table}
 
-        % Higgins text from email to Mark Wolverton: Laser thermal propulsion originated with Arthur Kantrowitz, who was involved in developing the first gas dynamic lasers that would be able to reach MW-class power in the 1960s. (Interesting connection to Jordin Kare: Jordin was also a filk-singer, which is a science-fiction themed version of folk singing. He actually wrote a song about laser thermal propulsion called “Kantrowitz 1972”. Put your coffee cup down before listening to this…) 
-        %The laser-thermal rocket kind of died with the demise of high-power laser weapon research in the early 1990s. Now with Phil Lubin’s work, I think it is worthwhile looking at again. Even with a gigawatt-class laser, laser propulsion is not well suited for ground-to-orbit launch vehicles, unless they are very small (this is what Jordin’s filk song is about—rapid turn around of launching many microlaunchers using a laser).  Here’s the clip of Elon Musk making the same point: https://youtu.be/viRylmoFAj0?si=MzzsBkhHF71FLCRG
-        
-        %However, with Philip Lubin’s demonstration that phased array lasers can be made arbitrarily large, we can now reach much deeper into space and perform propulsive maneuvers more leisurely (say, over hours), so the power requirements now drop to the 100s of MW (rather than 10s of gigawatts!). This was the basis of our 45-days-to-Mars study, which I think you have already seen. Here is an un-paywalled version of it: [2201.00244] Design of a rapid transit to Mars mission using laser-thermal propulsion (arxiv.org)
-
-        %The other approach is to provide laser power onto a solar panel (although one tuned to the laser wavelength) that then powers electric propulsion like an ion engine or Hall effect thruster: Laser-electric propulsion. Lubin’s group published a similar study to ours, trying to hit similar objectives (the usual “Mars in a month” metrics). I’ve attached their paper here: SheerinLubinEtAl_FastTransporationElectricPropulsionDirectedEnergy_ActaAstro2021
-        %Their paper and ours make for a nice “compare and contrast” of the pluses and minuses of the laser-electric and laser-thermal approaches.
-
-        \section{Objective}
-
-            The objective of this research project is to test a lab-scale proof-of-concept LTP thruster for interplanetary space flight, using a \qty{1.07}{um} fiber laser. The main objective of the proposed research will be to measure the key performance parameters of this thruster (thrust and specific impulse notably), as well as characterize the laser-sustained plasma (LSP) heating core inside the thruster. This project will validate theoretical insights recently developed by the McGill Interstellar Flight Experimental Research Group \cite{baoTwoDimensionalSimulationLaser}, \cite{duplayDesignRapidTransit2022a} and continue the experimental research started by \textcite{duplayArgonLaserPlasmaThruster2024a}. % Plus, add "Determine the effect of seeding on thrust performance"
+            [Summary of lit review]
+            
+            The objective of this research project is to test a lab-scale proof-of-concept LTP thruster for interplanetary space flight, using a \qty{1.07}{um} fiber laser. The main objective of the proposed research will be to measure the key performance parameters of this thruster (thrust and specific impulse), as well as characterize the laser-sustained plasma (LSP) heating core inside the thruster. This project will mainly build upon the experimental research started by \textcite{duplayArgonLaserPlasmaThruster2024a}.
 
             % mention The original contribution of this work ?
