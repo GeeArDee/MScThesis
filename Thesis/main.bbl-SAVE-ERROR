@@ -1,0 +1,958 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{tiesingaFundamentalPhysicalConstants2019}{online}{}{}
+      \name{author}{4}{}{%
+        {{hash=c78972b7154db12858f8b2a43cbddc26}{%
+           family={Tiesinga},
+           familyi={T\bibinitperiod},
+           given={Eite},
+           giveni={E\bibinitperiod}}}%
+        {{hash=70ffad8a9850472813ebca8d8d1f2f69}{%
+           family={Mohr},
+           familyi={M\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=2f44e26ac0465165a8ac1a25c397cced}{%
+           family={Newell},
+           familyi={N\bibinitperiod},
+           given={David\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=77904d9affa7a41f527d077427b5e034}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Barry\bibnamedelima N.},
+           giveni={B\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{organization}{2}{%
+        {The NIST Reference on Constants, Units,}%
+        {Uncertainty}%
+      }
+      \strng{namehash}{7577d9576de4d3d566fddee3a945c978}
+      \strng{fullhash}{f0214bd871e5f4b88b29378050b779e8}
+      \strng{fullhashraw}{f0214bd871e5f4b88b29378050b779e8}
+      \strng{bibnamehash}{f0214bd871e5f4b88b29378050b779e8}
+      \strng{authorbibnamehash}{f0214bd871e5f4b88b29378050b779e8}
+      \strng{authornamehash}{7577d9576de4d3d566fddee3a945c978}
+      \strng{authorfullhash}{f0214bd871e5f4b88b29378050b779e8}
+      \strng{authorfullhashraw}{f0214bd871e5f4b88b29378050b779e8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This database gives values of the basic constants and conversion factors of physics and chemistry resulting from the 2018 least-squares adjustment of the fundamental physical constants as published by the CODATA Task Group on Fundamental Constants and recommended for international use by CODATA.}
+      \field{month}{5}
+      \field{title}{Fundamental {{Physical Constants}} from {{NIST}}}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://physics.nist.gov/cuu/Constants/index.html
+      \endverb
+      \verb{url}
+      \verb https://physics.nist.gov/cuu/Constants/index.html
+      \endverb
+    \endentry
+    \entry{kantrowitzRelevanceSpace1971}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aad0ca9db5b68a8eef010113f2420776}{%
+           family={Kantrowitz},
+           familyi={K\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{fullhash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{fullhashraw}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{bibnamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorbibnamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authornamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorfullhash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorfullhashraw}{aad0ca9db5b68a8eef010113f2420776}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{While space programs are being cut back and attempts to probe the universe are attacked as irrelevant, there are some voices making themselves heard on the opposite side. An attack on the “naive pessimism” that is adversely affecting further exploration comes from Arthur Kantrowitz, director of Avco Everett Research Laboratory and vice president of Avco Corporation. This article is adapted from a speech given to the American Institute of Aeronautics \& Astronautics in October 1970.}
+      \field{day}{1}
+      \field{issn}{0096-3402}
+      \field{issue}{4}
+      \field{journaltitle}{Bulletin of the Atomic Scientists}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{The {{Relevance}} of {{Space}}}
+      \field{volume}{27}
+      \field{year}{1971}
+      \field{dateera}{ce}
+      \field{pages}{32\bibrangedash 33}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1080/00963402.1971.11455353
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00963402.1971.11455353
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00963402.1971.11455353
+      \endverb
+    \endentry
+    \entry{duplayArgonLaserPlasmaThruster2024a}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=2e8ef8140411a53ea276200c8955e82c}{%
+           family={Duplay},
+           familyi={D\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technical University Delft}%
+      }
+      \list{location}{1}{%
+        {Delft}%
+      }
+      \strng{namehash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{fullhash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{fullhashraw}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{bibnamehash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{authorbibnamehash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{authornamehash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{authorfullhash}{2e8ef8140411a53ea276200c8955e82c}
+      \strng{authorfullhashraw}{2e8ef8140411a53ea276200c8955e82c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A laser-sustained plasma (LSP) generator capable of operating as a laser-thermal thruster was designed and tested. The apparatus was powered by a 3-kW 1070-nm fiber-optic laser and was operated with argon gas. The laser absorption, radiated spectrum, and change in static pressure were recorded, and high-speed video footage of the LSP was acquired. Of special interest is the heat-deposition efficiency into the working gas resulting from LSP ignition, which was estimated by tracking the pressure change in the test section. Laser transmission through the plasma was also measured to quantify two energy loss mechanisms: incomplete laser absorption and radiation of heat to the walls of the test section. Minimizing these losses would be critical in the realization of a practical and efficient laser-thermal propulsion (LTP) thruster, as most of the laser energy should be deposited as heat in the propellant to maximize thruster specific impulse.}
+      \field{langid}{english}
+      \field{pagetotal}{149}
+      \field{shorttitle}{Argon {{Laser-Plasma Thruster}}}
+      \field{title}{Argon {{Laser-Plasma Thruster}}: {{Design}} and {{Test}} of a {{Laboratory Model}}}
+      \field{type}{mathesis}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\PGK8XE8J\Duplay - 2024 - Argon Laser-Plasma Thruster Design and Test of a .pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://repository.tudelft.nl/islandora/object/uuid%3A3a853f2e-2d8c-496b-a016-9e9855e8069c
+      \endverb
+      \verb{url}
+      \verb https://repository.tudelft.nl/islandora/object/uuid%3A3a853f2e-2d8c-496b-a016-9e9855e8069c
+      \endverb
+    \endentry
+    \entry{generalovContinuousOpticalDischarge1970}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=e7daa5081a7458c891cc6bdf91d46eb8}{%
+           family={Generalov},
+           familyi={G\bibinitperiod},
+           given={N.\bibnamedelimi A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=bb93dcaeb298a29ff0f5f587d51575eb}{%
+           family={Zimakov},
+           familyi={Z\bibinitperiod},
+           given={V.\bibnamedelimi P.},
+           giveni={V\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=13b2c5d3ec82a582c86064d6054741b1}{%
+           family={Kozlov},
+           familyi={K\bibinitperiod},
+           given={G.\bibnamedelimi I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=ecfea6e240932da79dc05a70d990c31d}{%
+           family={Masyukov},
+           familyi={M\bibinitperiod},
+           given={V.\bibnamedelimi A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5f98d5273bc75e45e66882dfd40dc6b6}{%
+           family={Raizer},
+           familyi={R\bibinitperiod},
+           given={Yu.\bibnamedelimi P.},
+           giveni={Yu\bibinitperiod\bibinitdelim \bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{03b9808ebd490f311869399aca3f006c}
+      \strng{fullhash}{f331790244e9e1089321db3ae31ee347}
+      \strng{fullhashraw}{f331790244e9e1089321db3ae31ee347}
+      \strng{bibnamehash}{f331790244e9e1089321db3ae31ee347}
+      \strng{authorbibnamehash}{f331790244e9e1089321db3ae31ee347}
+      \strng{authornamehash}{03b9808ebd490f311869399aca3f006c}
+      \strng{authorfullhash}{f331790244e9e1089321db3ae31ee347}
+      \strng{authorfullhashraw}{f331790244e9e1089321db3ae31ee347}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Soviet Journal of Experimental and Theoretical Physics Letters}
+      \field{title}{Continuous Optical Discharge}
+      \field{volume}{11}
+      \field{year}{1970}
+      \field{dateera}{ce}
+      \field{pages}{302\bibrangedash 304}
+      \range{pages}{3}
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\ER5V67UD\article_26161.pdf
+      \endverb
+    \endentry
+    \entry{shojiLaserheatedRocketThruster1977}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=aae3417c168e15290078c5799a50ba16}{%
+           family={Shoji},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aae3417c168e15290078c5799a50ba16}
+      \strng{fullhash}{aae3417c168e15290078c5799a50ba16}
+      \strng{fullhashraw}{aae3417c168e15290078c5799a50ba16}
+      \strng{bibnamehash}{aae3417c168e15290078c5799a50ba16}
+      \strng{authorbibnamehash}{aae3417c168e15290078c5799a50ba16}
+      \strng{authornamehash}{aae3417c168e15290078c5799a50ba16}
+      \strng{authorfullhash}{aae3417c168e15290078c5799a50ba16}
+      \strng{authorfullhashraw}{aae3417c168e15290078c5799a50ba16}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A space vehicle application using 5,000-kw input laser power was conceptually evaluated. A detailed design evaluation of a 10-kw experimental thruster including plasma size, chamber size, cooling, and performance analyses, was performed for 50 psia chamber pressure and using hydrogen as a propellant. The 10-kw hardware fabricated included a water cooled chamber, an uncooled copper chamber, an injector, igniters, and a thrust stand. A 10-kw optical train was designed.}
+      \field{annotation}{NTRS Author Affiliations: Rockwell International Corp.\\ NTRS Document ID: 19770017244\\ NTRS Research Center: Legacy CDMS (CDMS)}
+      \field{day}{12}
+      \field{month}{4}
+      \field{number}{NASA-CR-135128}
+      \field{title}{Laser-Heated Rocket Thruster}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\gdub5\\Zotero\\storage\\QCAIDG7L\\Shoji - 1977 - Laser-heated rocket thruster.pdf;C\:\\Users\\gdub5\\Zotero\\storage\\HDTZDZLR\\19770017244.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ntrs.nasa.gov/citations/19770017244
+      \endverb
+      \verb{url}
+      \verb https://ntrs.nasa.gov/citations/19770017244
+      \endverb
+      \keyw{Spacecraft Propulsion And Power}
+    \endentry
+    \entry{shojiPerformanceHeatTransfer1976a}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=4fcfe6236c49a41d021c4a6852141dff}{%
+           family={Shoji},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=378df3a9d7404bf7ba0f9be168ccec93}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Aeronautics and Astronautics}%
+      }
+      \strng{namehash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{fullhash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{fullhashraw}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{bibnamehash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{authorbibnamehash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{authornamehash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{authorfullhash}{96702883a8f8f1dcae9f34343b8236d5}
+      \strng{authorfullhashraw}{96702883a8f8f1dcae9f34343b8236d5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{12th {{International Electric Propulsion Conference}}}
+      \field{day}{14}
+      \field{month}{11}
+      \field{series}{International {{Electric Propulsion Conference}}}
+      \field{title}{Performance and Heat Transfer Characteristics of the Laser-Heated Rocket - {{A}} Future Space Transportation System}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{1976}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2514/6.1976-1044
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\G5R226MD\Shoji and Larson - 1976 - Performance and heat transfer characteristics of t.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/10.2514/6.1976-1044
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/10.2514/6.1976-1044
+      \endverb
+      \keyw{Combustion Chambers,Computer Programs,Convection,Heat Transfer,Laser Heating,Propellant,Reaction Kinetics,Rockets,Space Transportation System,Wall Temperature}
+    \endentry
+    \entry{keeferPowerAbsorptionLasersustained1986a}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b12ea5b034f26d635c72401df4b113da}{%
+           family={Keefer},
+           familyi={K\bibinitperiod},
+           given={Dennis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f5c0444180882ad744c9326cbe8969e2}{%
+           family={Welle},
+           familyi={W\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=12133b62e43837e9c41b6a385b6b89aa}{%
+           family={Peters},
+           familyi={P\bibinitperiod},
+           given={Carroll},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Aeronautics and Astronautics}%
+      }
+      \strng{namehash}{ae73a1bceeb8ff01c9cfccaff8a7e8cb}
+      \strng{fullhash}{4f7b966791653f659d551551faab2404}
+      \strng{fullhashraw}{4f7b966791653f659d551551faab2404}
+      \strng{bibnamehash}{4f7b966791653f659d551551faab2404}
+      \strng{authorbibnamehash}{4f7b966791653f659d551551faab2404}
+      \strng{authornamehash}{ae73a1bceeb8ff01c9cfccaff8a7e8cb}
+      \strng{authorfullhash}{4f7b966791653f659d551551faab2404}
+      \strng{authorfullhashraw}{4f7b966791653f659d551551faab2404}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-1452}
+      \field{journaltitle}{AIAA Journal}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Power Absorption in Laser-Sustained Argon Plasmas}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{volume}{24}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1663\bibrangedash 1669}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.2514/3.9498
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\QCL2N59W\Keefer et al. - 1986 - Power absorption in laser-sustained argon plasmas.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/10.2514/3.9498
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/10.2514/3.9498
+      \endverb
+      \keyw{Absorption Coefficient,Carbon Dioxide Laser,Convective Flow,Energy Distribution,Flow Velocity,Isotherms,Lasers,Temperature Fields,Thermal Radiation,Thermodynamic Equilibrium}
+    \endentry
+    \entry{zerkleLasersustainedArgonPlasmas1990}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=704a1733f75e34f2df02b428b4c2c5b1}{%
+           family={Zerkle},
+           familyi={Z\bibinitperiod},
+           given={D.\bibnamedelimi K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=bf8798e2003545fcd7a2bf202fe7092d}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8d30a304d3718f1b867e01c39ccba142}{%
+           family={Mertogul},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=60aeb23a507616b6ae2488ddaab41f0e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9d45a2825fe67fd0501149680ad935c6}{%
+           family={Krier},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=09731c8e04a3b71e792fcf3c00f69166}{%
+           family={Mazumder},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Aeronautics and Astronautics}%
+      }
+      \strng{namehash}{0be3ad633e9a595d85cd86924d5c4807}
+      \strng{fullhash}{cb48a511bc56b04520c2075520872ad1}
+      \strng{fullhashraw}{cb48a511bc56b04520c2075520872ad1}
+      \strng{bibnamehash}{cb48a511bc56b04520c2075520872ad1}
+      \strng{authorbibnamehash}{cb48a511bc56b04520c2075520872ad1}
+      \strng{authornamehash}{0be3ad633e9a595d85cd86924d5c4807}
+      \strng{authorfullhash}{cb48a511bc56b04520c2075520872ad1}
+      \strng{authorfullhashraw}{cb48a511bc56b04520c2075520872ad1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0748-4658}
+      \field{journaltitle}{Journal of Propulsion and Power}
+      \field{number}{1}
+      \field{title}{Laser-Sustained Argon Plasmas for Thermal Rocket Propulsion}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{6}
+      \field{year}{1990}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{38\bibrangedash 45}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.2514/3.23220
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\F8R4ZK6N\Zerkle et al. - 1990 - Laser-sustained argon plasmas for thermal rocket p.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2514/3.23220
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2514/3.23220
+      \endverb
+    \endentry
+    \entry{blackLaserPropulsion10kW1995}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a897d4abecad06d3a68de9f7a6235987}{%
+           family={Black},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9d45a2825fe67fd0501149680ad935c6}{%
+           family={Krier},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b1e5da3a7479397a45c01949b1a82bce}{%
+           family={Glumb},
+           familyi={G\bibinitperiod},
+           given={R.\bibnamedelimi J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9368afd5b8279c97f87f096355052f8f}
+      \strng{fullhash}{225fc214688333be900b51bbba0fc890}
+      \strng{fullhashraw}{225fc214688333be900b51bbba0fc890}
+      \strng{bibnamehash}{225fc214688333be900b51bbba0fc890}
+      \strng{authorbibnamehash}{225fc214688333be900b51bbba0fc890}
+      \strng{authornamehash}{9368afd5b8279c97f87f096355052f8f}
+      \strng{authorfullhash}{225fc214688333be900b51bbba0fc890}
+      \strng{authorfullhashraw}{225fc214688333be900b51bbba0fc890}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0748-4658, 1533-3876}
+      \field{issue}{6}
+      \field{journaltitle}{Journal of Propulsion and Power}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{6}
+      \field{shortjournal}{Journal of Propulsion and Power}
+      \field{title}{Laser {{Propulsion}} 10-{{kW Thruster Test Program}} Results}
+      \field{volume}{11}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \field{pages}{1307\bibrangedash 1316}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.2514/3.23973
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\ZRKHY67U\Black et al. - 1995 - Laser Propulsion 10-kW Thruster Test Program resul.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/10.2514/3.23973
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/10.2514/3.23973
+      \endverb
+    \endentry
+    \entry{toyodaThrustPerformanceCW2002}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bae201c6619303d2bfa9ebafdcff58e0}{%
+           family={Toyoda},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cc714bf1791ee1655caa2f11467c1c61}{%
+           family={Komurasaki},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6badaf282b58a89bbcd6fb3089d1e3b8}{%
+           family={Arakawa},
+           familyi={A\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ab76a49c17189b827ab563497fba14d5}
+      \strng{fullhash}{ca3a45b147d184bbba41dfef414762e9}
+      \strng{fullhashraw}{ca3a45b147d184bbba41dfef414762e9}
+      \strng{bibnamehash}{ca3a45b147d184bbba41dfef414762e9}
+      \strng{authorbibnamehash}{ca3a45b147d184bbba41dfef414762e9}
+      \strng{authornamehash}{ab76a49c17189b827ab563497fba14d5}
+      \strng{authorfullhash}{ca3a45b147d184bbba41dfef414762e9}
+      \strng{authorfullhashraw}{ca3a45b147d184bbba41dfef414762e9}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper reports the results of fundamental experiments on a continuous-wave CO2 laser thruster. A thrust in vacuum was measured using a simple thrust stand, bellows and vacuum system. The thruster was connected to the vacuum tank with bellows outside the tank instead of setting the thruster into the tank. As a result of thrust measurement in vacuum, the thrust coefficient increase from 1.0 to 1.6 with increasing pressure ratio of 5–400. The energy conversion efficiency reached 37\% in vacuum.}
+      \field{day}{27}
+      \field{issn}{0042-207X}
+      \field{issue}{3}
+      \field{journaltitle}{Vacuum}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{3}
+      \field{series}{3rd {{International Symposium}} on {{Applied Plasma Science}} ({{ISAPS}} 01)}
+      \field{shortjournal}{Vacuum}
+      \field{title}{Thrust Performance of a {{CW}} Laser Thruster in Vacuum}
+      \field{volume}{65}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{pages}{383\bibrangedash 388}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/S0042-207X(01)00446-8
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\5NA747PU\Toyoda et al. - 2002 - Thrust performance of a CW laser thruster in vacuu.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0042207X01004468
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0042207X01004468
+      \endverb
+      \keyw{Laser propulsion,LSP,Plasma,Thruster performance}
+    \endentry
+    \entry{luCharacteristicDiagnosticsLaserStabilized2022a}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=89e55aa3282135f30fdac656b54192a7}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=61004c474eff4456e0a1454f084540ed}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Bowen},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5a8f138bab1fd0704293f83345aa4436}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Yijia},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b6e35b8a05cb3f13b2e01015fac3aea0}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=63a7f7c745b6d09cd740beb55a1033c0}{%
+           family={Qiao},
+           familyi={Q\bibinitperiod},
+           given={Junjie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=64c8707561077e6cde00a9ab1a056d8c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dazhi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7d56b1f7e3f57274cf3c20065b49d6cb}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Qing},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{13464ba4bfb2a7f2c049a9e3f44e7fb0}
+      \strng{fullhash}{cd1c78ba3b22ba8cf1d6457f28f357d1}
+      \strng{fullhashraw}{cd1c78ba3b22ba8cf1d6457f28f357d1}
+      \strng{bibnamehash}{13464ba4bfb2a7f2c049a9e3f44e7fb0}
+      \strng{authorbibnamehash}{13464ba4bfb2a7f2c049a9e3f44e7fb0}
+      \strng{authornamehash}{13464ba4bfb2a7f2c049a9e3f44e7fb0}
+      \strng{authorfullhash}{cd1c78ba3b22ba8cf1d6457f28f357d1}
+      \strng{authorfullhashraw}{cd1c78ba3b22ba8cf1d6457f28f357d1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Laser-stabilized plasma (LSP) attracts intense interests in lighting applications requiring extreme stability, long lifetime, and broad radiation range ( 10\textsuperscript{1} – 10⁴ nm). In this work, an argon LSP was generated at high pressures ({$>$}10 bar) by a focused laser beam, and its fundamental properties were studied in detail by the approach of optical emission spectroscopy (OES), with emphasis on the determination of plasma parameters including the electron temperature and density. The effects of argon gas pressure, laser power, and N2 mixture ratio, on the full-view of radiation spectra and electron parameters, were investigated experimentally. The results demonstrate that the increase of gas pressure or laser power density is a proper way to achieve higher optical radiation from the argon LSP, but not by adding molecular mixtures like N2.}
+      \field{eventtitle}{{{IEEE Transactions}} on {{Plasma Science}}}
+      \field{issn}{1939-9375}
+      \field{journaltitle}{IEEE Transactions on Plasma Science}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{Characteristic {{Diagnostics}} of a {{Laser-Stabilized High-Pressure Argon Plasma}} by {{Optical Emission Spectroscopy}}}
+      \field{urlday}{25}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{volume}{50}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2578\bibrangedash 2587}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TPS.2022.3172977
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\KLL47CWP\getPDF.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9784436
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9784436
+      \endverb
+      \keyw{Argon,Bars,Broad radiation range,electron parameters,Gas lasers,high pressure,laser-stabilized plasma (LSP),Measurement by laser beam,optical emission spectroscopy (OES),Optical variables measurement,Plasmas,Power lasers}
+    \endentry
+    \entry{kameiMethaneMethaneXenon2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=2e90d6acb821d2f1c5d711be2297cd03}{%
+           family={Kamei},
+           familyi={K\bibinitperiod},
+           given={Tomoki},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5db792c2edaaba98da1e9c309df48ff9}{%
+           family={Matsui},
+           familyi={M\bibinitperiod},
+           given={Makoto},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bd4720b56ff8c7dd328a7f798fab15ea}{%
+           family={Ono},
+           familyi={O\bibinitperiod},
+           given={Takahiro},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b3920c549be51e2694a8d0937b69a07}
+      \strng{fullhash}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \strng{fullhashraw}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \strng{bibnamehash}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \strng{authorbibnamehash}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \strng{authornamehash}{2b3920c549be51e2694a8d0937b69a07}
+      \strng{authorfullhash}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \strng{authorfullhashraw}{ddb72a801c7dc7ee5db063d73fef8cdc}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{LSP (Laser Sustained Plasma) has a higher temperature than arc discharge plasma without electrodes. So, the LSP is a promising heat source of electrothermal type thruster, which has a higher specific impulse and longer lifetime than those of arcjet thrusters. In this study, we tried to generate methane, methane–argon and methane–xenon LSPs using 1 kW class diode laser. As a result, the LSP could not be generated for the methane and methane–argon gases though the emission intensity increased with the laser irradiation. In the case of methane–xenon gases, the LSP could be generated at the xenon pressure of 0.10 MPa, and the methane pressure ranged from 0.02 MPa to 0.06 MPa. The threshold power was around 850 W, which is lower than the pure xenon condition.}
+      \field{issn}{1884-0485}
+      \field{journaltitle}{TRANSACTIONS OF THE JAPAN SOCIETY FOR AERONAUTICAL AND SPACE SCIENCES, AEROSPACE TECHNOLOGY JAPAN}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{shortjournal}{AEROSPACE TECHNOLOGY JAPAN}
+      \field{title}{Methane and {{Methane}}–{{Xenon Laser Sustained Plasma}} Using {{High Power Diode Laser}} for {{Space Propulsion}}}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{18}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{271\bibrangedash 275}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.2322/tastj.18.271
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\CYLSCGHT\Kamei et al. - 2020 - Methane and Methane–Xenon Laser Sustained Plasma u.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstage.jst.go.jp/article/tastj/18/5/18_18.271/_article
+      \endverb
+      \verb{url}
+      \verb https://www.jstage.jst.go.jp/article/tastj/18/5/18_18.271/_article
+      \endverb
+    \endentry
+    \entry{zimakovInteractionNearIRLaser2016}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=bb93dcaeb298a29ff0f5f587d51575eb}{%
+           family={Zimakov},
+           familyi={Z\bibinitperiod},
+           given={V.\bibnamedelimi P.},
+           giveni={V\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=0ac01fee9ec21798807f9a20989b09a5}{%
+           family={Kuznetsov},
+           familyi={K\bibinitperiod},
+           given={V.\bibnamedelimi A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9b794d5c3dc29c6caf92858ba7408204}{%
+           family={Solovyov},
+           familyi={S\bibinitperiod},
+           given={N.\bibnamedelimi G.},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9278c851a4c669b51b0e51c3558682fc}{%
+           family={Shemyakin},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=4d53bc49f5d223085378a2ad73da14df}{%
+           family={Shilov},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=024593366c1531b1b4061d3c5bf43c0c}{%
+           family={Yakimov},
+           familyi={Y\bibinitperiod},
+           given={M.\bibnamedelimi Yu.},
+           giveni={M\bibinitperiod\bibinitdelim Yu\bibinitperiod\bibinitdelim \bibinitperiod}}}%
+      }
+      \strng{namehash}{d96378f4a1d5501bedfb79e1b3cb4ce7}
+      \strng{fullhash}{4137876b3f39b1667d791a4d9427c80a}
+      \strng{fullhashraw}{4137876b3f39b1667d791a4d9427c80a}
+      \strng{bibnamehash}{4137876b3f39b1667d791a4d9427c80a}
+      \strng{authorbibnamehash}{4137876b3f39b1667d791a4d9427c80a}
+      \strng{authornamehash}{d96378f4a1d5501bedfb79e1b3cb4ce7}
+      \strng{authorfullhash}{4137876b3f39b1667d791a4d9427c80a}
+      \strng{authorfullhashraw}{4137876b3f39b1667d791a4d9427c80a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1063-780X, 1562-6938}
+      \field{issue}{1}
+      \field{journaltitle}{Plasma Physics Reports}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{Plasma Phys. Rep.}
+      \field{title}{Interaction of Near-{{IR}} Laser Radiation with Plasma of a Continuous Optical Discharge}
+      \field{urlday}{6}
+      \field{urlmonth}{1}
+      \field{urlyear}{2023}
+      \field{volume}{42}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{68\bibrangedash 73}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1134/S1063780X15110100
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1134/S1063780X15110100
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1134/S1063780X15110100
+      \endverb
+    \endentry
+    \entry{matsuiGeneratingConditionsArgon2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=5db792c2edaaba98da1e9c309df48ff9}{%
+           family={Matsui},
+           familyi={M\bibinitperiod},
+           given={Makoto},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bd4720b56ff8c7dd328a7f798fab15ea}{%
+           family={Ono},
+           familyi={O\bibinitperiod},
+           given={Takahiro},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2e90d6acb821d2f1c5d711be2297cd03}{%
+           family={Kamei},
+           familyi={K\bibinitperiod},
+           given={Tomoki},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3841567c6c76ea4f56480276bafec1f9}{%
+           family={Mori},
+           familyi={M\bibinitperiod},
+           given={Koichi},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{97657bb240085fdeee962679ce1ca02c}
+      \strng{fullhash}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \strng{fullhashraw}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \strng{bibnamehash}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \strng{authorbibnamehash}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \strng{authornamehash}{97657bb240085fdeee962679ce1ca02c}
+      \strng{authorfullhash}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \strng{authorfullhashraw}{d5a6376a3228ac6f28f22f327df0a4e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Laser-sustained plasma (LSP) is a promising method for high-pressure plasma generation that overcomes the problems of arc discharge. Then, the generating conditions of argon LSP were investigated using a kilowatt class disk, fiber and diode lasers. For the disk and fiber lasers, the threshold laser power for LSP generation was found to decrease with pressure. The minimum laser power of the disk and fiber lasers was 1.1\,kW\,at a pressure of 1.5\,MPa and 0.45\,kW\,at a pressure of 2.0\,MPa. The threshold power of the disk laser was higher than that of the fiber laser. The fiber laser might have a lower threshold because atomic line absorption occurs at 1067\,nm and 1068\,nm since both absorption coefficients achieved through the Bremsstrahlung process are almost the same. Since LSP could not be generated by a diode laser at a pressure of less than 6.5\,MPa, the generating conditions were estimated based on the product of the absorption coefficient of laser intensity. A pressure of more than 8\,MPa was found to be necessary for a laser with 1\,kW of power, and laser power of more than 109\,kW is necessary for a pressure of 0.1\,MPa.}
+      \field{day}{1}
+      \field{issn}{0042-207X}
+      \field{journaltitle}{Vacuum}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{shortjournal}{Vacuum}
+      \field{title}{Generating Conditions of Argon Laser-Sustained Plasma by Disk, Fiber and Diode Lasers}
+      \field{volume}{167}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{490\bibrangedash 494}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.vacuum.2018.05.012
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0042207X18301751
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0042207X18301751
+      \endverb
+      \keyw{Diode laser,Disk laser,Fiber laser,High-pressure plasma,Laser-sustained plasma}
+    \endentry
+    \entry{mcbrideNASAGlennCoefficients2002}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=e517dff9ee519cd1d4d6815ba8cac450}{%
+           family={McBride},
+           familyi={M\bibinitperiod},
+           given={Bonnie\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=ef5956bb35154c5d7cc581210eafc5fd}{%
+           family={Zehe},
+           familyi={Z\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=528ca2ce5c7d5f1c55b0a32885507936}{%
+           family={Gordon},
+           familyi={G\bibinitperiod},
+           given={Sanford},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba1acf2a814a2b2eda10916d3fc27660}
+      \strng{fullhash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{fullhashraw}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{bibnamehash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authorbibnamehash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authornamehash}{ba1acf2a814a2b2eda10916d3fc27660}
+      \strng{authorfullhash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authorfullhashraw}{e4b302826dc793724e9351c9581dcdb9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This report documents the library of thermodynamic data used with the NASA Glenn computer program CEA (Chemical Equilibrium with Applications). This library, containing data for over 2000 solid, liquid, and gaseous chemical species for temperatures ranging from 200 to 20,000 K, is available for use with other computer codes as well. The data are expressed as least-squares coefficients to a seven-term functional form for C((sup o)(sub p)) (T) / R with integration constants for H (sup o) (T) / RT and S(sup o) (T) / R. The NASA Glenn computer program PAC (Properties and Coefficients) was used to calculate thermodynamic functions and to generate the least-squares coefficients. PAC input was taken from a variety of sources. A complete listing of the database is given along with a summary of thermodynamic properties at 0 and 298.15 K.}
+      \field{annotation}{NTRS Author Affiliations: NASA Glenn Research Center\\ NTRS Report/Patent Number: NASA/TP-2002-211556\\ NTRS Document ID: 20020085330\\ NTRS Research Center: Glenn Research Center (GRC)}
+      \field{day}{1}
+      \field{month}{9}
+      \field{title}{{{NASA Glenn Coefficients}} for {{Calculating Thermodynamic Properties}} of {{Individual Species}}}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\gdub5\\Zotero\\storage\\GY9D4N8V\\McBride et al. - 2002 - NASA Glenn Coefficients for Calculating Thermodynamic Properties of Individual Species.pdf;C\:\\Users\\gdub5\\Zotero\\storage\\HBKQYPF8\\20020085330.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ntrs.nasa.gov/citations/20020085330
+      \endverb
+      \verb{url}
+      \verb https://ntrs.nasa.gov/citations/20020085330
+      \endverb
+      \keyw{Physics Of Elementary Particles And Fields}
+    \endentry
+    \entry{khanGasDetectionUsing2019}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=03aa1bff3174194d51e8a7fad7d5cb8a}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Sulaiman},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7d4683e4777a585383b14c8797bcd5c7}{%
+           family={Newport},
+           familyi={N\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=908cd8628d78ec701f172f11ebed5a21}{%
+           family={Le\bibnamedelima Calvé},
+           familyi={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{9b215b5f9087c41be28aa3f6ecf4cf73}
+      \strng{fullhash}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{fullhashraw}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{bibnamehash}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{authorbibnamehash}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{authornamehash}{9b215b5f9087c41be28aa3f6ecf4cf73}
+      \strng{authorfullhash}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{authorfullhashraw}{3e02d2481b0ab86e39625c1c61a3f926}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Several gas molecules of environmental and domestic significance exhibit a strong deep-UV absorption. Therefore, a sensitive and a selective gas detector based on this unique molecular property (i.e., absorption at a specific wavelength) can be developed using deep-UV absorption spectrophotometry. UV absorption spectrometry provides a highly sensitive, reliable, self-referenced, and selective approach for gas sensing. This review article addresses the recent progress in the application of deep-UV absorption for gas sensing owing to its inherent features and tremendous potentials. Applications, advancements, and challenges related to UV emission sources, gas cells, and UV photodetectors are assessed and compared. We present the relevant theoretical aspects and challenges associated with the development of portable sensitive spectrophotometer. Finally, the applications of UV absorption spectrometry for ozone, NO2, SO2, and aromatic organic compounds during the last decades are discussed and compared. A portable UV absorption spectrophotometer can be developed by using LEDs, hollow core waveguides (HCW), and UV photodetectors (i.e., photodiodes). LED provides a portable UV emission source with low power input, low-intensity drifts, low cost, and ease of alignment. It is a quasi-chromatic UV source and covers the absorption band of molecules without optical filters for absorbance measurement of a target analyte. HCWs can be applied as a miniature gas cell for guiding UV radiation for measurement of low gas concentrations. Photodiodes, on the other hand, offer a portable UV photodetector with excellent spectral selectivity with visible rejection, minimal dark current, linearity, and resistance against UV-aging.}
+      \field{issn}{1424-8220}
+      \field{issue}{23}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{23}
+      \field{shorttitle}{Gas {{Detection Using Portable Deep-UV Absorption Spectrophotometry}}}
+      \field{title}{Gas {{Detection Using Portable Deep-UV Absorption Spectrophotometry}}: {{A Review}}}
+      \field{urlday}{14}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{19}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{5210}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s19235210
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\V6J22S5E\Khan et al. - 2019 - Gas Detection Using Portable Deep-UV Absorption Spectrophotometry A Review.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/19/23/5210
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/19/23/5210
+      \endverb
+      \keyw{absorption spectrophotometry,BTEX,deep ultraviolet,hollow core waveguides,LEDs,NO<sub>2</sub>,ozone,photodiodes,SO<sub>2</sub>,spectroscopy,ultraviolet light sources,VOC}
+    \endentry
+  \enddatalist
+  \missing{125mm lens}
+  \missing{thorlabs}
+  \missing{winlens}
+\endrefsection
+\endinput
+
