@@ -8,7 +8,7 @@
 
         The system architecture is similar to Breakthrough Starshot: a \qty{10}{m} laser array beams \qty{100}{MW} of power to an orbiting spacecraft for injection burns. Our team proposed a conceptual design of an LTP spacecraft in 2022 in Acta Astronautica [CITE]. With a \qty{1000}{kg} payload, about \qty{6}{kN} of thrust and \qty{3000}{s} of $I_{sp}$, we do a \qty{1}{h} maneuver to get \qty{14}{km/s} of delta-V and reach Mars in 45 days.
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.9\textwidth]{assets/2 background/ltp_architecture.pdf}
             \caption{LTP architecture (\textcite{duplayArgonLaserPlasmaThruster2024a})}
@@ -17,7 +17,7 @@
 
         In the thrust chamber of the vehicle, hydrogen is introduced. The laser is focused inside, creating a plasma core. Colder hydrogen flows around it and is heated by the plasma to \qty{10000}{K}. It is then exhausted though a conventional converging-diverging nozzle, imparting thrust.
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.9\textwidth]{assets/2 background/chamber.pdf}
             \caption{Overview of LTP system (\textcite{duplayArgonLaserPlasmaThruster2024a})}
@@ -38,13 +38,13 @@
 
         Increasing the amount of energy deposited by the laser into the working gas remains a topic of active research and is a significant hurdle for the operational use of LTP.
 
-            [Graph of energy loss here (similar but not exactly same as Emmanuel's)]
+        [Graph of energy loss here (similar but not exactly same as Emmanuel's)]
 
-            The two main conversion efficiencies are:
-            \begin{enumerate}
-                \item Absorption of the laser energy by the plasma
-                \item Heat transfer from the plasma to the working gas (e.g. propellant)
-            \end{enumerate}
+        The two main conversion efficiencies are:
+        \begin{enumerate}
+            \item Absorption of the laser energy by the plasma
+            \item Heat transfer from the plasma to the working gas (e.g. propellant)
+        \end{enumerate}
 
         As the efficiencies chosen are different from source to source, these efficiencies will be defined where applicable.
     
@@ -66,14 +66,14 @@
         
         The \qty{5000}{kW} thruster loses \qty{4.5}{\%} of laser power by radiation, 
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \includegraphics[width=\textwidth]{assets/2 background/Shoji_assy.png}
             \caption{\qty{10}{kW} thruster from \textcite{shojiPerformanceHeatTransfer1976a}}
             \label{fig:Shoji apparatus}
         \end{figure}
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \includegraphics[width=\textwidth]{assets/2 background/Shoji cross-section.png}
             \caption{Cross-section drawing of \qty{10}{kW} thruster from \textcite{shojiLaserheatedRocketThruster1977}}
@@ -83,9 +83,9 @@
         The \qty{10}{kW} prototype (\autoref{fig:Shoji apparatus}) was built and delivered to NASA at the conclusion of the grant.
 
         Much work on the topic was done in the 1980s. \textcite{keeferPowerAbsorptionLasersustained1986a} studied LSP in a forced convective flow environment. Using a \qty{1.5}{kW} \ce{CO2} laser with power levels of \qtyrange{360}{840}{W} and pressures of \qtyrange{1.3}{2.3}{atm}, with varying flow velocities, the temperature field of the plasma was measured. From the temperature field, and assuming local thermodynamic equilibrium, the power absorbed by the plasma and the power radiated from it can be calculated.
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.35\textwidth]{assets/2 background/UTSI (Keefer) Apparatus.png}
+            \includegraphics[width=0.5\textwidth]{assets/2 background/UTSI (Keefer) Apparatus.png}
             \caption{Experimental apparatus from \textcite{keeferPowerAbsorptionLasersustained1986a}}
             \label{fig:Keefer apparatus}
         \end{figure}
@@ -95,9 +95,9 @@
 
         In parallel, a group from the University of Illinois [say this differently?], reported absorption approaching \qty{80}{\%} and thermal efficiency[...]
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.35\textwidth]{assets/2 background/Illinois (Krier) Apparatus.png}
+            \includegraphics[width=0.5\textwidth]{assets/2 background/Illinois (Krier) Apparatus.png}
             \caption{Experimental apparatus from \textcite{zerkleLasersustainedArgonPlasmas1990}}
             \label{fig:Krier apparatus}
         \end{figure}
@@ -114,7 +114,7 @@
         \[ n_e = F^2 - \frac{F^2_{cold}}{2 \dot{m} P}\]
         Where $F$ is the thrust with laser on, $F_{cold}$ is the cold flow thrust (laser off) and $P$ is incident laser power. An energy conversion efficiency of 37\% and an $I_{sp}$ of \qty{113}{s}, the highest recorded, were measured with the second model \autoref{fig:Toyoda apparatus 2} in vacuum with argon propellant. The pressure ratio, defined as the chamber pressure divided by the nozzle exit pressure, was 420. A water cooling system measured the heat loss to the walls to be 55\% of incident laser power, with a final 8\% being 'other loss'. Heat loss to the walls was expected to be recycled with regenerative cooling in a real-world application.
 
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \begin{subfigure}[t]{0.45\textwidth}
                 \centering
@@ -138,15 +138,13 @@
         %Chinese work: 2020s?
 
         \textcite{luCharacteristicDiagnosticsLaserStabilized2022a} investigated LSP for lighting applications instead of propulsion. Therefore, an emphasis was made on spectroscopy measurements. A \qty{300}{W} fiber laser at a wavelength of \qty{1080}{nm} was focused to a \qty{50}{μm} diameter spot in a high pressure chamber.
-        
-        \begin{figure}[h]
+        \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.35\textwidth]{assets/2 background/Lu apparatus.png}
+            \includegraphics[width=0.9\textwidth]{assets/2 background/Lu apparatus.png}
             \caption{Experimental setup from \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}}
             \label{fig:Lu apparatus}
         \end{figure}
-
-        Argon pressures between \qtyrange{10}{20}{bar} were used. \ce{N2} was later added between \qtyrange{0.1}{1.0}{\%}. A lower ignition power (\qty{117}{W}) than other studies was achieved at \qty{20}{bar}. This was attributed to the smaller focus delivering a higher photon flux. As expected, increasing the laser power or the gas pressure was found to increase the radiation intensity of the LSP. However, adding \ce{N2} reduced both the electron temperature and electron density of the LSP, reducing its radiation intensity.
+        Argon was used, with pressures between \qtyrange{10}{20}{bar}. A lower ignition power (\qty{117}{W}) than other studies was achieved at \qty{20}{bar}. This was attributed to the smaller focus delivering a higher photon flux. \ce{N2} was later added between \qtyrange{0.1}{1.0}{\%}. As expected, increasing the laser power or the gas pressure was found to increase the radiation intensity of the LSP. However, adding \ce{N2} reduced both the electron temperature and electron density of the LSP, reducing its radiation intensity.
 
         %Canadian work: 2020s
 
@@ -156,7 +154,7 @@
         Seeding the working gas with another species has been discussed as a way to increase the energy absorption into the working fluid of an LTP engine. Carbon particles have been suggested by [SHOJI, rework these sentences].
 
         LSPs in pure methane and methane-seeded gasses have been investigated by \textcite{kameiMethaneMethaneXenon2020}. The rationale is similar to carbon particles, as the methane dissociates into hydrogen and carbon with the high temperature of the LSP. A \qty{1.1}{kW} diode laser at a wavelength of \qty{940}{nm} was beamed into a high-pressure chamber fitted with arc ignition electrodes. The gap between these electrodes was \qty{1}{mm}. A CCD type spectrometer recorded emission spectra of the ignition arc discharge and of the LSP. LSPs in three different gasses were attempted: pure methane, methane-argon and methane-xenon.
-        \begin{figure}[h!]
+        \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.9\textwidth]{assets/2 background/Kamei apparatus.png}
             \caption{LSP generation chamber and cross-section view from \textcite{kameiMethaneMethaneXenon2020}}
@@ -170,7 +168,7 @@
         
         From the literature review, \autoref{tab:lit review summary} was compiled. [Summary of lit review and explain table].
 
-        \begin{table}[h!] % TODO - update this table. Column is very narrow and difficult to read. If you cannot make it wider, might consider eliminating this column and instead have this information appear as footnotes below the table, which are much easier to read. Also, since many of the entries are the same "Arc discharge ignition", the same footnote can be used over and over.
+        \begin{table}[!ht] % TODO - update this table. Column is very narrow and difficult to read. If you cannot make it wider, might consider eliminating this column and instead have this information appear as footnotes below the table, which are much easier to read. Also, since many of the entries are the same "Arc discharge ignition", the same footnote can be used over and over.
             \small
             \centering
             \caption{Summary of a selection of past LSP experiments. $\lambda$: wavelength, $P$: maximum laser power, $p$: pressure, $I_\mathrm{sp}$: maximum specific impulse, $F_\mathrm{T}$: maximum thrust}
@@ -190,8 +188,10 @@
             \label{tab:lit review summary}
             
         \end{table}
-   
-        The objective of this research project is to test a lab-scale proof-of-concept LTP thruster for interplanetary space flight, using a \qty{1.07}{μm} fiber laser. The main objective of the proposed research will be to measure the key performance parameters of this thruster (thrust and specific impulse), as well as characterize the laser-sustained plasma (LSP) heating core inside the thruster. This project will mainly build upon the experimental research started by \textcite{duplayArgonLaserPlasmaThruster2024a}.
+        
+        $I_{sp}$ values close to \qty{100}{s} can be expected, with thrust values under \qty{1}{N}, as was found by \textcite{toyodaThrustPerformanceCW2002} and [Matsui citation].
+
+        The objective of this research project will be to test a lab-scale proof-of-concept LTP thruster for interplanetary space flight, using a \qty{1.07}{μm} fiber laser. Key performance parameters of this thruster such as thrust and specific impulse will be measured, as well as characterize the laser-sustained plasma (LSP) heating core inside the thruster. This project will mainly build upon the experimental research started by \textcite{duplayArgonLaserPlasmaThruster2024a}.
         
         % Link to next chapter, modelling c_p
-        Before going into the experiments, it is important to characterize certain thermodynamic properties of the plasma. Notably, the modelling of heat capacity will be presented in the next chapter.
+        Before going into experiments, it is important to characterize certain thermodynamic properties of the gasses used. Notably, the modelling of heat capacity will be presented in the next chapter.
