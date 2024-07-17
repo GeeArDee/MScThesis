@@ -70,52 +70,6 @@
       \verb https://physics.nist.gov/cuu/Constants/index.html
       \endverb
     \endentry
-    \entry{kantrowitzRelevanceSpace1971}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=aad0ca9db5b68a8eef010113f2420776}{%
-           family={Kantrowitz},
-           familyi={K\bibinitperiod},
-           given={Arthur},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Routledge}%
-      }
-      \strng{namehash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{fullhash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{fullhashraw}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{bibnamehash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{authorbibnamehash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{authornamehash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{authorfullhash}{aad0ca9db5b68a8eef010113f2420776}
-      \strng{authorfullhashraw}{aad0ca9db5b68a8eef010113f2420776}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{While space programs are being cut back and attempts to probe the universe are attacked as irrelevant, there are some voices making themselves heard on the opposite side. An attack on the “naive pessimism” that is adversely affecting further exploration comes from Arthur Kantrowitz, director of Avco Everett Research Laboratory and vice president of Avco Corporation. This article is adapted from a speech given to the American Institute of Aeronautics \& Astronautics in October 1970.}
-      \field{day}{1}
-      \field{issn}{0096-3402}
-      \field{issue}{4}
-      \field{journaltitle}{Bulletin of the Atomic Scientists}
-      \field{month}{4}
-      \field{number}{4}
-      \field{title}{The {{Relevance}} of {{Space}}}
-      \field{volume}{27}
-      \field{year}{1971}
-      \field{dateera}{ce}
-      \field{pages}{32\bibrangedash 33}
-      \range{pages}{2}
-      \verb{doi}
-      \verb 10.1080/00963402.1971.11455353
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1080/00963402.1971.11455353
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1080/00963402.1971.11455353
-      \endverb
-    \endentry
     \entry{duplayArgonLaserPlasmaThruster2024a}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=2e8ef8140411a53ea276200c8955e82c}{%
@@ -162,6 +116,52 @@
       \endverb
       \verb{url}
       \verb https://repository.tudelft.nl/islandora/object/uuid%3A3a853f2e-2d8c-496b-a016-9e9855e8069c
+      \endverb
+    \endentry
+    \entry{kantrowitzRelevanceSpace1971}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aad0ca9db5b68a8eef010113f2420776}{%
+           family={Kantrowitz},
+           familyi={K\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{fullhash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{fullhashraw}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{bibnamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorbibnamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authornamehash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorfullhash}{aad0ca9db5b68a8eef010113f2420776}
+      \strng{authorfullhashraw}{aad0ca9db5b68a8eef010113f2420776}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{While space programs are being cut back and attempts to probe the universe are attacked as irrelevant, there are some voices making themselves heard on the opposite side. An attack on the “naive pessimism” that is adversely affecting further exploration comes from Arthur Kantrowitz, director of Avco Everett Research Laboratory and vice president of Avco Corporation. This article is adapted from a speech given to the American Institute of Aeronautics \& Astronautics in October 1970.}
+      \field{day}{1}
+      \field{issn}{0096-3402}
+      \field{issue}{4}
+      \field{journaltitle}{Bulletin of the Atomic Scientists}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{The {{Relevance}} of {{Space}}}
+      \field{volume}{27}
+      \field{year}{1971}
+      \field{dateera}{ce}
+      \field{pages}{32\bibrangedash 33}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1080/00963402.1971.11455353
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00963402.1971.11455353
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00963402.1971.11455353
       \endverb
     \endentry
     \entry{generalovContinuousOpticalDischarge1970}{article}{}{}
@@ -371,6 +371,77 @@
       \verb https://arc.aiaa.org/doi/10.2514/3.9498
       \endverb
       \keyw{Absorption Coefficient,Carbon Dioxide Laser,Convective Flow,Energy Distribution,Flow Velocity,Isotherms,Lasers,Temperature Fields,Thermal Radiation,Thermodynamic Equilibrium}
+    \endentry
+    \entry{krierContinuousWaveLaser1986a}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=9d45a2825fe67fd0501149680ad935c6}{%
+           family={Krier},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=09731c8e04a3b71e792fcf3c00f69166}{%
+           family={Mazumder},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=08f63bd38b3a523f8d44466e56caf443}{%
+           family={Rockstroh},
+           familyi={R\bibinitperiod},
+           given={T.j.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4b99ddb6c672f44ad270b5649c382685}{%
+           family={Bender},
+           familyi={B\bibinitperiod},
+           given={T.d.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=368890da6081dc7a3e9b35df5b883df3}{%
+           family={Glumb},
+           familyi={G\bibinitperiod},
+           given={R.j.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Aeronautics and Astronautics}%
+      }
+      \strng{namehash}{f6ce3d5fd914cbe28b9fdc7e336fc886}
+      \strng{fullhash}{a4e45119b5892f422f1bcd9d819eedce}
+      \strng{fullhashraw}{a4e45119b5892f422f1bcd9d819eedce}
+      \strng{bibnamehash}{a4e45119b5892f422f1bcd9d819eedce}
+      \strng{authorbibnamehash}{a4e45119b5892f422f1bcd9d819eedce}
+      \strng{authornamehash}{f6ce3d5fd914cbe28b9fdc7e336fc886}
+      \strng{authorfullhash}{a4e45119b5892f422f1bcd9d819eedce}
+      \strng{authorfullhashraw}{a4e45119b5892f422f1bcd9d819eedce}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-1452}
+      \field{journaltitle}{AIAA Journal}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Continuous Wave Laser Gas Heating by Sustained Plasmas in Flowing Argon}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{24}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1656\bibrangedash 1662}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.2514/3.9497
+      \endverb
+      \verb{file}
+      \verb C:\Users\gdub5\Zotero\storage\VBZINECY\Krier et al. - 1986 - Continuous wave laser gas heating by sustained pla.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arc.aiaa.org/doi/10.2514/3.9497
+      \endverb
+      \verb{url}
+      \verb https://arc.aiaa.org/doi/10.2514/3.9497
+      \endverb
+      \keyw{Absorption Coefficient,Continuous Wave Lasers,Electron Temperature,Laser Propulsion,Mass Flow Rate,Numerical Modeling,Propellant,Temperature Fields,Thermal Energy,Tungsten Rhenium Thermocouples}
     \endentry
     \entry{zerkleLasersustainedArgonPlasmas1990}{article}{}{}
       \name{author}{6}{}{%
@@ -668,8 +739,8 @@
       \strng{authornamehash}{2b3920c549be51e2694a8d0937b69a07}
       \strng{authorfullhash}{ddb72a801c7dc7ee5db063d73fef8cdc}
       \strng{authorfullhashraw}{ddb72a801c7dc7ee5db063d73fef8cdc}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{LSP (Laser Sustained Plasma) has a higher temperature than arc discharge plasma without electrodes. So, the LSP is a promising heat source of electrothermal type thruster, which has a higher specific impulse and longer lifetime than those of arcjet thrusters. In this study, we tried to generate methane, methane–argon and methane–xenon LSPs using 1 kW class diode laser. As a result, the LSP could not be generated for the methane and methane–argon gases though the emission intensity increased with the laser irradiation. In the case of methane–xenon gases, the LSP could be generated at the xenon pressure of 0.10 MPa, and the methane pressure ranged from 0.02 MPa to 0.06 MPa. The threshold power was around 850 W, which is lower than the pure xenon condition.}

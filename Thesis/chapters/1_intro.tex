@@ -49,8 +49,6 @@
         As the efficiencies chosen are different from source to source, these efficiencies will be defined where applicable.
     
     \section{Literature review}
-    
-        Most studies have used \ce{CO2} lasers with a wavelength \qty{10.6}{μm}. However, these concepts were limited by a short focusing range due to their long laser wavelength. This relegated them to ground-to-orbit launch. High power fiber lasers emitting near 1 μm have recently become readily available. Being able to beam energy to low earth orbit, fiber lasers make laser propulsion more feasible.
 
         %Russian work: 1960s-2000s?
 
@@ -58,7 +56,7 @@
         
         %American work: 1970s-1990s?
 
-        Work was done under a NASA grant in the mid-1970s by \textcite{shojiLaserheatedRocketThruster1977,shojiPerformanceHeatTransfer1976a} to design a small-scale \qty{10}{kW} and full-scale \qty{5000}{kW} LTP engine. 
+        Work was done under a NASA grant in the mid-1970s by \textcite{shojiLaserheatedRocketThruster1977,shojiPerformanceHeatTransfer1976a} to design a small-scale \qty{10}{kW} and full-scale \qty{5000}{kW} LTP engine.
         
         Carbon-seeded hydrogen was used to capture the plasma's radiation, which was mostly in the UV wavelength 
 
@@ -68,14 +66,14 @@
 
         \begin{figure}[!ht]
             \centering
-            \includegraphics[width=\textwidth]{assets/2 background/Shoji_assy.png}
+            \includegraphics[width=0.5\textwidth]{assets/2 background/Shoji_assy.png}
             \caption{\qty{10}{kW} thruster from \textcite{shojiPerformanceHeatTransfer1976a}}
             \label{fig:Shoji apparatus}
         \end{figure}
 
         \begin{figure}[!ht]
             \centering
-            \includegraphics[width=\textwidth]{assets/2 background/Shoji cross-section.png}
+            \includegraphics[width=0.5\textwidth]{assets/2 background/Shoji cross-section.png}
             \caption{Cross-section drawing of \qty{10}{kW} thruster from \textcite{shojiLaserheatedRocketThruster1977}}
             \label{fig:Shoji cross-section}
         \end{figure}
@@ -89,24 +87,28 @@
             \caption{Experimental apparatus from \textcite{keeferPowerAbsorptionLasersustained1986a}}
             \label{fig:Keefer apparatus}
         \end{figure}
-        \autoref{fig:Keefer apparatus} shows the apparatus used for these measurements. An inner quartz flow channel contains the plasma, while an outer quartz jacket contains the pressure. Flowing argon comes in from the bottom and into the flow channel. The plasma is initiated by laser heating of a tungsten rod, which was removed after ignition. Downstream, a water-cooled copper beam dump absorbs the laser energy and cools the heated argon flow.
+        \autoref{fig:Keefer apparatus} shows the apparatus used for these measurements. An inner quartz flow channel contains the plasma, while an outer quartz jacket contains the pressure. Flowing argon comes in from the bottom and into the flow channel. The plasma is initiated by laser heating of a tungsten rod, which was removed after ignition. Downstream, a water-cooled copper beam dump absorbs the laser energy and cools the heated argon flow. The power absorbed by the plasma was between \qtyrange{23}{61}{\%} of incident laser power, while radiation loss was between \qtyrange{51}{80}{\%} of the absorbed power.
 
-        \Citeauthor{keeferPowerAbsorptionLasersustained1986a} determined that [PUT PERCENTAGES HERE]
-
-        In parallel, a group from the University of Illinois [say this differently?], reported absorption approaching \qty{80}{\%} and thermal efficiency[...]
-
+        At the same conference as \textcite{keeferPowerAbsorptionLasersustained1986a}, \textcite{krierContinuousWaveLaser1986a}, reported laser absorption in an argon plasma approaching \qty{80}{\%}. \autoref{fig:Krier apparatus} shows the apparatus that was both used in \textcite{krierContinuousWaveLaser1986a} and \textcite{zerkleLasersustainedArgonPlasmas1990}. This vertical cylindrical flow chamber is made of 304 steel and has an internal diameter of 5 inches.  A water-cooled calorimeter is used as a beam dump for the \qty{10}{kW} \ce{CO_2} laser. The laser energy not collected by the beam dump is assumed to be absorbed by the plasma, as reflection losses are less than \qty{2}{\%} at these electron number densities. Moveable thermocouples give two-dimensional maps of the flow surrounding the plasma core. The minimum maintenance intensity of the plasma was also estimated at \qtyrange{1.0}{3.0}{10^5 W/cm^2}.
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.5\textwidth]{assets/2 background/Illinois (Krier) Apparatus.png}
             \caption{Experimental apparatus from \textcite{zerkleLasersustainedArgonPlasmas1990}}
             \label{fig:Krier apparatus}
         \end{figure}
+        Thermal efficiency was between \qtyrange{6}{25}{\%}, with radiative losses of \qty{64}{\%} and \qty{30}{\%}, respectively. Thermal efficiency was defined as:
+        \[n_{th} =  \frac{\text{Power retained by the gas}}{\text{Incident laser power}}\]
+        
+        Further work by \textcite{zerkleLasersustainedArgonPlasmas1990} with the same apparatus reported absorption from \qtyrange{55}{97}{\%} and thermal efficiency from \qtyrange{11}{46}{\%}. This was done under \qtylist{1 2.5}{atm} of flowing argon, with laser powers up to \qty{7}{kW}.
 
-        In their later work in 1990, \textcite{zerkleLasersustainedArgonPlasmas1990}, reported absorption from \qtyrange{55}{97}{\%} and thermal efficiency from \qtyrange{11}{46}{\%}. [continue this review, define "thermal efficiency"]
-
-        Thrusters with higher laser powers were experimented with by \textcite{blackLaserPropulsion10kW1995}, with a \qty{10}{kW} \ce{CO2} laser. Both argon and hydrogen were used.
-
-        In this study, a preliminary design for a \qty{100}{kW} thruster was presented, with a predicted specific impulse of \qty{1000}{s}, thrust of \qty{4.5}{N} and a conversion efficiency of \qty{80}{\%}.
+        A laser-powered rocket engine demonstrator was eventually tested by \textcite{blackLaserPropulsion10kW1995} with a \qty{10}{kW} \ce{CO2} laser. This was planned to be a step towards a full-scale thruster. The \qty{10}{kW} thruster is presented in \autoref{fig:Black apparatus}. Both argon and hydrogen were used. Argon was able to achieve... With hydrogen propellant,
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.5\textwidth]{assets/2 background/BlackKrier thruster.png}
+            \caption{\qty{10}{kW} thruster from \textcite{blackLaserPropulsion10kW1995}}
+            \label{fig:Black apparatus}
+        \end{figure}
+        A preliminary design for the full-scale \qty{100}{kW} thruster was also presented, with a predicted specific impulse of \qty{1000}{s}, thrust of \qty{4.5}{N} and a conversion efficiency of \qty{80}{\%}.
 
         %Japanese work: 1980s-2020s?
 
@@ -160,33 +162,49 @@
             \caption{LSP generation chamber and cross-section view from \textcite{kameiMethaneMethaneXenon2020}}
             \label{fig:Kamei}
         \end{figure}
-        In methane at \qty{0.1}{MPa}, soot formation between the electrodes prevented LSP ignition. The spectrometer confirmed the dissociation of methane, as line spectra of carbon and hydrogen were observed at the ignition arc. Ignition was also unsuccessful in argon-methane with a pressure between \qtyrange{0.1}{0.3}{MPa} and a methane volume fraction between \qtyrange{20}{60}{\%}. 
+        In methane at \qty{0.1}{MPa}, soot formation between the electrodes prevented LSP ignition. The spectrometer confirmed the dissociation of methane, as line spectra of carbon and hydrogen were observed at the ignition arc. Ignition was also unsuccessful in argon-methane with a pressure between \qtyrange{0.1}{0.3}{MPa} and a methane volume fraction between \qtyrange{20}{60}{\%}.
         
         LSP was successfully generated in methane-xenon, with a lower threshold power (\qty{850}{W}) than in pure xenon. The partial pressure of methane was between \qtyrange{0.02}{0.6}{MPa}, with a partial pressure of xenon of \qty{0.10}{MPa}.
 
     \section{Summary and direction of work in this thesis}
         
-        From the literature review, \autoref{tab:lit review summary} was compiled. [Summary of lit review and explain table].
+        From the literature review, \autoref{tab:lit review summary} was compiled. Most studies have used \ce{CO2} lasers with a wavelength \qty{10.6}{μm}. However, these concepts were limited by a short focusing range due to their long laser wavelength. This relegated them to ground-to-orbit launch. High power fiber lasers emitting near 1 μm have recently become readily available. Being able to beam energy to low earth orbit, fiber lasers make laser propulsion more feasible. [Summary of lit review and explain table].
 
         \begin{table}[!ht] % TODO - update this table. Column is very narrow and difficult to read. If you cannot make it wider, might consider eliminating this column and instead have this information appear as footnotes below the table, which are much easier to read. Also, since many of the entries are the same "Arc discharge ignition", the same footnote can be used over and over.
-            \small
             \centering
-            \caption{Summary of a selection of past LSP experiments. $\lambda$: wavelength, $P$: maximum laser power, $p$: pressure, $I_\mathrm{sp}$: maximum specific impulse, $F_\mathrm{T}$: maximum thrust}
+            \caption{Summary of a selection of past LSP experiments. $\lambda$: wavelength, $P$: maximum laser power, $p$: pressure, $\dot m$: mass flow rate, $I_\mathrm{sp}$: maximum specific impulse, $F_\mathrm{T}$: maximum thrust}
             \label{tab:pastexp}
-            \begin{tabularx}{\textwidth}{@{}>{\small}X<{\raggedright}llrrlrrr>{\footnotesize}X<{\raggedright}@{}}
+            \begin{tabularx}{\textwidth}{@{}>{\small}X<{\raggedright}llrrlrrrr<{\raggedright}@{}}
             \toprule
-            {LSP   Facility}                                                           & Year & Laser         & $\lambda$   [\unit{\um}] & $P$ [kW] & Gas                 & $p$   [atm] & $I_\mathrm{sp}$ [s] & $F_\mathrm{T}$   [N] & {Comments}                                                                   \\ \midrule
-            \textcite{generalovContinuousOpticalDischarge1970}                                                         & 1970 & \ce{CO_2}                  & 10.60             & 0.15               & \ce{Xe}              & 3.0 - 4.0        &           -             &       -       & First   LSP                                                              \\
-            \textcite{keeferPowerAbsorptionLasersustained1986a}         & 1986 & \ce{CO_2}                  & 10.60             & 0.84        & \ce{Ar}              & 1.3   - 2.3      &            -            &       -       & Specialized   laser beam dump integrated within the converging exit nozzle \\
-            \textcite{blackLaserPropulsion10kW1995}          & 1995 & \ce{CO_2}                  & 10.60             & 10.00              & \ce{Ar},   \ce{H_2}    & 1.0   - 2.7      & 350                    & 3.00         & \footnote{15:1   expansion ratio nozzle}                                              \\
-            \\
-            \textcite{toyodaThrustPerformanceCW2002} & 2002 & \ce{CO_2}                  & 10.60             & 2.00               & \ce{Ar},   \ce{N_2}    & 2.0   - 5.5      & 113             & 0.44         & \footnote{Tungsten   rod ignition}                                                    \\
-            \textcite{zimakovInteractionNearIRLaser2016}                                                        & 2016 & Fiber                & 1.07              & 1.50        & \ce{Ar},   \ce{Xe}   & 3.0   - 24.7     & -                      & -            & \footnote{Arc   discharge ignition}                                                   \\
-            \textcite{matsuiGeneratingConditionsArgon2019}                                                          & 2019 & Fiber &      1.07             &        2.00            &           \ce{Ar}           &          1.0 - 64.2        &            -            &       -       & \footnote{Arc   discharge ignition}                                               \\
-            \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}                                                             & 2022 & Fiber                & 1.08              & 0.30      & \ce{Ar},   \ce{N_2} & 9.9   - 19.7     & -                      & -            & \footnote{Arc   discharge ignition}                                                   \\ \bottomrule
+            {\normalsize LSP   Facility} & Year & Laser & $\lambda$ [\unit{\um}] & $P$ [kW] & Gas & $p$ [atm] & $\dot m$ [g/s] & $I_\mathrm{sp}$ [s] & $F_\mathrm{T}$ [N]  \\ \midrule
+            \textcite{generalovContinuousOpticalDischarge1970}        &1970&\ce{CO_2}&10.60&0.15 &\ce{Xe}           & 3.0 - 4.0  &    & -   &  -   \\
+            \textcite{keeferPowerAbsorptionLasersustained1986a}       &1986&\ce{CO_2}&10.60&0.84 &\ce{Ar}           & 1.3 - 2.3  & 0.01 - 0.19   & -   &  -   \\
+            \textcite{krierContinuousWaveLaser1986a}                  &1986&\ce{CO_2}&10.60&10.00&\ce{Ar}           &            & 2.3 - 4.6 & & \\
+            \textcite{zerkleLasersustainedArgonPlasmas1990}           &1990&\ce{CO_2}&10.60&7.00 & \ce{Ar}          &            &          & & \\
+            \textcite{blackLaserPropulsion10kW1995}                   &1995&\ce{CO_2}&10.60&10.00&\ce{Ar}           & 1.0 - 2.7  & 1.1& 350 & 3.00 \\
+                                                                      &    &         &     &     &\ce{H_2}          &            &    &     &      \\
+            \textcite{toyodaThrustPerformanceCW2002}                  &2002&\ce{CO_2}&10.60&2.00 &\ce{Ar}, \ce{N_2} & 2.0 - 5.5  &    & 113 & 0.44 \\
+            \textcite{zimakovInteractionNearIRLaser2016}              &2016&Fiber    &1.07 &1.50 &\ce{Ar}, \ce{Xe}  & 3.0 - 24.7 &    & -   & -    \\
+            \textcite{matsuiGeneratingConditionsArgon2019}            &2019&Fiber    &1.07 &2.00 &\ce{Ar}           & 1.0 - 64.2 &    & -   & -    \\
+            \textcite{luCharacteristicDiagnosticsLaserStabilized2022a}&2022&Fiber    &1.08 &0.30 &\ce{Ar}, \ce{N_2} & 9.9 - 19.7 &    & -   & -    \\ \bottomrule
             \end{tabularx}
             \label{tab:lit review summary}
-            
+        \end{table}
+
+        \begin{table}[!ht]
+            \centering
+            \caption{Comparative table of reported LTP thruster efficiencies}
+            \label{tab:efficiencies}
+            \begin{tabularx}{\textwidth}{@{}>{\small}X<{\raggedright} r r l X@{}}
+            \toprule
+            {\normalsize LSP   Facility}   & Laser absorption & Radiative losses & Other efficiency & Value of other efficiency \\ \midrule
+            \textcite{keeferPowerAbsorptionLasersustained1986a}   & 0.23 - 0.61   &  0.51 - 0.80     &          -        &                 -          \\
+            \textcite{krierContinuousWaveLaser1986a}       & 0.50 - 0.80  &          0.30 - 0.64        & Thermal efficiency &  0.06 - 0.25 \\
+            \textcite{zerkleLasersustainedArgonPlasmas1990}       & 0.55 - 0.97   &          -        & Thermal efficiency &  0.11 - 0.46 \\
+            \textcite{blackLaserPropulsion10kW1995}       &  -  &  $\approx$ 0.33 & $ n = \frac{F^2}{2 \dot{m} P_L} $& 0.20 - 0.25 (Ar), 0.25 - 0.40 (H)\\
+            \textcite{toyodaThrustPerformanceCW2002}    & -                & -                & $ n_e = F^2 - \frac{F^2_{cold}}{2 \dot{m} P} $     &   0.37 \\
+            Potato \& Sons                              &                  &                  &                  &                           \\ \bottomrule
+            \end{tabularx}
         \end{table}
         
         $I_{sp}$ values close to \qty{100}{s} can be expected, with thrust values under \qty{1}{N}, as was found by \textcite{toyodaThrustPerformanceCW2002} and [Matsui citation].

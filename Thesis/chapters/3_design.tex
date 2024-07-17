@@ -83,10 +83,9 @@
 
         \subsection{Sizing the double choked LTP thruster} 
 
-            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_{in}$ constant, so the increase in pressure chamber can be interpreted as a measure of energy deposition (as was discussed in \autoref{chp:models}).
-            The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked, a classic problem in compressible fluid mechanics.
+            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_{in}$ constant, so the increase in pressure chamber can be interpreted as a measure of energy deposition (as was discussed in \autoref{chp:models}). The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked, a classic problem in compressible fluid mechanics.
             
-            The starting assumptions were the following: a 300 W power input (laser) supplies energy to an LTP experiment that has an internal pressure of 25 bar, with a 50 bar feed pressure. We want the hot gas operation (laser on) to increase the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine together the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
+            The starting assumptions were the following: a 300 W power input (the laser) supplies energy to an LTP experiment that has an internal pressure of 25 bar, with a 50 bar feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
 
             \begin{figure}[h]
             \centering
@@ -94,20 +93,16 @@
             \caption{\label{fig:double choke sizing}Schematic of a double choked LTP thruster.}
             \end{figure}
             
+            Starting with a cold gas thruster using argon, $C_0$ choked, without nozzle is speed of sound: $323 \:m/s$ This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, we accelerate the gas by $\approx 2$ times. The $v_{exit}$, which is our main performance parameter, is therefore \qty{646}{m/s}.
             
-            Starting with a cold gas thruster using argon, $C_0$ choked, without nozzle is speed of sound: $323 \:m/s$ This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, we accelerate the gas by $\approx 2$ times. The $v_{exit}$, which is our main performance parameter, is therefore: 
-            \[v_{exit} = 646\: m/s\]
-            
-            Now, for laser on (hot) operation. Taking the previous $v_{exit}$ and ionizing the whole flow, we hope that our efficiency is doubled. This gives a $v_{exit}\approx 1300\:m/s$. What nozzle throat size is necessary for this $\dot m$ with $p_{chamber} = 25\: bar$? We know that $MW_{Ar} = 40 \: g/mol$. From Fluids 2, the speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4! From Thermo 1:
+            Laser on (hot) operation will now be examined. Taking the previous $v_{exit}$ and ionizing the whole flow, it is posed that our efficiency is doubled. This gives a $v_{exit}$\approx \qty{1300}{m/s}. What nozzle throat size is necessary for this $\dot m$ with $p_{chamber} = \qty{25}{bar}$? We know that $MW_{Ar} = 40 \: g/mol$. The speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4.
             \[Power = \dot m (h_2-h_1)
             = \dot m C_p (T_2-T_1)\]
-            The $C_p$ of argon is $0.520\:kJ/(kg-K)$ Find the $\dot m$ that we can expect in g/s.\vspace{60mm}
+            Using a constant $C_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}.
             
             Fliegner's formula describes the mass flow rate of an isentropic flow:
             \[\frac{\dot m}{A} = p_0\sqrt{\frac{\gamma}{T_0 R}}\frac{M}{(1+\frac{\gamma-1}{2}M^2)^{(\frac{\gamma+1}{2(\gamma-1)})}}\]
-            With $\gamma = \frac{C_p}{C_v} = 1.666$ for Argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are [fill in the blank]
-            
-            We can repeat these calculations for the feed orifice, with the same $\dot m$, a pressure of 50 bar and ambient temperature. This gives us an orifice size of about 0.2 mm, or 10 thou in freedom units.
+            With $\gamma = \frac{C_p}{C_v} = 1.666$ for argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are \qty{0.176}{mm^2} and \qty{0.473}{mm}, respectively. These calculations can be repeated for the feed orifice, with the same $\dot m$, a pressure of \qty{50}{bar} and ambient temperature. This gives us an orifice size of about 0.2 mm.
 
         \subsection{Capstone team deliverable \& integration}
             

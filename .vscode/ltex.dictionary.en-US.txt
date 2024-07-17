@@ -33,3 +33,4 @@ Rubeiz
 Tawil
 μm
 MPa
+isentropic
