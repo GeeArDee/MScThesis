@@ -138,3 +138,47 @@
                 \end{figure}
 
                 Once installed in the V2 thruster, the electrodes were pushed into contact with each other and the Ultra-Torr connectors tightened. Statically pressurizing V2 to \qty{20}{bar} was enough to slightly separate the electrodes from one another. [add text for flow testing?]
+    
+    \section{Optics design}
+                
+                Due to the low continuous laser power compared to experiments in the literature, increasing the laser flux with small a focus is critical.
+
+                Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculate the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. Secondly, this equation \cite{LaserSpotSize} can be used: (ideal?)
+                
+                \[
+                \text{Spot size}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
+                \]
+
+                The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \cite{hechtUnderstandingLasersEntry2019}. 
+                
+                The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad} [Refer to appendix laser's data sheet].
+
+                
+                
+                It is also implemented in WinLens, but is not based on ray tracing.
+
+                The following spot diagrams were produced with WinLens. Note the difference in scales and spacing used throughout.
+
+            
+
+                \begin{table}[!ht]
+                    \centering
+                    \caption{Simulated focal length and spot diameter of various lens assemblies in WinLens3D. Laser flux is also calculated for \qty{300}{W} of incident power}
+                    \label{tab:laser flux}
+                    \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}@{}}
+                    \toprule
+                    Lens & Nominal focal length (\unit{mm}) & Focal length at \qty{1070}{nm} (\unit{mm})& Spot diameter (\unit{mm}) & Laser flux at \qty{300}{W} (\unit{W/cm^2}) \\ \midrule
+                    Single & 125           &        &           &  \\
+                    Single & 100           &        &    0.20   &  \\
+                    Double & 500, 150      & 110    &    0.08   &  \\
+                    \bottomrule
+                    \end{tabularx}
+                \end{table}
+
+                (Maybe compare with minimum maintenance intensity of previous literature)
+
+                In a two element system, the longest focal length lens should be placed first, as the diameter of the beam entering the second lens is maximized. However, it is placed after here because it is impossible to mount before. The difference in spot size is acceptable. [maybe compare?]
+
+                Practical considerations for experiments are the following. When aligning the laser with the red visible guide beam, chromatic abberations [\dots] \cite{hechtUnderstandingLasersEntry2019}.
+
+                The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the ignition system. [does this change with flowing LSP?]

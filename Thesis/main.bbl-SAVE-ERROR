@@ -19,57 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{tiesingaFundamentalPhysicalConstants2019}{online}{}{}
-      \name{author}{4}{}{%
-        {{hash=c78972b7154db12858f8b2a43cbddc26}{%
-           family={Tiesinga},
-           familyi={T\bibinitperiod},
-           given={Eite},
-           giveni={E\bibinitperiod}}}%
-        {{hash=70ffad8a9850472813ebca8d8d1f2f69}{%
-           family={Mohr},
-           familyi={M\bibinitperiod},
-           given={Peter\bibnamedelima J.},
-           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=2f44e26ac0465165a8ac1a25c397cced}{%
-           family={Newell},
-           familyi={N\bibinitperiod},
-           given={David\bibnamedelima B.},
-           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=77904d9affa7a41f527d077427b5e034}{%
-           family={Taylor},
-           familyi={T\bibinitperiod},
-           given={Barry\bibnamedelima N.},
-           giveni={B\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-      }
-      \list{organization}{2}{%
-        {The NIST Reference on Constants, Units,}%
-        {Uncertainty}%
-      }
-      \strng{namehash}{7577d9576de4d3d566fddee3a945c978}
-      \strng{fullhash}{f0214bd871e5f4b88b29378050b779e8}
-      \strng{fullhashraw}{f0214bd871e5f4b88b29378050b779e8}
-      \strng{bibnamehash}{f0214bd871e5f4b88b29378050b779e8}
-      \strng{authorbibnamehash}{f0214bd871e5f4b88b29378050b779e8}
-      \strng{authornamehash}{7577d9576de4d3d566fddee3a945c978}
-      \strng{authorfullhash}{f0214bd871e5f4b88b29378050b779e8}
-      \strng{authorfullhashraw}{f0214bd871e5f4b88b29378050b779e8}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This database gives values of the basic constants and conversion factors of physics and chemistry resulting from the 2018 least-squares adjustment of the fundamental physical constants as published by the CODATA Task Group on Fundamental Constants and recommended for international use by CODATA.}
-      \field{month}{5}
-      \field{title}{Fundamental {{Physical Constants}} from {{NIST}}}
-      \field{year}{2019}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://physics.nist.gov/cuu/Constants/index.html
-      \endverb
-      \verb{url}
-      \verb https://physics.nist.gov/cuu/Constants/index.html
-      \endverb
-    \endentry
     \entry{lubinRoadmapInterstellarFlight2016}{article}{}{}
       \name{author}{1}{}{%
         {{hash=ba3212e81936acf53b9c59acfb1edb61}{%
@@ -86,8 +35,8 @@
       \strng{authornamehash}{ba3212e81936acf53b9c59acfb1edb61}
       \strng{authorfullhash}{ba3212e81936acf53b9c59acfb1edb61}
       \strng{authorfullhashraw}{ba3212e81936acf53b9c59acfb1edb61}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the nearly 60 years of spaceflight we have accomplished wonderful feats of exploration that have shown the incredible spirit of the human drive to explore and understand our universe. Yet in those 60 years we have barely left our solar system with the Voyager 1 spacecraft launched in 1977 finally leaving the solar system after 37 years of flight at a speed of 17 km/s or less than 0.006\% the speed of light. As remarkable as this is we will never reach even the nearest stars with our current propulsion technology in even 10 millennium. We have to radically rethink our strategy or give up our dreams of reaching the stars, or wait for technology that does not currently exist. While we all dream of human spaceflight to the stars in a way romanticized in books and movies, it is not within our power to do so, nor it is clear that this is the path we should choose. We posit a technological path forward, that while not simple, it is within our technological reach. We propose a roadmap to a program that will lead to sending relativistic probes to the nearest stars and will open up a vast array of possibilities of flight both within our solar system and far beyond. Spacecraft from gram level complete spacecraft on a wafer ("wafersats") that reach more than \$1/4c\$ and reach the nearest star in 20 years to spacecraft with masses more than \$10\textasciicircum 5\$ kg (100 tons) that can reach speeds of greater than 1000 km/s. These systems can be propelled to speeds currently unimaginable with existing propulsion technologies. To do so requires a fundamental change in our thinking of both propulsion and in many cases what a spacecraft is. In addition to larger spacecraft, some capable of transporting humans, we consider functional spacecraft on a wafer, including integrated optical communications, imaging systems, photon thrusters, power and sensors combined with directed energy propulsion.}
@@ -132,8 +81,8 @@
       \strng{authornamehash}{aad0ca9db5b68a8eef010113f2420776}
       \strng{authorfullhash}{aad0ca9db5b68a8eef010113f2420776}
       \strng{authorfullhashraw}{aad0ca9db5b68a8eef010113f2420776}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{While space programs are being cut back and attempts to probe the universe are attacked as irrelevant, there are some voices making themselves heard on the opposite side. An attack on the “naive pessimism” that is adversely affecting further exploration comes from Arthur Kantrowitz, director of Avco Everett Research Laboratory and vice president of Avco Corporation. This article is adapted from a speech given to the American Institute of Aeronautics \& Astronautics in October 1970.}
@@ -251,8 +200,8 @@
       \strng{authornamehash}{2e8ef8140411a53ea276200c8955e82c}
       \strng{authorfullhash}{2e8ef8140411a53ea276200c8955e82c}
       \strng{authorfullhashraw}{2e8ef8140411a53ea276200c8955e82c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{A laser-sustained plasma (LSP) generator capable of operating as a laser-thermal thruster was designed and tested. The apparatus was powered by a 3-kW 1070-nm fiber-optic laser and was operated with argon gas. The laser absorption, radiated spectrum, and change in static pressure were recorded, and high-speed video footage of the LSP was acquired. Of special interest is the heat-deposition efficiency into the working gas resulting from LSP ignition, which was estimated by tracking the pressure change in the test section. Laser transmission through the plasma was also measured to quantify two energy loss mechanisms: incomplete laser absorption and radiation of heat to the walls of the test section. Minimizing these losses would be critical in the realization of a practical and efficient laser-thermal propulsion (LTP) thruster, as most of the laser energy should be deposited as heat in the propellant to maximize thruster specific impulse.}
@@ -313,8 +262,8 @@
       \strng{authornamehash}{03b9808ebd490f311869399aca3f006c}
       \strng{authorfullhash}{f331790244e9e1089321db3ae31ee347}
       \strng{authorfullhashraw}{f331790244e9e1089321db3ae31ee347}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Soviet Journal of Experimental and Theoretical Physics Letters}
@@ -344,8 +293,8 @@
       \strng{authornamehash}{aae3417c168e15290078c5799a50ba16}
       \strng{authorfullhash}{aae3417c168e15290078c5799a50ba16}
       \strng{authorfullhashraw}{aae3417c168e15290078c5799a50ba16}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A space vehicle application using 5,000-kw input laser power was conceptually evaluated. A detailed design evaluation of a 10-kw experimental thruster including plasma size, chamber size, cooling, and performance analyses, was performed for 50 psia chamber pressure and using hydrogen as a propellant. The 10-kw hardware fabricated included a water cooled chamber, an uncooled copper chamber, an injector, igniters, and a thrust stand. A 10-kw optical train was designed.}
@@ -395,8 +344,8 @@
       \strng{authornamehash}{96702883a8f8f1dcae9f34343b8236d5}
       \strng{authorfullhash}{96702883a8f8f1dcae9f34343b8236d5}
       \strng{authorfullhashraw}{96702883a8f8f1dcae9f34343b8236d5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{12th {{International Electric Propulsion Conference}}}
@@ -453,8 +402,8 @@
       \strng{authornamehash}{ae73a1bceeb8ff01c9cfccaff8a7e8cb}
       \strng{authorfullhash}{4f7b966791653f659d551551faab2404}
       \strng{authorfullhashraw}{4f7b966791653f659d551551faab2404}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0001-1452}
@@ -524,8 +473,8 @@
       \strng{authornamehash}{f6ce3d5fd914cbe28b9fdc7e336fc886}
       \strng{authorfullhash}{a4e45119b5892f422f1bcd9d819eedce}
       \strng{authorfullhashraw}{a4e45119b5892f422f1bcd9d819eedce}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0001-1452}
@@ -600,8 +549,8 @@
       \strng{authornamehash}{0be3ad633e9a595d85cd86924d5c4807}
       \strng{authorfullhash}{cb48a511bc56b04520c2075520872ad1}
       \strng{authorfullhashraw}{cb48a511bc56b04520c2075520872ad1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0748-4658}
@@ -651,8 +600,8 @@
       \strng{authornamehash}{c48a865568ebad7d7ae02798deef5679}
       \strng{authorfullhash}{c48a865568ebad7d7ae02798deef5679}
       \strng{authorfullhashraw}{c48a865568ebad7d7ae02798deef5679}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The effects of elevated gas‐flow speed were studied for the cw CO2 laser‐sustained argon plasma in a chamber of 1‐atm pressure using the argon emission spectrum. Electron temperature distribution was obtained from the 415.8‐nm Ari line‐to‐continuum intensity ratio. This temperature distribution was further utilized to calculate the fraction of laser power absorbed by the plasma, and the amount of radiation loss from the plasma. The experiments were performed for laser powers of 2.5 and 5 kW with an f/7 lens focusing scheme, and gas‐flow speeds of 2–10 m/s. The results show that as high as 86\% of incident laser energy can be absorbed by the plasma. Accounting for the plasma radiation loss, 41\%–62\% of the laser energy can still be retained as the gas thermal energy, which is a significant increase over the previously reported results for lower flow speed and smaller focusing f number.}
@@ -712,8 +661,8 @@
       \strng{authornamehash}{9368afd5b8279c97f87f096355052f8f}
       \strng{authorfullhash}{225fc214688333be900b51bbba0fc890}
       \strng{authorfullhashraw}{225fc214688333be900b51bbba0fc890}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0748-4658, 1533-3876}
@@ -768,8 +717,8 @@
       \strng{authornamehash}{ab76a49c17189b827ab563497fba14d5}
       \strng{authorfullhash}{ca3a45b147d184bbba41dfef414762e9}
       \strng{authorfullhashraw}{ca3a45b147d184bbba41dfef414762e9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper reports the results of fundamental experiments on a continuous-wave CO2 laser thruster. A thrust in vacuum was measured using a simple thrust stand, bellows and vacuum system. The thruster was connected to the vacuum tank with bellows outside the tank instead of setting the thruster into the tank. As a result of thrust measurement in vacuum, the thrust coefficient increase from 1.0 to 1.6 with increasing pressure ratio of 5–400. The energy conversion efficiency reached 37\% in vacuum.}
@@ -848,8 +797,8 @@
       \strng{authornamehash}{13464ba4bfb2a7f2c049a9e3f44e7fb0}
       \strng{authorfullhash}{cd1c78ba3b22ba8cf1d6457f28f357d1}
       \strng{authorfullhashraw}{cd1c78ba3b22ba8cf1d6457f28f357d1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Laser-stabilized plasma (LSP) attracts intense interests in lighting applications requiring extreme stability, long lifetime, and broad radiation range ( 10\textsuperscript{1} – 10⁴ nm). In this work, an argon LSP was generated at high pressures ({$>$}10 bar) by a focused laser beam, and its fundamental properties were studied in detail by the approach of optical emission spectroscopy (OES), with emphasis on the determination of plasma parameters including the electron temperature and density. The effects of argon gas pressure, laser power, and N2 mixture ratio, on the full-view of radiation spectra and electron parameters, were investigated experimentally. The results demonstrate that the increase of gas pressure or laser power density is a proper way to achieve higher optical radiation from the argon LSP, but not by adding molecular mixtures like N2.}
@@ -908,8 +857,8 @@
       \strng{authornamehash}{2b3920c549be51e2694a8d0937b69a07}
       \strng{authorfullhash}{ddb72a801c7dc7ee5db063d73fef8cdc}
       \strng{authorfullhashraw}{ddb72a801c7dc7ee5db063d73fef8cdc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{LSP (Laser Sustained Plasma) has a higher temperature than arc discharge plasma without electrodes. So, the LSP is a promising heat source of electrothermal type thruster, which has a higher specific impulse and longer lifetime than those of arcjet thrusters. In this study, we tried to generate methane, methane–argon and methane–xenon LSPs using 1 kW class diode laser. As a result, the LSP could not be generated for the methane and methane–argon gases though the emission intensity increased with the laser irradiation. In the case of methane–xenon gases, the LSP could be generated at the xenon pressure of 0.10 MPa, and the methane pressure ranged from 0.02 MPa to 0.06 MPa. The threshold power was around 850 W, which is lower than the pure xenon condition.}
@@ -975,8 +924,8 @@
       \strng{authornamehash}{03269c8a31feba29391f3b959ed3e514}
       \strng{authorfullhash}{ba978c20fecccd49c57d151dd1d0f694}
       \strng{authorfullhashraw}{ba978c20fecccd49c57d151dd1d0f694}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Laser propulsion is a space transportation system that uses laser beams emitted from a satellite or laser unit on board as an energy source to generate thrust. One laser propulsion uses laser-sustained plasma (LSP) as a heat source to generate thrust. Because the plasma can be sustained indirectly, there is no electrode erosion during operation. Furthermore, because the LSP is a high-temperature heat source, the specific impulse of laser propulsion is higher than that of conventional electric propulsion. In this study, thrust performance was evaluated using a laser propulsion demonstrator. As a result, a specific impulse of 105 s and a thrust efficiency of 8\% were obtained.}
@@ -998,6 +947,38 @@
       \verb{url}
       \verb https://arc.aiaa.org/doi/abs/10.2514/6.2024-2704
       \endverb
+    \endentry
+    \entry{hechtUnderstandingLasersEntry2019}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b7579d9f6ab99a98f43a3fdbcf05f42}{%
+           family={Hecht},
+           familyi={H\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hoboken}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Inc.}%
+      }
+      \strng{namehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{fullhash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{fullhashraw}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{bibnamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{authorbibnamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{authornamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{authorfullhash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{authorfullhashraw}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-1-119-31064-8}
+      \field{title}{Understanding {{Lasers}}: {{An Entry Level Guide}}}
+      \field{year}{2019}
+      \field{dateera}{ce}
     \endentry
     \entry{mcbrideNASAGlennCoefficients2002}{misc}{}{}
       \name{author}{3}{}{%
