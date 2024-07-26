@@ -146,9 +146,10 @@ for p in P:
     print(f'Mole Fraction of H2 at {p/1e5} bar: {(1-xi)/(1+xi)}\n')
 
 plt.xlim(0, 1)
-plt.legend(P/1e5)
+plt.legend(['0.1 bar', '1 bar', '10 bar'])
 plt.xlabel('x (degree of dissociation)')
 plt.ylabel('G (MJ)')
+plt.savefig('Thesis/assets/2 models/Gibbs.pdf')
 
 # %% 4) Solve, minimizing gibbs energy with Argon
 
@@ -312,11 +313,11 @@ Higgins_cp = (np.array([[0.52033093,
                                                       4.496251534
                                                       ]]).T)*1e3
 
-plt.figure()
-plt.plot(T, h_results)
+# plt.figure()
+# plt.plot(T, h_results)
 
-plt.figure()
-plt.plot(T, cp_results)
+# plt.figure()
+# plt.plot(T, cp_results)
 
 plt.figure()
 plt.plot(T, cp_take2)
@@ -327,7 +328,7 @@ plt.ylabel('Cp')
 # Add Higgins and CEA datapoints to plot
 
 plt.plot(CEA_temp, CEA_cp, 'o')
-plt.plot(Higgins_temp, Higgins_cp, 'o')
+# plt.plot(Higgins_temp, Higgins_cp, 'o')
 
 # %% 5)Test problems for heat addition part 2, variable cp
 
@@ -348,7 +349,7 @@ delta_q = Lzr_power*Lzr_duration  # J
 # Rate of heat loss? Suppose it's thick (a surface emitter)?
 
 
-delta_q = m*(h2-h1)
+# delta_q = m*(h2-h1)
 
 # Volume, then mass of plasma ball
 d = 2/100  # m
