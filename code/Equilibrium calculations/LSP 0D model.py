@@ -149,7 +149,7 @@ plt.xlim(0, 1)
 plt.legend(['0.1 bar', '1 bar', '10 bar'])
 plt.xlabel('x (degree of dissociation)')
 plt.ylabel('G (MJ)')
-plt.savefig('Thesis/assets/2 models/Gibbs.pdf')
+plt.savefig('../../Thesis/assets/2 models/Gibbs.pdf')
 
 # %% 4) Solve, minimizing gibbs energy with Argon
 
@@ -325,10 +325,13 @@ plt.legend(['0.1 bar', '1 bar', '10 bar'])
 plt.xlabel('Temperature (K)')
 plt.ylabel('Cp')
 
+
 # Add Higgins and CEA datapoints to plot
 
-plt.plot(CEA_temp, CEA_cp, 'o')
+plt.plot(CEA_temp, CEA_cp, 'o', label='CEA data')
 # plt.plot(Higgins_temp, Higgins_cp, 'o')
+
+plt.savefig('../../Thesis/assets/2 models/Cp_compare.pdf')
 
 # %% 5)Test problems for heat addition part 2, variable cp
 

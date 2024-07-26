@@ -39,17 +39,22 @@
 
         Plotting the Gibbs energy of the hydrogen mixture as a function of x, for different pressures:
 
-        [graph gibbs]
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.7\textwidth]{assets/2 models/Gibbs.pdf}
+            \caption{Gibbs free energy (G) plotted against the degree of dissociation (x) of hydrogen under three different pressures}
+            \label{fig:Gibbs}
+        \end{figure}
 
         A mixture will reach equilibrium at the minimum of the Gibbs energy.
 
-        Finally, the calculated $C_p$ values were then validated against values from CEA. 
+        Finally, the calculated $C_p$ values were then validated against values from CEA \cite{CEARUNRev4}. 
         
         \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.7\textwidth]{assets/2 models/finalsetup_static.pdf}
-            \caption{Static LSP apparatus from \textcite{duplayArgonLaserPlasmaThruster2024a}}
-            \label{fig:Duplay apparatus}
+            \includegraphics[width=0.7\textwidth]{assets/2 models/Cp_compare.pdf}
+            \caption{Comparing calculated $C_p$ values to those from CEA}
+            \label{fig:Cp_compare}
         \end{figure}
 
     \section{Test problem for heat addition}
