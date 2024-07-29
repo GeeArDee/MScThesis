@@ -321,17 +321,19 @@ Higgins_cp = (np.array([[0.52033093,
 
 plt.figure()
 plt.plot(T, cp_take2)
-plt.legend(['0.1 bar', '1 bar', '10 bar'])
+
 plt.xlabel('Temperature (K)')
 plt.ylabel('Cp')
 
 
 # Add Higgins and CEA datapoints to plot
+plt.plot(CEA_temp, CEA_cp, 'o')
 
-plt.plot(CEA_temp, CEA_cp, 'o', label='CEA data')
+plt.legend(['0.1 bar', '1 bar', '10 bar', 'CEA data'])
 # plt.plot(Higgins_temp, Higgins_cp, 'o')
 
-plt.savefig('../../Thesis/assets/2 models/Cp_compare.pdf')
+# UNCOMMENT TO OVERWRITE FANCY SMOOTH FIG
+#plt.savefig('../../Thesis/assets/2 models/Cp_compare.pdf')
 
 # %% 5)Test problems for heat addition part 2, variable cp
 

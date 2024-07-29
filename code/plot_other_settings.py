@@ -19,6 +19,6 @@ def plot_other_settings(ax,legend_on,box_on,grid_on):
 
     #set legend
     if legend_on:
-        legend=ax.legend(fontsize='x-small',frameon=False,facecolor='white', framealpha=1,loc='best',ncol=3)
+        legend=ax.legend(fontsize='xx-small',frameon=False,facecolor='white', framealpha=1,loc='best',ncol=3)
         frame = legend.get_frame()
         frame.set_linewidth(0)
