@@ -1,10 +1,31 @@
 \chapter{Facility description}
 
+    \section{Laser}
+
+        Use section like this?
+
     \section{Version 1} \label{sec:design_v1}
 
         The first generation thruster, called Version 1 (V1), was designed by Emmanuel Duplay during his master's project. This process can be found in his thesis \cite{duplayArgonLaserPlasmaThruster2024a}. It proved to be a dependable prototype, repurposed from a previous unrelated experiment. However, it presented problems that required a second generation prototype to be designed and manufactured.
 
         [Add short description of V1 here]
+
+        V1 was powered by an IPG Photonics YLR-300/3000-QCW-MM-AC Ytterbium fiber laser, 
+
+        \begin{figure}[!ht]
+            \centering
+            \begin{subfigure}[t]{\textwidth}
+                \includegraphics[width=0.85\textwidth]{assets/3 design/finalsetup_static.pdf}
+                \caption{Static setup}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{\textwidth}
+                \includegraphics[width=0.85\textwidth]{assets/3 design/finalsetup_flowing.pdf}
+                \caption{Flowing setup}
+            \end{subfigure}
+            \caption{V1 LTP thruster}
+            \label{fig:V1 setup}
+        \end{figure}
 
         \subsection{Capabilities}
 
@@ -14,7 +35,7 @@
 
             Too heavy -> too much friction on rail for thrust tests. This was mitigated in part by a rope system.
 
-            Critically, rubber seals were exposed to laser path during continuous lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm}focal length lens would solve this.
+            Critically, rubber seals were exposed to laser path during continuous lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm} focal length lens would solve this.
 
 
 
