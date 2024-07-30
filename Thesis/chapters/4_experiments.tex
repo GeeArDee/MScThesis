@@ -8,6 +8,14 @@
             
             As was discussed in \textcite{duplayArgonLaserPlasmaThruster2024a}, spark ignition was not reliable enough with the available electrode system. Opposing ports were drilled into the bottom of the apparatus to fit an electrode through the top and one through the bottom. This increased spatial repeatability of the spark and enabled the electrode gap length to be easily adjusted.
 
+            In addition to this, the synchronization of the spark and the laser was found to be lacking. With the Photron high speed camera, the spark and the laser were separately imaged. The infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the thin metal to glow white-hot when the laser is on. The following timings were determined by this investigation:
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
+                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
+            \end{figure}
+
         \subsection{Bringing the pulsed power down and Optical design (move to design)} \label{sec:pulse_power_down_V1}
             
             Pulsed shots at lower power levels revealed a difficulty to ignite the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP ignition in the V1 thruster was possible under this maximum CW power level.
@@ -16,27 +24,36 @@
 
             %Section on quantifying diameter, laser optics basics (email from thorlabs guy)
 
-            For a multi-element system, the spot diameter must be calculated numerically with ray tracing software. WinLens 3D Basic \cite{winlens} was used here, as it is free and powerful enough for this application. The single element system was also simulated in this software to verify the calculations.
+            For a multi-element system, the spot diameter must be calculated numerically with ray tracing software. WinLens 3D Basic \cite{QioptiqQShopFree} was used here, as it is free and powerful enough for this application. The single element system was also simulated in this software to verify the calculations.
 
-            Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{thorlabs}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C \cite{125mm lens}) was used, as it was the simpler option. During these shots, the goal was to achieve LSP ignition at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP ignition attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
+            Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{LensTutorial}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C [CITE 125mm lens]) was used, as it was the simpler option. During these shots, the goal was to achieve LSP ignition at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP ignition attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
             
             % Graph of 125mm lens
-            \includegraphics[width=\textwidth]{assets/5 results/125lens.pdf}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/125lens.pdf}
+                \caption{125 mm focal length lens}
+            \end{figure}
 
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/125mm_focus_threshold.pdf}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
                 \caption{125 mm focal length lens}
             \end{figure}
             
             Ignition at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase ignition reliability.
 
             % Graph of multi-lens
-            \includegraphics[width=\textwidth]{assets/5 results/500 and 150 lenses.pdf}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/500 and 150 lenses.pdf}
+                \caption{Multi-lens system}
+            \end{figure}
+
 
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/duallens_focus_threshold.pdf}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/duallens_focus_threshold.pdf}
                 \caption{Multi-lens system}
             \end{figure}
 
@@ -56,7 +73,7 @@
 
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/NO2_shots_analysis.pdf}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
                 \caption{NO2 LSP shots}
                 \label{fig:NO2_shots_analysis}
             \end{figure}
@@ -70,7 +87,7 @@
 
             \begin{figure}
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/V2 test damage.jpg}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
                 \caption{Damage to the thruster after two \qty{3}{kW} laser shots}
             \end{figure}
 
@@ -106,7 +123,7 @@
 
             \begin{figure}
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/V2_focus_threshold.pdf}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
                 \caption{LSP threshold graph for V2}
             \end{figure}
 
@@ -116,13 +133,13 @@
                 \centering
                 \begin{subfigure}[t]{0.45\textwidth}
                     \centering
-                    \includegraphics[width=\textwidth]{assets/5 results/10p 50ms Statistics.png}
+                    \includegraphics[width=\textwidth]{assets/4 experiments/10p 50ms Statistics.png}
                     \caption{Statistics of 10 \qty{50}{ms} shots at 10\% power}
                 \end{subfigure}
                 \hfill
                 \begin{subfigure}[t]{0.45\textwidth}
                     \centering
-                    \includegraphics[width=\textwidth]{assets/5 results/12p 50ms Statistics.png}
+                    \includegraphics[width=\textwidth]{assets/4 experiments/12p 50ms Statistics.png}
                     \caption{Statistics of 10 \qty{50}{ms} shots at 12\% power}
                 \end{subfigure}
                 \caption{Test}
@@ -144,7 +161,7 @@
 
             \begin{figure}
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/window damage.jpg}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/window damage.jpg}
                 \caption{Rear window damage on V2}
             \end{figure}
 
@@ -154,7 +171,7 @@
 
         \subsection{New nozzle design}
             
-            To solve the ablation of the aluminium nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified and a new backplate was manufactured to accept graphite nozzle inserts. These cheap, chageable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
+            To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified and a new backplate was manufactured to accept graphite nozzle inserts. These cheap, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
 
             [image of drawing highlighting changes]
 
@@ -168,7 +185,7 @@
 
             \begin{figure}
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/5 results/Shattered 500 mm lens.jpg}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
                 \caption{Shattered 500 mm lens}
             \end{figure}
 
