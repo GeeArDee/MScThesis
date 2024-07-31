@@ -39,3 +39,6 @@ iso-molded
 WinLens
 Photron
 Dubé
+MAOP
+mJ
+Ultra-Torr

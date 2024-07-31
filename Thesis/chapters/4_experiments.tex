@@ -4,9 +4,9 @@
 
     \section{V1 experiments}
 
-        \subsection{Spark ignition}
+        \subsection{Spark initiation}
             
-            As was discussed in \textcite{duplayArgonLaserPlasmaThruster2024a}, spark ignition was not reliable enough with the available electrode system. Opposing ports were drilled into the bottom of the apparatus to fit an electrode through the top and one through the bottom. This increased spatial repeatability of the spark and enabled the electrode gap length to be easily adjusted.
+            As was discussed in \textcite{duplayArgonLaserPlasmaThruster2024a}, spark initiation was not reliable enough with the available electrode system. Opposing ports were drilled into the bottom of the apparatus to fit an electrode through the top and one through the bottom. This increased spatial repeatability of the spark and enabled the electrode gap length to be easily adjusted.
 
             In addition to this, the synchronization of the spark and the laser was found to be lacking. With the Photron high speed camera, the spark and the laser were separately imaged. The infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the thin metal to glow white-hot when the laser is on. The following timings were determined by this investigation:
 
@@ -16,42 +16,42 @@
                 \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
             \end{figure}
 
-        \subsection{Bringing the pulsed power down and Optical design (move to design)} \label{sec:pulse_power_down_V1}
+        \subsection{Bringing the pulsed power down and optical design (move to design)} \label{sec:pulse_power_down_V1}
             
-            Pulsed shots at lower power levels revealed a difficulty to ignite the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP ignition in the V1 thruster was possible under this maximum CW power level.
+            Pulsed shots at lower power levels revealed a difficulty to initiate the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
             
-            To obtain LSP ignition, a high enough laser flux is needed. With a fixed power, it is necessary to focus the laser down to the smallest area possible to get the highest flux. Quantifying the diameter of this focus was therefore the first step. 
+            To obtain LSP initiation, a high enough laser flux is needed. With a fixed power, it is necessary to focus the laser down to the smallest area possible to get the highest flux. Quantifying the diameter of this focus was therefore the first step. 
 
             %Section on quantifying diameter, laser optics basics (email from thorlabs guy)
 
             For a multi-element system, the spot diameter must be calculated numerically with ray tracing software. WinLens 3D Basic \cite{QioptiqQShopFree} was used here, as it is free and powerful enough for this application. The single element system was also simulated in this software to verify the calculations.
 
-            Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{LensTutorial}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C [CITE 125mm lens]) was used, as it was the simpler option. During these shots, the goal was to achieve LSP ignition at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP ignition attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
+            Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{LensTutorial}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C [CITE 125mm lens]) was used, as it was the simpler option. During these shots, the goal was to achieve LSP initiation at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
             
             % Graph of 125mm lens
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=\textwidth]{assets/4 experiments/125lens.pdf}
                 \caption{125 mm focal length lens}
             \end{figure}
 
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
                 \caption{125 mm focal length lens}
             \end{figure}
             
-            Ignition at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase ignition reliability.
+            Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation reliability.
 
             % Graph of multi-lens
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=\textwidth]{assets/4 experiments/500 and 150 lenses.pdf}
                 \caption{Multi-lens system}
             \end{figure}
 
 
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/duallens_focus_threshold.pdf}
                 \caption{Multi-lens system}
@@ -59,7 +59,7 @@
 
             % Section on power meter reading lower pulsed power at these low power settings, like about 200W
 
-            The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to ultimately test CW operation with flowing argon.
+            The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with flowing argon.
         
         \subsection{\ce{NO2} seeding}
             
@@ -71,7 +71,7 @@
 
             The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
 
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
                 \caption{NO2 LSP shots}
@@ -85,7 +85,7 @@
     
         \subsection{Initial LSP shots}
 
-            \begin{figure}
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
                 \caption{Damage to the thruster after two \qty{3}{kW} laser shots}
@@ -119,9 +119,9 @@
 
             As can be seen above, the window suffered laser damage after this round of testing. However, this damage proved minor as the window was used to align the laser focus with the spark gap, not to measure power absorption.
             
-            The following figure present the LSP ignition attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
+            The following figure presents the LSP initiation attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
 
-            \begin{figure}
+            \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
                 \caption{LSP threshold graph for V2}
@@ -129,7 +129,7 @@
 
             The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (see \autoref{label})
 
-            \begin{figure}[h]
+            \begin{figure}[!ht]
                 \centering
                 \begin{subfigure}[t]{0.45\textwidth}
                     \centering
@@ -157,21 +157,21 @@
 
         \subsection{Window extension tube}
             
-            After the first CW LSP, more CW and pulsed shots were attempted. As laser alignment was not perfect, these continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that 
+            After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that 
 
-            \begin{figure}
+            \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/window damage.jpg}
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/window damage.jpg}
                 \caption{Rear window damage on V2}
             \end{figure}
 
             The solution chosen was to manufacture a window extension tube, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen.
 
-            [drawing of extention tube]
+            [drawing of extension tube]
 
         \subsection{New nozzle design}
             
-            To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified and a new backplate was manufactured to accept graphite nozzle inserts. These cheap, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
+            To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified, and a new backplate was manufactured to accept graphite nozzle inserts. These inexpensive, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
 
             [image of drawing highlighting changes]
 
@@ -183,9 +183,9 @@
 
             [graph of laser power that broke lens]
 
-            \begin{figure}
+            \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
                 \caption{Shattered 500 mm lens}
             \end{figure}
 
