@@ -1,10 +1,10 @@
 \chapter{Modelling heat capacity} \label{chp:models}
     
-    To correctly predict the temperature increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. Argon is the current gas used in experiments, while hydrogen is projected to be used for its increased $I_{sp}$.
+    To correctly predict the temperature increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. Argon is the current gas used in experiments, while hydrogen is projected to be used for its increased $I_\mathrm{sp}$.
 
     \section{Equilibrium calculations} \label{sec:equilibrium calcs}
         
-        The following seventh order polynomials and their coefficients, from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{H+}, \ce{Ar}, \ce{Ar+} and electrons \ce{e-}. The heat capacity at constant pressure, as well as the temperature dependent part of enthalpy and entropy of each species are given by $C_p^0$, $H^0$ and $S^0$, respectively.
+        The following seventh order polynomials and their coefficients, from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{H+}, \ce{Ar}, \ce{Ar+}, and electrons \ce{e-}. The heat capacity at constant pressure, as well as the temperature dependent part of enthalpy and entropy of each species are given by $C_p^0$, $H^0$ and $S^0$, respectively.
 
         \begin{equation}
             C_p^0 (T)/R = a_1 T^{-2} + a_2 T^{-1} + a_3 + a_4   T + a_5 T^2 + a_6 T^3 + a_7 T^4
