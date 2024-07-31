@@ -1,4 +1,4 @@
-\chapter{Facility description}
+\chapter{Facility design}
 
     \section{Laser}
 
@@ -206,3 +206,83 @@
                 Practical considerations for experiments are the following. When aligning the laser with the red visible guide beam, chromatic abberations [\dots] \cite{hechtUnderstandingLasersEntry2019}.
 
                 The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the ignition system. [does this change with flowing LSP?]
+
+            \subsection{V1 Bringing the pulsed power down and optical design} \label{sec:pulse_power_down_V1}
+            
+                Pulsed shots at lower power levels revealed a difficulty to initiate the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
+                
+                To obtain LSP initiation, a high enough laser flux is needed. With a fixed power, it is necessary to focus the laser down to the smallest area possible to get the highest flux. Quantifying the diameter of this focus was therefore the first step. 
+    
+                %Section on quantifying diameter, laser optics basics (email from thorlabs guy)
+    
+                For a multi-element system, the spot diameter must be calculated numerically with ray tracing software. WinLens 3D Basic \cite{QioptiqQShopFree} was used here, as it is free and powerful enough for this application. The single element system was also simulated in this software to verify the calculations.
+    
+                Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{LensTutorial}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C [CITE 125mm lens]) was used, as it was the simpler option. During these shots, the goal was to achieve LSP initiation at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
+                
+                % Graph of 125mm lens
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/125lens.pdf}
+                    \caption{125 mm focal length lens}
+                \end{figure}
+    
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
+                    \caption{125 mm focal length lens}
+                \end{figure}
+                
+                Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation reliability.
+    
+                % Graph of multi-lens
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/500 and 150 lenses.pdf}
+                    \caption{Multi-lens system}
+                \end{figure}
+    
+    
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=0.75\textwidth]{assets/4 experiments/duallens_focus_threshold.pdf}
+                    \caption{Multi-lens system}
+                \end{figure}
+    
+                % Section on power meter reading lower pulsed power at these low power settings, like about 200W
+    
+                The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with flowing argon.
+            
+            \subsection{V2 Bringing the pulsed power down, again}
+            
+                To prevent the damage to the thruster seen previously, a rear window mount was manufactured. This allows the laser energy that is not absorbed to pass freely through the apparatus, also enabling power meter measurements. 
+                
+                % Photo of rear window mount and damaged window
+    
+                As can be seen above, the window suffered laser damage after this round of testing. However, this damage proved minor as the window was used to align the laser focus with the spark gap, not to measure power absorption.
+                
+                The following figure presents the LSP initiation attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
+    
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
+                    \caption{LSP threshold graph for V2}
+                \end{figure}
+    
+                The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (see \autoref{label})
+    
+                \begin{table}[!ht]
+                    \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
+                    \label{tab:laser shot statistics}
+                    \begin{tabular}{lll}
+                    \textbf{Value {[}Unit{]}} & \textbf{10x 50 ms shots at 10\% power} & \textbf{10x 50 ms shots at 12\% power} \\ \hline
+                    Average value {[}J{]}  & 9.985 & 12.89 \\
+                    Maximum value {[}J{]}  & 10.2  & 13.3  \\
+                    Minimum value {[}J{]}  & 9.63  & 12.0  \\
+                    RMS Stability {[}\%{]} & 1.690 & 2.811 \\
+                    PTP Stability {[}\%{]} & 5.599 & 10.31 \\
+                    Average power {[}W{]}  & 0.490 & 1.14  \\
+                    Std deviation {[}J{]}  & 0.169 & 0.362 \\ \hline
+                    \end{tabular}
+                \end{table}
+                
+                At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}. This validated that the 
