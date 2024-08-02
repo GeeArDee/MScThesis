@@ -2,13 +2,23 @@
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to validate the V2 thruster.
 
-    \section{V1 results}
-
+    \section{V1 experiments}
+        
+        Spark ignition shots
 
     \section{V2 experiments}
         This section presents the various experiments that were conducted with the V2 thruster, as well as improvements that were made to this thruster while operating it.
     
         \subsection{Initial LSP shots}
+
+            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2.
+
+            % put this in discussion
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
+                \caption{Damage to the thruster after two \qty{3}{kW} laser shots}
+            \end{figure}
 
             \begin{figure}[!ht]
                 \centering
@@ -17,16 +27,16 @@
             \end{figure}
 
             % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
+
+            As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
         
         \subsection{Cold flow thrust tests}
 
-            Cold flow tests were completed to give a baseline measurement of thrust before the hot fire test, and to validate the functioning of all data acquisition systems.
+            Cold flow tests were completed to give a baseline measurement of thrust before hot fire tests, and to validate the functioning of all data acquisition systems.
             
             % thrust vs pressure graph
 
-            [FRICTION HYSTERESIS PROBLEMS] To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). However, the issue remained.
-
-            A different type of thrust stand (e.g. a rotating arm), could eventually be built to measure thrust in a more repeatable manner.
+            
         
         \subsection{Effective throat area}
             
@@ -41,9 +51,17 @@
             
             A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
 
-            % photo of laser on, Spark/LSP ignition, LSP constant, laser off (LSP dying down)
+            [photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
 
-            This was the first CW LSP generated in the lab. No damage was noticed to the apparatus after this test.
+            First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The CW LSP was kept running for about a second before the laser turns off and the LSP dies down.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/CW pressure rise.png}
+                \caption{Pressure rise with PCB transducer}
+            \end{figure}
+
+            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. As it is a dynamic sensor, this graph has little value, although it is included as a result to support CW LSP initiation. This was the first CW LSP generated in the lab. Minimal damage to the window was noticed after this test, showing that the LSP absorbs a significant amount of energy.
 
         \subsection{Window extension tube}
             
