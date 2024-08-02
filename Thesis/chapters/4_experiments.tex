@@ -1,43 +1,11 @@
 \chapter{Experiments}
 
-    The following chapter will explain the experiments undertaken with both V1 and V2 thrusters, including the improvements made to V2.
+    The following chapter will explain the methodology and the results of the various experiments undertaken to validate the V2 thruster.
 
-    \section{V1 experiments}
+    \section{V1 results}
 
-        \subsection{Spark initiation}
-            
-            As was discussed in \textcite{duplayArgonLaserPlasmaThruster2024a}, spark initiation was not reliable enough with the available electrode system. Opposing ports were drilled into the bottom of the apparatus to fit an electrode through the top and one through the bottom. This increased spatial repeatability of the spark and enabled the electrode gap length to be easily adjusted.
 
-            In addition to this, the synchronization of the spark and the laser was found to be lacking. With the Photron high speed camera, the spark and the laser were separately imaged. The infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the thin metal to glow white-hot when the laser is on. The following timings were determined by this investigation:
-
-            \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
-                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
-            \end{figure}
-
-        
-        
-        \subsection{\ce{NO2} seeding}
-            
-            As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to vacuum (how much?) before introducing gas.
-
-            [Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
-
-            Control LSP shots were undertaken in pure argon. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, were introduced into the chamber. It was then pressurized with argon to 20 bar. With the spark active, LSPs were consistently generated in the seeded atmosphere and their pressure trace from the PCB transducer was recorded with the oscilloscope. This pressure rise was approximately double the one seen in pure argon; see \autoref{fig:NO2_shots_analysis}.
-
-            The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
-                \caption{Comparing \ce{NO2} LSP shots to pure argon LSP shots}
-                \label{fig:NO2_shots_analysis}
-            \end{figure}
-
-            Indeed, with as low as (0.5\%?) of \ce{NO2} mixed with argon, nearly double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
-
-    \section{V2 experiments and improvements}
+    \section{V2 experiments}
         This section presents the various experiments that were conducted with the V2 thruster, as well as improvements that were made to this thruster while operating it.
     
         \subsection{Initial LSP shots}
@@ -91,34 +59,28 @@
 
             [drawing of extension tube]
 
-        \subsection{New nozzle design}
-            
-            To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified, and a new backplate was manufactured to accept graphite nozzle inserts. These inexpensive, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (link with zoetro: https://www.graphitestore.com/isomolded-graphite-rod-0-500dia-x-12l-gt001685)
 
-            [image of drawing highlighting changes]
-
-        \subsection{CW power test}
-
-            Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
-
-            Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
-
-            [graph of laser power that broke lens]
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
-                \caption{Shattered 500 mm lens}
-            \end{figure}
-
-            This test showed a \qty{316}{W} (?) max CW power.
-
-            Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
+        
 
 
-        \subsection{CW LSP (hot fire) thrust tests}
+        % \subsection{CW LSP (hot fire) thrust tests}
 
-            Find m dot, show thrust graph. Get Isp from these. Compare to other thrusters in the literature. Get heat deposition efficiency somehow? Or use Toyoda's definition of efficiency that only uses power in.
+        %     Find m dot, show thrust graph. Get Isp from these. Compare to other thrusters in the literature. Get heat deposition efficiency somehow? Or use Toyoda's definition of efficiency that only uses power in.
+
+        \section{Summary of results}
+
+            \begin{table}[]
+                \caption{Summary of the studied V2 thruster characteristics}
+                \label{tab:characteristics}
+                \begin{tabular}{ll}
+                Characteristic             & Value and unit \\
+                mdot                       &                \\
+                Valve A*                   &                \\
+                Nozzle A*                  &                \\
+                Internal volume            &                \\
+                Cold flow thrust at 20 bar &               
+                \end{tabular}
+            \end{table}
  
 
             
