@@ -6,25 +6,37 @@
 
         \subsection{V1 LSP spark initiation}
 
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time.
 
-
-            [Explain ]
-
-            To resolve the spark spatially, 
+            % Align in space
+            To resolve the spark in the y and z planes (radially) \todo{define this}, the Photron SA5 camera without lens filters was placed in front of the V1 test section, looking in axially. This would be the point of view of the laser beam had it been installed. 
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.25\textwidth]{assets/4 experiments/Composite photo spark.png}
                 \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
             \end{figure}
+            
+            Using the thickness of the electrode as a reference, the spark gap is XX mm and the spark is X mm thick. \todo{measure distance with thickness of electrode}
+            The spark is \todo{measure this too} X mm thick.
+            
+            % Link between the two
+            As the spark was recorded by the high speed camera, timing data was also collected for the spark.
+            
+            % Align in time
+            To align the laser focus to the spark in time, the infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the steel to glow white-hot when the laser was on. The following timings were determined by this investigation: \todo{reword this}
 
-
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
+                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
+            \end{figure}
 
         \subsection{V2 LSP spark initiation and QCW LSP}
 
             % Methodology
 
-            As temporal alignement of the spark and laser focus is the same as the previous section (ref), only the methodology of spatial alignement will be covered here.
+            As timing of the spark and laser focus was kept the same as the previous section (ref), only the methodology of spatial alignement will be covered here.
 
             % Methodology of V2 spark initiation: moving the test section back and forth on the rail gave a reliable way to align spatially . Then 2 figures: wide fov and tight fov, stills from the alignment video I took on the power meter
 
@@ -46,7 +58,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.5\textwidth]{assets/4 experiments/holy jesus look at this.png}
-                \caption{ PLACEHOLDER! QCW LSP shot}
+                \caption{ PLACEHOLDER! 100\% power (quantify) QCW LSP shot. Note the bright plasma emission axially upstream of V2 on the laser safety curtain.}
             \end{figure}
 
             \todo{placeholder picture}
@@ -61,7 +73,9 @@
 
             First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The CW LSP was kept running for about a second before the laser turns off and the LSP dies down.
 
-            Observation of the high speed camera footage showed that the CW LSP lasted \qty{999999}{ms}, \todo{add CW LSP lifetime in ms} much longer than the maximum QCW pulse length of \qty{50}{ms} at this power.
+            Observation of the high speed camera footage, recorded at 10000 frames per second showed the CW LSP starting at frame 32 \qty{3.2}{ms} and ending at frame 883 \qty{88.3}{ms}, lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50}{ms} at this power.
+
+            % Discussion: while these results are encouraging, more experiments with CW laser operation must be completed to determine if lifetimes can be extended an order of magnitude more, i.e. around one second.
 
             \begin{figure}[!ht]
                 \centering
@@ -70,6 +84,24 @@
             \end{figure}
 
             This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test, suggesting that the LSP absorbed a portion of the laser energy.
+
+        \subsection{CW power measurement}
+
+            Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
+    
+            Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
+    
+            [graph of laser power that broke lens]
+    
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
+                \caption{Shattered \qty{500}{mm} focal length lens}
+            \end{figure}
+    
+            This test showed a \qty{316}{W} (?) max CW power.
+    
+            Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
 
         \subsection{Summary of results}
 
@@ -114,7 +146,7 @@
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The thrust versus pressure relation is given by... \todo{insert relation here}.
+            The empirical relation of thrust versus pressure is given by... \todo{insert relation here}.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
@@ -144,9 +176,9 @@
 
         \subsection{Needle valve effective sonic area $A^*$}
 
-            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}).
+            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}). The bubble flow meter and experiment methodology were presented in \textcite{barigouFluidMechanicsSoap1993}.
 
-            Creating a uniform bubble at the base of the tube, the bubble rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate \todo{add citation on which they base themselves}.
+            Creating a uniform bubble at the base of the tube, the bubble rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate.
 
             \begin{figure}[!ht]
                 \centering
@@ -184,7 +216,7 @@
                 \end{tabularx}
             \end{table}
 
-        % \subsection{QCW LSP (hot fire) thrust tests}
+    \section{Initial QCW LSP thrust tests (hot fire)}
  
 
             

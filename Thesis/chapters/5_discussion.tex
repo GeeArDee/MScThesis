@@ -2,7 +2,7 @@
 
 \section*{What was improved and why? Talk about why we got new parts for V2}
 
-\section{LSP validation}
+\section{Static LSP validation}
 
     \subsection{Solving spark initiation}
 
@@ -16,13 +16,7 @@
                 \caption{V1 with newly machined opposing bottom ports}
             \end{figure}
 
-            In addition to this, the synchronization of the spark and the laser was found to be lacking. With the Photron high speed camera, the spark and the laser were separately imaged. The infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the thin metal to glow white-hot when the laser is on. The following timings were determined by this investigation:
-
-            \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
-                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
-            \end{figure}
+            In addition to this, the synchronization of the spark and the laser was found to be lacking.
 
         \subsubsection{Electrodes}
             Static pressure testing up to \qty{75}{bar} for \qty{25}{minutes} was completed successfully. However, the off-the-shelf \qty{44}{kV} wire originally intended to be used as the electrodes burst during pressure tests. An electrode redesign was therefore necessary. Molded dielectric epoxy (Stycast ES 1001 [LINK to website]) around an industrial sewing needle core was chosen, as it was economical and the outer diameter of the electrodes could be precisely controlled by sanding the surface of the set epoxy. Molds were 3d printed and Mann Ease Release\texttrademark 300 was applied to all their inside surfaces.
@@ -98,9 +92,7 @@
 
         The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \cite{hechtUnderstandingLasersEntry2019}. 
         
-        The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad} [Refer to appendix laser's data sheet].
-        
-        It is also implemented in WinLens, but is not based on ray tracing.
+        The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}.
 
         The following spot diagrams were produced with WinLens. Note the difference in scales and spacing used throughout.
 
@@ -120,6 +112,8 @@
             \end{tabularx}
         \end{table}
 
+        It was considered that a magnitude reduction in diameter of the focus was satisfying to move forward with experimentally. Why? Rationale for why we brought down the power: power density. If we have 3kw, and an optic that focusses 1, if we want 300w we need optic that focusses 10x better (to get same laser density). Even better optics would be aspherics, but cost a lot approx 500 usd, \todo{find lens thorlabs}.
+
         (Maybe compare with minimum maintenance intensity of previous literature)
 
         In a two element system, the longest focal length lens should be placed first, as the diameter of the beam entering the second lens is maximized. However, it is placed after here because it is impossible to mount before. The difference in spot size is acceptable. [maybe compare?]
@@ -128,23 +122,7 @@
 
         The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the ignition system. [does this change with flowing LSP?]
 
-        \subsection{CW power test}
-
-        Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
-
-        Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
-
-        [graph of laser power that broke lens]
-
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics[width=0.5\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
-            \caption{Shattered 500 mm lens}
-        \end{figure}
-
-        This test showed a \qty{316}{W} (?) max CW power.
-
-        Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
+        
 
     \subsection{V1 Bringing the pulsed power down and optical design} \label{sec:pulse_power_down_V1}
 
@@ -225,7 +203,7 @@
         
         At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}. This validated that the
 
-\section{Discussion of cold flow thrust tests}
+\section{Cold flow thrust tests}
 
     \subsection{Initial sizing of the double choked LTP thruster}
 
@@ -255,17 +233,17 @@
     
     \subsection{Cold flow test friction HYSTERESIS}
 
-        [FRICTION HYSTERESIS PROBLEMS: TO DISCUSSION] To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). However, the issue remained.
+        [FRICTION HYSTERESIS PROBLEMS: TO DISCUSSION] To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). Lubricant was also added to the cart's bearings. However, the issue remained.
 
-        A different type of thrust stand (e.g. a rotating arm), could eventually be built to measure thrust in a more repeatable manner.
-
-    \subsection{Mass flow rate $\dot m$}
-
-        \todo{MOVE TO FUTURE WORK: experiment with bubble meter}
+        The present type of thrust stand is therefore inadequate for future thrust tests. A different type of thrust stand (e.g. a rotating arm), should be built to measure thrust in a repeatable manner.
 
     \subsection{Effective throat area - discussion}
             
-        With the cold flow thrust tests completed, the effective throat area, $A^*$, was determined. Although the throat was machined to be \qty{0.7}{mm} in diameter, boundary layer effects at this size greatly reduce the effective throat area.
+        With the cold flow thrust tests completed, the effective throat area, $A^*$, was determined to be \qty{3.46e-8}{m^2}, or a diameter of \qty{0.21}{mm}. Although the throat was physically measured to be \qty{0.8}{mm} in diameter (a 20G pin could pass through it), boundary layer effects at this size greatly reduce the effective throat area.
+
+        Indeed, the effective
+
+        [Add Reynolds number at throat? -> calculation]
 
         [ADD SAAD BLOWDOWN DISCUSSION]
 
@@ -283,12 +261,12 @@
         \centering
         \includegraphics[width=0.5\textwidth]{assets/5 discussion/Nozzle ablation.png}
         \caption{Nozzle ablation during flowing test}
-        \label{nozzle ablation}
+        \label{fig:nozzle ablation}
     \end{figure}
 
-    \autoref{nozzle ablation} shows nozzle ablation during a flowing test. No LSP was initiated, however a plasma trail can be seen exiting the nozzle. This plasma was generated by nozzle ablation, proving that this experiment can operate as a laser ablation thruster. This unfortunately not what the thruster was designed for. \todo{Looking at the video from the last shot (no electrodes, so no LSP), we do have a plasma-powered rocket engine!  It's just that it's an ablation plasma, not the kind we want}
+    \autoref{fig:nozzle ablation} shows nozzle ablation during a QCW flowing test. No LSP was initiated, however a plasma trail can be seen exiting the nozzle. This plasma was generated by nozzle ablation, proving that this experiment can operate as a laser ablation thruster. This unfortunately not what the thruster was designed for. \todo{Looking at the video from the last shot (no electrodes, so no LSP), we do have a plasma-powered rocket engine!  It's just that it's an ablation plasma, not the kind we want}
 
-    \textcite{toyodaThrustPerformanceCW2002} uses a refractory metal, tungsten, as the nozzle material. Graphite was chosen because... \todo{Refer to lit review article when talk about graphite nozzle, which study we base ourself on to choose a graphite nozzle}
+    \textcite{toyodaThrustPerformanceCW2002} uses a refractory metal, tungsten, as the nozzle material. Other possibilites were: machinable cermaics (expensive on McMaster!), stainless steel. Graphite was chosen because it is already used for model rockets and is economical. However, it is messy when you machine it \todo{Refer to lit review article when talk about graphite nozzle, which study we base ourself on to choose a graphite nozzle}
 
     \begin{figure}[!ht]
         \centering
@@ -298,7 +276,7 @@
 
     To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified, and a new backplate was manufactured to accept graphite nozzle inserts. These inexpensive, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (0.500" diameter x 12"L, SKU GT001685).
 
-    [image of drawing highlighting changes]
+    [image of drawing highlighting changes to inner cylinder], other parts that were made.
 
 
 
