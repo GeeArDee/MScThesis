@@ -125,24 +125,28 @@
 
             The best match was found to be an area of \qty{3.46e-8}{m^2}, giving a diameter of \qty{0.21}{mm}.
 
-
-
         \subsection{Needle valve effective sonic area $A^*$}
 
-            With
+            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to 
+
+            A bubble flow meter (\autoref{label}) was constructed. Creating a uniform bubble at the base of the tube, this bubble rises upwards towards the top of the tube, which is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate \todo{add citation on which they base themselves}.
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/Bubble meter.png}
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/Bubble meter.png}
                 \caption{Bubble meter setup}
                 \label{bubble meter}
             \end{figure}
 
-            A report on this subject with further calibration results can be found in the appendix. \todo{add Tariq's report to the appendix}
+            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.50 rotations to 2.0 rotations. 
 
-        \subsection{Mass flow rate $\dot m$}
+            The following calibration results and calculations were taken from \autoref{chp:app Thariq}.
 
-            \todo{MOVE TO FUTURE WORK add experiment with me and Tariq}
+            \missingfigure{sample of Thariq's table}
+
+            Supposing that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and ... [Other suppositions], \autoref{chp:app Thariq} recommends a rotation increment of approximately 1.33 to produce an $A^*$ of \qty{0.147}{mm^2}.
+
+            
 
         \subsection{Summary of results}
 
@@ -157,13 +161,11 @@
                 Needle valve A*                   &                \\
                 Nozzle A*                  &      \qty{3.46e-8}{m^2}          \\
                 Internal volume of thruster in flowing configuration        &     \qty{9.68e-6}{m^3}           \\
-                Average cold flow thrust at 20 bar &     \todo{value}          
+                Average cold flow thrust at 20 bar &               
                 \end{tabularx}
             \end{table}
 
-        % \subsection{CW LSP (hot fire) thrust tests}
-
-        %     Find m dot, show thrust graph. Get Isp from these. Compare to other thrusters in the literature. Get heat deposition efficiency somehow? Or use Toyoda's definition of efficiency that only uses power in.
+        % \subsection{QCW LSP (hot fire) thrust tests}
  
 
             
