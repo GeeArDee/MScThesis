@@ -1,4 +1,4 @@
-\chapter{Experiments: methodology and results}
+\chapter{Experiments}
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to validate and characterise the V2 thruster.
 
@@ -14,7 +14,7 @@
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/Composite photo spark.png}
+                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Composite photo spark.png}
                 \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
             \end{figure}
 
@@ -74,11 +74,30 @@
 
         \subsection{Cold flow thrust tests}
 
-            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems.
+            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
+
+            For thrust tests, pressure and thrust were recorded. \autoref{fig:20bar cold flow} shows a typical thrust and pressure curve for a chamber pressure of \qty{20}{bar}. Note that the thrust measurement does not return to the same value it was at initially.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/Example thrust 20 bar.pdf}
+                \caption{Typical cold flow pressure and thrust curves for 20 bar chamber pressure}
+                \label{fig:20bar cold flow}
+            \end{figure}
             
             % TO-DO:
-            \missingfigure{cold flow thrust curve at 20 bar}
-            \missingfigure{cold flow thrust vs pressure relation graph with 35 points}
+            \missingfigure{cold flow thrust vs pressure relation graph needs Siera's 35 points}
+
+            Next, cold flow thrust tests were completed at chamber pressures from \qtyrange{5}{35}{bar}. 5 were done for each nominal pressure in steps of \qty{5}{bar}, for a total of 35 tests. A linear curve fit of the experimental results is presented in \autoref{fig:coldflow pressure-thrust}
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/pressure-thrust graph.pdf}
+                \caption{Absolute pressure versus thrust with 35 experimental points and curve fit of pressure-thrust relation}
+                \label{fig:coldflow pressure-thrust}
+            \end{figure}
+
+            The thrust versus pressure relation is given by... \todo{insert relation here}.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
