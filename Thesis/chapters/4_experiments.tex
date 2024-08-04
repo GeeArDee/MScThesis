@@ -1,18 +1,26 @@
-\chapter{Experiments}
+\chapter{Experiments: methodology and results}
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to validate and characterise the V2 thruster.
 
     \section{Static LSP validation}
 
-        \subsection{V1 spark initiation}
+        \subsection{V1 LSP spark initiation}
 
-        \subsection{V2 spark initiation and QCW LSP}
+        \subsection{V2 LSP spark initiation and QCW LSP}
 
             % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
 
             As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
 
             With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2. \todo{complete V2 initiation section, add photos, remove one of these 2 sentences}
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/holy jesus look at this.png}
+                \caption{ PLACEHOLDER! QCW LSP shot}
+            \end{figure}
+
+            \todo{placeholder picture}
 
         \subsection{V2 CW LSP}
 
@@ -21,6 +29,8 @@
             [photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
 
             First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The CW LSP was kept running for about a second before the laser turns off and the LSP dies down.
+
+            Observation of the high speed camera footage showed that the CW LSP lasted \qty{999999}{ms}, \todo{add CW LSP lifetime in ms} much longer than the maximum QCW pulse length of \qty{50}{ms} at this power.
 
 
             \begin{figure}[!ht]
@@ -33,7 +43,8 @@
 
         \subsection{Summary of results}
 
-            \begin{table}[]
+            \begin{table}[!ht]
+                \centering
                 \caption{Summary of the static LSP validation campaign}
                 \label{tab:validation}
                 \begin{tabular}{@{}lll@{}}
@@ -51,8 +62,10 @@
         \subsection{Cold flow thrust tests}
 
             Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems.
-
-            % thrust vs pressure graph
+            
+            % TO-DO:
+            \missingfigure{cold flow thrust curve at 20 bar}
+            \missingfigure{cold flow thrust vs pressure relation graph with 35 points}
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
@@ -99,6 +112,7 @@
             The following table presents a summary of the results determined from cold flow thruster characterisation.
 
             \begin{table}[!ht]
+                \centering
                 \caption{Summary of the studied V2 thruster characteristics}
                 \label{tab:characteristics}
                 \begin{tabularx}{\textwidth}{XX}
@@ -111,8 +125,6 @@
                 \end{tabularx}
             \end{table}
 
-    % OLD TEXT OLD TEXT --------------------------------------------
-    \section{ANYTHING AFTER THIS IS OLD TEXT}
         % \subsection{CW LSP (hot fire) thrust tests}
 
         %     Find m dot, show thrust graph. Get Isp from these. Compare to other thrusters in the literature. Get heat deposition efficiency somehow? Or use Toyoda's definition of efficiency that only uses power in.
