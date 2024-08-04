@@ -4,35 +4,95 @@
 
     \section{Static LSP validation}
 
+        \subsection{V1 spark initiation}
+
+        \subsection{V2 spark initiation and QCW LSP}
+
+            % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
+
+            As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
+
+            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2. \todo{complete V2 initiation section, add photos, remove one of these 2 sentences}
+
+        \subsection{V2 CW LSP}
+
+            A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
+
+            [photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
+
+            First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The CW LSP was kept running for about a second before the laser turns off and the LSP dies down.
+
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/CW pressure rise.png}
+                \caption{Pressure rise with PCB transducer}
+            \end{figure}
+
+            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. Minimal damage to the window was noticed after this test, suggesting that the LSP absorbed a portion of the laser energy.
+
+        \subsection{Summary of results}
+
+            \begin{table}[]
+                \caption{Summary of the static LSP validation campaign}
+                \label{tab:validation}
+                \begin{tabular}{@{}lll@{}}
+                \toprule
+                Validation Question               & Yes & No \\ \midrule
+                Is LSP spark initiation possible? & X   &    \\
+                Is QCW LSP possible in V2?        & X   &    \\
+                Is CW LSP possible in V2?         & X   &   
+                \end{tabular}
+            \end{table}
+
 
     \section{Cold flow thruster characterisation}
 
         \subsection{Cold flow thrust tests}
 
+            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems.
+
+            % thrust vs pressure graph
+
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
-            To characterise the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar}. The argon flow was then closed. The pressure curve was recorded by the Omega \todo{part number} transducer.
+            To characterise the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega \todo{part number} transducer.
             
             \missingfigure{blowdown pressure curve}
 
+            \todo{In discussion, talk about the issue of nozzle A* being smaller with 5 papers from June 4th on slack.}
 
-            \todo{In discussion, talk about the issue of A* with 5 papers from June 4th on slack.}
+            The internal volume of the V2 thruster in flowing configuration was determined by weighing it before and after it was filled with isopropyl alcohol. Using a density of \qty{785.09}{kg/m^3}, the volume was found to be \qty{9.68e-6}{m^3}, or \qty{9.68}{ml}.
 
-            The following expression for a pressure-time history \todo{change this wording} was then implemented in Python:
+            The following expression for the pressure-time history \todo{change this wording} of a choked orifice flow was then implemented in Python. As the time scale is short (less than 10 seconds), the process is considered adiabatic and the isentropic case is used:
 
-            \[
-            
-            \]
+            \begin{equation}
+                t =  \frac{-2V \left[\left(\frac{p(t)}{p_i}\right)^{(1-\gamma) / 2\gamma}\right]}{(1-\gamma) R \sqrt{T} A \sqrt{\frac{\gamma}{R}(\frac{2}{\gamma + 1})^{(\gamma+1) / (\gamma-1)}}}
+            \end{equation}
 
-            The best match was found to be a diameter of \qty{0.23}{mm}.
+            Where $t$ is time, $p(t)$ is the absolute pressure in the system at time $t$, $p_i$ is the initial absolute pressure in the system, $V$ is the volume of the V2 thruster and tubing after the valve, $T$ is temperature, $A$ is the area of the nozzle's throat. \todo{add volume of tubing} With this equation, the absolute pressure in bar was plotted versus time in seconds for different values of $A$, with a specific heat ratio $\gamma$ of 1.67, a temperature of \qty{300}{K}, and an R of \qty{208.13}{J/kg*K}. The experimental pressure curve was overlayed, cut to only show the decrease in pressure right after the tank is closed, which is $t=0$.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/Saad blowdown fit.pdf}
+                \caption{Saad blowdown model and experimental data}
+            \end{figure}
+
+            The best match was found to be an area of \qty{3.46e-8}{m^2}, giving a diameter of \qty{0.21}{mm}.
 
 
 
         \subsection{Needle valve effective sonic area $A^*$}
 
+            With 
+
+            \missingfigure{Bubble meter}
+
+            A report on this subject with further calibration results can be found in the appendix. \todo{add Tariq's report to the appendix}
+
         \subsection{Mass flow rate $\dot m$}
 
-            [TODO: add experiment with me and Tariq]
+            \todo{add experiment with me and Tariq}
 
         \subsection{Summary of results}
 
@@ -44,113 +104,18 @@
                 \begin{tabularx}{\textwidth}{XX}
                 Characteristic             & Value and unit \\
                 mdot                       &                \\
-                Valve A*                   &                \\
-                Nozzle A*                  &                \\
-                Internal volume of thruster in flowing configuration        &                \\
+                Needle valve A*                   &                \\
+                Nozzle A*                  &      \qty{3.46e-8}{m^2}          \\
+                Internal volume of thruster in flowing configuration        &     \qty{9.68e-6}{m^3}           \\
                 Cold flow thrust at 20 bar &               
                 \end{tabularx}
             \end{table}
 
     % OLD TEXT OLD TEXT --------------------------------------------
     \section{ANYTHING AFTER THIS IS OLD TEXT}
-
-    \section{V1 experiments}
-        
-        Spark ignition shots
-
-    \section{V2 experiments}
-        This section presents the various experiments that were conducted with the V2 thruster, as well as improvements that were made to this thruster while operating it.
-    
-        \subsection{Initial LSP shots}
-
-            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2.
-
-            % put this in discussion
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
-                \caption{Damage to the thruster after two \qty{3}{kW} laser shots}
-            \end{figure}
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
-                \caption{Damage to the thruster after two \qty{3}{kW} laser shots}
-            \end{figure}
-
-            % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
-
-            As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
-        
-        \subsection{Cold flow thrust tests}
-
-            Cold flow tests were completed to give a baseline measurement of thrust before hot fire tests, and to validate the functioning of all data acquisition systems.
-            
-            % thrust vs pressure graph
-
-            
-        
-        \subsection{Effective throat area}
-            
-            With the cold flow thrust tests completed, the effective throat area, $A^*$, was determined. Although the throat was machined to be \qty{0.7}{mm} in diameter, boundary layer effects at this size greatly reduce the effective throat area.
-
-            [ADD SAAD BLOWDOWN DISCUSSION]
-
-            [CITE 2 ASME STUDIES]
-
-
-        \subsection{First CW LSP}
-            
-            A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
-
-            [photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
-
-            First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The CW LSP was kept running for about a second before the laser turns off and the LSP dies down.
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/CW pressure rise.png}
-                \caption{Pressure rise with PCB transducer}
-            \end{figure}
-
-            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. As it is a dynamic sensor, this graph has little value, although it is included as a result to support CW LSP initiation. This was the first CW LSP generated in the lab. Minimal damage to the window was noticed after this test, showing that the LSP absorbs a significant amount of energy.
-
-        \subsection{Window extension tube}
-            
-            After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that 
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/window damage.jpg}
-                \caption{Rear window damage on V2}
-            \end{figure}
-
-            The solution chosen was to manufacture a window extension tube, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen.
-
-            [drawing of extension tube]
-
-
-        
-
-
         % \subsection{CW LSP (hot fire) thrust tests}
 
         %     Find m dot, show thrust graph. Get Isp from these. Compare to other thrusters in the literature. Get heat deposition efficiency somehow? Or use Toyoda's definition of efficiency that only uses power in.
-
-        \section{Summary of results}
-
-            \begin{table}[]
-                \caption{Summary of the studied V2 thruster characteristics}
-                \label{tab:characteristics}
-                \begin{tabular}{ll}
-                Characteristic             & Value and unit \\
-                mdot                       &                \\
-                Valve A*                   &                \\
-                Nozzle A*                  &                \\
-                Internal volume            &                \\
-                Cold flow thrust at 20 bar &               
-                \end{tabular}
-            \end{table}
  
 
             

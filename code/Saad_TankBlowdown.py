@@ -29,6 +29,7 @@ plt.ylabel('Absolute Pressure (bar)')
 P = np.linspace(P_ini, P_stop, num=1000)
 V = 9.68*10**-6 # Thruster volume in m^3, ### should includes volume of tubing??
 diam_list = [0.20,0.21,0.22]  # throat diameter, in mm
+label_list = ['0.20 mm', '0.21 mm', '0.22 mm']
 D = np.array(diam_list)*10**-3 # throat diameter, in m
 A = np.pi/4*D**2
 T = 300 # K
@@ -37,6 +38,7 @@ gamma = 1.67
 R = 208.13  # J/kg*K
 
 def sol_isentropic(x, V, A, T, gamma, R):
+    # Exactly as in Saad, we're gonna invert the plotting
     numerator = -2*V*(x**((1-gamma)/(2*gamma))-1)
     denominator = ((1-gamma)*R*(T)**(1/2)*A*(gamma/R*(2/(gamma+1))**((gamma+1)/(gamma-1)))**(1/2))
     return numerator/denominator
@@ -47,11 +49,11 @@ for i, p in enumerate(P):
     time[i] = sol_isentropic(x, V, A, T, gamma, R)
 
 plt.figure(1)
-plt.plot(time+0.01, P/1e5, label=diam_list) # plot in bar
+plt.plot(time+0.01, P/1e5, label=label_list) # plot in bar
 plt.legend()
-#plt.ylim((0,22.5))
-#plt.xlim((0,3))
+plt.ylim((0,22.5))
+plt.xlim((0,3))
 
-plt.savefig('Thesis/assets/4 experiments/Saad blowdown fit.pdf')
+plt.savefig('../Thesis/assets/4 experiments/Saad blowdown fit.pdf')
 
 # %%
