@@ -22,6 +22,21 @@
 
         \subsection{V2 LSP spark initiation and QCW LSP}
 
+            % Methodology
+
+            As temporal alignement of the spark and laser focus is the same as the previous section (ref), only the methodology of spatial alignement will be covered here.
+
+            % Methodology of V2 spark initiation: moving the test section back and forth on the rail gave a reliable way to align spatially . Then 2 figures: wide fov and tight fov, stills from the alignment video I took on the power meter
+
+            The power meter was used as a screen to align the laser focus. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified. 
+            
+            \missingfigure{2 FOVs of laser light on powermeter}
+
+            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow. 
+            % Discussion: could do this when V2 is open (without putting flat back plate and before pressurizing) however, electrodes move a bit (approx 1mm) when pressurized so alignement is not perfect. Also, if alignement is not satisfactory the first time, the test section must be depressurized and the backplate taken off. The laser is realigned, back plate sealed back on (8 M2 screws to tighten) and test section must be purged again. THIS TAKES TOO LONG! It is easier to align with a rear window (final static LSP configuration), as the test section can be pressurized while the laser is being aligned, and the alignment can be changed without taking the window mount off.
+
+            
+
             % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
 
             As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
@@ -35,6 +50,8 @@
             \end{figure}
 
             \todo{placeholder picture}
+
+
 
         \subsection{V2 CW LSP}
 
@@ -127,26 +144,26 @@
 
         \subsection{Needle valve effective sonic area $A^*$}
 
-            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to 
+            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}).
 
-            A bubble flow meter (\autoref{label}) was constructed. Creating a uniform bubble at the base of the tube, this bubble rises upwards towards the top of the tube, which is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate \todo{add citation on which they base themselves}.
+            Creating a uniform bubble at the base of the tube, the bubble rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate \todo{add citation on which they base themselves}.
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.5\textwidth]{assets/4 experiments/Bubble meter.png}
                 \caption{Bubble meter setup}
-                \label{bubble meter}
+                \label{fig:bubble meter}
             \end{figure}
 
-            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.50 rotations to 2.0 rotations. 
+            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.50 rotations to 2.0 rotations.
+
+            The mass flow rate can then be derived by 
 
             The following calibration results and calculations were taken from \autoref{chp:app Thariq}.
 
             \missingfigure{sample of Thariq's table}
 
             Supposing that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and ... [Other suppositions], \autoref{chp:app Thariq} recommends a rotation increment of approximately 1.33 to produce an $A^*$ of \qty{0.147}{mm^2}.
-
-            
 
         \subsection{Summary of results}
 
@@ -157,11 +174,13 @@
                 \caption{Summary of the studied V2 thruster characteristics}
                 \label{tab:characteristics}
                 \begin{tabularx}{\textwidth}{XX}
-                Characteristic             & Value and unit \\
-                Needle valve A*                   &                \\
-                Nozzle A*                  &      \qty{3.46e-8}{m^2}          \\
-                Internal volume of thruster in flowing configuration        &     \qty{9.68e-6}{m^3}           \\
-                Average cold flow thrust at 20 bar &               
+                \toprule
+                Characteristic                                          &     Value and unit          \\ \midrule
+                Needle valve A* under predicted experiment conditions   &     \qty{0.147e-6}{m^2}     \\
+                Nozzle A*                                               &     \qty{3.46e-8}{m^2}      \\
+                Internal volume of thruster in flowing configuration    &     \qty{9.68e-6}{m^3}      \\
+                Average cold flow thrust at 20 bar                      &     \qty{0.96}{N}           \\
+                \bottomrule 
                 \end{tabularx}
             \end{table}
 
