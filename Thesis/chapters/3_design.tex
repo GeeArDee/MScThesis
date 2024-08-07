@@ -31,6 +31,8 @@
 
         To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024.
 
+        \missingfigure{Diagram of V2 in flowing and static configurations, like for V1}
+
         \subsection{Requirements}
 
             The following requirements were developed for the design of the V2 thruster. The objective was to detect a measurable difference in thrust between an argon cold gas thruster and an argon “hot gas” thruster, heated by a laser supported plasma (LSP).
@@ -109,7 +111,7 @@
 
         \subsection{Laser}
 
-            The laser used as the plasma's power source is an IPG Photonics YLR-300/3000-QCW-MM-AC Ytterbium fiber laser. The wavelength of the emitted light is \qty{1070}{nm}. Its nominal maximum power is \qty{3}{kW} quasi-continuous wave (QCW) or \qty{300}{W} continuous wave (CW). At \qty{3}{kW}, a QCW pulse has a maximum duration of \qty{10}{ms}. The maximum duration of a \qty{300}{W} QCW pulse is \qty{50}{ms} The laser light exits through an IPG Photonics P30-001736 collimator. The output beam is \qty{30}{mm} in diameter.
+            The laser used as the plasma's power source is an IPG Photonics YLR-300/3000-QCW-MM-AC Ytterbium fiber laser. The wavelength of the emitted light is \qty{1070}{nm}. Its nominal maximum power is \qty{3}{kW} quasi-continuous wave (QCW) or \qty{300}{W} continuous wave (CW). At \qty{3}{kW}, a QCW pulse has a maximum duration of \qty{10}{ms}. The maximum duration of a \qty{300}{W} QCW pulse is \qty{50}{ms} The laser light exits through an IPG Photonics P30-001736 collimator. The output beam is \qty{30}{mm} in diameter. The laser also includes a red visible laser for alignement, which is coaxial with the main beam.
 
             \begin{figure}[!ht]
                 \centering
@@ -127,15 +129,26 @@
                 \caption{Laser system}
             \end{figure}
 
-            Calibration reports for the laser and the collimator can be found in the appendix. [ADD TO APPENDIX]
+            Calibration reports for the laser and the collimator can be found in \autoref{chp:app_YLR}. The laser is mounted at the base of a freestanding electronics rack (\autoref{fig:electronics rack}).
 
-        \subsection{Spark initiation system}
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.50\textwidth]{assets/3 design/Control rack.jpg}
+                \caption{Electronics rack with laser at the base}
+                \label{fig:electronics rack}
+            \end{figure} 
 
-            AEM coil and electronics box.
 
         \subsection{Timing control}
 
-            Correct timing of the laser and spark initiation is necessary to initiate LSP when the laser is in QCW mode, and to minimize damage to V2's nozzle in CW mode. To this end, delay generators are used (BNC models 7010 and 7055).
+            Correct timing of the laser and spark initiation is necessary to initiate LSP when the laser is in QCW mode, and to minimize damage to V2's nozzle in CW mode. To this end, delay generators are used (BNC models 7010 and 7055) as seen in \autoref{fig:timing section and oscilloscope}. They are mounted at the top of the electronics rack.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.50\textwidth]{assets/3 design/Timing rack and oscilloscope.jpg}
+                \caption{Delay generators and oscilloscope}
+                \label{fig:timing section and oscilloscope}
+            \end{figure} 
 
         \subsection{Data acquisition (DAQ) system and oscilloscope}
 
@@ -160,6 +173,10 @@
 
             During LSP shots, the camera's sensor was protected by an adjustable neutral-density (ND) filter and a UV-cut filter \todo{part number, add wavelength}.
 
+        \subsection{Spark initiation system}
+
+            AEM coil and electronics box.
+
         \subsection{Needle valve}
             
             To be able to run the thruster in the double choked configuration, an adjustable orifice upstream of the thruster is required. The WL14H-320P needle valve was chosen for this.
@@ -170,3 +187,9 @@
                 \caption{WL14H-320P Needle valve}
                 \label{fig:Needle valve}
             \end{figure}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.50\textwidth]{assets/3 design/V1 V2 comparison.png}
+            \caption{Size comparison between V1 and V2. The WL14H-320P needle valve is not yet installed on V2.}
+        \end{figure} 
