@@ -21,17 +21,24 @@
 
         298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high speed camera (Photron Fastcam SA5).
 
-        % Adding holes on bottom for wire ignition
-
-        However, this test section was made of steel, creating too much friction on its rails during thrust tests. This was mitigated in part by a rope system mentioned in \textcite{duplayArgonLaserPlasmaThruster2024a}, but was not found to be repeatable. Having the LSP heat a smaller internal volume than the \qty{0.38}{L} of V1 was also desirable, as a greater effect on internal pressure and thrust would be seen.
-
-        Critically, rubber seals were exposed to the laser path during continuous (CW) lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm} focal length lens would allow the beam to pass through without hitting the sides of the test section.
-
     \section{Version 2} \label{sec:design_v2}
 
         To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024.
 
-        \missingfigure{Diagram of V2 in flowing and static configurations, like for V1}
+        \begin{figure}[!ht]
+            \centering
+            \begin{subfigure}[t]{\textwidth}
+                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Static config.pdf}
+                \caption{Static setup}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{\textwidth}
+                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Flowing config.pdf}
+                \caption{Flowing setup}
+            \end{subfigure}
+            \caption{V2 LTP thruster}
+            \label{fig:V1 setup}
+        \end{figure}
 
         \subsection{Requirements}
 
@@ -218,6 +225,6 @@
 
         \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.50\textwidth]{assets/3 design/V1 V2 comparison.png}
+            \includegraphics[width=\textwidth]{assets/3 design/V1 V2 comparison.png}
             \caption{Size comparison between V1 and V2. The WL14H-320P needle valve is not yet installed on V2.}
         \end{figure} 
