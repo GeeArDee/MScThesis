@@ -50,3 +50,4 @@ Harihar
 Hofmann
 NSERC
 Collimator
+paraxial

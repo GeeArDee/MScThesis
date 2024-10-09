@@ -1,6 +1,6 @@
 \chapter{Experiments}
 
-    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterise the V2 thruster.
+    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster.
 
     \section{Optical design}
 
@@ -155,9 +155,32 @@
                 \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
             \end{figure}
 
-            \missingfigure{image of V1 LSP spark video}
+            %\input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
 
             \missingfigure{pressure rise with V1 LSP spark initiation}
+
+            \subsection{\ce{NO2} seeding}
+
+            \todo{Comment from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross section of the molecule, which will involve using the  HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
+            
+            As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to vacuum (how much?) before introducing gas.
+
+            %[Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
+
+            Control LSP shots were undertaken in pure argon. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, were introduced into the chamber. It was then pressurized with argon to 20 bar. With the spark active, LSPs were consistently generated in the seeded atmosphere and their pressure trace from the PCB transducer was recorded with the oscilloscope. This pressure rise was approximately double the one seen in pure argon; see \autoref{fig:NO2_shots_analysis}.
+
+            The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
+                \caption{Comparing \ce{NO2} LSP shots to pure argon LSP shots}
+                \label{fig:NO2_shots_analysis}
+            \end{figure}
+
+            Indeed, with as low as (0.5\%?) of \ce{NO2} mixed with argon, nearly double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
+
+        
 
         \subsection{V2 LSP spark initiation and QCW LSP}
 
