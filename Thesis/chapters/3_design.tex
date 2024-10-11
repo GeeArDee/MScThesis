@@ -7,11 +7,13 @@
         \begin{figure}[!ht]
             \centering
             \begin{subfigure}[t]{\textwidth}
+                \centering
                 \includegraphics[width=0.85\textwidth]{assets/3 design/finalsetup_static.pdf}
                 \caption{Static setup}
             \end{subfigure}
             \hfill
             \begin{subfigure}[t]{\textwidth}
+                \centering
                 \includegraphics[width=0.85\textwidth]{assets/3 design/finalsetup_flowing.pdf}
                 \caption{Flowing setup}
             \end{subfigure}
@@ -23,21 +25,40 @@
 
     \section{Version 2} \label{sec:design_v2}
 
-        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024.
+        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024, seen in \autoref{fig:V2 render} and \autoref{fig:V2 setup}.
 
         \begin{figure}[!ht]
             \centering
             \begin{subfigure}[t]{\textwidth}
+                \centering
+                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 render 45 view.png}
+                \caption{View of the laser path (in red) and thruster mounted on its thrust stand}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{\textwidth}
+                \centering
+                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 render cutout.png}
+                \caption{Cutaway view of the inside of the thruster}
+            \end{subfigure}
+            \caption{Render of the V2 LTP thruster, by the capstone team}
+            \label{fig:V2 render}
+        \end{figure}
+
+        \begin{figure}[!ht]
+            \centering
+            \begin{subfigure}[t]{\textwidth}
+                \centering
                 \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Static config.pdf}
                 \caption{Static setup}
             \end{subfigure}
             \hfill
             \begin{subfigure}[t]{\textwidth}
+                \centering
                 \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Flowing config.pdf}
                 \caption{Flowing setup}
             \end{subfigure}
             \caption{V2 LTP thruster}
-            \label{fig:V1 setup}
+            \label{fig:V2 setup}
         \end{figure}
 
         \subsection{Requirements}
@@ -185,7 +206,7 @@
 
         \subsection{Data acquisition (DAQ) system and oscilloscope}
 
-            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used: [PCB and OMEGA]
+            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used: [PCB Model 113B28 (?) and OMEGA]
 
             \begin{figure}[!ht]
                 \centering
@@ -196,15 +217,17 @@
 
             [Photos of pressure sensor and PCB assembly]
 
-        \subsection{High speed camera}
+        \subsection{Cameras}
 
             A Photron SA5 high speed camera was used on certain LSP shots to validate 
             
             Due to the fact that no side window was present on V2, the Photron SA 5 high speed camera looking into the core of the thruster was used to validate.
 
-            [Photo of Photron looking into thruster]
+            \todo{Photo of Photron looking into thruster at angle}
 
             During LSP shots, the camera's sensor was protected by an adjustable neutral-density (ND) filter and a UV-cut filter \todo{part number, add wavelength}.
+
+            A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an extra confirmation that the laser emission was off before opening the laser safety curtain.
 
         \subsection{Spark initiation system}
 
@@ -228,7 +251,7 @@
 
         \subsection{Needle valve}
             
-            To be able to run the thruster in the double choked configuration, an adjustable orifice upstream of the thruster is required. The WL14H-320P needle valve was chosen for this.
+            To be able to run the thruster in the double choked configuration, an adjustable orifice upstream of the thruster is required. The WL14H-320P needle valve (\autoref{fig:Needle valve}) was chosen for this.
 
             \begin{figure}[!ht]
                 \centering

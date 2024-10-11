@@ -42,7 +42,7 @@
 
             Practical considerations for experiments are the following. When aligning the laser with the red visible guide beam, chromatic abberations [\dots] \cite{hechtUnderstandingLasersEntry2019}.
 
-            The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the ignition system. [does this change with flowing LSP?]
+            The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the initiation system. [does this change with flowing LSP?]
 
     
 
@@ -186,7 +186,7 @@
 
             % Methodology
 
-            As timing of the spark and laser focus was kept the same as the previous section (ref), only the methodology of spatial alignement will be covered here.
+            As timing of the spark and laser focus was kept the same as the previous section (ref), only the methodology of spatial alignment will be covered here.
 
             % Methodology of V2 spark initiation: moving the test section back and forth on the rail gave a reliable way to align spatially . Then 2 figures: wide fov and tight fov, stills from the alignment video I took on the power meter
 
@@ -205,7 +205,7 @@
                     \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 2.png}
                     \caption{V2 alignment, zoomed in}
                 \end{subfigure}
-                \caption{2 FOVs of laser light on powermeter. The abberation at the center of the red light is due to laser damage to the window.}
+                \caption{2 FOVs of laser light on power meter. The abberation at the center of the red light is due to laser damage to the window.}
                 \label{fig:FOV}
             \end{figure}
 
@@ -236,16 +236,14 @@
 
             A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
 
-            [photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
+            %[photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
+            \input{assets/4 experiments/CW LSP frames webcam/igntionFrames.tex}
 
-            \missingfigure{frames of high speed camera to show growth of plasma in V2}
+            First the laser is turned on. A flash marks the spark initiation and lifetime of the LSP. This flash lasts Notice the higher brightness in \autoref{fig:CW_V2_webcam_frames_LSP}, reflecting off various surfaces like the white box (PCB pressure sensor power supply) on the left of the collimator. The laser was kept running for about a second before it is turned off.
 
-            %\input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
+            \input{assets/4 experiments/CW LSP frames Photron/igntionFrames.tex}
 
-            First the laser is turned on. A flash marks the spark initiation and instant LSP initiation. The laser was kept running for about a second before it is turned off.
-
-            Observation of the high speed camera footage, recorded at 10000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50}{ms} at this power.
-
+            Observation of the high speed camera footage, recorded at 10000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms} at this power. The brightness of the plasma increases regularly after initiation, to reach its maximum intensity around \qty{50}{ms}, and this brightness is constant for \qty{10}{ms}. A flickering of the LSP is seen at \qty{70.0}{ms}, before it dies down and is completely extinguished after \qty{88.3}{ms}.
 
             \begin{figure}[!ht]
                 \centering
