@@ -146,20 +146,6 @@
     % \includepdf{assets/cover.pdf}
     \input{title page.tex}
 
-    % \newpage
-    % % \layout*
-    % {   \sffamily
-    %     \thispagestyle{empty}
-    %     \vspace*{\fill}
-    %     % Text width: \the\textwidth  \\ % DELETE THIS LINE BEFORE SUBMITTING
-    %     % Text height: \the\textheight  % DELETE THIS LINE BEFORE SUBMITTING
-
-    %     The code used for this project (including the \LaTeX\hspace{0.67ex}source) is available on \\ \url{https://github.com/eeduplay/MScThesis}
-
-    %     The author can be contacted by email at \href{mailto:gdub529@gmail.com}{gdub529@gmail.com}
-
-    %     Cover image: Composite photograph approximating (with some artistic license) the appearance of the second generation laser-thermal thruster model operating in the laboratory.
-    % }
     \pagenumbering{roman}
     
     
@@ -175,12 +161,12 @@
     
     %\input{chapters/0_1_nomenclature.tex}
 
-        %UNCOMMENT THESE!!!!
+        % ------------  UNCOMMENT THESE!!!! ------------------
 
     \newpage
-    %\input{chapters/0_2_abstract.tex}
-    %\input{chapters/0_3_abstract_fr.tex}
-    %\input{chapters/0_0_preface.tex}
+    % \input{chapters/0_2_abstract.tex}
+    % \input{chapters/0_3_abstract_fr.tex}
+    % \input{chapters/0_0_preface.tex}
     \afterpage{\blankpage}
     \newpage
     \pagenumbering{arabic}
@@ -189,12 +175,12 @@
 
     %UNCOMMENT THESE!!!!
     
-    \input{chapters/1_intro.tex}
+    %\input{chapters/1_intro.tex}
     %\input{chapters/2_models.tex}
-    \input{chapters/3_design.tex}
+    %\input{chapters/3_design.tex}
     \input{chapters/4_experiments.tex}
-    %\input{chapters/5_discussion.tex}
-    %\input{chapters/6_conclusion.tex}
+    \input{chapters/5_discussion.tex}
+    \input{chapters/6_conclusion.tex}
     
     \clearpage
     \defbibnote{bibmark}{\markright{}}
@@ -209,28 +195,40 @@
 
     % UNCOMMENT APPENDIX!
 
-    % \appendix
-    % \newcommand{\footeronly}{\thispagestyle{fancy}\markboth{}{}}
-    % \chapter{YLR-300/3000-QCW-MM-AC calibration report}
-    %     \label{chp:app_YLR}
-    %     \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/IPGLaser300-3000_calib.pdf}
-    % \chapter{P30 collimator calibration report}
-    %     \label{chp:app_Collimator}
-    %     \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/D30_Collimator_calib.pdf}
-    % \chapter{Bubble meter calibration report and $A^*$ calculation}
-    %     \label{chp:app Thariq}
-    %     \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/Bubble Meter and Throat Area Calculation 2024-07-31.pdf}
+    \appendix
+    \newcommand{\footeronly}{\thispagestyle{fancy}\markboth{}{}}
+    \chapter{YLR-300/3000-QCW-MM-AC Calibration Report}
+        \label{chp:app_YLR}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/IPGLaser300-3000_calib.pdf}
+    \chapter{P30 Collimator Calibration Report}
+        \label{chp:app_Collimator}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/D30_Collimator_calib.pdf}
+    \chapter{Bubble Meter Calibration Report and $A^*$ Calculation}
+        \label{chp:app Thariq}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/Bubble Meter and Throat Area Calculation 2024-07-31.pdf}
+    \chapter{V2 Test Section Parts Drawings}
+        \label{chp:V2 Test Section Drawings}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/Test Apparatus.pdf}
+    \chapter{V2 Second (Rear) Window Mount}
+        \label{chp:V2 rear window mount}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/Second Window Mount Final.pdf}
+    \chapter{Untested V2 Parts Drawings}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/sriel2_Extension cylinder real.pdf}\label{chp:Extension cylinder}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/Inner Cylinder.pdf}\label{chp:remachined inner cylinder}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/Exchangeable Nozzle.pdf}\label{chp:New nozzle}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/sriel2_Exchangeable Nozzle Plate_inches.pdf}\label{chp:Exchangeable nozzle plate}
+        \includepdf[pages=-, pagecommand={\footeronly}]{assets/appendices/New V2 parts/Higher Width Plate.pdf}\label{chp:thicker plate}
 
     % List of appendicies that I want:
-        % Laser and colimator calibration
-        % Bubble meter calibration Thariq's report
-        % Drawings for V2 from Capstone team
-        % Drawings of new parts
-            % Modified inner cylinder
-            % Spacer for static tests
-            % Flat plate with hole for bubble tests
-            % Flat plate for changeable graphite nozzles
-            % Graphite nozzles
+        % [x] Laser and colimator calibration
+        % [x] Bubble meter calibration Thariq's report
+        % [x] Drawings for V2 from Capstone team
+        % [x] V2 rear window mount
+        % Drawings of untested parts
+            % [x] Modified inner cylinder
+            % [x] Spacer for static tests
+            % [x] Flat plate with hole for bubble tests
+            % [x] Flat plate for changeable graphite nozzles
+            % [x] Graphite nozzles
     
-
 \end{document}

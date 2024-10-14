@@ -3,22 +3,25 @@
 \todo{What was improved and why? DISCUSS OVERALL! Talk about why we got new parts for V2, limitations of current apparatus and future directions}
 
 % why do we prefer spark ignition
-This project was started on the heels of \textcite{duplayArgonLaserPlasmaThruster2024a}, with the V1 test section using wire initiation during summer 2023. Spark initiation is preferred for a few reasons. First, there would be no solid object blocking the beam path. This would allow the power meter to measure the energy that was not absorbed by the plasma, which is the first efficiency considered in\todo{Link to intro?}. Second, replacing the target wire is a time consuming process that was conducted every 1-3 shots, requiring the test section to be re-pressurized. Indeed, spark initiation would allow a much higher shot rate. Third, when conducting flowing experiments, the wire could be moved out of the focus by the flowing argon. Finally, the wire prevents the downstream propagation of the plasma by being physically in the way.
+This project was started on the heels of \textcite{duplayArgonLaserPlasmaThruster2024a}, with the V1 test section using wire initiation during summer 2023. Spark initiation is preferred for a few reasons. First, there would be no solid object blocking the beam path. This would allow the power meter to measure the energy that was not absorbed by the plasma, which is the first efficiency considered in\todo{Link to intro?}. Second, replacing the target wire is a time-consuming process that was conducted every 1–3 shots, requiring the test section to be re-pressurized. Indeed, spark initiation would allow a much higher shot rate. Third, when conducting flowing experiments, the wire could be moved out of the focus by the flowing argon. Finally, the wire prevents the downstream propagation of the plasma by being physically in the way.
 
-With V1, spark initiation was first attempted with an initiation plug that could fit into a single port \todo{photo}. The electrodes were side by side. However, the spark was created at a different height every time between the parallel electrodes. Using opposing electrodes would ensure that their tips were the closest point to each other, greatly increasing spatial repeatability of the spark and enabling the electrode gap length to be easily adjusted. Opposing ports were drilled into the bottom of the V1 apparatus to fit an electrode through the top and one through the bottom \todo{photo of electrode plugs}.
+With V1, spark initiation was first attempted with an initiation plug that could fit into a single port \todo{photo}. The electrodes were side by side. However, the spark was created at a different height every time between the parallel electrodes. Using opposing electrodes would ensure that their tips were the closest point to each other, greatly increasing spatial repeatability of the spark and enabling the electrode gap length to be easily adjusted. Opposing ports were drilled into the bottom of the V1 apparatus to fit an electrode through the top and one through the bottom, seen in \autoref{fig: V1 opposing ports} \todo{photo of electrode plugs}.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.5\textwidth]{assets/5 discussion/Bottom ports machined.jpg}
     \caption{V1 with newly machined opposing bottom ports}
+    \label{fig: V1 opposing ports}
 \end{figure}
+
+\todo{talk about seeding with NO2?}
 
 %% % In addition to this, the synchronization of the spark and the laser was found to be lacking.
 
 % Coil burnout
 Another critical issue was that of coil burnout. 5 coils were damaged to the point that they could no longer create a strong enough spark across the spark gap. A contributing factor could have been the poor electrode retention of the Ultra-Torr fittings, as \qty{20}{bar} of gas could visibly push the electrodes away \qtyrange{1}{2}{mm}. An increase in the spark gap increases its resistance, putting a higher load on the coil. Another concern was electromagnetic interference between the coil and its power supply. Originally in the same box, the \qty{10}{A} current-limited power supply and the smart coil were placed in separate electrical boxes. Quad shielded coaxial cable was used between the coil, and it's controlling delay generator as an additional precaution. 
 
-% TALK ABOUT TIMING?
+\todo{TALK ABOUT TIMING?}
 
 % V1 spark initiation! + Why was V2 designed?
 With these problems solved, reliable spark initiation of LSP was achieved in V1 \todo{When?}. 
@@ -28,7 +31,7 @@ However, this test section was made of steel, creating too much friction on its 
 Critically, rubber seals were exposed to the laser path during continuous (CW) lasing with a lower focal length lens (picture), severely burning them in the only CW test conducted. A shorter test section designed for a \qty{100}{mm} focal length lens would allow the beam to pass through without hitting the sides of the test section. A purpose-built test section, named V2, was therefore designed over the course of two semesters. 
 
 % Got V2 from capstone team
-The achievement of consistent spark initiation with V1 coincided with the arrival of the V2 test section parts in late April. Static pressure testing of V2 up to \qty{75}{bar} for \qty{25}{minutes} was completed successfully. However, the off-the-shelf \qty{44}{kV} wire originally intended to be used as the electrodes burst during pressure tests. An electrode redesign was therefore necessary. Molded dielectric epoxy (Stycast ES 1001 [LINK to website]) around an industrial sewing needle core was chosen, as it was economical and the outer diameter of the electrodes could be precisely controlled by sanding the surface of the set epoxy. Molds were 3d printed and Mann Ease Release\texttrademark 300 was applied to all their inside surfaces.
+The achievement of consistent spark initiation with V1 coincided with the arrival of the V2 test section parts in late April. Static pressure testing of V2 up to \qty{75}{bar} for \qty{25}{minutes} was completed successfully. However, the off-the-shelf \qty{44}{kV} wire originally intended to be used as the electrodes burst during pressure tests. An electrode redesign was therefore necessary. Molded dielectric epoxy (Stycast ES 1001 \textcite{McMasterCarr}) around an industrial sewing needle core was chosen, as it was economical and the outer diameter of the electrodes could be precisely controlled by sanding the surface of the set epoxy. Molds were 3d printed and Mann Ease Release\texttrademark 300 was applied to all their inside surfaces.
 
 \begin{figure}[!ht]
     \centering
@@ -54,116 +57,62 @@ The achievement of consistent spark initiation with V1 coincided with the arriva
     \caption{Electrode manufacturing process}
 \end{figure}
 
-The electrodes were then sanded down to fit tightly into Ultra-Torr vacuum connectors [link to swagelok and part number]. Although these connectors were not designed for high pressure, previous experience has shown that they are appropriate up to about \qty{20}{bar} of internal pressure if tightened enough.
+The electrodes were then sanded down to fit tightly into Ultra-Torr vacuum connectors. Although these connectors were not designed for high pressure, previous experience has shown that they are appropriate up to about \qty{20}{bar} of internal pressure if tightened enough. The result is presented in \autoref{fig:Assembled electrode}. Once installed in the V2 thruster, the electrodes were pushed into contact with each other and the Ultra-Torr connectors tightened. Statically pressurizing V2 to \qty{20}{bar} was enough to separate the electrodes from one another by about \qty{1}{mm}.
 
-The result is presented in \autoref{fig:Assembled electrode}.
+With the dual lens system, static LSP via spark initiation in V2 was achieved on the first QCW shot at 100\% power (\qty{3050}{W}). This was initially done with a flat aluminum plate at the end of the test section (see \autoref{fig:initial V2 static config} and \autoref{chp:V2 Test Section Drawings}). 
 
-Once installed in the V2 thruster, the electrodes were pushed into contact with each other and the Ultra-Torr connectors tightened. Statically pressurizing V2 to \qty{20}{bar} was enough to slightly separate the electrodes from one another. \todo{Put some of this in design section}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
+    \caption{Ablation damage to the flat rear plate of the thruster after two \qty{3}{kW} laser shots}
+    \label{fig:initial V2 static config}
+\end{figure}
 
-\section*{LOTS OF TIME AND THINGS HAPPEN THEN...}
+The black sheet in \autoref{fig:initial V2 static config} is Thorlabs laser-absorbing aluminum foil, used in a failed attempt to protect the rear plate from damage. In addition to this ablation problem, the laser could only be aligned between the electrodes when the test section was open, requiring re-pressurization after every attempt at alignment. Given that the electrodes would move under the \qty{20}{bar} pressure, this was very tedious. The solution to this was to machine a second window holder (\autoref{chp:V2 rear window mount}) that would replace the flat plate. With the new window mount installed, the goal was then to bring the QCW initiation power down to the maximum CW power of the laser, \qty{314}{W}, in order to attempt a CW LSP.
 
-% Discussion on acheivement of V2 CW LSP: while these results are encouraging, more experiments with CW laser operation must be completed to determine if lifetimes can be extended an order of magnitude more, i.e. around one second.
+% Discussion on acheivement of V2 CW LSP:
+The laser power was brought down until \todo{talk about POWER-DISTANCE GRAPH}. Once a 13\% power \todo{put this in W} LSP was initiated reliably, our first 100\% power (\qty{314}{W}) CW LSP was generated for \qty{85.1}{ms}, a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms}. While these results are encouraging, more experiments with CW laser operation must be completed to determine if lifetimes can be extended to an order of magnitude more, i.e. around one second. This would greatly help with measuring a difference in thrust when the laser is on.
 
+% Damage to window and extension tube
+After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that visual laser alignment between the electrodes of V2 was no longer possible.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/4 experiments/window damage.jpg}
+    \caption{Rear window damage on V2}
+\end{figure}
+A window extension tube (\autoref{chp:Extension cylinder}) was manufactured to solve this, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen. This extension tube has yet to be tested.
 
+% Cold flow thruster characterisation
+In parallel to the static LSP validation, characterization of the thruster with argon cold flow was advanced.
 
-% OLD DISCUSSION
-\section*{AFTER THIS IS OLD DISCUSSION}
+[FRICTION HYSTERESIS PROBLEMS: TO DISCUSSION] To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). Lubricant was also added to the cart's bearings. However, the issue remained.
+Here are some results of the cold flow tests with the new load cell. Here, I did multiple firings with a 200g preload. We didn't calibrate the load cell, as we just want to look at hysteresis. What we see is that sometimes the final thrust is higher than the initial thrust, sometimes it's the other way around. According to me, this is due to the friction in the rail stopping the thruster from resetting at the same place every time. When we get to doing thrust tests with LSP, we'll do a few and average them. At least the initial increase looks fairly repeatable. Going forward, I think the only way to get really nice thrust data would be to use a rotating arm thrust stand. To be done after I finish the thesis! \todo{edit this to read more academic}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{assets/5 discussion/hysterisis.png}
+    \caption{PLACEHOLDER HYSTERESIS GRAPH}
+    \label{fig:double choke sizing}
+\end{figure}
+\todo{make graph better, not excel and calibrate}
+The discontinuities at 10 and 35 seconds are due to me accidentally shutting off the gas supply.
 
-\section{Static LSP validation}
+The present type of thrust stand is therefore inadequate for future thrust tests. A different type of thrust stand (e.g. a rotating arm), should be built to measure thrust repeatably.
 
-    \subsection{Improving V2's static LSP configuration}
-
-        [Flat plate -> interim solution aluminum paper, then steel cylinder but can't align.-> needed window, damaged window -> designed window with extension \todo{validate extension}]
-
-        % flat plate with aluminum damage
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2 test damage.jpg}
-            \caption{Damage to the flat rear plate of the thruster after two \qty{3}{kW} laser shots. The black sheet is laser-absorbing ADD PART NUMBER aluminum foil, used in a failed attempt to protect the rear plate from damage.}
-        \end{figure}
-
-        \subsubsection{Window extension tube - discussion}
-        
-        After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that 
-
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics[width=0.5\textwidth]{assets/4 experiments/window damage.jpg}
-            \caption{Rear window damage on V2}
-        \end{figure}
-
-        The solution chosen was to manufacture a window extension tube, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen.
-
-        [drawing of extension tube, calculations of laser flux]
-
-\section{Cold flow thrust tests}
-
-    \subsection{Cold flow test friction HYSTERESIS}
-
-        [FRICTION HYSTERESIS PROBLEMS: TO DISCUSSION] To correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). Lubricant was also added to the cart's bearings. However, the issue remained.
-
-        Here are some results of the cold flow tests with the new load cell. Here, I did multiple firings with a 200g preload. We didn't calibrate the load cell, as we just want to look at hysteresis. What we see is that sometimes the final thrust is higher than the initial thrust, sometimes it's the other way around. According to me, this is due to the friction in the rail stopping the thruster from resetting at the same place every time. When we get to doing thrust tests with LSP, we'll do a few and average them. At least the initial increase looks fairly repeatable.
-        Going forward, I think the only way to get really nice thrust data would be to use a rotating arm thrust stand. To be done after I finish the thesis! \todo{edit this to read more academic}
-
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.8\linewidth]{assets/5 discussion/hysterisis.png}
-            \caption{PLACEHOLDER HYSTERESIS GRAPH}
-            \label{fig:double choke sizing}
-        \end{figure}
-
-        \todo{make graph better, not excel and calibrate}
-
-        The discontinuities at 10 and 35 seconds are due to me accidentally shutting off the gas supply.
-
-        The present type of thrust stand is therefore inadequate for future thrust tests. A different type of thrust stand (e.g. a rotating arm), should be built to measure thrust in a repeatable manner.
-
-    \subsection{Effective throat area - discussion}
-            
-        With the cold flow thrust tests completed, the effective throat area, $A^*$, was determined to be \qty{3.46e-8}{m^2}, or a diameter of \qty{0.21}{mm}. Although the throat was physically measured to be \qty{0.8}{mm} in diameter (a 20G pin could pass through it), boundary layer effects at this size greatly reduce the effective throat area.
-
-        Indeed, the effective
-
-        [Add Reynolds number at throat? -> calculation]
-
-        [ADD SAAD BLOWDOWN DISCUSSION]
-
-        [CITE 2 ASME STUDIES]
-
-    \subsection*{Other stuff}
-
-\section{Flowing QCW LSP discussion}
-
-    \subsection{New nozzle design}
-
-    Attempts at pulsed LSP initiation with the original nozzle gave 
-
-    \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{assets/5 discussion/Nozzle ablation.png}
-        \caption{Nozzle ablation during flowing test}
-        \label{fig:nozzle ablation}
-    \end{figure}
-
-    \autoref{fig:nozzle ablation} shows nozzle ablation during a QCW flowing test. No LSP was initiated, however a plasma trail can be seen exiting the nozzle. This plasma was generated by nozzle ablation, proving that this experiment can operate as a laser ablation thruster. This unfortunately not what the thruster was designed for. \todo{Looking at the video from the last shot (no electrodes, so no LSP), we do have a plasma-powered rocket engine!  It's just that it's an ablation plasma, not the kind we want}
-
-    \textcite{toyodaThrustPerformanceCW2002} uses a refractory metal, tungsten, as the nozzle material. Other possibilites were: machinable cermaics (expensive on McMaster!), stainless steel. Graphite was chosen because it is already used for model rockets and is economical. However, it is messy when you machine it \todo{Refer to lit review article when talk about graphite nozzle, which study we base ourself on to choose a graphite nozzle}
-
-    \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{assets/4 experiments/Nozzle damage.jpg}
-        \caption{Nozzle laser damage}
-    \end{figure}
-
-    To solve the ablation of the aluminum nozzle under pulsed laser shots, the V2 thruster inner cylinder was modified, and a new backplate was manufactured to accept graphite nozzle inserts. These inexpensive, changeable inserts are made from superfine iso-molded graphite rods sourced from Graphitestore (0.500" diameter x 12"L, SKU GT001685).
-
-    [image of drawing highlighting changes to inner cylinder], other parts that were made.
+% QCW LSP thrust tests with V2:
+Initial QCW LSP (hot fire) thrust tests aimed to determine if QCW LSP, initiated by a spark in flowing argon, was possible with V2, and if usable thrust data could be collected. It was shown that LSP could be initiated, and a change of thrust was measured, but this was due to nozzle ablation in all cases. \autoref{fig:nozzle ablation} shows nozzle ablation during a QCW flowing test, with \autoref{fig: Nozzle laser damage} showing the damage to the nozzle afterward. No LSP was initiated in this test, however a plasma trail can be seen exiting the nozzle. This plasma was generated by nozzle ablation, proving that this experiment can operate as a laser ablation thruster. This was not what the thruster was designed for, and lead to a redesign of the V2 nozzle.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.45\textwidth]{assets/4 experiments/Nozzle damage.jpg}
+    \caption{Nozzle laser damage}
+    \label{fig:Nozzle laser damage}
+\end{figure}
+To solve the ablation of the aluminum nozzle under pulsed laser shots, a new backplate was manufactured to accept nozzle inserts. \textcite{toyodaThrustPerformanceCW2002} use a refractory metal, tungsten, as the nozzle material. Other possibilities are machinable ceramics, stainless steel or graphite. Graphite was chosen as it was already used by \textcite{} \todo{Refer to lit review article when talk about graphite nozzle, which study we base ourselves on to choose a graphite nozzle} and is economical. These inexpensive, changeable inserts were made from superfine iso-molded graphite rods sourced from Graphitestore (0.500" diameter x 12"L, SKU GT001685). V2's inner cylinder was also re-machined (\autoref{chp:remachined inner cylinder}) to guarantee a seal with the new nozzle.
 
 % New parts that were made and why?
     % Nozzle/retaining plate
     % Window extension
     %  NPT fitting to calculate m_dot in bubble meter
-Due to machining delays however, these final parts were not tested. 
+% Due to machining delays however, these final parts were not tested. 
 
 % Future work:
 % - Validate that window extension works

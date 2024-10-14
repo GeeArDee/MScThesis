@@ -6,9 +6,9 @@
 
         \subsection{Going from QCW to CW LSP}
                 
-            Due to the low continuous laser power compared to experiments in the literature, increasing the laser flux with small a focus is critical.
+            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with small a focus is critical.
 
-            Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculate the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. Secondly, this equation \cite{LaserSpotSize} can be used: (ideal?)
+            Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculates the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. Secondly, this equation \cite{LaserSpotSize} can be used: (ideal?)
             
             \[
             \text{Spot size}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
@@ -34,17 +34,11 @@
                 \end{tabularx}
             \end{table}
 
-            It was considered that a magnitude reduction in diameter of the focus was satisfying to move forward with experimentally. Why? Rationale for why we brought down the power: power density. If we have 3kw, and an optic that focusses 1, if we want 300w we need optic that focusses 10x better (to get same laser density). Even better optics would be aspherics, but cost a lot approx 500 usd, \todo{find lens thorlabs}.
+            It was considered that a magnitude reduction in diameter of the focus was satisfying to move forward with experimentally. Why? Rationale for why we brought down the power: laser flux. If we have 3kw, and an optic that focuses 1, if we want 300w we need optic that focuses 10x better (to get same laser flux). Even better optics would be aspheric lens, but cost a lot approx 500 usd, \todo{find lens thorlabs}.
 
             (Maybe compare with minimum maintenance intensity of previous literature)
 
-            In a two element system, the longest focal length lens should be placed first, as the diameter of the beam entering the second lens is maximized. However, it is placed after here because it is impossible to mount before. The difference in spot size is acceptable. [maybe compare?]
-
-            Practical considerations for experiments are the following. When aligning the laser with the red visible guide beam, chromatic abberations [\dots] \cite{hechtUnderstandingLasersEntry2019}.
-
-            The LSP will also be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the initiation system. [does this change with flowing LSP?]
-
-    
+            In a two element system, the longest focal length lens should be placed first, as the diameter of the beam entering the second lens is maximized. However, it is placed after here because it is impossible to mount before. The difference in spot size is minimal. A practical consideration for the experiments is that the LSP will be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the initiation system.
 
         \subsection{V1 Bringing the pulsed power down and optical design} \label{sec:pulse_power_down_V1}
 
@@ -251,7 +245,7 @@
                 \caption{Pressure rise with PCB transducer}
             \end{figure}
 
-            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test, suggesting that the LSP absorbed a portion of the laser energy.
+            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test.
 
         \subsection{CW power measurement}
 
@@ -267,7 +261,7 @@
                 \caption{Shattered \qty{500}{mm} focal length lens}
             \end{figure}
     
-            This test showed a \qty{316}{W} (?) max CW power.
+            This test showed a \qty{314}{W} max CW power.
     
             Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
 
@@ -287,11 +281,11 @@
             \end{table}
 
 
-    \section{Cold flow thruster characterisation}
+    \section{Cold flow thruster characterization}
 
         \subsection{Cold flow thrust tests}
 
-            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
+            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. %Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
 
             For thrust tests, pressure and thrust were recorded. \autoref{fig:20bar cold flow} shows a typical thrust and pressure curve for a chamber pressure of \qty{20}{bar}. Note that the thrust measurement does not return to the same value it was at initially.
 
@@ -302,7 +296,7 @@
                 \label{fig:20bar cold flow}
             \end{figure}
 
-            Next, cold flow thrust tests were completed at chamber pressures from \qtyrange{5}{35}{bar}. 5 were done for each nominal pressure in steps of \qty{5}{bar}, for a total of 35 tests \todo{cold flow thrust vs pressure relation graph needs Siera's 35 points}. A linear curve fit of the experimental results is presented in \autoref{fig:coldflow pressure-thrust}.
+            Next, cold flow thrust tests were completed at chamber pressures from \qtyrange{5}{35}{bar}. A linear curve fit of the experimental results is presented in \autoref{fig:coldflow pressure-thrust}.
 
             \begin{figure}[!ht]
                 \centering
@@ -311,13 +305,16 @@
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The empirical relation of thrust versus pressure is given by... \todo{insert relation here}.
+            The empirical relation of thrust versus pressure is given by:
+            \[
+            \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
+            \]
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
             To determine mass flow, \todo{Explain how we want to measure mass flow lol}
         
-            To characterise the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega \todo{part number} transducer.
+            To characterize the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega \todo{part number} transducer.
 
             \todo{In discussion, talk about the issue of nozzle A* being smaller with 5 papers from June 4th on slack.}
 
@@ -357,7 +354,7 @@
 
             The mass flow rate can then be derived by 
 
-            The following calibration results and calculations were taken from \autoref{chp:app Thariq} \todo{right way to cite this?}:
+            The following calibration results and calculations were taken from \autoref{chp:app Thariq}:
 
             \begin{table}[!ht]
                 \centering
@@ -379,7 +376,7 @@
 
         \subsection{Summary of results}
 
-            The following table presents a summary of the results determined from cold flow thruster characterisation.
+            The following table presents a summary of the results determined from cold flow thruster characterization.
 
             \begin{table}[!ht]
                 \centering
@@ -388,7 +385,7 @@
                 \begin{tabularx}{\textwidth}{XX}
                 \toprule
                 Characteristic                                          &     Value and unit          \\ \midrule
-                Needle valve A* under predicted experiment conditions   &     \qty{0.147e-6}{m^2}     \\
+                Needle valve A* with predicted experiment conditions   &     \qty{0.147e-6}{m^2}     \\
                 Nozzle A*                                               &     \qty{3.46e-8}{m^2}      \\
                 Internal volume of thruster in flowing configuration    &     \qty{9.68e-6}{m^3}      \\
                 Average cold flow thrust at 20 bar                      &     \qty{0.96}{N}           \\
@@ -396,11 +393,48 @@
                 \end{tabularx}
             \end{table}
 
+        
+
     \section{Initial QCW LSP thrust tests (hot fire)}
  
-            
-        Unfortunately, no thrust was measured. NEXT STEP WOULD BE TO TRY CW THRUST TEST, BUT WITH BETTER THRUST STAND CAUSE WE DIDN'T MEASURE ANYTHING WITH 10X THE POWER
-            
+        With V2 CW LSP achieved, and the cold flow thrust tests completed, initial QCW LSP thrust tests were attempted. The needle valve was not installed as it was not yet procured. 
+
+        \begin{figure}[!ht]
+            \centering
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/LSP314.pdf}
+                \caption{LSP314\_V2\_Flow3}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/LSP315.pdf}
+                \caption{LSP315\_V2\_Flow4}
+            \end{subfigure}
+            \caption{Two QCW thrust tests}
+            \label{fig:QCW LSP thrust tests}
+        \end{figure}
+
+        The thrust stand was unfortunately not calibrated before these tests. Thrust values should be closer to \qty{1}{N} according to previous cold flow data. Nonetheless, the QCW pulse changes the thrust in both cases, but in opposing directions. No concrete increase in thrust could be determined with the current V2 setup when the laser was on.
+
+        The following webcam frame (\autoref{fig:nozzle ablation}) was taken from the LSP315\_V2\_Flow4 \qty{3050}{W} QCW shot, with the electrodes unplugged so no LSP could be initiated. A plasma plume still left the nozzle and the noise of the flow changed once the laser was fired, indicating possible nozzle ablation.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.5\textwidth]{assets/5 discussion/Nozzle ablation.png}
+            \caption{Nozzle ablation during flowing test. LSP315\_V2\_Flow4.}
+            \label{fig:nozzle ablation}
+        \end{figure}
+
+        Further flowing tests confirmed that LSP could be initiated by a spark in flowing argon. The following frame (\autoref{fig:V2 Flowing LSP}) from the Photron SA5 shows LSP emission.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.5\textwidth]{assets/4 experiments/LSP321_V2_FLOW10.png}
+            \caption{V2 Flowing QCW LSP. LSP321\_V2\_Flow10.}
+            \label{fig:V2 Flowing LSP}
+        \end{figure}
 
         
 
