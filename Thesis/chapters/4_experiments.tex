@@ -265,6 +265,8 @@
     
             Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
 
+            \todo{Long duration lasing test: determine limits of V2 under max CW power: conclusion: lens cracked due to expansion. No optical damage of the glass was seen}
+
         \subsection{Summary of results}
 
             \begin{table}[!ht]
@@ -281,11 +283,11 @@
             \end{table}
 
 
-    \section{Cold flow thruster characterization}
+    \section{V2 Cold flow thruster characterization}
 
         \subsection{Cold flow thrust tests}
 
-            Cold flow tests (laser off) were completed to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. %Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
+            Cold flow tests (laser off) were completed with V2 to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. %Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
 
             For thrust tests, pressure and thrust were recorded. \autoref{fig:20bar cold flow} shows a typical thrust and pressure curve for a chamber pressure of \qty{20}{bar}. Note that the thrust measurement does not return to the same value it was at initially.
 
@@ -305,28 +307,39 @@
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The empirical relation of thrust versus pressure is given by:
+            The empirical relation of pressure versus thrust is given by:
             \[
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
 
+            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust. 
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\linewidth]{assets/5 discussion/hysterisis.png}
+                \caption{PLACEHOLDER HYSTERESIS GRAPH}
+                \label{fig:hysteresis}
+            \end{figure}
+            \autoref{fig:hysteresis} shows that sometimes the final thrust is higher than the initial thrust, and that sometimes it's the other way around. The discontinuities at \qtylist{10,35}{s} are due to the accidental shutoff of the gas supply.
+
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
-            To determine mass flow, \todo{Explain how we want to measure mass flow lol}
+            To determine the mass flow rate $\dot{m}$ of the thruster, \todo{A flow meter was not used because we did not have one} sonic isentropic flow at the nozzle throat is assumed. The following equation can then be used:
+            \begin{equation}
+                \dot{m} = \frac{A^* p}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^(\frac{-\gamma + 1}{2(\gamma-1)})
+            \end{equation}
+            Where $A^*$, the nozzle effective sonic area, is an unknown, $p$ is pressure, $T$ is temperature, $\gamma$ is the specific heat ratio, and $R$ is the gas constant.
         
-            To characterize the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega \todo{part number} transducer.
-
-            \todo{In discussion, talk about the issue of nozzle A* being smaller with 5 papers from June 4th on slack.}
+            To characterize the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was undertaken based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega transducer.
 
             The internal volume of the V2 thruster in flowing configuration was determined by weighing it before and after it was filled with isopropyl alcohol. Using a density of \qty{785.09}{kg/m^3}, the volume was found to be \qty{9.68e-6}{m^3}, or \qty{9.68}{ml}.
 
-            The following expression for the pressure-time history \todo{change this wording} of a choked orifice flow \cite{saadCompressibleFluidFlow} was then implemented in Python. As the time scale is short (less than 10 seconds), the process is considered adiabatic and the isentropic case is used:
+            The following expression for the pressure-time history of a blow down choked orifice flow \cite{saadCompressibleFluidFlow} was then implemented in Python. As the timescale is short (less than 10 seconds), the process is considered adiabatic, and the isentropic case is used:
 
             \begin{equation}
                 t =  \frac{-2V \left[\left(\frac{p(t)}{p_i}\right)^{(1-\gamma) / 2\gamma}\right]}{(1-\gamma) R \sqrt{T} A \sqrt{\frac{\gamma}{R}(\frac{2}{\gamma + 1})^{(\gamma+1) / (\gamma-1)}}}
             \end{equation}
 
-            Where $t$ is time, $p(t)$ is the absolute pressure in the system at time $t$, $p_i$ is the initial absolute pressure in the system, $V$ is the volume of the V2 thruster and tubing after the valve, $T$ is temperature, $A$ is the area of the nozzle's throat. \todo{add volume of tubing} With this equation, the absolute pressure in bar was plotted versus time in seconds for different values of $A$, with a specific heat ratio $\gamma$ of 1.67, a temperature of \qty{300}{K}, and an R of \qty{208.13}{J/kg*K} (see \autoref{fig:saad blowdown}). An experimental pressure curve was also overlayed, similar to \autoref{fig:20bar cold flow}, but cut to only show the decrease in pressure right after the gas feed valve is closed. The time at which this valve is closed is defined as $t=0$.
+            Where $t$ is time, $p(t)$ is the absolute pressure in the system at time $t$, $p_i$ is the initial absolute pressure in the system, $V$ is the volume of the V2 thruster and tubing after the valve, $T$ is temperature, $A$ is the area of the nozzle's throat. With this equation, the absolute pressure in bar was plotted versus time in seconds for different values of $A$, with a specific heat ratio $\gamma$ of 1.67, a temperature of \qty{300}{K}, and an R of \qty{208.13}{J/kg*K} (see \autoref{fig:saad blowdown}). An experimental pressure curve was also overlayed, similar to \autoref{fig:20bar cold flow}, but cut to only show the decrease in pressure right after the gas feed valve is closed. The time at which this valve is closed is defined as $t=0$.
 
             \begin{figure}[!ht]
                 \centering
