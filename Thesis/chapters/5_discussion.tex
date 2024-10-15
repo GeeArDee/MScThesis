@@ -3,9 +3,18 @@
 \todo{What was improved and why? DISCUSS OVERALL! Talk about why we got new parts for V2, limitations of current apparatus and future directions}
 
 % why do we prefer spark ignition
-This project was started on the heels of \textcite{duplayArgonLaserPlasmaThruster2024a}, with the V1 test section using wire initiation during summer 2023. Spark initiation is preferred for a few reasons. First, there would be no solid object blocking the beam path. This would allow the power meter to measure the energy that was not absorbed by the plasma, which is the first efficiency considered in\todo{Link to intro?}. Second, replacing the target wire is a time-consuming process that was conducted every 1–3 shots, requiring the test section to be re-pressurized. Indeed, spark initiation would allow a much higher shot rate. Third, when conducting flowing experiments, the wire could be moved out of the focus by the flowing argon. Finally, the wire prevents the downstream propagation of the plasma by being physically in the way.
+This project was started on the heels of \textcite{duplayArgonLaserPlasmaThruster2024a}, with the V1 test section using wire initiation during summer 2023. Spark initiation is preferred for a few reasons. First, there would be no solid object blocking the beam path. This would allow the power meter to measure the energy that was not absorbed by the plasma. Second, replacing the target wire is a time-consuming process that was conducted every 1–3 shots, requiring the test section to be re-pressurized. Indeed, spark initiation would allow a much higher shot rate. Third, when conducting flowing experiments, the wire could be moved out of the focus by the flowing argon. Finally, the wire prevents the downstream propagation of the plasma by being physically in the way.
 
-With V1, spark initiation was first attempted with an initiation plug that could fit into a single port \todo{photo}. The electrodes were side by side. However, the spark was created at a different height every time between the parallel electrodes. Using opposing electrodes would ensure that their tips were the closest point to each other, greatly increasing spatial repeatability of the spark and enabling the electrode gap length to be easily adjusted. Opposing ports were drilled into the bottom of the V1 apparatus to fit an electrode through the top and one through the bottom, seen in \autoref{fig: V1 opposing ports} \todo{photo of electrode plugs}.
+With V1, spark initiation was first attempted with an initiation plug that could fit into a single port, seen in \autoref{fig: V1 single plug electrodes}. The electrodes were side by side. However, the spark was created at a different height every time between the parallel electrodes.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/5 discussion/V1 single plug electrode.jpg}
+    \caption{V1 single plug electrodes}
+    \label{fig: V1 single plug electrodes}
+\end{figure}
+
+Using opposing electrodes would ensure that their tips were the closest point to each other, greatly increasing spatial repeatability of the spark and enabling the electrode gap length to be easily adjusted. Opposing ports were drilled into the bottom of the V1 apparatus to fit an electrode through the top and one through the bottom, seen in \autoref{fig: V1 opposing ports} \todo{photo of electrode plugs}.
 
 \begin{figure}[!ht]
     \centering
@@ -15,8 +24,6 @@ With V1, spark initiation was first attempted with an initiation plug that could
 \end{figure}
 
 \todo{talk about seeding with NO2?}
-
-%% % In addition to this, the synchronization of the spark and the laser was found to be lacking.
 
 % Coil burnout
 Another critical issue was that of coil burnout. 5 coils were damaged to the point that they could no longer create a strong enough spark across the spark gap. A contributing factor could have been the poor electrode retention of the Ultra-Torr fittings, as \qty{20}{bar} of gas could visibly push the electrodes away \qtyrange{1}{2}{mm}. An increase in the spark gap increases its resistance, putting a higher load on the coil. Another concern was electromagnetic interference between the coil and its power supply. Originally in the same box, the \qty{10}{A} current-limited power supply and the smart coil were placed in separate electrical boxes. Quad shielded coaxial cable was used between the coil, and it's controlling delay generator as an additional precaution. 
@@ -74,13 +81,20 @@ The black sheet in \autoref{fig:initial V2 static config} is Thorlabs laser-abso
 The laser power was brought down until \todo{talk about POWER-DISTANCE GRAPH}. Once a 13\% power \todo{put this in W} LSP was initiated reliably, our first 100\% power (\qty{314}{W}) CW LSP was generated for \qty{85.1}{ms}, a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms}. While these results are encouraging, more experiments with CW laser operation must be completed to determine if lifetimes can be extended to an order of magnitude more, i.e. around one second. This would greatly help with measuring a difference in thrust when the laser is on.
 
 % Damage to window and extension tube
-After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window. Eventually, a \qty{3}{s} CW shot melted it severely enough that visual laser alignment between the electrodes of V2 was no longer possible.
+After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window, as seen in \autoref{fig:Rear window damage}. Eventually, a \qty{3}{s} CW shot melted it severely enough that visual laser alignment between the electrodes of V2 was no longer possible.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.5\textwidth]{assets/4 experiments/window damage.jpg}
     \caption{Rear window damage on V2}
+    \label{fig:Rear window damage}
 \end{figure}
-A window extension tube (\autoref{chp:Extension cylinder}) was manufactured to solve this, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen. This extension tube has yet to be tested.
+A window extension tube (seen in \autoref{fig: window extension tube}, drawings in \autoref{chp:Extension cylinder}) was manufactured to solve this, moving the rear window downstream to where the laser flux density is comparable to the front window, where no damage was seen. This extension tube has yet to be tested.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/5 discussion/Extension cylinder.jpg}
+    \caption{Window extension tube}
+    \label{fig: window extension tube}
+\end{figure}
 
 % Cold flow thruster characterisation, hysterisis discussion
 In parallel to the static LSP validation, characterization of the thruster with argon cold flow was advanced. High hysteresis of the thrust measurements was found, with the thrust stand often not returning to its original zero after a cold flow test. To attempt to correct these problems, a more sensitive load cell was installed with a \qtyrange{0}{5}{N} force sensing range (Honeywell FSG005WNPB). Lubricant was also added to the cart's bearings. However, the issue remained (see \autoref{fig:hysteresis}) due to high friction between the rail and the ball bearing carriage preventing the thruster from resetting at the same place every time. The present type of thrust stand is therefore inadequate for future thrust tests. A different type of thrust stand (e.g. a rotating arm), should be built to measure thrust repeatably and reliably.
@@ -99,7 +113,7 @@ To solve the ablation of the aluminum nozzle under pulsed laser shots, a new bac
     % Nozzle/retaining plate
     % Window extension
     %  NPT fitting to calculate m_dot in bubble meter
-% ADD IMPORTANT: Due to machining delays however, these final parts were not tested. 
+% ADD IMPORTANT: Due to machining delays however, these final parts were not tested.
 
 % Future work:
 % - Validate that window extension works

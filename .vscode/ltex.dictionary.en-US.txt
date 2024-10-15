@@ -54,3 +54,6 @@ paraxial
 FOVs
 Graphitestore
 remachined
+PowerXND-II
+Hoya
+kV

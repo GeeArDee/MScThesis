@@ -158,7 +158,7 @@
                     \caption{Final flowing configuration. The nozzle is held by the rear plate.}
                 \end{subfigure}
                 \caption{V2 LTP thruster}
-                \label{fig:V2 setup}
+                \label{fig:V2 IRL setup}
             \end{figure}
 
             The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) mounted on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). It is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell, and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
@@ -206,7 +206,7 @@
 
         \subsection{Data acquisition (DAQ) system and oscilloscope}
 
-            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used: [PCB Model 113B28 (?) and OMEGA]
+            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used: a PCB Model 113B28 and an OMEGA PX119A-1KG5V.
 
             \begin{figure}[!ht]
                 \centering
@@ -219,13 +219,7 @@
 
         \subsection{Cameras}
 
-            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted.
-            
-            %Due to the fact that no side window was present on V2, the Photron SA 5 high speed camera looking into the core of the thruster was used to validate.
-
-            %\todo{Photo of Photron looking into thruster at angle}
-
-            During LSP shots, the camera's sensor was protected by an adjustable neutral-density (ND) filter and a UV-cut filter \todo{part number, add wavelength}.
+            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to the fact that no side window was present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's sensor was protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
 
             A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an extra confirmation that the laser emission was off before opening the laser safety curtain.
 
