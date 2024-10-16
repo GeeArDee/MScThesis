@@ -6,7 +6,7 @@
 
         \subsection{Going from QCW to CW LSP}
                 
-            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with small a focus is critical.
+            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical.
 
             Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculates the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. Secondly, this equation \cite{LaserSpotSize} can be used: (ideal?)
             
@@ -14,11 +14,31 @@
             \text{Spot size}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
             \]
 
-            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \cite{hechtUnderstandingLasersEntry2019}. 
+            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \cite{hechtUnderstandingLasersEntry2019}.
             
             The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}.
 
             The following spot diagrams were produced with WinLens. Note the difference in scales and spacing used throughout.
+            \begin{figure}[!ht]
+                \centering
+                \begin{subfigure}[t]{\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/3 design/100 lens spot diagram.png}
+                    \caption{100 lens}
+                \end{subfigure}
+                \begin{subfigure}[t]{\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/3 design/125 lens spot diagram.png}
+                    \caption{125 lens}
+                \end{subfigure}
+                \begin{subfigure}[t]{\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/3 design/500 and 150 lenses spot size.png}
+                    \caption{150 and 500 lens}
+                \end{subfigure}
+                \caption{Spot diagrams of the three lens systems studied}
+                \label{fig:spot diagrams}
+            \end{figure}
 
             \begin{table}[!ht]
                 \centering
@@ -42,7 +62,7 @@
 
         \subsection{V1 Bringing the pulsed power down and optical design} \label{sec:pulse_power_down_V1}
 
-            Pulsed shots at lower power levels revealed a difficulty to initiate the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{350}{W}. A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
+            Pulsed shots at lower power levels revealed a difficulty to initiate the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
             
             To obtain LSP initiation, a high enough laser flux is needed. With a fixed power, it is necessary to focus the laser down to the smallest area possible to get the highest flux. Quantifying the diameter of this focus was therefore the first step. 
 
@@ -82,15 +102,9 @@
 
             % Section on power meter reading lower pulsed power at these low power settings, like about 200W
 
-            The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with flowing argon.
+            %Not true: The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with flowing argon.
 
         \subsection{V2 Bringing the pulsed power down, again}
-
-            To prevent the damage to the thruster seen previously, a rear window mount was manufactured. This allows the laser energy that is not absorbed to pass freely through the apparatus, also enabling power meter measurements. 
-            
-            % Photo of rear window mount and damaged window
-
-            As can be seen above, the window suffered laser damage after this round of testing. However, this damage proved minor as the window was used to align the laser focus with the spark gap, not to measure power absorption.
             
             The following figure presents the LSP initiation attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
 
@@ -100,7 +114,7 @@
                 \caption{LSP threshold graph for V2}
             \end{figure}
 
-            The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (see \autoref{label})
+            The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average value (J) by the pulse duration (\qty{50}{ms}).
 
             \begin{table}[!ht]
                 \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
@@ -112,12 +126,12 @@
                 Minimum value {[}J{]}  & 9.63  & 12.0  \\
                 RMS Stability {[}\%{]} & 1.690 & 2.811 \\
                 PTP Stability {[}\%{]} & 5.599 & 10.31 \\
-                Average power {[}W{]}  & 0.490 & 1.14  \\
-                Std deviation {[}J{]}  & 0.169 & 0.362 \\ \hline
+                Std deviation {[}J{]}  & 0.169 & 0.362 \\
+                Average power {[}W{]}  & 200 & 258  \\ \hline
                 \end{tabular}
             \end{table}
             
-            At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}. This validated that the
+            At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
     \section{Static LSP validation}
 
@@ -134,8 +148,7 @@
                 \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
             \end{figure}
             
-            Using the thickness of the electrode as a reference, the spark gap is XX mm and the spark is X mm thick. \todo{measure distance with thickness of electrode}
-            The spark is \todo{measure this too} X mm thick.
+            Using the thickness of the electrode as a reference, the spark gap is XX mm high and the spark is X mm thick. \todo{Measure distance with thickness of electrode.}
             
             % Link between the two
             As the spark was recorded by the high speed camera, timing data was also collected for the spark.
