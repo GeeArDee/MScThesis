@@ -5,20 +5,69 @@
     \section{Optical design}
 
         \subsection{Going from QCW to CW LSP}
-                
-            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical.
 
-            Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculates the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. Secondly, this equation \cite{LaserSpotSize} can be used: (ideal?)
+            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W). 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
+
+            \begin{table}[!ht]
+                \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
+                \label{tab:laser shot statistics}
+                \begin{tabular}{lll}
+                \textbf{Value {[}Unit{]}} & \textbf{10x 50 ms shots at 10\% power} & \textbf{10x 50 ms shots at 12\% power} \\ \hline
+                Average energy value {[}J{]}  & 9.985 & 12.89 \\
+                Maximum energy value {[}J{]}  & 10.2  & 13.3  \\
+                Minimum energy value {[}J{]}  & 9.63  & 12.0  \\
+                RMS Stability {[}\%{]} & 1.690 & 2.811 \\
+                PTP Stability {[}\%{]} & 5.599 & 10.31 \\
+                Std deviation {[}J{]}  & 0.169 & 0.362 \\
+                Average power {[}W{]}  & 200 & 258  \\ \hline
+                \end{tabular}
+            \end{table}
             
-            \[
-            \text{Spot size}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
-            \]
+            At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
-            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \cite{hechtUnderstandingLasersEntry2019}.
+            %first V1 test
+            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
+
+            At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C lens, \qty{125}{mm} focal length) was used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the laser focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
+                \caption{125 mm focal length lens}
+                \label{fig: 125mm focus threshold}
+            \end{figure}
+            \todo{interpret graph, talk about way forward} Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation \todo{add to this} reliability.
+
+            Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculates the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and shows the path of these rays at the focus. 
             
-            The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}.
+            \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the diameter at the focus:
+            
+            \begin{equation}\label{eqn: spot diameter}
+                \text{Spot diameter}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
+            \end{equation}
 
-            The following spot diagrams were produced with WinLens. Note the difference in scales and spacing used throughout.
+            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a multi-lens system can lower the beam diameter at focus.
+            
+            For a multi-lens system, the spot diameter must be calculated numerically with ray tracing software. WinLens3D Basic was used to simulate the spot size of the both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
+            \begin{figure}[!ht]
+                \centering
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/125lens.pdf}
+                    \caption{\qty{125}{mm} focal length lens}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/500 and 150 lenses.pdf}
+                    \caption{Dual-lens \qtylist{500;150}{mm} system}
+                \end{subfigure}
+                \caption{Model of the lenses showing paraxial rays and focus}
+                \label{fig:modeled lenses}
+            \end{figure}
+
+            With a dual-lens system, the longest focal length lens should be placed first in this case, as the diameter of the beam entering the second lens is maximized. This would lead to a tighter focus. However, it was placed after as it was impossible to mount before with the available mounting hardware. The difference in spot size is minimal. A practical consideration for the experiments is that the LSP will be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the initiation system.
+
+            \autoref{fig:spot diagrams} presents the spot diagrams that were then produced with WinLens3D. Note the difference in scales and spacing used throughout.
             \begin{figure}[!ht]
                 \centering
                 \begin{subfigure}[t]{\textwidth}
@@ -39,99 +88,35 @@
                 \caption{Spot diagrams of the three lens systems studied}
                 \label{fig:spot diagrams}
             \end{figure}
-
+            From these three spot diagrams, the average laser flux at \qtylist{342}{W} was calculated (see \autoref{tab:laser flux}). It is assumed that the laser energy is evenly distributed in a circle the size of the farthest ray from the center.
             \begin{table}[!ht]
                 \centering
-                \caption{Simulated focal length and spot diameter of various lens assemblies in WinLens3D. Laser flux is also calculated for \qty{300}{W} of incident power}
+                \caption{Simulated focal length and spot diameter of various lens assemblies in WinLens3D. The average laser flux is calculated for \qty{342}{W} of incident power}
                 \label{tab:laser flux}
                 \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}@{}}
                 \toprule
-                Lens & Nominal focal length (\unit{mm}) & Focal length at \qty{1070}{nm} (\unit{mm})& Beam diameter at focus (\unit{mm}) & Laser flux at \qty{300}{W} (\unit{W/cm^2}) \\ \midrule
-                Single & 125           &  122   &    0.0863 ?  0.20?     &  \\
-                Single & 100           &  93   &    0.20   &  \\
-                Double & 500, 150      &  110    &    0.08   &  \\
+                Lens & Nominal focal length (\unit{mm}) & Focal length at \qty{1070}{nm} (\unit{mm})& Beam diameter at focus (\unit{mm}) & Average laser flux at \qty{342}{W} (\unit{MW/cm^2}) \\ \midrule
+                Single & 125           &  122  &    0.20   &  1.09 \\
+                Single & 100           &  93   &    0.15   &  1.94 \\
+                Double & 500, 150      &  110  &    0.08   &  6.80 \\ %calculations for this in C:\Users\gdub5\Documents\WinLens Files
                 \bottomrule
                 \end{tabularx}
             \end{table}
-
-            It was considered that a magnitude reduction in diameter of the focus was satisfying to move forward with experimentally. Why? Rationale for why we brought down the power: laser flux. If we have 3kw, and an optic that focuses 1, if we want 300w we need optic that focuses 10x better (to get same laser flux). Even better optics would be aspheric lens, but cost a lot approx 500 usd, \todo{find lens thorlabs}.
-
-            (Maybe compare with minimum maintenance intensity of previous literature)
-
-            In a two element system, the longest focal length lens should be placed first, as the diameter of the beam entering the second lens is maximized. However, it is placed after here because it is impossible to mount before. The difference in spot size is minimal. A practical consideration for the experiments is that the LSP will be formed upstream of the laser focus when there is no gas flow. Therefore, the focus needs to be slightly after the initiation system.
-
-        \subsection{V1 Bringing the pulsed power down and optical design} \label{sec:pulse_power_down_V1}
-
-            Pulsed shots at lower power levels revealed a difficulty to initiate the LSP below \qty{20}{\%} power, which corresponds to about \qty{620}{W}. This poses a problem, as the maximum CW power of the laser is significantly lower, at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
-            
-            To obtain LSP initiation, a high enough laser flux is needed. With a fixed power, it is necessary to focus the laser down to the smallest area possible to get the highest flux. Quantifying the diameter of this focus was therefore the first step. 
-
-            %Section on quantifying diameter, laser optics basics (email from thorlabs guy)
-
-            For a multi-element system, the spot diameter must be calculated numerically with ray tracing software. WinLens 3D Basic was used here, as it is free and powerful enough for this application. The single element system was also simulated in this software to verify the calculations.
-
-            Now that the diameter of the focus is known, two avenues are possible to improve it: a shorter focal length or a multi-lens system \cite{LensTutorial}. At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C lens, \qty{125}{mm} focal length ) was used, as it was the simpler option. During these shots, the goal was to achieve LSP initiation at or below \qty{11}{\%} pulsed power, or \qty{340}{W}. The following graph shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
-            
-            % Graph of 125mm lens
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/125lens.pdf}
-                \caption{125 mm focal length lens}
-            \end{figure}
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
-                \caption{125 mm focal length lens}
-            \end{figure}
-            
-            Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation reliability.
-
-            % Graph of multi-lens
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/500 and 150 lenses.pdf}
-                \caption{Multi-lens system}
-            \end{figure}
+            The LSP experiments were continued with this double lens system, as it offers a 6.25 times increase of the laser flux compared to the single \qtylist{125}{mm} focal length lens. To increase the laser flux even more, an aspheric lens of comparable focal length could be used.
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/duallens_focus_threshold.pdf}
-                \caption{Multi-lens system}
+                \caption{LSP threshold graph for V1 with double lens system}
             \end{figure}
-
-            % Section on power meter reading lower pulsed power at these low power settings, like about 200W
-
-            %Not true: The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with flowing argon.
-
-        \subsection{V2 Bringing the pulsed power down, again}
             
-            The following figure presents the LSP initiation attempts with focus distance, similarly to the graphs presented in \autoref{sec:pulse_power_down_V1}.
-
+            The following figure presents the QCW LSP initiation attempts in V2 with focus distance. \qty{20}{bar} of argon was used for these shots.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
                 \caption{LSP threshold graph for V2}
             \end{figure}
-
-            The real amount of power in the pulsed shots was also measured to validate the \qty{11}{\%} threshold quoted previously. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average value (J) by the pulse duration (\qty{50}{ms}).
-
-            \begin{table}[!ht]
-                \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
-                \label{tab:laser shot statistics}
-                \begin{tabular}{lll}
-                \textbf{Value {[}Unit{]}} & \textbf{10x 50 ms shots at 10\% power} & \textbf{10x 50 ms shots at 12\% power} \\ \hline
-                Average value {[}J{]}  & 9.985 & 12.89 \\
-                Maximum value {[}J{]}  & 10.2  & 13.3  \\
-                Minimum value {[}J{]}  & 9.63  & 12.0  \\
-                RMS Stability {[}\%{]} & 1.690 & 2.811 \\
-                PTP Stability {[}\%{]} & 5.599 & 10.31 \\
-                Std deviation {[}J{]}  & 0.169 & 0.362 \\
-                Average power {[}W{]}  & 200 & 258  \\ \hline
-                \end{tabular}
-            \end{table}
-            
-            At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}, lower than the expected \qty{300}{W} For \qty{12}{\%}. This revealed a higher power threshold, in terms of percentage, than previously thought. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}.
+            The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with static argon.
 
     \section{Static LSP validation}
 
@@ -332,7 +317,7 @@
                 \caption{PLACEHOLDER HYSTERESIS GRAPH}
                 \label{fig:hysteresis}
             \end{figure}
-            \autoref{fig:hysteresis} shows that sometimes the final thrust is higher than the initial thrust, and that sometimes it's the other way around. The discontinuities at \qtylist{10,35}{s} are due to the accidental shutoff of the gas supply.
+            \autoref{fig:hysteresis} shows that sometimes the final thrust is higher than the initial thrust, and that sometimes it's the other way around. The discontinuities at \qtylist{10;35}{s} are due to the accidental shutoff of the gas supply.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
