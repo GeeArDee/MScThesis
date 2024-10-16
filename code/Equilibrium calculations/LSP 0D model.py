@@ -148,7 +148,7 @@ for p in P:
 plt.xlim(0, 1)
 plt.legend(['0.1 bar', '1 bar', '10 bar'])
 plt.xlabel('x (degree of dissociation)')
-plt.ylabel('G (MJ)')
+plt.ylabel('G (kJ/mol)')
 plt.savefig('../../Thesis/assets/2 models/Gibbs.pdf')
 
 # %% 4) Solve, minimizing gibbs energy with Argon
@@ -226,7 +226,7 @@ def cp_mix_mass_take2(T, P):  # Cp in J/(kg*K)
 
 
 # temperature in K, change 1000 to 100 for smooth curve
-T = np.arange(1000, 20001, 1000, dtype=float)
+T = np.arange(1000, 20001, 100, dtype=float)
 P = np.array([0.1e5, 1e5, 10e5])  # pressure in Pa
 h_results = np.zeros((np.size(T), np.size(P)))
 cp_results = np.zeros((np.size(T), np.size(P)))
@@ -323,17 +323,18 @@ plt.figure()
 plt.plot(T, cp_take2)
 
 plt.xlabel('Temperature (K)')
-plt.ylabel('Cp')
-
+plt.ylabel('Cp (kJ/kg-K)')
+plt.xlim(0,20000)
+plt.ylim(0,14000)
 
 # Add Higgins and CEA datapoints to plot
-plt.plot(CEA_temp, CEA_cp, 'o')
+plt.plot(CEA_temp, CEA_cp, '.')
 
-plt.legend(['0.1 bar', '1 bar', '10 bar', 'CEA data'])
+plt.legend(['0.1 bar', '1 bar', '10 bar', 'CEA data at 0.1 bar','CEA data at 1 bar','CEA data at 10 bar'])
 # plt.plot(Higgins_temp, Higgins_cp, 'o')
 
 # UNCOMMENT TO OVERWRITE FANCY SMOOTH FIG
-#plt.savefig('../../Thesis/assets/2 models/Cp_compare.pdf')
+# plt.savefig('../../Thesis/assets/2 models/Cp_compare.pdf')
 
 # %% 5)Test problems for heat addition part 2, variable cp
 
