@@ -2,9 +2,101 @@
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the propellant in all cases, due to its low cost, safety and ease of ionization.
 
-    \section{Optical design}
+    \section{Static LSP validation}
 
-        \subsection{Going from QCW to CW LSP}
+        \subsection{V1 LSP spark initiation}
+
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time.
+
+            % Align in space
+            To resolve the spark in the y and z planes (radially) \todo{define this}, the Photron SA5 camera without lens filters was placed in front of the V1 test section, looking in axially. This would be the point of view of the laser beam had it been installed. 
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Composite photo spark.png}
+                \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
+            \end{figure}
+            
+            Using the thickness of the electrode as a reference, the spark gap is XX mm high and the spark is X mm thick. \todo{Measure distance with thickness of electrode.}
+            
+            % Link between the two
+            As the spark was recorded by the high speed camera, timing data was also collected for the spark.
+            
+            % Align in time
+            To align the laser focus to the spark in time, the infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the steel to glow white-hot when the laser was on. The following timings were determined by this investigation: \todo{reword this}
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
+                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
+                \label{fig: Signal timing diagram}
+            \end{figure}
+
+            \todo{explain this}
+            \input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
+
+            %\missingfigure{pressure rise with V1 LSP spark initiation}
+
+        \subsection{\ce{NO2} seeding}
+
+            \textcolor{red}{Comment from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
+            
+            As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to a rough vacuum before introducing the gasses.
+
+            %[Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
+
+            Three control QCW LSP shots were undertaken in pure argon and their dynamic pressure trace from the PCB transducer was recorded. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, was introduced into the chamber. V1 was then pressurized with argon to 20 bar. With the spark active, three LSPs were generated in the seeded atmosphere. The dynamic pressure rise of the seeded argon was approximately double the one seen in pure argon. The next two LSP shots were conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar with argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar} with argon. This would have brought the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Two LSPs were initiated, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots. \autoref{fig:NO2_shots_analysis} presents the averages of these recorded pressure traces.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
+                \caption{Average dynamic pressure rise of QCW LSP shots in a mixture of \ce{NO2} and argon compared to that of pure argon QCW LSP}
+                \label{fig:NO2_shots_analysis}
+            \end{figure}
+
+            With as low as (0.6\%) of \ce{NO2} mixed with argon, double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
+
+        \subsection{V2 LSP spark initiation and QCW LSP}
+
+            For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. 
+            
+            \begin{figure}[!ht]
+                \centering
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 1.png}
+                    \caption{V2 alignment, zoomed out}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 2.png}
+                    \caption{V2 alignment, zoomed in}
+                \end{subfigure}
+                \caption{2 FOVs of laser light on power meter. The aberration at the center of the red light is due to laser damage to the window.}
+                \label{fig:FOV}
+            \end{figure}
+
+            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow. 
+            % Discussion: could do this when V2 is open (without putting flat back plate and before pressurizing) however, electrodes move a bit (approx 1mm) when pressurized so alignement is not perfect. Also, if alignement is not satisfactory the first time, the test section must be depressurized and the backplate taken off. The laser is realigned, back plate sealed back on (8 M2 screws to tighten) and test section must be purged again. THIS TAKES TOO LONG! It is easier to align with a rear window (final static LSP configuration), as the test section can be pressurized while the laser is being aligned, and the alignment can be changed without taking the window mount off.
+
+            
+
+            % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
+
+            As these are at an angle, and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
+
+            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2. \todo{complete V2 initiation section, add photos, remove one of these 2 sentences}
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.5\textwidth]{assets/4 experiments/holy jesus look at this.png}
+                \caption{ PLACEHOLDER! 100\% power (quantify) QCW LSP shot. Note the bright plasma emission axially upstream of V2 on the laser safety curtain.}
+            \end{figure}
+
+            \todo{placeholder picture}
+
+        \subsection{Optical experiments: going from QCW to CW LSP}
 
             Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W). 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
 
@@ -46,7 +138,7 @@
             \end{equation}
 
             The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a multi-lens system can lower the beam diameter at focus.
-            
+
             For a multi-lens system, the spot diameter must be calculated numerically with ray tracing software. WinLens3D Basic was used to simulate the spot size of the both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
             \begin{figure}[!ht]
                 \centering
@@ -110,119 +202,14 @@
                 \caption{LSP threshold graph for V1 with double lens system}
             \end{figure}
             
-            The following figure presents the QCW LSP initiation attempts in V2 with focus distance. \qty{20}{bar} of argon was used for these shots.
+            The \autoref{fig:V2 threshold graph} presents the QCW LSP initiation attempts in V2 with focus distance. \qty{20}{bar} of argon was used for these shots.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
                 \caption{LSP threshold graph for V2}
+                \label{fig:V2 threshold graph}
             \end{figure}
             The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with static argon.
-
-    \section{Static LSP validation}
-
-        \subsection{V1 LSP spark initiation}
-
-            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time.
-
-            % Align in space
-            To resolve the spark in the y and z planes (radially) \todo{define this}, the Photron SA5 camera without lens filters was placed in front of the V1 test section, looking in axially. This would be the point of view of the laser beam had it been installed. 
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Composite photo spark.png}
-                \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
-            \end{figure}
-            
-            Using the thickness of the electrode as a reference, the spark gap is XX mm high and the spark is X mm thick. \todo{Measure distance with thickness of electrode.}
-            
-            % Link between the two
-            As the spark was recorded by the high speed camera, timing data was also collected for the spark.
-            
-            % Align in time
-            To align the laser focus to the spark in time, the infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the steel to glow white-hot when the laser was on. The following timings were determined by this investigation: \todo{reword this}
-
-            \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
-                \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
-            \end{figure}
-
-            \input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
-
-            \missingfigure{pressure rise with V1 LSP spark initiation}
-
-            \subsection{\ce{NO2} seeding}
-
-            \todo{Comment from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross section of the molecule, which will involve using the  HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
-            
-            As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to vacuum (how much?) before introducing gas.
-
-            %[Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
-
-            Control LSP shots were undertaken in pure argon. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, were introduced into the chamber. It was then pressurized with argon to 20 bar. With the spark active, LSPs were consistently generated in the seeded atmosphere and their pressure trace from the PCB transducer was recorded with the oscilloscope. This pressure rise was approximately double the one seen in pure argon; see \autoref{fig:NO2_shots_analysis}.
-
-            The next series of LSP shots was conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar of argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar}. This should bring the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Again, LSPs were consistent, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots.
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
-                \caption{Comparing \ce{NO2} LSP shots to pure argon LSP shots}
-                \label{fig:NO2_shots_analysis}
-            \end{figure}
-
-            Indeed, with as low as (0.5\%?) of \ce{NO2} mixed with argon, nearly double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
-
-        
-
-        \subsection{V2 LSP spark initiation and QCW LSP}
-
-            % Methodology
-
-            As timing of the spark and laser focus was kept the same as the previous section (ref), only the methodology of spatial alignment will be covered here.
-
-            % Methodology of V2 spark initiation: moving the test section back and forth on the rail gave a reliable way to align spatially . Then 2 figures: wide fov and tight fov, stills from the alignment video I took on the power meter
-
-            The power meter was used as a screen to align the laser focus. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified (see \autoref{fig:FOV}). 
-            
-            \begin{figure}[!ht]
-                \centering
-                \begin{subfigure}[t]{0.45\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 1.png}
-                    \caption{V2 alignment, zoomed out}
-                \end{subfigure}
-                \hfill
-                \begin{subfigure}[t]{0.45\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 2.png}
-                    \caption{V2 alignment, zoomed in}
-                \end{subfigure}
-                \caption{2 FOVs of laser light on power meter. The abberation at the center of the red light is due to laser damage to the window.}
-                \label{fig:FOV}
-            \end{figure}
-
-
-
-            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow. 
-            % Discussion: could do this when V2 is open (without putting flat back plate and before pressurizing) however, electrodes move a bit (approx 1mm) when pressurized so alignement is not perfect. Also, if alignement is not satisfactory the first time, the test section must be depressurized and the backplate taken off. The laser is realigned, back plate sealed back on (8 M2 screws to tighten) and test section must be purged again. THIS TAKES TOO LONG! It is easier to align with a rear window (final static LSP configuration), as the test section can be pressurized while the laser is being aligned, and the alignment can be changed without taking the window mount off.
-
-            
-
-            % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
-
-            As these are at an angle and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
-
-            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2. \todo{complete V2 initiation section, add photos, remove one of these 2 sentences}
-
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/holy jesus look at this.png}
-                \caption{ PLACEHOLDER! 100\% power (quantify) QCW LSP shot. Note the bright plasma emission axially upstream of V2 on the laser safety curtain.}
-            \end{figure}
-
-            \todo{placeholder picture}
-
-
 
         \subsection{V2 CW LSP}
 
@@ -231,7 +218,7 @@
             %[photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
             \input{assets/4 experiments/CW LSP frames webcam/igntionFrames.tex}
 
-            First the laser is turned on. A flash marks the spark initiation and lifetime of the LSP. This flash lasts only a few frames. Notice the higher brightness in \autoref{fig:CW_V2_webcam_frames_LSP}, reflecting off various surfaces like the white box (PCB pressure sensor power supply) on the left of the collimator. The laser was kept running for about a second before it is turned off.
+            The webcam footage (\autoref{fig:CW_V2_webcam_frames}) will be examined first. The laser is first turned on. A flash marks the spark initiation and lifetime of the LSP. This flash lasts only a few frames. Notice the higher brightness in \autoref{fig:CW_V2_webcam_frames_LSP}, reflecting off various surfaces like the white box (PCB signal conditioner) on the left of the collimator. The laser was kept running for about a second before it is turned off.
 
             \input{assets/4 experiments/CW LSP frames Photron/igntionFrames.tex}
 
@@ -245,47 +232,47 @@
 
             This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test.
 
-        \subsection{CW power measurement}
+        % \subsection{CW power measurement}
 
-            Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
+        %     Wanted to see where exactly the pulsed power threshold was. For this, needed a max CW power measurement to compare against. 
     
-            Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
+        %     Tried to measure max CW power through two lenses, without the V2 apparatus. The two lenses were rated for this flux, but the 500 mm focal length lens shattered after about \qty{50}{s} of CW lasing. The leading hypothesis is that as the lens' temperature increased, it expanded, shattering it
     
-            [graph of laser power that broke lens]
+        %     [graph of laser power that broke lens]
     
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
-                \caption{Shattered \qty{500}{mm} focal length lens}
-            \end{figure}
+        %     \begin{figure}[!ht]
+        %         \centering
+        %         \includegraphics[width=0.25\textwidth]{assets/4 experiments/Shattered 500 mm lens.jpg}
+        %         \caption{Shattered \qty{500}{mm} focal length lens}
+        %     \end{figure}
     
-            This test showed a \qty{314}{W} max CW power.
+        %     This test showed a \qty{314}{W} max CW power.
     
-            Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
+        %     Therefore, future CW tests will have to stay under this maximum time period, unless a lens cooling system is implemented. This could be as simple as a fan blowing cool air onto the lens.
 
-            \todo{Long duration lasing test: determine limits of V2 under max CW power: conclusion: lens cracked due to expansion. No optical damage of the glass was seen}
+        %     \todo{Long duration lasing test: determine limits of V2 under max CW power: conclusion: lens cracked due to expansion. No optical damage of the glass was seen}
 
-        \subsection{Summary of results}
+        % \subsection{Summary of results}
 
-            \begin{table}[!ht]
-                \centering
-                \caption{Summary of the static LSP validation campaign}
-                \label{tab:validation}
-                \begin{tabular}{@{}lll@{}}
-                \toprule
-                Validation Question               & Yes & No \\ \midrule
-                Is LSP spark initiation possible? & X   &    \\
-                Is QCW LSP possible in V2?        & X   &    \\
-                Is CW LSP possible in V2?         & X   &   
-                \end{tabular}
-            \end{table}
+        %     \begin{table}[!ht]
+        %         \centering
+        %         \caption{Summary of the static LSP validation campaign}
+        %         \label{tab:validation}
+        %         \begin{tabular}{@{}lll@{}}
+        %         \toprule
+        %         Validation Question               & Yes & No \\ \midrule
+        %         Is LSP spark initiation possible? & X   &    \\
+        %         Is QCW LSP possible in V2?        & X   &    \\
+        %         Is CW LSP possible in V2?         & X   &   
+        %         \end{tabular}
+        %     \end{table}
 
 
     \section{V2 Cold flow thruster characterization}
 
         \subsection{Cold flow thrust tests}
 
-            Cold flow tests (laser off) were completed with V2 to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems. %Refer to appendix for Omega pressure sensor calibration \todo{Add pressure sensor calibration in appendix}.
+            Cold flow tests (laser off) were completed with V2 to give a baseline measurement of thrust before eventual hot fire tests (laser on), and to validate the functioning of all data acquisition systems.
 
             For thrust tests, pressure and thrust were recorded. \autoref{fig:20bar cold flow} shows a typical thrust and pressure curve for a chamber pressure of \qty{20}{bar}. Note that the thrust measurement does not return to the same value it was at initially.
 
