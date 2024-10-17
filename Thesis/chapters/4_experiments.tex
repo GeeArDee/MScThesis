@@ -77,16 +77,11 @@
                 \label{fig:FOV}
             \end{figure}
 
-            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow. 
-            % Discussion: could do this when V2 is open (without putting flat back plate and before pressurizing) however, electrodes move a bit (approx 1mm) when pressurized so alignement is not perfect. Also, if alignement is not satisfactory the first time, the test section must be depressurized and the backplate taken off. The laser is realigned, back plate sealed back on (8 M2 screws to tighten) and test section must be purged again. THIS TAKES TOO LONG! It is easier to align with a rear window (final static LSP configuration), as the test section can be pressurized while the laser is being aligned, and the alignment can be changed without taking the window mount off.
-
-            
+            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow.
 
             % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
 
-            As these are at an angle, and we are looking at the reflection of the LSP, no LSP velocity measurements can be made.
-
-            With the Photron SA5 looking into the thruster from the front, LSP initiation was confirmed in V2. \todo{complete V2 initiation section, add photos, remove one of these 2 sentences}
+            With the Photron SA5 looking into the front of the thruster at an angle, LSP initiation was confirmed in \todo{complete V2 initiation section, add photos} V2. 
 
             \begin{figure}[!ht]
                 \centering
@@ -120,11 +115,11 @@
             %first V1 test
             Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
 
-            At first, a single lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C lens, \qty{125}{mm} focal length) was used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the laser focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling for LSP conditions.
+            At first, a single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C lens, \qty{125}{mm} focal length) was used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling of sorts, for LSP conditions.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
-                \caption{125 mm focal length lens}
+                \caption{LSP threshold graph for V1 with \qty{125}{mm} focal length lens}
                 \label{fig: 125mm focus threshold}
             \end{figure}
             \todo{interpret graph, talk about way forward} Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation \todo{add to this} reliability.
@@ -137,9 +132,9 @@
                 \text{Spot diameter}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
             \end{equation}
 
-            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a multi-lens system can lower the beam diameter at focus.
+            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at focus.
 
-            For a multi-lens system, the spot diameter must be calculated numerically with ray tracing software. WinLens3D Basic was used to simulate the spot size of the both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
+            For a dual-lens system, the spot diameter must be calculated numerically with ray tracing software. WinLens3D Basic was used to simulate the spot size of the both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
             \begin{figure}[!ht]
                 \centering
                 \begin{subfigure}[t]{0.45\textwidth}
@@ -165,22 +160,22 @@
                 \begin{subfigure}[t]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{assets/3 design/100 lens spot diagram.png}
-                    \caption{100 lens}
+                    \caption{\qty{100}{mm} focal length lens}
                 \end{subfigure}
                 \begin{subfigure}[t]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{assets/3 design/125 lens spot diagram.png}
-                    \caption{125 lens}
+                    \caption{\qty{125}{mm} focal length lens}
                 \end{subfigure}
                 \begin{subfigure}[t]{\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{assets/3 design/500 and 150 lenses spot size.png}
-                    \caption{150 and 500 lens}
+                    \caption{Dual-lens \qtylist{500;150}{mm} system}
                 \end{subfigure}
                 \caption{Spot diagrams of the three lens systems studied}
                 \label{fig:spot diagrams}
             \end{figure}
-            From these three spot diagrams, the average laser flux at \qtylist{342}{W} was calculated (see \autoref{tab:laser flux}). It is assumed that the laser energy is evenly distributed in a circle the size of the farthest ray from the center.
+            From these three spot diagrams, the average laser flux at \qtylist{342}{W} was calculated (see \autoref{tab:laser flux}). It is assumed that the laser energy is evenly distributed in a circle as wide as the farthest ray from the center.
             \begin{table}[!ht]
                 \centering
                 \caption{Simulated focal length and spot diameter of various lens assemblies in WinLens3D. The average laser flux is calculated for \qty{342}{W} of incident power}
@@ -194,7 +189,7 @@
                 \bottomrule
                 \end{tabularx}
             \end{table}
-            The LSP experiments were continued with this double lens system, as it offers a 6.25 times increase of the laser flux compared to the single \qtylist{125}{mm} focal length lens. To increase the laser flux even more, an aspheric lens of comparable focal length could be used.
+            The LSP experiments were continued with this dual-lens system (\qty{500}{mm} and \qty{150}{mm} focal lengths), as it offers a 6.25 times increase of the laser flux compared to the single \qtylist{125}{mm} focal length lens. To increase the laser flux even more, an aspheric lens of comparable focal length could be used, although it costs 10 times as much as a single plano-convex lens.
 
             \begin{figure}[!ht]
                 \centering
@@ -206,7 +201,7 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
-                \caption{LSP threshold graph for V2}
+                \caption{LSP threshold graph for V2 with double lens system}
                 \label{fig:V2 threshold graph}
             \end{figure}
             The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with static argon.
@@ -292,7 +287,7 @@
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The empirical relation of pressure versus thrust is given by:
+            The empirical relation of pressure versus thrust is given \todo{Only 5 points is a bit thin to say its linear. Original plan was to have 35 points, but my SURE student can't seem to find where they put the data}by:
             \[
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
@@ -416,7 +411,7 @@
 
         The thrust stand was unfortunately not calibrated before these tests. Thrust values should be closer to \qty{1}{N} according to previous cold flow data. Nonetheless, the QCW pulse changes the thrust in both cases, but in opposing directions. No concrete increase in thrust could be determined with the current V2 setup when the laser was on.
 
-        The following webcam frame (\autoref{fig:nozzle ablation}) was taken from the LSP315\_V2\_Flow4 \qty{3050}{W} QCW shot, with the electrodes unplugged so no LSP could be initiated. A plasma plume still left the nozzle and the noise of the flow changed once the laser was fired, indicating possible nozzle ablation.
+        The following webcam frame (\autoref{fig:nozzle ablation}) was taken from the LSP315\_V2\_Flow4 \qty{3079}{W} QCW shot, with the electrodes unplugged so no LSP could be initiated. A plasma plume still left the nozzle and the noise of the flow changed once the laser was fired, indicating possible nozzle ablation.
 
         \begin{figure}[!ht]
             \centering
@@ -425,7 +420,7 @@
             \label{fig:nozzle ablation}
         \end{figure}
 
-        Further flowing tests confirmed that LSP could be initiated by a spark in flowing argon. The following frame (\autoref{fig:V2 Flowing LSP}) from the Photron SA5 shows LSP emission.
+        Further flowing tests confirmed that LSP could be initiated by a spark in flowing argon. The following frame (\autoref{fig:V2 Flowing LSP}) from the Photron SA5 shows LSP light emission.
 
         \begin{figure}[!ht]
             \centering

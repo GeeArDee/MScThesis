@@ -63,4 +63,6 @@ ax1.plot(x, func(x,a,b), color='green', label='Linear curve fit', linestyle='das
 ax1.legend()
 
 fig2.savefig('../Thesis/assets/4 experiments/pressure-thrust graph.pdf')
+
+
 # %%
