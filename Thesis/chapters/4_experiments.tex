@@ -30,16 +30,16 @@
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=\textwidth]{assets/4 experiments/timings.pdf}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/timings.pdf}
                 \caption{Signal timing diagram. The \textit{trig} prefix denotes triggering signals. The component is active when the line is high. Timings in \unit{ms} are also indicated on the figure.}
                 \label{fig: Signal timing diagram}
             \end{figure}
 
-            With the position of the laser aligned to the spark and the timings synchronized, QCW LSP spark initiation in V1 was achieved at 100\% power (\qty{3079}{W}) and a pressure of \qty{20}{bar}, as seen in \autoref{fig:V1_spark_initiation_frames}.
+            With the position of the laser aligned to the spark and the timings synchronized, QCW LSP spark initiation in V1 was achieved with a \qty{200}{mm} focal length lens at 100\% power (\qty{3079}{W}) and a pressure of \qty{20}{bar}, as seen in \autoref{fig:V1_spark_initiation_frames}.
             
             \input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
             
-            The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two \todo{I could include here the dynamic pressure rise of the LSP.} frames \qty{0.2}{ms}.
+            The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two \todo{I could include here the dynamic pressure rise of the LSP.} frames (\qty{0.2}{ms}).
 
         \subsection{\ce{NO2} seeding}
 
@@ -58,11 +58,9 @@
                 \label{fig:NO2_shots_analysis}
             \end{figure}
 
-            With as low as (0.6\%) of \ce{NO2} mixed with argon, double the pressure rise is observed. This indicates that the working gas is absorbing twice the energy from the plasma. As the \ce{NO2} fraction is increased, there are diminishing returns to the pressure rise. This is encouraging, as not much \ce{NO2} is needed to have a great impact on the energy absorption.
-
         \subsection{V2 LSP spark initiation and QCW LSP}
 
-            For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. 
+            For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen to project the visible (red) alignment laser. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. The laser focus can then be moved with the translation stages, so the brightest spot matches the center of the electrodes' shadow.
             
             \begin{figure}[!ht]
                 \centering
@@ -77,23 +75,18 @@
                     \includegraphics[width=\textwidth]{assets/4 experiments/V2 alignment 2.png}
                     \caption{V2 alignment, zoomed in}
                 \end{subfigure}
-                \caption{2 FOVs of laser light on power meter. The aberration at the center of the red light is due to laser damage to the window.}
+                \caption{2 FOVs of alignment laser light on power meter. The aberration at the center of the red light is due to laser damage to the window.}
                 \label{fig:FOV}
             \end{figure}
 
-            The laser can then be moved so that the area where the visible alignment laser is brightest matches the center of the electrodes' shadow.
-
-            % Stills of first High-speed LSP video, showing expansion of LSP wave like in V1
-
-            With the Photron SA5 looking into the front of the thruster at an angle, LSP initiation was confirmed in \todo{complete V2 initiation section, add photos} V2. 
+            Once the laser focus was aligned, a QCW LSP With the Photron SA5 looking into the front of the thruster at an angle, and the PCB transducer recording the pressure rise, LSP initiation was confirmed in V2. \autoref{fig: big flash}, taken by the webcam, shows the brightness of a full power QCW LSP. Note the bright plasma emission to the left of the image on the laser safety curtain.
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/holy jesus look at this.png}
-                \caption{ PLACEHOLDER! 100\% power (quantify) QCW LSP shot. Note the bright plasma emission axially upstream of V2 on the laser safety curtain.}
+                \includegraphics[width=\textwidth]{assets/4 experiments/holy jesus look at this.png}
+                \caption{100\% power (\qty{3079}{W}) QCW LSP shot}
+                \label{fig: big flash}
             \end{figure}
-
-            \todo{placeholder picture}
 
         \subsection{Optical experiments: going from QCW to CW LSP}
 
@@ -117,10 +110,7 @@
             At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
             %first V1 test
-            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
-
-            
-            \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the diameter at the focus:
+            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level. \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the diameter at the focus:
             
             \begin{equation}\label{eqn: spot diameter}
                 \text{Spot diameter}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
@@ -128,14 +118,14 @@
 
             The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at focus.
 
-            A single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C) was then chosen, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling of sorts, for LSP conditions.
+            A single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C) was then chosen, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows a record of LSP initiation attempts at various power settings and lens axial positions with the \qty{125}{mm} focal length lens. \qty{20}{bar} of argon was used for these shots.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
                 \caption{LSP threshold graph for V1 with \qty{125}{mm} focal length lens}
                 \label{fig: 125mm focus threshold}
             \end{figure}
-            \todo{interpret graph, talk about way forward} Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation \todo{add to this} reliability, and a dual-lens system was designed.
+            Power levels lower than 15\%, initiation was unreliable and could take up to 20 attempts to get one initiation. For example, initiation at \qty{11}{\%} was successful once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation reliability by increasing laser flux at the focus, and a dual-lens system was designed.
 
             For a dual-lens system, the spot diameter must be calculated numerically. Ray tracing software, such as WinLens3D Basic, calculate the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. WinLens3D was chosen to simulate the spot size of both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
             \begin{figure}[!ht]
@@ -188,30 +178,28 @@
                 Lens & Nominal focal length (\unit{mm}) & Focal length at \qty{1070}{nm} (\unit{mm})& Beam diameter at focus (\unit{mm}) & Average laser flux at \qty{342}{W} (\unit{MW/cm^2}) \\ \midrule
                 Single & 125           &  122  &    0.20   &  1.09 \\
                 Single & 100           &  93   &    0.15   &  1.94 \\
-                Double & 500, 150      &  110  &    0.08   &  6.80 \\ %calculations for this in C:\Users\gdub5\Documents\WinLens Files
+                Dual & 500, 150      &  110  &    0.08   &  6.80 \\ %calculations for this in C:\Users\gdub5\Documents\WinLens Files
                 \bottomrule
                 \end{tabularx}
             \end{table}
-            The LSP experiments were continued with this dual-lens system (\qty{500}{mm} and \qty{150}{mm} focal lengths), as it offers a 6.25 times increase of the laser flux compared to the single \qtylist{125}{mm} focal length lens. To increase the laser flux even more, an aspheric lens of comparable focal length could be used, although it costs 10 times as much as a single plano-convex lens.
-
+            The LSP experiments were continued with this dual-lens system (\qty{500}{mm} and \qty{150}{mm} focal lengths), as it offers a 6.25 times increase of the laser flux compared to the single \qtylist{125}{mm} focal length lens. To increase the laser flux even more, an aspheric lens of comparable focal length could be used, though it costs 10 times as much as a single plano-convex lens. \autoref{fig:V1 dual-lens threshold graph} presents a record of LSP initiation attempts at various power settings and lens axial positions with this dual-lens system.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/duallens_focus_threshold.pdf}
-                \caption{LSP threshold graph for V1 with double lens system}
+                \caption{LSP threshold graph for V1 with dual-lens system}
+                \label{fig:V1 dual-lens threshold graph}
             \end{figure}
-            
-            The \autoref{fig:V2 threshold graph} presents the QCW LSP initiation attempts in V2 with focus distance. \qty{20}{bar} of argon was used for these shots.
+            The completion of these tests validated the dual-lens design, showing that LSPs in the CW power regime of the laser could be generated. The first LSPs in V2 were therefore done using the dual-lens system. A similar graph to \autoref{fig:V1 dual-lens threshold graph} was then created with V2 to find the lens position where the minimum laser power could reliably initiate QCW LSP. \autoref{fig:V2 threshold graph} presents these initiation attempts.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/V2_focus_threshold.pdf}
-                \caption{LSP threshold graph for V2 with double lens system}
+                \caption{LSP threshold graph for V2 with dual-lens system}
                 \label{fig:V2 threshold graph}
             \end{figure}
-            The completion of these tests validated LSP generation in the CW power regime of the laser. The V2 thruster was then set up to test CW operation with static argon.
 
         \subsection{V2 CW LSP}
 
-            A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
+            A \qty{100}{\%} power CW shot was then attempted with \qty{20}{bar} of static argon. 
 
             \input{assets/4 experiments/CW LSP frames webcam/igntionFrames.tex}
 
@@ -228,7 +216,7 @@
                 \label{fig:CW pressure rise}
             \end{figure}
 
-            \autoref{fig:CW pressure rise} shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test.
+            \autoref{fig:CW pressure rise} shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. Minimal damage to the window was noticed after this test.
 
         % \subsection{CW power measurement}
 
@@ -295,7 +283,7 @@
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
 
-            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded \todo{I don't have the calibration for this graph}, as the hysteresis was the point of interest and not the thrust.
+            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was \todo{I don't have the calibration for this graph}recorded, as the hysteresis was the point of interest and not the thrust.
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/hysterisis graph.pdf}
@@ -322,7 +310,7 @@
                 t =  \frac{-2V \left[\left(\frac{p(t)}{p_i}\right)^{(1-\gamma) / 2\gamma}\right]}{(1-\gamma) R \sqrt{T} A \sqrt{\frac{\gamma}{R}(\frac{2}{\gamma + 1})^{(\gamma+1) / (\gamma-1)}}}
             \end{equation}
 
-            Where $t$ is time, $p(t)$ is the absolute pressure in the system at time $t$, $p_i$ is the initial absolute pressure in the system, $V$ is the volume of the V2 thruster and tubing after the valve, $T$ is temperature, $A$ is the area of the nozzle's throat. With this equation, the absolute pressure in bar was plotted versus time in seconds for different values of $A$, with a specific heat ratio $\gamma$ of 1.67, a temperature of \qty{300}{K}, and an R of \qty{208.13}{J/kg*K} (see \autoref{fig:saad blowdown}). An experimental pressure curve was also overlayed, similar to \autoref{fig:20bar cold flow}, but cut to only show the decrease in pressure right after the gas feed valve is closed. The time at which this valve is closed is defined as $t=0$.
+            Where $t$ is time, $p(t)$ is the absolute pressure in the system at time $t$, $p_i$ is the initial absolute pressure in the system, $V$ is the volume of the V2 thruster and tubing after the valve, $T$ is temperature, $A$ is the area of the nozzle's throat. With this equation, the absolute pressure in bar was plotted versus time in seconds for different values of $A$, with a specific heat ratio $\gamma$ of 1.67, a temperature of \qty{300}{K}, and an R of \qty{208.13}{J/kg*K} (see \autoref{fig:saad blowdown}). An experimental pressure curve was also overlaid, similar to \autoref{fig:20bar cold flow}, but cut to only show the decrease in pressure right after the gas feed valve is closed. The time at which this valve is closed is defined as $t=0$.
 
             \begin{figure}[!ht]
                 \centering
@@ -337,7 +325,7 @@
 
             The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}). The bubble flow meter and experiment methodology were presented in \textcite{barigouFluidMechanicsSoap1993}.
 
-            Creating a uniform bubble at the base of the tube, the bubble rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate.
+            A uniform bubble created at the base of the tube rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate.
 
             \begin{figure}[!ht]
                 \centering
@@ -346,15 +334,11 @@
                 \label{fig:bubble meter}
             \end{figure}
 
-            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.50 rotations to 2.0 rotations.
-
-            The mass flow rate can then be derived by \todo{add here}
-
-            The following calibration results and calculations were taken from \autoref{chp:app Thariq}:
+            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.50 rotations to 2.0 rotations. The calculated opening area of the valve is presented in \autoref{tab:opening_area}.
 
             \begin{table}[!ht]
                 \centering
-                \caption{Sample of Table 3: Calculated Opening Area for Needle Valve at Different Rotations (Upstream Pressure = 5000 kPa and Outlet Pressure = 100 kPa)}
+                \caption{Calculated Opening Area for Needle Valve at Different Rotations (Upstream Pressure = \qty{5000}{kPa} and Outlet Pressure = \qty{100}{kPa}), adapted from \autoref{chp:app Thariq}}
                 \label{tab:opening_area}
                 \begin{tabular}{|c|c|c|c|c|}
                 \hline
@@ -368,11 +352,11 @@
                 \end{tabular}
             \end{table}
 
-            Supposing that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and ... [Other suppositions], \autoref{chp:app Thariq} recommends a rotation increment of approximately 1.33 to produce an $A^*$ of \qty{0.147}{mm^2}. \todo{update with latest}
+            Assuming that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and the mass flow rate is \qty{0.641}{g/s}, \autoref{chp:app Thariq} recommends a rotation increment of approximately 1.33 to produce an $A^*$ of \qty{0.147}{mm^2}.
 
         \subsection{Summary of results}
 
-            The following table presents a summary of the results determined from cold flow thruster characterization.
+            \autoref{tab:characteristics} presents a summary of the results determined from cold flow thruster \todo{Didn't have time to measure m\_dot with the bubble meter, but I could calculate a predicted value}characterization.
 
             \begin{table}[!ht]
                 \centering
