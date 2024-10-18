@@ -82,7 +82,7 @@ The black sheet in \autoref{fig:initial V2 static config} is Thorlabs laser-abso
 The laser power was brought down \todo{Talk about POWER-DISTANCE GRAPH} until. Once a 13\% power \todo{put this in W} LSP was initiated reliably, our first 100\% power (\qty{342}{W}) CW LSP was generated for \qty{85.1}{ms}, a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms}. While these results are encouraging, more experiments with CW laser operation must be completed to determine if lifetimes can be extended to an order of magnitude more, i.e. around one second. This would greatly help with measuring a difference in thrust when the laser is on.
 
 % Damage to window and extension tube
-After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window, as seen in \autoref{fig:Rear window damage}. Eventually, a \qty{3}{s} CW shot melted it severely enough that visual laser alignment between the electrodes of V2 was no longer possible.
+After the first CW LSP, more CW and pulsed shots were attempted. These continued to damage the rear window, as seen in the center of \autoref{fig:Rear window damage}. Eventually, a \qty{3}{s} CW shot melted it severely enough that visual laser alignment between the electrodes of V2 was no longer possible.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.45\textwidth]{assets/4 experiments/window damage.jpg}
@@ -108,7 +108,34 @@ Initial QCW LSP (hot fire) thrust tests aimed to determine if QCW LSP initiated 
     \caption{Nozzle laser damage}
     \label{fig:Nozzle laser damage}
 \end{figure}
-To solve the ablation of the aluminum nozzle under pulsed laser shots, a new backplate was manufactured to accept nozzle inserts. \textcite{toyodaThrustPerformanceCW2002} use a refractory metal, tungsten, as the nozzle material. Other possibilities are machinable ceramics, stainless steel or graphite. Graphite was chosen as it was already used by \textcite{shojiLaserheatedRocketThruster1977} and is economical. These inexpensive, changeable inserts were made from superfine iso-molded graphite rods sourced from Graphitestore (0.500" diameter x 12"L, SKU GT001685). V2's inner cylinder was also re-machined (\autoref{chp:remachined inner cylinder}) to guarantee a seal with the new nozzle.
+To solve the ablation of the aluminum nozzle under pulsed laser shots, a new backplate (\autoref{fig:nozzle plate} and \autoref{chp:Exchangeable nozzle plate}) was manufactured to accept nozzle inserts. \textcite{toyodaThrustPerformanceCW2002} use a refractory metal, tungsten, as the nozzle material. Other possibilities are machinable ceramics, stainless steel or graphite. Graphite was chosen as it was already used by \textcite{shojiLaserheatedRocketThruster1977} and is economical. These inexpensive, changeable inserts (\autoref{fig:nozzle insert} and \autoref{chp:New nozzle}) were made from superfine iso-molded graphite rods sourced from Graphitestore (0.500" diameter x 12"L, SKU GT001685). V2's inner cylinder was also re-machined (\autoref{chp:remachined inner cylinder}) to guarantee a seal with the new nozzle. Due to machining delays however, these final parts are still to be tested.
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/}
+        \caption{Nozzle retention plate}
+        \label{fig:nozzle plate}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/}
+        \caption{Graphite nozzle insert}
+        \label{fig:nozzle insert}
+    \end{subfigure}
+    \caption{New nozzle parts}
+\end{figure}
+
+Longer term, to ultimately test LTP as a viable means of space propulsion, more improvements to the V2 setup can be 
+
+Using hydrogen as a propellant instead of argon would. However, it would be harder to ionize, possibly requiring higher laser power or better focusing optics.
+
+\begin{itemize}
+    \item Use a more powerful laser. Instead of 300 W CW, use 3kW CW.
+    \item Move to hydrogen as a propellant
+    \item Complete thrust tests in vacuum
 
 % New parts that were made and why?
     % Nozzle/retaining plate

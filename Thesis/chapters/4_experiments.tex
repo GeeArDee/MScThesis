@@ -295,20 +295,20 @@
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
 
-            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust.
+            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded \todo{I don't have the calibration for this graph}, as the hysteresis was the point of interest and not the thrust.
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.8\linewidth]{assets/5 discussion/hysterisis.png}
-                \caption{PLACEHOLDER HYSTERESIS GRAPH}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/hysterisis graph.pdf}
+                \caption{Multiple cold flow thrust tests in succession}
                 \label{fig:hysteresis}
             \end{figure}
-            significant hysteresis of the thrust stand is seen in \autoref{fig:hysteresis}. The final thrust is sometimes higher than the initial thrust, and sometimes the inverse is true. The discontinuities at \qtylist{10;35}{s} are due to the accidental shutoff of the gas supply.
+            Significant hysteresis of the thrust stand is seen in \autoref{fig:hysteresis}. The final thrust is sometimes higher than the initial thrust, and sometimes the inverse is true. The discontinuities at \qtylist{10;35}{s} are due to the accidental shutoff of the gas supply.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
             To determine the mass flow rate $\dot{m}$ of the thruster, \todo{A flow meter was not used because we did not have one} sonic isentropic flow at the nozzle throat is assumed. The following equation can then be used:
             \begin{equation}
-                \dot{m} = \frac{A^* p}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^(\frac{-\gamma + 1}{2(\gamma-1)})
+                \dot{m} = \frac{A^* p}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^{\frac{-\gamma + 1}{2(\gamma-1)}}
             \end{equation}
             Where $A^*$, the nozzle effective sonic area, is an unknown, $p$ is pressure, $T$ is temperature, $\gamma$ is the specific heat ratio, and $R$ is the gas constant.
         
