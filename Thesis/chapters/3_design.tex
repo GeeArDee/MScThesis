@@ -110,18 +110,16 @@
                 \label{fig:double choke sizing}
             \end{figure}
             
-            The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
+            The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). The gas mass flow rate and the diameter of the two orifices needed to choke the flow will be determined.
 
-            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The $v_\mathrm{exit}$, which is our main performance parameter, is therefore \qty{646}{m/s}.
+            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is our main performance parameter, is therefore \qty{646}{m/s}.
             
-            Laser on (hot) operation will now be examined. Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is supposed that our efficiency is doubled. This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. What nozzle throat size is therefore necessary for this $\dot m$ with $p_\mathrm{chamber} = \qty{25}{bar}$? We know that $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$. The speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4.
+            Laser on (hot) operation will now be examined. Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is assumed that the thruster's efficiency is doubled. This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. What nozzle throat size is therefore necessary for this $\dot m$ with $p_\mathrm{chamber} = \qty{25}{bar}$? $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ and the speed of sound is $c = \sqrt{\gamma R T}$. As the speed of sound will be doubled, the temperature is multiplied by 4.
             \[\text{Power} = \dot m (h_2-h_1)
             = \dot m c_p (T_2-T_1)\]
-            Using a constant $c_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}.
-            
-            Fliegner's formula describes the mass flow rate of an isentropic flow:
+            Using a constant $c_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}. Fliegner's formula describes the mass flow rate of an isentropic flow:
             \[\frac{\dot m}{A} = p_0\sqrt{\frac{\gamma}{T_0 R}}\frac{M}{(1+\frac{\gamma-1}{2}M^2)^{(\frac{\gamma+1}{2(\gamma-1)})}}\]
-            With $\gamma = \frac{c_p}{c_v} = 1.666$ for argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are \qty{0.176}{mm^2} and \qty{0.473}{mm}, respectively. These calculations can be repeated for the feed orifice, with the same $\dot m$, a pressure of \qty{50}{bar} and ambient temperature. This gives us an orifice diameter of about 0.2 mm.
+            With $\gamma = \frac{c_p}{c_v} = 1.67$ for argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are \qty{0.176}{mm^2} and \qty{0.473}{mm}, respectively. The V2 test section was built with this nozzle diameter. These calculations can be repeated for the feed orifice, with the same $\dot m$, a pressure of \qty{50}{bar} and ambient temperature. This gives us an orifice diameter of about 0.2 mm.
         
         \subsection{Test section and thrust stand}
             
@@ -161,7 +159,7 @@
                 \label{fig:V2 IRL setup}
             \end{figure}
 
-            The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) mounted on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). It is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell, and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
+            The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). The rail is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell, and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
 
         \subsection{Laser and optics}
 
@@ -197,7 +195,7 @@
 
         \subsection{Timing control}
 
-            Correct timing of the laser and spark initiation is necessary to initiate LSP when the laser is in QCW mode, and to minimize damage to V2's nozzle in CW mode. To this end, delay generators are used (BNC models 7010 and 7055) as seen in \autoref{fig:timing section and oscilloscope}. They are mounted at the top of the electronics rack.
+            Correct timing of the laser and spark initiation is necessary to initiate LSP. To this end, delay generators are used (BNC models 7010 and 7055) as seen in \autoref{fig:timing section and oscilloscope}. They are mounted at the top of the electronics rack.
 
             \begin{figure}[!ht]
                 \centering
@@ -217,11 +215,9 @@
                 \label{fig:DAQ}
             \end{figure}
 
-            [Photos of pressure sensor and PCB assembly]
-
         \subsection{Cameras}
 
-            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to the fact that no side window was present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's sensor was protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
+            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to no side windows being present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's sensor was protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
 
             A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an extra confirmation that the laser emission was off before opening the laser safety curtain.
 

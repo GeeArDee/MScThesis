@@ -76,7 +76,6 @@ plt.xlabel('Time (s)')
 plt.ylabel('Raw load cell voltage (V)')
 plt.xlim(0,55)
 plt.ylim(0.4,0.6)
-plt.legend()
 plt.plot(time,volt, '.', color=color)
 
 plt.savefig('../Thesis/assets/4 experiments/hysterisis graph.pdf')

@@ -1,12 +1,12 @@
 \chapter{Modelling heat capacity} \label{chp:models}
     
-    \textcolor{red}{Gabriel's comment: The original goal was to have a 0D model of the LTP thruster that could be compared to experiments. Prof. Higgins wanted an experimental line and a theory line on a graph that were somewhat on top of each other. Given that we received the V2 experiment parts to be setup at the end of April, I concentrated my efforts on getting the thruster running so we could get experimental data. Due to reasons explored in the discussion chapter, more parts had to be made for the V2 experiment to work. I ended up without experimental data and without this model completed. This is the reason Prof. Higgins dismissed my thesis in August, and I attempted a re-scoping of the work toward designing and commissioning the V2 thruster. I will have to change the justification of why this chapter was written if I keep it.}
+    \textcolor{red}{Gabriel's comment: The original goal was to create a 0D model of the LTP thruster that could be compared to experiments. Prof. Higgins wanted an experimental line and a theory line on a graph that were somewhat on top of each other. Given that we received the V2 experiment parts to be setup at the end of April, I concentrated my efforts on getting the thruster running so we could get experimental data. Due to reasons explored in the discussion chapter, more parts had to be made for the V2 experiment to work. I ended up without experimental data and without this model completed. This is the reason Prof. Higgins dismissed my thesis in August, and I attempted a re-scoping of the work toward designing and commissioning the V2 thruster. I will have to change the justification of why this chapter was written if I keep it.}
 
     To correctly predict the temperature increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in the full-scale LTP engine for its increased $I_\mathrm{sp}$ due to having lower molecular weight.
 
     \section{Equilibrium calculations} \label{sec:equilibrium calcs}
         
-        The following seventh order polynomials and their coefficients ($a_1$ to $a_7$, $b_1$, and $b_2$), from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{Ar}, \ce{Ar+}, and electrons \ce{e-}. Plasma temperatures studied allowed us to treat the argon as singly ionized. The heat capacity at constant pressure, as well as the temperature ($T$) dependent part of enthalpy and entropy of each species are given by $C_p^0$, $H^0$ and $S^0$, respectively. $\bar R$ is the universal gas constant.
+        The following seventh order polynomials and their coefficients ($a_1$ to $a_7$, $b_1$, and $b_2$), from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{Ar}, \ce{Ar+}, and electrons \ce{e-}. Plasma temperatures studied allowed us to treat the argon as singly ionized, and the hydrogen as dissociated. The heat capacity at constant pressure, as well as the temperature ($T$) dependent part of enthalpy and entropy of each species are given by $C_p^0$, $H^0$ and $S^0$, respectively. $\bar R$ is the universal gas constant.
 
         \begin{equation}
             C_p^0 (T)/\bar R = a_1 T^{-2} + a_2 T^{-1} + a_3 + a_4   T + a_5 T^2 + a_6 T^3 + a_7 T^4
@@ -27,7 +27,7 @@
         \end{equation}
 
         \begin{equation}
-            \bar g = \bar h - T \bar s
+            \bar g_i = \bar h_i - T \bar s_i
         \end{equation}
 
         Considering the number of moles $n_i$, expressions of the Gibbs energy of the two mixtures $G_{mixture}$ are found:
@@ -42,12 +42,12 @@
             G_{mixture,\: H_2}(T, p) = n_H \bar g_H(T, p_H) + n_{H2} \bar g_{H2}(T, p_{H2})
         \end{equation}
 
-        Plotting the Gibbs energy of the hydrogen mixture as a function of its degree of dissociation $x$, for different total pressures $p$:
+        \autoref{fig:Gibbs} plots the Gibbs energy of the hydrogen mixture as a function of its degree of dissociation $x$, for different total pressures $p$.
 
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.7\textwidth]{assets/2 models/Gibbs.pdf}
-            \caption{Gibbs free energy (G) plotted against the degree of dissociation of hydrogen under three different pressures}
+            \caption{Gibbs free energy (G) plotted against the degree of dissociation (x) of hydrogen under three different pressures}
             \label{fig:Gibbs}
         \end{figure}
 
@@ -57,7 +57,7 @@
             C_p = \frac{\partial H}{\partial T}
         \end{equation}
         
-        For argon, these calculated $C_p$ values were validated against values from CEA \cite{CEARUNRev4}.
+        For argon, these calculated $C_p$ values were validated against values from CEA \cite{CEARUNRev4} in \autoref{fig:Cp_compare}.
         
         \begin{figure}[!ht]
             \centering
