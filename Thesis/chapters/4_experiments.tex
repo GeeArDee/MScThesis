@@ -10,9 +10,9 @@
 
             \begin{figure}[!ht]
                 \centering
-                \begin{subfigure}[t]{0.45\textwidth}
+                \begin{subfigure}[t]{0.25\textwidth}
                     \centering
-                    \includegraphics[height=\textheight]{assets/4 experiments/Composite photo spark.png}
+                    \includegraphics[width=\textwidth]{assets/4 experiments/Composite photo spark.png}
                     \caption{Composite photo showing spark between two electrodes. The spark gap is approximately \qty{0.79}{mm}.}
                     \label{fig:spark composite}
                 \end{subfigure}
@@ -213,22 +213,22 @@
 
             A \qty{100}{\%} power CW shot was then attempted at \qty{20}{bar} argon. 
 
-            %[photo of laser on, Spark/LSP initiation, LSP constant, laser off (LSP dying down)]
             \input{assets/4 experiments/CW LSP frames webcam/igntionFrames.tex}
 
             The webcam footage (\autoref{fig:CW_V2_webcam_frames}) will be examined first. The laser is first turned on. A flash marks the spark initiation and lifetime of the LSP. This flash lasts only a few frames. Notice the higher brightness in \autoref{fig:CW_V2_webcam_frames_LSP}, reflecting off various surfaces like the white box (PCB signal conditioner) on the left of the collimator. The laser was kept running for about a second before it is turned off.
 
             \input{assets/4 experiments/CW LSP frames Photron/igntionFrames.tex}
 
-            Observation of the high speed camera footage, recorded at 10000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms} at this power. The brightness of the plasma increases regularly after initiation, to reach its maximum intensity around \qty{50}{ms}, and this brightness is constant for \qty{10}{ms}. A flickering of the LSP is seen at \qty{70.0}{ms}, before it dies down and is completely extinguished after \qty{88.3}{ms}.
+            Observation of the high speed camera footage (\autoref{fig:CW_V2_Photron_frames}), recorded at 10000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms} at this power. The brightness of the plasma increases regularly after initiation, to reach its maximum intensity around \qty{50}{ms}, and this brightness is constant for \qty{10}{ms}. A flickering of the LSP is seen at \qty{70.0}{ms}, before it dies down and is completely extinguished after \qty{88.3}{ms}.
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.5\textwidth]{assets/4 experiments/CW pressure rise.png}
-                \caption{Pressure rise with PCB transducer}
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/CW pressure rise.pdf}
+                \caption{Dynamic pressure rise from CW LSP measured with PCB transducer}
+                \label{fig:CW pressure rise}
             \end{figure}
 
-            This graph shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test.
+            \autoref{fig:CW pressure rise} shows the pressure rise recorded by the PCB transducer connected to the oscilloscope. This was the first CW LSP generated in the lab. \todo{make better graph} Minimal damage to the window was noticed after this test.
 
         % \subsection{CW power measurement}
 
@@ -286,23 +286,23 @@
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/pressure-thrust graph.pdf}
-                \caption{Absolute pressure versus thrust with 35 experimental points and curve fit of pressure-thrust relation}
+                \caption{Absolute pressure versus thrust and curve fit of pressure-thrust relation}
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The empirical relation of pressure versus thrust is given \todo{Only 5 points is a bit thin to say its linear. Original plan was to have 35 points, but my SURE student can't seem to find where they put the data}by:
+            The empirical relation of pressure versus thrust is given \todo{Only 5 points is indeed a bit thin to say its linear.}by:
             \[
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
 
-            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust. 
+            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust.
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.8\linewidth]{assets/5 discussion/hysterisis.png}
                 \caption{PLACEHOLDER HYSTERESIS GRAPH}
                 \label{fig:hysteresis}
             \end{figure}
-            \autoref{fig:hysteresis} shows that sometimes the final thrust is higher than the initial thrust, and that sometimes it's the other way around. The discontinuities at \qtylist{10;35}{s} are due to the accidental shutoff of the gas supply.
+            significant hysteresis of the thrust stand is seen in \autoref{fig:hysteresis}. The final thrust is sometimes higher than the initial thrust, and sometimes the inverse is true. The discontinuities at \qtylist{10;35}{s} are due to the accidental shutoff of the gas supply.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 

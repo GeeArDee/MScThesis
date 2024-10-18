@@ -64,5 +64,7 @@ ax1.legend()
 
 fig2.savefig('../Thesis/assets/4 experiments/pressure-thrust graph.pdf')
 
-
 # %%
+df = pd.read_excel('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/Thrust tests/coldflow 13, 20 bar 5N cell, 200g no cup.xlsx', usecols='A, D')
+
+fig3.savefig('../Thesis/assets/4 experiments/hysterisis graph.pdf')
