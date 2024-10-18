@@ -6,24 +6,27 @@
 
         \subsection{V1 LSP spark initiation}
 
-            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time.
-
-            % Align in space
-            To resolve the spark in the y and z planes (radially) \todo{define this}, the Photron SA5 camera without lens filters was placed in front of the V1 test section, looking in axially. This would be the point of view of the laser beam had it been installed. 
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser beam during an LSP shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gives an average position of the spark, which is seen as being slightly left of the electrodes' centerline.
 
             \begin{figure}[!ht]
                 \centering
-                \includegraphics[width=0.25\textwidth]{assets/4 experiments/Composite photo spark.png}
-                \caption{Composite photo showing spark between two electrodes. Electrode distance is approximately \qty{1}{mm}}
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[height=\textheight]{assets/4 experiments/Composite photo spark.png}
+                    \caption{Composite photo showing spark between two electrodes. The spark gap is approximately \qty{0.79}{mm}.}
+                    \label{fig:spark composite}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[t]{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{assets/4 experiments/V1 opposing electrodes.jpg}
+                    \caption{Front of V1 test section showing electrode position. This view is rotated 90\degree from \autoref{fig:spark composite}}
+                    \label{fig: standard view of electrodes}
+                \end{subfigure}
+                \caption{V1 spark alignment}
             \end{figure}
             
-            Using the thickness of the electrode as a reference, the spark gap is XX mm high and the spark is X mm thick. \todo{Measure distance with thickness of electrode.}
-            
-            % Link between the two
-            As the spark was recorded by the high speed camera, timing data was also collected for the spark.
-            
-            % Align in time
-            To align the laser focus to the spark in time, the infrared laser being invisible to the camera, the beam was focused on one of the electrodes at low power. This caused the steel to glow white-hot when the laser was on. The following timings were determined by this investigation: \todo{reword this}
+            Using the thickness of the electrode (\qty{1.55}{mm}) as a reference, the spark gap's length is \qty{0.79}{mm} and the average spark is \qty{0.23}{mm} wide. Timing data was also recorded for the spark by the high speed camera. To align the laser focus to the spark in time, the laser was reinstalled, and the camera was placed back to its normal position looking into the side of the test section (seen in \autoref{fig: standard view of electrodes}). The beam was then focused on one of the electrodes at low power. This caused the electrode to glow white-hot when the laser was on. The timings presented in \autoref{fig: Signal timing diagram} were determined by this investigation.
 
             \begin{figure}[!ht]
                 \centering
@@ -32,10 +35,11 @@
                 \label{fig: Signal timing diagram}
             \end{figure}
 
-            \todo{explain this}
+            With the position of the laser aligned to the spark and the timings synchronized, QCW LSP spark initiation in V1 was achieved at 100\% power (\qty{3079}{W}) and a pressure of \qty{20}{bar}, as seen in \autoref{fig:V1_spark_initiation_frames}.
+            
             \input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
-
-            %\missingfigure{pressure rise with V1 LSP spark initiation}
+            
+            The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two \todo{I could include here the dynamic pressure rise of the LSP.} frames \qty{0.2}{ms}.
 
         \subsection{\ce{NO2} seeding}
 
@@ -113,18 +117,8 @@
             At 10\% power, an 9.985 J average during \qty{50}{ms} gives an average power of \qty{200}{W}. Extrapolating from these measurements, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
             %first V1 test
-            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
+            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presents a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level.
 
-            At first, a single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C lens, \qty{125}{mm} focal length) was used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling of sorts, for LSP conditions.
-            \begin{figure}[!ht]
-                \centering
-                \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
-                \caption{LSP threshold graph for V1 with \qty{125}{mm} focal length lens}
-                \label{fig: 125mm focus threshold}
-            \end{figure}
-            \todo{interpret graph, talk about way forward} Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation \todo{add to this} reliability.
-
-            Two ways can be used to calculate the spot size of a laser. Firstly, ray tracing software such as WinLens calculates the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and shows the path of these rays at the focus. 
             
             \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the diameter at the focus:
             
@@ -134,7 +128,16 @@
 
             The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 \textcite{hechtUnderstandingLasersEntry2019}. The YLR-300/3000 laser has a BPP of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot size, increasing laser flux. \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at focus.
 
-            For a dual-lens system, the spot diameter must be calculated numerically with ray tracing software. WinLens3D Basic was used to simulate the spot size of the both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
+            A single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C) was then chosen, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against the front window. \autoref{fig: 125mm focus threshold} shows LSP initiation attempts at various power settings and axial lens positions. 20 pulsed laser shots were performed for each point on the graph. If at least one was successful at igniting LSP, it was recorded as such. This graph can also be interpreted as a beam profiling of sorts, for LSP conditions.
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
+                \caption{LSP threshold graph for V1 with \qty{125}{mm} focal length lens}
+                \label{fig: 125mm focus threshold}
+            \end{figure}
+            \todo{interpret graph, talk about way forward} Initiation at \qty{11}{\%} was attained once, but it was not possible to replicate this. A tighter focus was necessary to increase initiation \todo{add to this} reliability, and a dual-lens system was designed.
+
+            For a dual-lens system, the spot diameter must be calculated numerically. Ray tracing software, such as WinLens3D Basic, calculate the geometry of paraxial \footnote{Rays having small angles and distances to the optical axis} rays and show the path of these rays at the focus. WinLens3D was chosen to simulate the spot size of both the single- and dual-lens systems, as it is free and powerful enough for this application. The modelled lenses are seen in \autoref{fig:modeled lenses}.
             \begin{figure}[!ht]
                 \centering
                 \begin{subfigure}[t]{0.45\textwidth}

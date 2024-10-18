@@ -25,7 +25,7 @@
 
     \section{Version 2} \label{sec:design_v2}
 
-        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024, seen in \autoref{fig:V2 render} and \autoref{fig:V2 setup}.
+        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024, seen in \autoref{fig:V2 render}.
 
         \begin{figure}[!ht]
             \centering
@@ -42,23 +42,6 @@
             \end{subfigure}
             \caption{Render of the V2 LTP thruster}
             \label{fig:V2 render}
-        \end{figure}
-
-        \begin{figure}[!ht]
-            \centering
-            \begin{subfigure}[t]{\textwidth}
-                \centering
-                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Static config.pdf}
-                \caption{Static setup}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}[t]{\textwidth}
-                \centering
-                \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Flowing config.pdf}
-                \caption{Flowing setup}
-            \end{subfigure}
-            \caption{V2 LTP thruster}
-            \label{fig:V2 setup}
         \end{figure}
 
         \subsection{Requirements}
@@ -118,9 +101,7 @@
 
         \subsection{Initial sizing of the double choked LTP thruster}
 
-            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_\mathrm{in}$ constant, so the increase in chamber pressure can be interpreted as a measure of energy deposition. The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked, a classic problem in compressible fluid mechanics.
-            
-            The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
+            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_\mathrm{in}$ constant, so the increase in chamber pressure can be interpreted as a measure of energy deposition. The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked (see \autoref{fig:double choke sizing}), a classic problem in compressible fluid mechanics.
 
             \begin{figure}[h]
                 \centering
@@ -129,6 +110,8 @@
                 \label{fig:double choke sizing}
             \end{figure}
             
+            The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). We will determine the gas mass flow rate and the diameter of the two orifices needed to choke the flow.
+
             Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The $v_\mathrm{exit}$, which is our main performance parameter, is therefore \qty{646}{m/s}.
             
             Laser on (hot) operation will now be examined. Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is supposed that our efficiency is doubled. This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. What nozzle throat size is therefore necessary for this $\dot m$ with $p_\mathrm{chamber} = \qty{25}{bar}$? We know that $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$. The speed of sound is $c = \sqrt{\gamma R T}$. As we want to double the speed of sound, we are multiplying the temperature by 4.
@@ -142,7 +125,24 @@
         
         \subsection{Test section and thrust stand}
             
-            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting. Argon propellant was directly vented to the lab.
+            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity, enabling static and flowing tests with argon propellant. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting. After flowing through the test section, used argon propellant was vented directly to the lab. \autoref{fig:V2 IRL setup} shows the two final configurations in the lab.
+
+            \begin{figure}[!ht]
+                \centering
+                \begin{subfigure}[t]{\textwidth}
+                    \centering
+                    \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Static config.pdf}
+                    \caption{Static configuration}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[t]{\textwidth}
+                    \centering
+                    \includegraphics[width=0.85\textwidth]{assets/3 design/V2 Flowing config.pdf}
+                    \caption{Flowing configuration}
+                \end{subfigure}
+                \caption{V2 LTP thruster}
+                \label{fig:V2 setup}
+            \end{figure}
 
             \begin{figure}[!ht]
                 \centering
@@ -163,9 +163,9 @@
 
             The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) mounted on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). It is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell, and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
 
-        \subsection{Laser}
+        \subsection{Laser and optics}
 
-            The laser used as the plasma's power source is an IPG Photonics YLR-300/3000-QCW-MM-AC Ytterbium fiber laser. The wavelength of the emitted light is \qty{1070}{nm}. Its nominal maximum power is \qty{3}{kW} quasi-continuous wave (QCW) or \qty{300}{W} continuous wave (CW). At \qty{3}{kW}, a QCW pulse has a maximum duration of \qty{10}{ms}. The maximum duration of a \qty{300}{W} QCW pulse is \qty{50}{ms}. The IPG Photonics P30-001736 collimator outputs a \qty{30}{mm} diameter laser beam. The laser also includes a red visible laser for alignment, which is coaxial to the main beam.
+            The laser used as the plasma's power source is an IPG Photonics YLR-300/3000-QCW-MM-AC Ytterbium fiber laser. The wavelength of the emitted light is \qty{1070}{nm}. Its nominal maximum power is \qty{3}{kW} quasi-continuous wave (QCW) or \qty{300}{W} continuous wave (CW). At \qty{3}{kW}, a QCW pulse has a maximum duration of \qty{10}{ms}. The maximum duration of a \qty{300}{W} QCW pulse is \qty{50}{ms}. The IPG Photonics P30-001736 collimator outputs a \qty{30}{mm} diameter laser beam. The laser also includes a red visible laser for alignment, which is coaxial to the main beam. These components form the laser system, presented in \autoref{fig:laser and collimator}.
 
             \begin{figure}[!ht]
                 \centering
@@ -181,6 +181,7 @@
                     \caption{IPG Photonics P30-001736 collimator}
                 \end{subfigure}
                 \caption{Laser system}
+                \label{fig:laser and collimator}
             \end{figure}
 
             Calibration reports for the laser and the collimator can be found in \autoref{chp:app_YLR}. The laser is mounted at the base of a freestanding electronics rack (\autoref{fig:electronics rack}).
@@ -190,8 +191,9 @@
                 \includegraphics[width=0.50\textwidth]{assets/3 design/Control rack.jpg}
                 \caption{Electronics rack with laser at the base}
                 \label{fig:electronics rack}
-            \end{figure} 
+            \end{figure}
 
+            V2 uses two lenses placed close to each other to focus the laser from the collimator. These are the Thorlabs LA1380-C and LA1417-C N-BK7 plano-convex lenses with a \qtyrange{1050}{1700}{nm} anti-reflective coating. Their focal lengths of \qty{500}{mm} and \qty{150}{mm}, respectively, give a combined focal length of \qty{115}{mm}. \todo{The design of this lens system is discussed in the experimental chapter. Should it be here?} These two lenses are mounted in a single Thorlabs LMR2 lens mount with two retaining rings. A Thorlabs DT12 translation stage enables left/right alignment of the laser focus, while a Thorlabs DTS25 translation stage gives control on the depth (axial position) of the focus.
 
         \subsection{Timing control}
 
@@ -234,13 +236,13 @@
                 \label{fig:Spark initiation}
             \end{figure}
 
-            \autoref{fig:Assembled electrode} shows the assembled electrodes, the sharper one being connected to the smart coil's output. The other electrode is grounded.
+            \autoref{fig:Assembled electrode design} shows the assembled electrodes, the sharper one being connected to the smart coil's output. The other electrode is grounded.
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.5\textwidth]{assets/3 design/V2 electrodes.jpg}
                 \caption{Assembled electrodes with Ultra-Torr cap and electrical connectors}
-                \label{fig:Assembled electrode}
+                \label{fig:Assembled electrode design}
             \end{figure}
 
         \subsection{Needle valve}
