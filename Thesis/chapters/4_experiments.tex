@@ -39,13 +39,12 @@
             
             \input{assets/4 experiments/V1 Spark Ignition Frames/igntionFrames.tex}
             
-            The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two \todo{I could include here the dynamic pressure rise of the LSP.} frames (\qty{0.2}{ms}).
+            The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two frames (\qty{0.2}{ms}).
+            % I could include here the dynamic pressure rise of the LSP.
 
         \subsection{\ce{NO2} seeding}
 
-            \textcolor{red}{Comment from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
-
-            \textcolor{red}{Gabriel: I could do this, but I have not explored these concepts yet.}
+            \textcolor{red}{TO-DO from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
             
             As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to a rough vacuum before introducing the gasses.
 
@@ -280,12 +279,12 @@
                 \label{fig:coldflow pressure-thrust}
             \end{figure}
 
-            The empirical relation of pressure versus thrust is given \todo{Only 5 points is a bit thin to say it's linear, but I don't have more points. We planned to do 35 but didn't have time.}by:
+            The empirical relation of pressure versus thrust is given by:
             \[
             \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
             \]
 
-            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was \todo{I don't have the calibration for this graph}recorded, as the hysteresis was the point of interest and not the thrust.
+            Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust.
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/hysterisis graph.pdf}
@@ -296,7 +295,7 @@
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
-            To determine the mass flow rate $\dot{m}$ of the thruster, \todo{A flow meter was not used because we did not have one} sonic isentropic flow at the nozzle throat was assumed. The following equation can then be used:
+            To determine the mass flow rate $\dot{m}$ of the thruster, sonic isentropic flow at the nozzle throat was assumed. The following equation can then be used:
             \begin{equation}
                 \dot{m} = \frac{A^* p}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^{\frac{-\gamma + 1}{2(\gamma-1)}}
             \end{equation}
@@ -358,7 +357,7 @@
 
         \subsection{Summary of results}
 
-            \autoref{tab:characteristics} presents a summary of the results determined from cold flow thruster \todo{Didn't have time to measure m\_dot with the bubble meter, but I could calculate a predicted value}characterization.
+            \autoref{tab:characteristics} presents a summary of the results determined from cold flow thruster characterization.
 
             \begin{table}[!ht]
                 \centering
