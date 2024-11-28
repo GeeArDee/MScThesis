@@ -226,7 +226,7 @@ def cp_mix_mass_take2(T, P):  # Cp in J/(kg*K)
 
 
 # temperature in K, change third argument from 1000 to 100 for smooth curve
-T = np.arange(1000, 20001, 100, dtype=float)  # -------------------------------------------------------
+T = np.arange(1000, 20001, 1000, dtype=float)  # -------------------------------------------------------
 #P = np.array([0.1e5, 1e5, 10e5])  # pressure in Pa
 P = np.array([20e5])  # pressure in Pa
 

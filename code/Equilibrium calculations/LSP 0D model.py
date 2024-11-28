@@ -2,10 +2,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from CEA_LSP_polynomials import CEA_LSP_polynomials
-from scipy.optimize import minimize, Bounds
+from scipy.optimize import minimize, Bounds, fsolve
 import pandas as pd
 import sympy as sp
 from labellines import labelLines
+from Equilibrium_calculations import MinimizeGibbs_Ar, h_mix_mass_Ar
 
 
 # Initialize variables
@@ -15,30 +16,34 @@ n_points = 1000                             # Number of points for radiation sim
 
 T_ini = 300                                 # Initial temperature of the chamber (K)
 p_ini = 20e5                                # Pressure of the chamber (20 bar to Pa)
-n_absorp_lsr = 0.8                          # Efficiency of laser absorption by the plasma cone (-)
 E_laser = 30                                # Total input energy by the laser (J)
-V_chamberV1 = 0.4/1000                      # Volume of the V1 chamber (0.4 L to m^3)
-rho_argon_300K =   20*1.784                         # Density of argon at 300 K (kg/m^3)
+V_chamberV1 = 0.4/1000                      # Volume of the V1 chamber (0.4 L to m^3)                      
 
 
-# Functions
+# Functions                                 # Density of argon near 300 K (kg/m^3)
 def rho_300K(T, p):
     R_u = 8314.462                          # Universal gas constant [J/kmol-K]
     MW_Ar = 39.948                          # Molecular weight of argon [u]
     R_specific = R_u/MW_Ar
     return p/(R_specific*T)
 
-print(rho_300K(300, 20e5))
+def h_mix(T, p):
+    # Take symbolic expression of h(T) and calculate h(T)
+    t = sp.symbols('t')
+    h = sp.lambdify(t, h_mix_mass_Ar(T, p), "numpy")    
+    return h(T)
 
-def p(m, R_specific, T, V):
-    #  p V = m R_s T
-    return m*R_specific*T/V
-
-# def T_final(Q, m, T_1, p_1, p_2):
-#     # Q = m * (h2 - h1), solve for T_2
-#     h1 = 
-#     ...
-#     return 
+def T_final(Q, m, T_1, p_1, p_2):
+    # Q = m * (h2 - h1), solve for T_2
+    t = sp.symbols('t')
+    h_1 = h_mix(T_1, p_1)
+    print(h_1)
+    T_guess = 6001                         # Guess that T is higher than 6000 K for the polynomials to return the right one
+    h_2 = sp.lambdify(t, h_mix_mass_Ar(T_guess, p_2), "numpy") 
+    print(h_2)
+    system = [m*(h_2 - h_1) - Q]
+    T_2 = fsolve(func, 15000)
+    return T_2
 
 def V_final(p, N_ions, N_electrons, T):
     # p*V = N*R_u*T
@@ -51,17 +56,17 @@ def V_final(p, N_ions, N_electrons, T):
 l = 2/100                                   # Length of plasma cone (m)
 r = 1/1000                                  # Radius of the base of plasma cone (m) CHANGE THIS, FIRST APPROX.
 V_plasma = np.pi*r**2*l/3                   # Volume of plasma cone (m^3)
-m_plasma = V_plasma*rho_argon_300K          # Mass of plasma (kg), will be taken as constant during this exercise
-print(m_plasma)
+m_plasma = V_plasma*rho_300K(T_ini, p_ini)  # Mass of plasma (kg), will be taken as constant during this exercise
+
 
 # STEP 2: Add 30 J of energy to m_plasma, while keeping constant pressure
 p_2 = p_ini                                             # Plasma cone is at the same pressure as the surrounding gas
 T_2 = T_final(E_laser, m_plasma, T_ini, p_ini, p_2)     # Temperature of plasma after energy addition (K)
-
+print(T_2)
 
 # STEP 3: Find new volume (V_2) of cone
-V_2 = V_final(p_2, N_ions, N_electrons, T_2)
-print(V_2)
+#V_2 = V_final(p_2, N_ions, N_electrons, T_2)
+
 
 # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
 
