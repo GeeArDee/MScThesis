@@ -169,7 +169,7 @@ def MinimizeGibbs_Ar(T, P):
     yAr = (1-x)/(x+1)
     yArII = x/(x+1)
     ye = x/(x+1)
-    return Gibbs, yAr, yArII, ye
+    return Gibbs, x, yAr, yArII, ye
 
 
 # # Verify if mole fractions are the same as Higgins'
@@ -190,7 +190,7 @@ def MinimizeGibbs_Ar(T, P):
 
 
 def MW_avg_Ar(T, P):
-    (Gibbs, yAr, yArII, ye) = MinimizeGibbs_Ar(T, P)
+    (Gibbs, x, yAr, yArII, ye) = MinimizeGibbs_Ar(T, P)
     return yAr*MW_Ar + yArII*MW_ArII + ye*MW_e
 
 
@@ -200,7 +200,7 @@ def h_bar_i_symbolic(compound, T):
 
 
 def h_mix_bar_Ar(T, P):
-    (Gibbs, yAr, yArII, ye) = MinimizeGibbs_Ar(T, P)
+    (Gibbs, x, yAr, yArII, ye) = MinimizeGibbs_Ar(T, P)
     return yAr*h_bar_i_symbolic('Ar', T) + yArII*h_bar_i_symbolic('Arp', T) + ye*h_bar_i_symbolic('e', T)
 
 
