@@ -316,8 +316,8 @@ Higgins_cp = (np.array([[0.52033093,
                                                       4.496251534
                                                       ]]).T)*1e3
 
-# plt.figure()
-# plt.plot(T, h_results)
+plt.figure()
+plt.plot(T, h_results)
 
 # plt.figure()
 # plt.plot(T, cp_results)
