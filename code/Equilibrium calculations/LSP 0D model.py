@@ -23,7 +23,6 @@ MW_Ar = 39.948                          # Molecular weight of argon [u]
 Z_Ar = 18                               # Atomic number of argon [-]
 
 
-
 # Functions                                 
 def rho_300K(T, p):                         # Density of argon near 300 K (kg/m^3)
     R_u = 8314.462                          # Universal gas constant [J/kmol-K]
@@ -48,6 +47,11 @@ def V_final(p, n, T):
     # p*V = n*R_u*T
     R_u = 8314.462                          # Universal gas constant [J/kmol-K]
     return n*R_u*T/p
+
+def p_final(V, n, T):
+    # p*V = n*R_u*T
+    R_u = 8314.462                          # Universal gas constant [J/kmol-K]
+    return n*R_u*T/V
 
 def P_brems_perV(T_e, n_i, n_e, Z):              # Total radiation power by Bremsstrahlung per unit volume [W/m^3 (?)] -> Check units! From Plasma physics: An introduction to laboratory, space, and fusion plasmas (2010) by A. Piel
     constant_term = 8*constants.pi**2 * (constants.k)**(1/2) / (np.sqrt(3) * (4*constants.pi*constants.epsilon_0)**3 * constants.m_e**(3/2) * constants.c**3 * constants.h)
@@ -79,10 +83,17 @@ n_Ar = y_Ar*n_tot
 n_ArII = y_ArII*n_tot
 n_e = y_e*n_tot
 V_2 = V_final(p_2, n_tot, T_2)
+print(V_2)
 
 
 # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
-
+m_gas_nonionized = (V_chamberV1 - V_plasma)*rho_300K(T_ini, p_ini)
+n_gas_nonionized = m_gas_nonionized/MW_Ar
+V_4 = V_chamberV1-V_2
+p_4 = p_final(V_4, n_gas_nonionized, T_ini)
+# print(m_gas_nonionized)
+# print(n_gas_nonionized)
+# print(p_4)
 
 # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
 P_brems = V_2 * P_brems_perV(T_2, n_ArII, n_e, Z_Ar)
