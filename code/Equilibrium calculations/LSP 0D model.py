@@ -53,10 +53,9 @@ def p_final(V, n, T):
     R_u = 8314.462                          # Universal gas constant [J/kmol-K]
     return n*R_u*T/V
 
-def P_brems_perV(T_e, n_i, n_e, Z):              # Total radiation power by Bremsstrahlung per unit volume [W/m^3 (?)] -> Check units! From Plasma physics: An introduction to laboratory, space, and fusion plasmas (2010) by A. Piel
-    constant_term = 8*constants.pi**2 * (constants.k)**(1/2) / (np.sqrt(3) * (4*constants.pi*constants.epsilon_0)**3 * constants.m_e**(3/2) * constants.c**3 * constants.h)
-    print(constant_term) # should be close to 5.34e-37
-    return constant_term * Z**2 * n_e * n_i * T_e**(1/2)
+def P_brems_perV(T_e_K, n_i, n_e, Z):              # Total radiation power by Bremsstrahlung per unit volume [W/m^3 (?)]
+    constant_term = 1.57e-28
+    return constant_term * Z**2 * n_e * n_i * T_e_K**(1/2)
 
 
 
@@ -71,7 +70,7 @@ m_plasma = V_plasma*rho_300K(T_ini, p_ini)  # Mass of plasma (kg), will be taken
 p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
 T_2_guess = 15000.0
 T_2 = solve_for_T2(E_laser, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]     # Temperature of plasma after energy addition (K)
-# print(T_2)
+print("T_2 = ", T_2)
 
 
 # STEP 3: Find new volume (V_2) of cone
@@ -83,25 +82,46 @@ n_Ar = y_Ar*n_tot
 n_ArII = y_ArII*n_tot
 n_e = y_e*n_tot
 V_2 = V_final(p_2, n_tot, T_2)
-print(V_2)
+print("V_2 =", V_2)
 
 
 # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
-m_gas_nonionized = (V_chamberV1 - V_plasma)*rho_300K(T_ini, p_ini)
-n_gas_nonionized = m_gas_nonionized/MW_Ar
-V_4 = V_chamberV1-V_2
-p_4 = p_final(V_4, n_gas_nonionized, T_ini)
-# print(m_gas_nonionized)
-# print(n_gas_nonionized)
-# print(p_4)
+k = 1.666 # k, or gamma
+p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
+print("p_4 =", p_4)
+print("Pressure increase :", (p_4-p_ini)/1000,"kPa")
 
 # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
-P_brems = V_2 * P_brems_perV(T_2, n_ArII, n_e, Z_Ar)
-# print(P_brems)
+rho_N_ArII =  n_ArII * constants.Avogadro /V_2      # Number density of argon ions (n/m^3)
+rho_N_e =   n_e * constants.Avogadro   /V_2         # Number density of electrons (n/m^3)
+P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII, rho_N_e, 1)
+print("P_brems =", P_brems, "W")
+
+# Graph Brems. radiation with temperature
+t_vector = np.arange(500, 20001, 500, dtype=float)  # temperature in K
+P_brems_vector = np.zeros(np.shape(t_vector))
+for i, t in enumerate(t_vector):
+    P_brems_vector[i] = V_2 * P_brems_perV(t, rho_N_ArII, rho_N_e, 1)
+plt.figure()
+plt.plot(t_vector, P_brems_vector)
+plt.xlabel('Temperature [K]')
+plt.ylabel('P_brems [W]')
+
+# Calculate plasma frequency to compare to Brems. light emission
+omega_p = np.sqrt(rho_N_e*constants.e**2/(constants.epsilon_0*constants.m_e))
+print("The plasma frequency is", "{:e}".format(omega_p), "Hz")
+# If we consider visible light and above (>1e14 Hz), it's a volume emitter!
 
 # %% Next steps
 
-#while t < t_end:#
+timestep = 1e-6
+
+#while p_4 > p_ini:
+
+
+
+
+
 
 # Calculate rate of heat loss via bremsstralung.
 # Is plasma ball optically thick or thin? -> volumetric/surface emitter
