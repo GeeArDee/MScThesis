@@ -57,6 +57,13 @@ def P_brems_perV(T_e_K, n_i, n_e, Z):              # Total radiation power by Br
     constant_term = 1.57e-28
     return constant_term * Z**2 * n_e * n_i * T_e_K**(1/2)
 
+def rho_N_ArII(T, p, n_tot_ini):
+    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T, p)         # Get dissociation x and mole fractions at temp and press
+    n_tot = n_tot_ini*(x + 1)
+    n_ArII = y_ArII*n_tot
+    V_2 = V_final(p, n_tot, T)
+    return n_ArII * constants.Avogadro /V_2                     # Return number density of Ar+, which is equal to electron density
+
 
 
 # STEP 1: Volume and mass of plasma cone at p_ini and T_ini 
@@ -92,31 +99,34 @@ print("p_4 =", p_4)
 print("Pressure increase :", (p_4-p_ini)/1000,"kPa")
 
 # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
-rho_N_ArII =  n_ArII * constants.Avogadro /V_2      # Number density of argon ions (n/m^3)
-rho_N_e =   n_e * constants.Avogadro   /V_2         # Number density of electrons (n/m^3)
-P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII, rho_N_e, 1)
-print("P_brems =", P_brems, "W")
+    #rho_N_ArII =  n_ArII * constants.Avogadro /V_2      # Number density of argon ions (n/m^3)
+    #rho_N_e =   n_e * constants.Avogadro   /V_2         # Number density of electrons (n/m^3)
+P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
+print("P_brems =", "{:e}".format(P_brems), "W")
 
 # Graph Brems. radiation with temperature
 t_vector = np.arange(500, 20001, 500, dtype=float)  # temperature in K
 P_brems_vector = np.zeros(np.shape(t_vector))
 for i, t in enumerate(t_vector):
-    P_brems_vector[i] = V_2 * P_brems_perV(t, rho_N_ArII, rho_N_e, 1)
+    P_brems_vector[i] = V_2 * P_brems_perV(t, rho_N_ArII(t, p_ini, n_tot_ini), rho_N_ArII(t, p_ini, n_tot_ini), 1)
 plt.figure()
 plt.plot(t_vector, P_brems_vector)
 plt.xlabel('Temperature [K]')
 plt.ylabel('P_brems [W]')
+plt.xlim([0,20000])
+plt.ylim([0,5e11])
+plt.title("P_brems evolution with temperature")
 
 # Calculate plasma frequency to compare to Brems. light emission
 omega_p = np.sqrt(rho_N_e*constants.e**2/(constants.epsilon_0*constants.m_e))
 print("The plasma frequency is", "{:e}".format(omega_p), "Hz")
 # If we consider visible light and above (>1e14 Hz), it's a volume emitter!
 
-# %% Next steps
+# %% STEP 6: Plot pressure with time
 
 timestep = 1e-6
 
-#while p_4 > p_ini:
+while p_4 > p_ini:
 
 
 
@@ -124,5 +134,3 @@ timestep = 1e-6
 
 
 # Calculate rate of heat loss via bremsstralung.
-# Is plasma ball optically thick or thin? -> volumetric/surface emitter
-# Rate of heat loss? Suppose it's thick (a surface emitter)?
