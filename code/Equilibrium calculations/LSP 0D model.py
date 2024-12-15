@@ -20,7 +20,7 @@ p_ini = 20.0e5                                # Pressure of the chamber (20 bar 
 E_laser = 30.0                                # Total input energy by the laser (J)
 V_chamberV1 = 0.4/1000                      # Volume of the V1 chamber (0.4 L to m^3)   
 MW_Ar = 39.948                          # Molecular weight of argon [u]      
-Z_Ar = 18                               # Atomic number of argon [-]
+k = 1.666                               # k, or gamma
 
 
 # Functions                                 
@@ -57,8 +57,8 @@ def P_brems_perV(T_e_K, n_i, n_e, Z):              # Total radiation power by Br
     constant_term = 1.57e-28
     return constant_term * Z**2 * n_e * n_i * T_e_K**(1/2)
 
-def rho_N_ArII(T, p, n_tot_ini):
-    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T, p)         # Get dissociation x and mole fractions at temp and press
+def rho_N_ArII(T, p, n_tot_ini):                                # Number density of argon ions (n/m^3) = Number density of electrons (n/m^3)
+    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T, p)      # Get dissociation x and mole fractions at temp and press
     n_tot = n_tot_ini*(x + 1)
     n_ArII = y_ArII*n_tot
     V_2 = V_final(p, n_tot, T)
@@ -93,18 +93,15 @@ print("V_2 =", V_2)
 
 
 # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
-k = 1.666 # k, or gamma
 p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
 print("p_4 =", p_4)
 print("Pressure increase :", (p_4-p_ini)/1000,"kPa")
 
 # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
-    #rho_N_ArII =  n_ArII * constants.Avogadro /V_2      # Number density of argon ions (n/m^3)
-    #rho_N_e =   n_e * constants.Avogadro   /V_2         # Number density of electrons (n/m^3)
 P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
 print("P_brems =", "{:e}".format(P_brems), "W")
 
-# Graph Brems. radiation with temperature
+    # Graph Brems. radiation with temperature
 t_vector = np.arange(500, 20001, 500, dtype=float)  # temperature in K
 P_brems_vector = np.zeros(np.shape(t_vector))
 for i, t in enumerate(t_vector):
@@ -117,20 +114,54 @@ plt.xlim([0,20000])
 plt.ylim([0,5e11])
 plt.title("P_brems evolution with temperature")
 
-# Calculate plasma frequency to compare to Brems. light emission
-omega_p = np.sqrt(rho_N_e*constants.e**2/(constants.epsilon_0*constants.m_e))
+    # Calculate plasma frequency to compare to Brems. light emission
+omega_p = np.sqrt(rho_N_ArII(T_2, p_ini, n_tot_ini)*constants.e**2/(constants.epsilon_0*constants.m_e))
 print("The plasma frequency is", "{:e}".format(omega_p), "Hz")
-# If we consider visible light and above (>1e14 Hz), it's a volume emitter!
+    # If we consider visible light and above (>1e14 Hz), it's a volume emitter!
 
-# %% STEP 6: Plot pressure with time
+# STEP 6: Plot pressure with time
 
-timestep = 1e-6
+# Initialize variables
+timestep = 1e-11
+time = np.array(0)  # time [s]
+p = np.array(p_4)   # pressure [Pa]
+T = np.array(T_2)   # Temperature [K]
+V = np.array(V_2)   # Volume of plasma cone [m^3]
+i = 1               # iteration index
 
-while p_4 > p_ini:
+while i < 50: #p_4 > p_ini:
+    E_laser = E_laser - P_brems * timestep          # Energy in the plasma ("E_laser") goes down as energy is radiated 
+    
+    # STEP 2: Have XX J of energy to m_plasma, while keeping constant pressure
+    p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
+    T_2_guess = 15000.0
+    T_2 = solve_for_T2(E_laser, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
 
+    # STEP 3: Volume of the cone contracts; find new volume (V_2) of cone
+    n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
+    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T_2, p_2)          # Get dissociation x and mole fractions at temp and press of step 2
+    n_tot = n_tot_ini*(x + 1)
+    V_2 = V_final(p_2, n_tot, T_2)
+    
+    # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
+    p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
 
+    # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
+    P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
 
+    # Save all values to vectors and increment iterator
+    time = np.append(time, i * timestep)
+    p = np.append(p, p_4)
+    T = np.append(T, T_2)                                                              # Store temperature in vector for plotting
+    V = np.append(V, V_2)
 
+    i += 1
 
-
-# Calculate rate of heat loss via bremsstralung.
+# plot 
+plt.figure()
+plt.plot(time, p)
+plt.xlabel('Time [s]')
+plt.ylabel('Pressure [Pa]')
+#plt.xlim([0,20000])
+#plt.ylim([0,5e11])
+plt.title("Pressure change over time with bremsstrahlung radiation loss")
