@@ -119,7 +119,8 @@ omega_p = np.sqrt(rho_N_ArII(T_2, p_ini, n_tot_ini)*constants.e**2/(constants.ep
 print("The plasma frequency is", "{:e}".format(omega_p), "Hz")
     # If we consider visible light and above (>1e14 Hz), it's a volume emitter!
 
-# STEP 6: Plot pressure with time
+
+# STEP 6: Plot pressure with time, once the laser switches off
 
 # Initialize variables
 timestep = 1e-11
@@ -132,27 +133,27 @@ i = 1               # iteration index
 while i < 50: #p_4 > p_ini:
     E_laser = E_laser - P_brems * timestep          # Energy in the plasma ("E_laser") goes down as energy is radiated 
     
-    # STEP 2: Have XX J of energy to m_plasma, while keeping constant pressure
+    # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
     p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
     T_2_guess = 15000.0
     T_2 = solve_for_T2(E_laser, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
 
-    # STEP 3: Volume of the cone contracts; find new volume (V_2) of cone
+    # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
     n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
     (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T_2, p_2)          # Get dissociation x and mole fractions at temp and press of step 2
     n_tot = n_tot_ini*(x + 1)
     V_2 = V_final(p_2, n_tot, T_2)
     
-    # STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
+    # STEP 6.4: Calculate pressure increase in chamber due to expansion of gas in plasma core
     p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
 
-    # STEP 5: As gas cools due to Brems. radiation, volume of the cone contracts
+    # STEP 6.5: As gas cools due to Brems. radiation, volume of the cone contracts
     P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
 
     # Save all values to vectors and increment iterator
     time = np.append(time, i * timestep)
     p = np.append(p, p_4)
-    T = np.append(T, T_2)                                                              # Store temperature in vector for plotting
+    T = np.append(T, T_2)             # Store temperature in vector for plotting
     V = np.append(V, V_2)
 
     i += 1
@@ -164,4 +165,55 @@ plt.xlabel('Time [s]')
 plt.ylabel('Pressure [Pa]')
 #plt.xlim([0,20000])
 #plt.ylim([0,5e11])
-plt.title("Pressure change over time with bremsstrahlung radiation loss")
+plt.title("Pressure change over time when laser turns off, with bremsstrahlung radiation loss")
+
+#%% STEP 7: Pressure with time, with t=0 laser turns on. This is to see what happens as pressure rises.
+
+# Initialize variables
+timestep = 1e-6     # 1 us timestep
+time = np.array([0])  # time [s]
+p = np.array([p_ini])   # pressure [Pa]
+T = np.array([T_ini])   # Temperature [K]
+V = np.array([0])   # Volume of plasma cone [m^3]
+i = 1               # iteration index
+time_end = 10e-3    # end of the sim at 10 ms, when laser pulse is done
+P_brems = 0         # Brems dissipation power [W]
+P_laser = 3000      # laser power (3 kW) [W]
+
+while time[i-1] < time_end:
+    E_laser = P_laser * time[i-1] - P_brems * time[i-1]          # Energy in the plasma ("E_laser") goes up as time progresses
+    
+    # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
+    p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
+    T_2_guess = T[i-1]
+    T_2 = solve_for_T2(E_laser, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
+
+    # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
+    n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
+    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T_2, p_2)          # Get dissociation x and mole fractions at temp and press of step 2
+    n_tot = n_tot_ini*(x + 1)
+    V_2 = V_final(p_2, n_tot, T_2)
+    
+    # STEP 6.4: Calculate pressure increase in chamber due to expansion of gas in plasma core
+    p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
+
+    # STEP 6.5: As gas heats due to Brems. radiation, volume of the cone increases
+    P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
+
+    # Save all values to vectors and increment time + iterator
+    time = np.append(time, i*timestep)  # time of next iteration
+    p = np.append(p, p_4)
+    T = np.append(T, T_2)               # Store temperature in vector for plotting
+    V = np.append(V, V_2)
+
+    i += 1
+
+# plot 
+plt.figure()
+plt.plot(time, p)
+plt.xlabel('Time [s]')
+plt.ylabel('Pressure [Pa]')
+#plt.xlim([0,20000])
+#plt.ylim([0,5e11])
+plt.title("Pressure change over time during laser pulse, with bremsstrahlung radiation loss")
+# %%
