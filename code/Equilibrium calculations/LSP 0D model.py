@@ -170,23 +170,26 @@ plt.title("Pressure change over time when laser turns off, with bremsstrahlung r
 #%% STEP 7: Pressure with time, with t=0 laser turns on. This is to see what happens as pressure rises.
 
 # Initialize variables
-timestep = 1e-6     # 1 us timestep
-time = np.array([0])  # time [s]
-p = np.array([p_ini])   # pressure [Pa]
-T = np.array([T_ini])   # Temperature [K]
-V = np.array([0])   # Volume of plasma cone [m^3]
-i = 1               # iteration index
-time_end = 10e-3    # end of the sim at 10 ms, when laser pulse is done
-P_brems = 0         # Brems dissipation power [W]
-P_laser = 3000      # laser power (3 kW) [W]
+timestep = 100e-6       # 1 us timestep
+time = np.array([0])    # time [s]
+p = np.array([p_ini])       # pressure [Pa]
+T = np.array([T_ini])       # Temperature [K]
+V = np.array([0])           # Volume of plasma cone [m^3]
+E_plasma_array = np.array([0])    # Energy in the plasma [J]
+i = 1                   # iteration index
+time_end = 10e-3        # end of the sim at 10 ms, when laser pulse is done
+P_brems = 0             # Brems dissipation power [W]
+P_laser = 3000          # laser power (3 kW) [W]
 
-while time[i-1] < time_end:
-    E_laser = P_laser * time[i-1] - P_brems * time[i-1]          # Energy in the plasma ("E_laser") goes up as time progresses
+time = np.append(time, i*timestep)  # time of first iteration
+
+while time[i] < time_end:
+    E_plasma = P_laser * time[i] - P_brems * time[i]          # Energy in the plasma ("E_plasma") goes up as time progresses
     
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
     p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
-    T_2_guess = T[i-1]
-    T_2 = solve_for_T2(E_laser, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
+    T_2_guess = T[i-1]      # Take the last calculated temperature as the guess for polynomials
+    T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
 
     # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
     n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
@@ -199,14 +202,16 @@ while time[i-1] < time_end:
 
     # STEP 6.5: As gas heats due to Brems. radiation, volume of the cone increases
     P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
+    print(P_brems)
 
     # Save all values to vectors and increment time + iterator
-    time = np.append(time, i*timestep)  # time of next iteration
     p = np.append(p, p_4)
     T = np.append(T, T_2)               # Store temperature in vector for plotting
     V = np.append(V, V_2)
+    E_plasma_array = np.append(E_plasma_array, E_plasma)
 
     i += 1
+    time = np.append(time, i*timestep)  # time of next iteration
 
 # plot 
 plt.figure()
