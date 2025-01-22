@@ -64,6 +64,11 @@ def rho_N_ArII(T, p, n_tot_ini):                                # Number density
     V_2 = V_final(p, n_tot, T)
     return n_ArII * constants.Avogadro /V_2                     # Return number density of Ar+, which is equal to electron density
 
+def area_cone(V_cone, r_fixed):
+    l = 3*V_cone/(np.pi*r_fixed**2)
+    A = np.pi*r_fixed*(r_fixed + np.sqrt(l**2 + r_fixed**2))
+    return A
+
 
 
 # STEP 1: Volume and mass of plasma cone at p_ini and T_ini 
@@ -170,21 +175,24 @@ plt.title("Pressure change over time when laser turns off, with bremsstrahlung r
 #%% STEP 7: Pressure with time, with t=0 laser turns on. This is to see what happens as pressure rises.
 
 # Initialize variables
-timestep = 100e-6       # 1 us timestep
+timestep = 10e-6       # 1 us timestep
 time = np.array([0])    # time [s]
 p = np.array([p_ini])       # pressure [Pa]
 T = np.array([T_ini])       # Temperature [K]
 V = np.array([0])           # Volume of plasma cone [m^3]
 E_plasma_array = np.array([0])    # Energy in the plasma [J]
+E_plasma = 0
 i = 1                   # iteration index
 time_end = 10e-3        # end of the sim at 10 ms, when laser pulse is done
-P_brems = 0             # Brems dissipation power [W]
+P_loss = 0             # Brems dissipation power [W]
 P_laser = 3000          # laser power (3 kW) [W]
+
+loss = "brems" # "brems" or "blackbody"
 
 time = np.append(time, i*timestep)  # time of first iteration
 
 while time[i] < time_end:
-    E_plasma = P_laser * time[i] - P_brems * time[i]          # Energy in the plasma ("E_plasma") goes up as time progresses
+    E_plasma = E_plasma + P_laser * timestep - P_loss * timestep          # Energy in the plasma ("E_plasma") goes up as time progresses
     
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
     p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
@@ -200,9 +208,16 @@ while time[i] < time_end:
     # STEP 6.4: Calculate pressure increase in chamber due to expansion of gas in plasma core
     p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
 
-    # STEP 6.5: As gas heats due to Brems. radiation, volume of the cone increases
-    P_brems = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
-    print(P_brems)
+    match loss:
+        case "brems":
+            # STEP 6.5: As gas heats due to Brems. radiation, volume of the cone increases
+            P_loss = V_2 * P_brems_perV(T_2, rho_N_ArII(T_2, p_ini, n_tot_ini), rho_N_ArII(T_2, p_ini, n_tot_ini), 1)
+            print(P_loss)
+        case "blackbody":
+            # calculate blackbody radiation loss, as a sanity check upper bound on power loss
+            A = area_cone(V_2, r)
+            P_loss = constants.Stefan_Boltzmann * T_2**4 *A # blackbody radiation (emissivity e = 1)
+            print(P_loss)
 
     # Save all values to vectors and increment time + iterator
     p = np.append(p, p_4)
@@ -214,6 +229,7 @@ while time[i] < time_end:
     time = np.append(time, i*timestep)  # time of next iteration
 
 # plot 
+
 plt.figure()
 plt.plot(time, p)
 plt.xlabel('Time [s]')
