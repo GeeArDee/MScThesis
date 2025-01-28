@@ -97,7 +97,7 @@ V_2 = V_final(p_2, n_tot, T_2)
 print("V_2 =", V_2)
 
 
-# STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma core
+# STEP 4: Calculate pressure increase in chamber due to expansion of gas in plasma cone
 p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
 print("p_4 =", p_4)
 print("Pressure increase :", (p_4-p_ini)/1000,"kPa")
@@ -187,7 +187,7 @@ time_end = 10e-3        # end of the sim at 10 ms, when laser pulse is done
 P_loss = 0             # Brems dissipation power [W]
 P_laser = 3000          # laser power (3 kW) [W]
 
-loss = "brems" # "brems" or "blackbody"
+loss = "blackbody" # "brems" or "blackbody"
 
 time = np.append(time, i*timestep)  # time of first iteration
 

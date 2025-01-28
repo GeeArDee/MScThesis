@@ -1,6 +1,8 @@
-\chapter{Modelling heat capacity} \label{chp:models}
+\chapter{0D LSP Model} \label{chp:models}
 
-    To correctly predict the temperature increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in the full-scale LTP engine for its increased $I_\mathrm{sp}$ due to having lower molecular weight.
+    To correctly predict the temperature increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. 
+    
+    Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in the full-scale LTP engine for its increased $I_\mathrm{sp}$ due to having lower molecular weight.
 
     \section{Equilibrium calculations} \label{sec:equilibrium calcs}
         
@@ -63,9 +65,45 @@
             \caption{Comparing calculated $C_p$ values of argon to those from CEA}
             \label{fig:Cp_compare}
         \end{figure}
+    
+    \section{Bremsstrahlung}
+        
+        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron's velocity vector changes around a heavier ion (elastic collision), a photon is released \todo{change this explanation}. The total radiated power can then be calculated with the formulas presented in the following table.
 
-    % \section{Test problem for heat addition}
+        \todo{Brems formula table} \textcite{glasstoneControlledThermonuclearReactions1975}
 
-    %     With these variable heat capacities, a test problem can be solved, giving a preliminary 0D model of an LTP engine.
+        The first relation was used for the remainder of the calculations. 
 
-    %     Bla bli \todo{Add homework problem}
+        There is also a question regarding whether the plasma is a surface emitter or a volume emitter. This is determined by calculating the plasma frequency at a typical electron density and comparing it to the wavelength of the light emitted by Bremsstrahlung. If the plasma frequency is LOWER/HIGHER? than the wavelength of Bremsstrahlung light, then it is cut off by the plasma; no light can escape the volume of the LSP cone, and it is a surface emitter. If it is HIGHER/LOWER?, then the emitted photons are not blocked by the LSP and the cone is a volumetric emitter.
+        
+        The plasma frequency $\omega_p$ is found with: 
+
+        \begin{equation}
+            \omega_p = \sqrt{\frac{n_e e^2}{\epsilon_0 m_e}}
+        \end{equation}
+
+            \todo{check if up to checklist standards italics}
+        With $n_e$ the plasma electron density, $e$ XX, $\epsilon_0$ is \todo{XX} and $m_e$ the electron mass.
+
+        At \todo{XX} K and \todo{XX} Pa, we get an electron density of \todo{XX}. This results in $\omega_p = XX$. Considering visible light and above (> \qty{1e14}{Hz}) as the wavelengths of interest, the LSP is indeed a volume emitter.
+
+    \section{Model setup}
+        
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.85\textwidth]{assets/2 models/Modeling figure.pdf}
+            \caption{0D model of an LSP inside a volume of pressurized argon}
+            \label{fig:0D model}
+        \end{figure}
+
+        The calculation procedure is as follows:
+
+        \begin{enumerate}
+            \item The volume and the mass of a cone of pure argon is found at the initial temperature (\qty{300}{K}) and pressure (\qty{20}{bar})
+            \item Energy from the laser pulse is added to the cone at constant pressure and the new temperature at this step is found ($T_2$)
+            \item The new volume of the cone ($V_2$) is found
+            \item The pressure increase in the chamber due to the expansion of the gas in the plasma cone is calculated
+            \item 
+          \end{enumerate}
+
+    \section{Model results}
