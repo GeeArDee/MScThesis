@@ -9,7 +9,7 @@ import sympy as sp
 from labellines import labelLines
 from Equilibrium_calculations import MinimizeGibbs_Ar, h_mix_mass_Ar
 
-
+#%%
 # Initialize variables
 t = 0                                       # Time (s)
 t_end = 10                                  # End time of the simulation (s)
@@ -77,7 +77,7 @@ r = 1/1000                                  # Radius of the base of plasma cone 
 V_plasma = np.pi*r**2*l/3                   # Volume of plasma cone (m^3)
 m_plasma = V_plasma*rho_300K(T_ini, p_ini)  # Mass of plasma (kg), will be taken as constant during this exercise
 
-
+#%%
 # STEP 2: Add 30 J of energy to m_plasma, while keeping constant pressure
 p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
 T_2_guess = 15000.0
@@ -172,32 +172,38 @@ plt.ylabel('Pressure [Pa]')
 #plt.ylim([0,5e11])
 plt.title("Pressure change over time when laser turns off, with bremsstrahlung radiation loss")
 
-#%% STEP 7: Pressure with time, with t=0 laser turns on. This is to see what happens as pressure rises.
+#%% STEP 7: Pressure with time, with t=0 laser turns on, t = 10 ms laser turns off
 
 # Initialize variables
-timestep = 10e-6       # 1 us timestep
+timestep = 100e-6       # 1 us timestep
 time = np.array([0])    # time [s]
+T_ini = 300.0                                # Initial temperature of the chamber (K)
+p_ini = 20.0e5                                # Pressure of the chamber (20 bar to Pa)
 p = np.array([p_ini])       # pressure [Pa]
 T = np.array([T_ini])       # Temperature [K]
+T_2_guess = T_ini           # First temperature guess is the initial temp
+p_2 = p_ini                  # For step 6.2: Plasma cone is at the same pressure as the surrounding gas
 V = np.array([0])           # Volume of plasma cone [m^3]
 E_plasma_array = np.array([0])    # Energy in the plasma [J]
 E_plasma = 0
-i = 1                   # iteration index
+i = 0                   # iteration index
 time_end = 10e-3        # end of the sim at 10 ms, when laser pulse is done
 P_loss = 0             # Brems dissipation power [W]
 P_laser = 3000          # laser power (3 kW) [W]
 
 loss = "blackbody" # "brems" or "blackbody"
 
-time = np.append(time, i*timestep)  # time of first iteration
+# time = np.append(time, i*timestep)  # time of first iteration
 
-while time[i] < time_end:
-    E_plasma = E_plasma + P_laser * timestep - P_loss * timestep          # Energy in the plasma ("E_plasma") goes up as time progresses
+while i < 200:
+    if time[i] < time_end: # While laser is on
+        E_plasma = E_plasma + P_laser * timestep - P_loss * timestep          # Energy in the plasma ("E_plasma") goes up as time progresses
+    else: # laser turns off, LSP radiates away energy
+        E_plasma = E_plasma - P_loss * timestep          # Energy in the plasma ("E_plasma") goes down as energy is radiated
     
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
-    p_2 = p_ini                                                             # Plasma cone is at the same pressure as the surrounding gas
-    T_2_guess = T[i-1]      # Take the last calculated temperature as the guess for polynomials
     T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
+    T_2_guess = T_2          # Take the last calculated temperature as the guess for the next polynomials
 
     # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
     n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
@@ -207,6 +213,7 @@ while time[i] < time_end:
     
     # STEP 6.4: Calculate pressure increase in chamber due to expansion of gas in plasma core
     p_4 = p_ini * ((V_chamberV1 - V_plasma)/(V_chamberV1 - V_2))**k
+    p_2 = p_4           # Plasma cone is at the same pressure as the surrounding gas, for next iteration
 
     match loss:
         case "brems":
@@ -219,22 +226,40 @@ while time[i] < time_end:
             P_loss = constants.Stefan_Boltzmann * T_2**4 *A # blackbody radiation (emissivity e = 1)
             print(P_loss)
 
+
     # Save all values to vectors and increment time + iterator
+    time = np.append(time, i*timestep)
     p = np.append(p, p_4)
     T = np.append(T, T_2)               # Store temperature in vector for plotting
     V = np.append(V, V_2)
     E_plasma_array = np.append(E_plasma_array, E_plasma)
-
     i += 1
-    time = np.append(time, i*timestep)  # time of next iteration
 
 # plot 
-
 plt.figure()
 plt.plot(time, p)
 plt.xlabel('Time [s]')
 plt.ylabel('Pressure [Pa]')
 #plt.xlim([0,20000])
 #plt.ylim([0,5e11])
-plt.title("Pressure change over time during laser pulse, with bremsstrahlung radiation loss")
+plt.title("Pressure change over time during laser pulse, with radiation loss")
+
+
+# Plot experimental data
+df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19012.csv', header=2) # Experimental data from LSP178_SPRK49 (V1 100% power pulse shot, 19.91 bar)
+
+
+
+# LW41871 = {
+#         'psi_conversion': 103.0e-3,  # V/psi
+#         'kPa_conversion': 14.94e-3,  # V/kPa 
+#     }
+#     LW41374 = {
+#         'psi_conversion': 100.0e-3,  # V/psi
+#         'kPa_conversion': 14.51e-3,  # V/kPa
+#     }
+
+plt.plot() 
+
+plt.legend(['Experimental', 'Blackbody radiation (bounding case)']) # add BRems too
 # %%
