@@ -289,3 +289,5 @@ def CEA_LSP_polynomials(compound, T):
         2 + a_5*(t**2)/3 + a_6*(t**3)/4 + a_7*(t**4)/5 + b_1/t
 
     return cp_divR, h_divRT, so_divR, h_f, h_divRT_symbolic
+
+# %%

@@ -19,445 +19,175 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{khanGasDetectionUsing2019}{article}{}{}
+    \entry{mcbrideNASAGlennCoefficients2002}{misc}{}{}
       \name{author}{3}{}{%
-        {{hash=03aa1bff3174194d51e8a7fad7d5cb8a}{%
-           family={Khan},
-           familyi={K\bibinitperiod},
-           given={Sulaiman},
-           giveni={S\bibinitperiod}}}%
-        {{hash=7d4683e4777a585383b14c8797bcd5c7}{%
-           family={Newport},
-           familyi={N\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-        {{hash=908cd8628d78ec701f172f11ebed5a21}{%
-           family={Le\bibnamedelima Calvé},
-           familyi={L\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Stéphane},
+        {{hash=e517dff9ee519cd1d4d6815ba8cac450}{%
+           family={McBride},
+           familyi={M\bibinitperiod},
+           given={Bonnie\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=ef5956bb35154c5d7cc581210eafc5fd}{%
+           family={Zehe},
+           familyi={Z\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=528ca2ce5c7d5f1c55b0a32885507936}{%
+           family={Gordon},
+           familyi={G\bibinitperiod},
+           given={Sanford},
            giveni={S\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Multidisciplinary Digital Publishing Institute}%
-      }
-      \strng{namehash}{9b215b5f9087c41be28aa3f6ecf4cf73}
-      \strng{fullhash}{3e02d2481b0ab86e39625c1c61a3f926}
-      \strng{fullhashraw}{3e02d2481b0ab86e39625c1c61a3f926}
-      \strng{bibnamehash}{3e02d2481b0ab86e39625c1c61a3f926}
-      \strng{authorbibnamehash}{3e02d2481b0ab86e39625c1c61a3f926}
-      \strng{authornamehash}{9b215b5f9087c41be28aa3f6ecf4cf73}
-      \strng{authorfullhash}{3e02d2481b0ab86e39625c1c61a3f926}
-      \strng{authorfullhashraw}{3e02d2481b0ab86e39625c1c61a3f926}
+      \strng{namehash}{ba1acf2a814a2b2eda10916d3fc27660}
+      \strng{fullhash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{fullhashraw}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{bibnamehash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authorbibnamehash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authornamehash}{ba1acf2a814a2b2eda10916d3fc27660}
+      \strng{authorfullhash}{e4b302826dc793724e9351c9581dcdb9}
+      \strng{authorfullhashraw}{e4b302826dc793724e9351c9581dcdb9}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Several gas molecules of environmental and domestic significance exhibit a strong deep-UV absorption. Therefore, a sensitive and a selective gas detector based on this unique molecular property (i.e., absorption at a specific wavelength) can be developed using deep-UV absorption spectrophotometry. UV absorption spectrometry provides a highly sensitive, reliable, self-referenced, and selective approach for gas sensing. This review article addresses the recent progress in the application of deep-UV absorption for gas sensing owing to its inherent features and tremendous potentials. Applications, advancements, and challenges related to UV emission sources, gas cells, and UV photodetectors are assessed and compared. We present the relevant theoretical aspects and challenges associated with the development of portable sensitive spectrophotometer. Finally, the applications of UV absorption spectrometry for ozone, NO2, SO2, and aromatic organic compounds during the last decades are discussed and compared. A portable UV absorption spectrophotometer can be developed by using LEDs, hollow core waveguides (HCW), and UV photodetectors (i.e., photodiodes). LED provides a portable UV emission source with low power input, low-intensity drifts, low cost, and ease of alignment. It is a quasi-chromatic UV source and covers the absorption band of molecules without optical filters for absorbance measurement of a target analyte. HCWs can be applied as a miniature gas cell for guiding UV radiation for measurement of low gas concentrations. Photodiodes, on the other hand, offer a portable UV photodetector with excellent spectral selectivity with visible rejection, minimal dark current, linearity, and resistance against UV-aging.}
-      \field{issn}{1424-8220}
-      \field{issue}{23}
-      \field{journaltitle}{Sensors}
-      \field{langid}{english}
-      \field{month}{1}
-      \field{number}{23}
-      \field{shorttitle}{Gas {{Detection Using Portable Deep-UV Absorption Spectrophotometry}}}
-      \field{title}{Gas {{Detection Using Portable Deep-UV Absorption Spectrophotometry}}: {{A Review}}}
-      \field{urlday}{14}
-      \field{urlmonth}{6}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This report documents the library of thermodynamic data used with the NASA Glenn computer program CEA (Chemical Equilibrium with Applications). This library, containing data for over 2000 solid, liquid, and gaseous chemical species for temperatures ranging from 200 to 20,000 K, is available for use with other computer codes as well. The data are expressed as least-squares coefficients to a seven-term functional form for C((sup o)(sub p)) (T) / R with integration constants for H (sup o) (T) / RT and S(sup o) (T) / R. The NASA Glenn computer program PAC (Properties and Coefficients) was used to calculate thermodynamic functions and to generate the least-squares coefficients. PAC input was taken from a variety of sources. A complete listing of the database is given along with a summary of thermodynamic properties at 0 and 298.15 K.}
+      \field{annotation}{NTRS Author Affiliations: NASA Glenn Research Center\\ NTRS Report/Patent Number: NASA/TP-2002-211556\\ NTRS Document ID: 20020085330\\ NTRS Research Center: Glenn Research Center (GRC)}
+      \field{day}{1}
+      \field{month}{9}
+      \field{title}{{{NASA Glenn Coefficients}} for {{Calculating Thermodynamic Properties}} of {{Individual Species}}}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
       \field{urlyear}{2024}
-      \field{volume}{19}
-      \field{year}{2019}
+      \field{year}{2002}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{5210}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/s19235210
-      \endverb
       \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\V6J22S5E\Khan et al. - 2019 - Gas Detection Using Portable Deep-UV Absorption Spectrophotometry A Review.pdf
+      \verb C\:\\Users\\gdub5\\Zotero\\storage\\GY9D4N8V\\McBride et al. - 2002 - NASA Glenn Coefficients for Calculating Thermodynamic Properties of Individual Species.pdf;C\:\\Users\\gdub5\\Zotero\\storage\\HBKQYPF8\\20020085330.html
       \endverb
       \verb{urlraw}
-      \verb https://www.mdpi.com/1424-8220/19/23/5210
+      \verb https://ntrs.nasa.gov/citations/20020085330
       \endverb
       \verb{url}
-      \verb https://www.mdpi.com/1424-8220/19/23/5210
+      \verb https://ntrs.nasa.gov/citations/20020085330
       \endverb
-      \keyw{absorption spectrophotometry,BTEX,deep ultraviolet,hollow core waveguides,LEDs,NO<sub>2</sub>,ozone,photodiodes,SO<sub>2</sub>,spectroscopy,ultraviolet light sources,VOC}
+      \keyw{Physics Of Elementary Particles And Fields}
     \endentry
-    \entry{LaserSpotSize}{online}{}{}
-      \list{organization}{1}{%
-        {Gentec-EO}%
-      }
+    \entry{CEARUNRev4}{online}{}{}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
-      \field{abstract}{This calculator gives you the laser spot size and laser beam waist values based on the beam diameter at lens, wavelength, and other parameters you input.}
-      \field{langid}{english}
-      \field{title}{Laser Spot Size and Beam Waist Calculator and Formulas}
-      \field{urlday}{25}
+      \field{title}{{{CEARUN}} Rev4}
+      \field{urlday}{26}
       \field{urlmonth}{7}
       \field{urlyear}{2024}
       \field{urldateera}{ce}
       \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\CBFQ5XVN\beam-waist-spot-size.html
+      \verb C:\Users\gdub5\Zotero\storage\C4U6PU6B\cearun.grc.nasa.gov.html
       \endverb
       \verb{urlraw}
-      \verb https://www.gentec-eo.com/laser-calculators/beam-waist-spot-size
+      \verb https://cearun.grc.nasa.gov/
       \endverb
       \verb{url}
-      \verb https://www.gentec-eo.com/laser-calculators/beam-waist-spot-size
+      \verb https://cearun.grc.nasa.gov/
       \endverb
     \endentry
-    \entry{hechtUnderstandingLasersEntry2019}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=1b7579d9f6ab99a98f43a3fdbcf05f42}{%
-           family={Hecht},
-           familyi={H\bibinitperiod},
-           given={Jeff},
-           giveni={J\bibinitperiod}}}%
+    \entry{glasstoneControlledThermonuclearReactions1975}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=6bbef81f7bc0d403f9a8be54d611aeec}{%
+           family={Glasstone},
+           familyi={G\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0595e186e50a9f8fe9c3beb78ce979ca}{%
+           family={Lovberg},
+           familyi={L\bibinitperiod},
+           given={Ralph\bibnamedelimb H.\bibnamedelimi (Ralph\bibnamedelima Harvey)},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim (\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Hoboken}%
+      \name{namea}{1}{}{%
+        {{hash=cbd2fd311741990b3e76308c90a5ddf2}{%
+           family={{Internet Archive}},
+           familyi={I\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {John Wiley \& Sons, Inc.}%
+        {Huntington, N.Y. : R. E. Krieger Pub. Co.}%
       }
-      \strng{namehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{fullhash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{fullhashraw}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{bibnamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{authorbibnamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{authornamehash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{authorfullhash}{1b7579d9f6ab99a98f43a3fdbcf05f42}
-      \strng{authorfullhashraw}{1b7579d9f6ab99a98f43a3fdbcf05f42}
+      \strng{namehash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{fullhash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{fullhashraw}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{bibnamehash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{authorbibnamehash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{authornamehash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{authorfullhash}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{authorfullhashraw}{62589c2757c597f73376fa16a1dbc17d}
+      \strng{nameabibnamehash}{cbd2fd311741990b3e76308c90a5ddf2}
+      \strng{nameanamehash}{cbd2fd311741990b3e76308c90a5ddf2}
+      \strng{nameafullhash}{cbd2fd311741990b3e76308c90a5ddf2}
+      \strng{nameafullhashraw}{cbd2fd311741990b3e76308c90a5ddf2}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{4}
-      \field{isbn}{978-1-119-31064-8}
-      \field{title}{Understanding {{Lasers}}: {{An Entry Level Guide}}}
-      \field{year}{2019}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{"Prepared under auspices of the Office of Technical Information, United States Atomic Energy Commission."; Reprint of the ed. published by Van Nostrand Reinhold Co., New York; Includes bibliographical references and index}
+      \field{isbn}{978-0-88275-326-3}
+      \field{langid}{english}
+      \field{nameatype}{collaborator}
+      \field{pagetotal}{554}
+      \field{shorttitle}{Controlled Thermonuclear Reactions}
+      \field{title}{Controlled Thermonuclear Reactions : An Introduction to Theory and Experiment}
+      \field{urlday}{28}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{1975}
       \field{dateera}{ce}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\WZK8YRTD\Hecht - 2019 - Understanding Lasers An Entry Level Guide.pdf
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://archive.org/details/controlledthermo00glas
       \endverb
+      \verb{url}
+      \verb http://archive.org/details/controlledthermo00glas
+      \endverb
+      \keyw{Controlled fusion}
     \endentry
-    \entry{paschottaBeamParameterProduct}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=d32f26c6dc8d9b5ebcbada8fe8470680}{%
-           family={Paschotta},
-           familyi={P\bibinitperiod},
-           given={Dr\bibnamedelima Rüdiger},
-           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+    \entry{rybickiRadiativeProcessesAstrophysics2004}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=a8b83f4134b8420d321b4347ac783e11}{%
+           family={Rybicki},
+           familyi={R\bibinitperiod},
+           given={George\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=6f630e08309226fb2a0dbdf8e0a6fdf7}{%
+           family={Lightman},
+           familyi={L\bibinitperiod},
+           given={Alan\bibnamedelima P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \strng{namehash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{fullhash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{fullhashraw}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{bibnamehash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{authorbibnamehash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{authornamehash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{authorfullhash}{d32f26c6dc8d9b5ebcbada8fe8470680}
-      \strng{authorfullhashraw}{d32f26c6dc8d9b5ebcbada8fe8470680}
+      \list{location}{1}{%
+        {Weinheim, [Germany]}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-VCH Verlag GmbH \& Co. KGaA}%
+      }
+      \strng{namehash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{fullhash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{fullhashraw}{5adc88be60a94c7021deb49fbe035855}
+      \strng{bibnamehash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{authorbibnamehash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{authornamehash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{authorfullhash}{5adc88be60a94c7021deb49fbe035855}
+      \strng{authorfullhashraw}{5adc88be60a94c7021deb49fbe035855}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The beam parameter product of a laser beam is the product of the beam radius in a focus and the far-field half-angle beam divergence.}
+      \field{isbn}{978-0-471-82759-7 978-3-527-61818-7}
       \field{langid}{english}
-      \field{title}{Beam Parameter Product}
-      \field{urlday}{26}
-      \field{urlmonth}{3}
-      \field{urlyear}{2024}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\XKTCEIVT\beam_parameter_product.html
-      \endverb
-      \verb{urlraw}
-      \verb https://www.rp-photonics.com/beam_parameter_product.html
-      \endverb
-      \verb{url}
-      \verb https://www.rp-photonics.com/beam_parameter_product.html
-      \endverb
-    \endentry
-    \entry{LensTutorial}{online}{}{}
-      \list{organization}{1}{%
-        {Thorlabs}%
-      }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Thorlabs specializes in the building blocks for laser and fiber optic systems. From optomechanical components to telecom test instrumentation, Thorlabs' extensive manufacturing capabilities allow us to ship high quality, well priced components and devices for next-day delivery. Optomechanics, optics, opto-electronics, laser diodes, fiber optics and ASE test sources as well as fiber optic amplifiers.}
-      \field{langid}{english}
-      \field{title}{Lens {{Tutorial}}}
-      \field{urlday}{30}
-      \field{urlmonth}{7}
-      \field{urlyear}{2024}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\X46WR3J3\newgrouppage9.html
-      \endverb
-      \verb{urlraw}
-      \verb https://www.thorlabs.com
-      \endverb
-      \verb{url}
-      \verb https://www.thorlabs.com
-      \endverb
-    \endentry
-    \entry{saadCompressibleFluidFlow}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=47bc93f2d578b15872f8c46cc62447f6}{%
-           family={Saad},
-           familyi={S\bibinitperiod},
-           given={Michel\bibnamedelima A.},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Englewood Cliffs}%
-      }
-      \strng{namehash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{fullhash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{fullhashraw}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{bibnamehash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{authorbibnamehash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{authornamehash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{authorfullhash}{47bc93f2d578b15872f8c46cc62447f6}
-      \strng{authorfullhashraw}{47bc93f2d578b15872f8c46cc62447f6}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Compressible {{Fluid Flow}}}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\G4NLQYDH\Saad - Compressible Fluid Flow.pdf
-      \endverb
-    \endentry
-    \entry{barigouFluidMechanicsSoap1993}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=e98a8925e009706ae857c90ad3f3e736}{%
-           family={Barigou},
-           familyi={B\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=3ea7cbb632c3b177191e53d87a8bd1bf}{%
-           family={Davidson},
-           familyi={D\bibinitperiod},
-           given={J.\bibnamedelimi F.},
-           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-      }
-      \strng{namehash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{fullhash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{fullhashraw}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{bibnamehash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{authorbibnamehash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{authornamehash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{authorfullhash}{f3b421cbea2fa560839b3cb5d773adc7}
-      \strng{authorfullhashraw}{f3b421cbea2fa560839b3cb5d773adc7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{A free soap film extending across the circular cross section of a tube consists of a thin central lamella surrounded by a meniscus or Plateau border at the wall of the tube; this meniscus is the seat of a suction pressure. Measurements of the pressure drop arising from the motion of single and multiple soap films in the vertical cylindrical tube of a soap film meter for measuring gas flow show that the pressure drop is a linear function of both the film velocity and the number of films flowing simultaneously in the tube. This function consists of a static component and a dynamic component: the static component is the pressure drop when the film velocity tends to zero. This static component arises from the film meniscus as the lamella is shown to be very thin. Two non-linear second-order differential equations are derived which describe the shape of a stationary meniscus. Numerical integration of these equations led to the successful prediction of the static pressure drop component by an evaluation of the weight of liquid in the meniscus. The theory is confirmed by experimental measurements of pressure drop in soap film meters of diameters in the range 6.2–73.4 mm. In each case, the theoretical solution also yielded the value of the suction presurre in the Plateau border. A soap film is inherently unstable, for the continuous drainage of the intralamellar liquid into the meniscus eventually leads to its collapse. A critical tube radius is calculated below which the central lamella does not exist and the film consists of a meniscus where the liquid is under hydrostatic equilibrium. This tube radius corresponds to the critical Bond number for stability of equilibrium interfaces. Experiments confirmed that, in a controlled environment, such static menisci are stable for an indefinite period of time.}
-      \field{day}{1}
-      \field{issn}{0009-2509}
-      \field{journaltitle}{Chemical Engineering Science}
-      \field{month}{7}
-      \field{number}{14}
-      \field{shortjournal}{Chemical Engineering Science}
-      \field{title}{The Fluid Mechanics of the Soap Film Meter}
-      \field{urlday}{4}
-      \field{urlmonth}{8}
-      \field{urlyear}{2024}
-      \field{volume}{48}
-      \field{year}{1993}
+      \field{pagetotal}{1}
+      \field{title}{Radiative Processes in Astrophysics}
+      \field{year}{2004}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{2587\bibrangedash 2597}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.1016/0009-2509(93)80269-V
-      \endverb
       \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\VWG6GIV3\000925099380269V.html
+      \verb C:\Users\gdub5\Zotero\storage\CV737AVU\Rybicki and Lightman - 2004 - Radiative processes in astrophysics.pdf
       \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/000925099380269V
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/000925099380269V
-      \endverb
-    \endentry
-    \entry{duplayArgonLaserPlasmaThruster2024a}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=2e8ef8140411a53ea276200c8955e82c}{%
-           family={Duplay},
-           familyi={D\bibinitperiod},
-           given={Emmanuel},
-           giveni={E\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Technical University Delft}%
-      }
-      \list{location}{1}{%
-        {Delft}%
-      }
-      \strng{namehash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{fullhash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{fullhashraw}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{bibnamehash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{authorbibnamehash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{authornamehash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{authorfullhash}{2e8ef8140411a53ea276200c8955e82c}
-      \strng{authorfullhashraw}{2e8ef8140411a53ea276200c8955e82c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{A laser-sustained plasma (LSP) generator capable of operating as a laser-thermal thruster was designed and tested. The apparatus was powered by a 3-kW 1070-nm fiber-optic laser and was operated with argon gas. The laser absorption, radiated spectrum, and change in static pressure were recorded, and high-speed video footage of the LSP was acquired. Of special interest is the heat-deposition efficiency into the working gas resulting from LSP ignition, which was estimated by tracking the pressure change in the test section. Laser transmission through the plasma was also measured to quantify two energy loss mechanisms: incomplete laser absorption and radiation of heat to the walls of the test section. Minimizing these losses would be critical in the realization of a practical and efficient laser-thermal propulsion (LTP) thruster, as most of the laser energy should be deposited as heat in the propellant to maximize thruster specific impulse.}
-      \field{langid}{english}
-      \field{pagetotal}{149}
-      \field{shorttitle}{Argon {{Laser-Plasma Thruster}}}
-      \field{title}{Argon {{Laser-Plasma Thruster}}: {{Design}} and {{Test}} of a {{Laboratory Model}}}
-      \field{type}{mathesis}
-      \field{urlday}{2}
-      \field{urlmonth}{2}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\PGK8XE8J\Duplay - 2024 - Argon Laser-Plasma Thruster Design and Test of a .pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://repository.tudelft.nl/islandora/object/uuid%3A3a853f2e-2d8c-496b-a016-9e9855e8069c
-      \endverb
-      \verb{url}
-      \verb https://repository.tudelft.nl/islandora/object/uuid%3A3a853f2e-2d8c-496b-a016-9e9855e8069c
-      \endverb
-    \endentry
-    \entry{McMasterCarr}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{abstract}{McMaster-Carr is the complete source for your plant with over 595\&\#44;000 products. 98\% of products ordered ship from stock and deliver same or next day.}
-      \field{langid}{english}
-      \field{title}{{{McMaster-Carr}}}
-      \field{urlday}{14}
-      \field{urlmonth}{10}
-      \field{urlyear}{2024}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\ZEH6P7LD\7369A12.html
-      \endverb
-      \verb{urlraw}
-      \verb https://www.mcmaster.com/
-      \endverb
-      \verb{url}
-      \verb https://www.mcmaster.com/
-      \endverb
-    \endentry
-    \entry{toyodaThrustPerformanceCW2002}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=bae201c6619303d2bfa9ebafdcff58e0}{%
-           family={Toyoda},
-           familyi={T\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=cc714bf1791ee1655caa2f11467c1c61}{%
-           family={Komurasaki},
-           familyi={K\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=6badaf282b58a89bbcd6fb3089d1e3b8}{%
-           family={Arakawa},
-           familyi={A\bibinitperiod},
-           given={Y.},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{ab76a49c17189b827ab563497fba14d5}
-      \strng{fullhash}{ca3a45b147d184bbba41dfef414762e9}
-      \strng{fullhashraw}{ca3a45b147d184bbba41dfef414762e9}
-      \strng{bibnamehash}{ca3a45b147d184bbba41dfef414762e9}
-      \strng{authorbibnamehash}{ca3a45b147d184bbba41dfef414762e9}
-      \strng{authornamehash}{ab76a49c17189b827ab563497fba14d5}
-      \strng{authorfullhash}{ca3a45b147d184bbba41dfef414762e9}
-      \strng{authorfullhashraw}{ca3a45b147d184bbba41dfef414762e9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This paper reports the results of fundamental experiments on a continuous-wave CO2 laser thruster. A thrust in vacuum was measured using a simple thrust stand, bellows and vacuum system. The thruster was connected to the vacuum tank with bellows outside the tank instead of setting the thruster into the tank. As a result of thrust measurement in vacuum, the thrust coefficient increase from 1.0 to 1.6 with increasing pressure ratio of 5–400. The energy conversion efficiency reached 37\% in vacuum.}
-      \field{day}{27}
-      \field{issn}{0042-207X}
-      \field{issue}{3}
-      \field{journaltitle}{Vacuum}
-      \field{langid}{english}
-      \field{month}{5}
-      \field{number}{3}
-      \field{series}{3rd {{International Symposium}} on {{Applied Plasma Science}} ({{ISAPS}} 01)}
-      \field{shortjournal}{Vacuum}
-      \field{title}{Thrust Performance of a {{CW}} Laser Thruster in Vacuum}
-      \field{volume}{65}
-      \field{year}{2002}
-      \field{dateera}{ce}
-      \field{pages}{383\bibrangedash 388}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1016/S0042-207X(01)00446-8
-      \endverb
-      \verb{file}
-      \verb C:\Users\gdub5\Zotero\storage\5NA747PU\Toyoda et al. - 2002 - Thrust performance of a CW laser thruster in vacuu.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0042207X01004468
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0042207X01004468
-      \endverb
-      \keyw{Laser propulsion,LSP,Plasma,Thruster performance}
-    \endentry
-    \entry{shojiLaserheatedRocketThruster1977}{report}{}{}
-      \name{author}{1}{}{%
-        {{hash=aae3417c168e15290078c5799a50ba16}{%
-           family={Shoji},
-           familyi={S\bibinitperiod},
-           given={J.\bibnamedelimi M.},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \strng{namehash}{aae3417c168e15290078c5799a50ba16}
-      \strng{fullhash}{aae3417c168e15290078c5799a50ba16}
-      \strng{fullhashraw}{aae3417c168e15290078c5799a50ba16}
-      \strng{bibnamehash}{aae3417c168e15290078c5799a50ba16}
-      \strng{authorbibnamehash}{aae3417c168e15290078c5799a50ba16}
-      \strng{authornamehash}{aae3417c168e15290078c5799a50ba16}
-      \strng{authorfullhash}{aae3417c168e15290078c5799a50ba16}
-      \strng{authorfullhashraw}{aae3417c168e15290078c5799a50ba16}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{A space vehicle application using 5,000-kw input laser power was conceptually evaluated. A detailed design evaluation of a 10-kw experimental thruster including plasma size, chamber size, cooling, and performance analyses, was performed for 50 psia chamber pressure and using hydrogen as a propellant. The 10-kw hardware fabricated included a water cooled chamber, an uncooled copper chamber, an injector, igniters, and a thrust stand. A 10-kw optical train was designed.}
-      \field{annotation}{NTRS Author Affiliations: Rockwell International Corp.\\ NTRS Document ID: 19770017244\\ NTRS Research Center: Legacy CDMS (CDMS)}
-      \field{day}{12}
-      \field{month}{4}
-      \field{number}{NASA-CR-135128}
-      \field{title}{Laser-Heated Rocket Thruster}
-      \field{urlday}{2}
-      \field{urlmonth}{2}
-      \field{urlyear}{2024}
-      \field{year}{1977}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C\:\\Users\\gdub5\\Zotero\\storage\\QCAIDG7L\\Shoji - 1977 - Laser-heated rocket thruster.pdf;C\:\\Users\\gdub5\\Zotero\\storage\\HDTZDZLR\\19770017244.html
-      \endverb
-      \verb{urlraw}
-      \verb https://ntrs.nasa.gov/citations/19770017244
-      \endverb
-      \verb{url}
-      \verb https://ntrs.nasa.gov/citations/19770017244
-      \endverb
-      \keyw{Spacecraft Propulsion And Power}
     \endentry
   \enddatalist
 \endrefsection
