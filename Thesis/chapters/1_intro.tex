@@ -165,16 +165,28 @@
 
     \section{Summary and direction of work in this thesis}
         
-        From the literature review, \autoref{tab:lit review summary} and \autoref{tab:efficiencies} were compiled. Most studies have used \ce{CO2} lasers with a wavelength of \qty{10.6}{μm}. Use of a \ce{CO2} laser for power beaming to a remote target for propulsion applications is limited by the range over which the laser can be focused due to their long laser wavelength. 
+        From the literature review, \autoref{tab:lit review summary} and \autoref{tab:efficiencies} were compiled. Most studies have used \ce{CO2} lasers with a wavelength of \qty{10.6}{μm}. 
+        
+
+        %%%%
+        Use of a \ce{CO2} laser for power beaming to a remote target for propulsion applications is limited by the range over which the laser can be focused due to their long laser wavelength.
+
+        The range $L$ at which the laser's spot size is equal to its emitter size is given by:
     
-        Indeed, the diffraction limit of a laser, which is the theoretical lower limit on beam divergence, equals the wavelength ($\lambda$) divided by the diameter $D$ of the output beam \cite{hechtUnderstandingLasersEntry2019}.
+        % Indeed, the diffraction limit of a laser, which is the theoretical lower limit on beam divergence, equals the wavelength ($\lambda$) divided by the diameter $D$ of the output beam \cite{hechtUnderstandingLasersEntry2019}.
         \[
-        \text{Diffraction limit (radians)} = \lambda/D
+            L = \frac{dD}{2\lambda\alpha}
         \]
-        \textcolor{red}{I will change this to explain the range over which a laser can be focused.}
+        % \textcolor{red}{I will change this to explain the range over which a laser can be focused.}
+        
+        \textcite{lubinRoadmapInterstellarFlight2016}
+
+        A smaller wavelength ($\lambda$) gives a larger value of $L$, as the beam diverges less.
+        
+        With a \qty{10}{m} circular emitter and receptor, an L of...
 
         This relegated \ce{CO2} lasers to ground-to-orbit launch. However, high power fiber lasers emitting near \qty{1}{μm} have recently become readily available. Being able to beam energy to low earth orbit, fiber lasers make laser propulsion more feasible.
-        
+        %%%%
 
         \begin{table}[!ht]
             \centering
