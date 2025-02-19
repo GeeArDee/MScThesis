@@ -1,3 +1,4 @@
+\setcounter{chapter}{2}
 \chapter{Facility design}
 
     \section{Version 1 test section} \label{sec:design_v1}
@@ -80,7 +81,7 @@
                     \end{enumerate}
                     \item A 1/8" NPT port for a pressure transducer shall be present along the thruster
                     \item An optical port shall be present for spectrometry measurements of the plasma
-                    \item The thruster shall be installed on a thrust stand (See section 3. Thrust stand)
+                    \item The thruster shall be installed on a thrust stand (See requirements section 3. Thrust stand)
                 \end{enumerate}
                 \item Initiation system/electrical
                 \begin{enumerate}
@@ -101,12 +102,18 @@
 
         \subsection{Initial sizing of the double choked LTP thruster}
 
-            When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_\mathrm{in}$ constant, so the increase in chamber pressure can be interpreted as a measure of energy deposition. The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked (see \autoref{fig:double choke sizing}), a classic problem in compressible fluid mechanics.
+            The minimum diameter of the cylinder that will contain the LSP core must be larger than the diameter of the plasma itself, which is \qty{2}{mm} according to observations from \textcite{duplayArgonLaserPlasmaThruster2024a}. An arbitrary factor of safety of 2.5 was used, which set the innermost diameter to \qty{5}{mm}.
+
+            The argon gas enters radially near the end of the thruster. A channel around the inner cylinder directs the gas to the front of the thruster, where it turns \qty{180}{\degree} through the plasma region and out the nozzle (see \autoref{fig:double choke sizing}). This ``cylinder-inside-a-cylinder" design was inspired by \textcite{toyodaThrustPerformanceCW2002}, allowing the gas to cool the inner cylinder and straightening the flow.
+
+            The thickness of the exterior wall of the thruster was determined by the minimum engagement depth (\qty{14}{mm}) of the 1/4 inch Ultra-Torr NPT fittings.
+
+            The required metering valve and nozzle orifice sizes were then estimated. When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_\mathrm{in}$ constant, so the increase in chamber pressure can be interpreted as a measure of energy deposition. The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked (see \autoref{fig:double choke sizing}), a classic problem in compressible fluid mechanics.
 
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.8\linewidth]{assets/3 design/Double choked LTP thruster.pdf}
-                \caption{Cutaway of a double choked LTP thruster showing both choking orifices: the metering valve and the nozzle.}
+                \caption{Cutaway of the V2 double choked LTP thruster showing both choking orifices: the metering valve and the nozzle. Ports other than the argon inlet are omitted for clarity.}
                 \label{fig:double choke sizing}
             \end{figure}
             
@@ -123,7 +130,7 @@
         
         \subsection{Test section and thrust stand}
             
-            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity, enabling static and flowing tests with argon propellant. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting. After flowing through the test section, used argon propellant was vented directly to the lab. \autoref{fig:V2 IRL setup} shows the two final configurations in the lab.
+            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity, enabling static and flowing tests with argon propellant. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting, but was replaced by a pipe plug after excessive rod breakage. After flowing through the test section, used argon propellant was vented to the ambient air. \autoref{fig:V2 IRL setup} shows the two final configurations that were used.
 
             \begin{figure}[!ht]
                 \centering
@@ -217,9 +224,9 @@
 
         \subsection{Cameras}
 
-            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to no side windows being present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's sensor was protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
+            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to no side windows being present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's lenses and its sensor were protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
 
-            A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an extra confirmation that the laser emission was off before opening the laser safety curtain.
+            A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an additional confirmation that the laser emission was turned off before opening the laser safety curtain.
 
         \subsection{Spark initiation system}
 
@@ -255,5 +262,5 @@
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=\textwidth]{assets/3 design/V1 V2 comparison.png}
-            \caption{Size comparison between V1 (top) and V2 (bottom). V2 is in static configuration, without the extension cylinder.}
+            \caption{Size comparison between V1 (top, on extrusion rails) and V2 (bottom, mounted in front of laser collimator). V2 is in static configuration, without the extension cylinder.}
         \end{figure} 
