@@ -52,7 +52,7 @@
         A similar dissociation graph can be found with argon, but with three species. The Gibbs energy is then minimized to determine the molar fractions $y_i$ at which the mixture reaches equilibrium. From this, the enthalpy $H$ of the mixture was found. The $C_p$ of the mixture was then calculated from the enthalpy with:
 
         \begin{equation}
-            C_p = \frac{\partial H}{\partial T}
+            C_p = \frac{\partial H}{\partial T}\bigg|_{p = const.}
         \end{equation}
         
         For argon, these calculated $C_p$ values were validated against values from CEA \cite{CEARUNRev4} in \autoref{fig:Cp_compare}.
@@ -71,15 +71,15 @@
         The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \todo{source}. The total radiated power of the collisions can then be calculated with the formulas presented in \autoref{tab:Brems_compare}.
 
         \begin{table}[!ht]
-            \small
+            \footnotesize
             \centering
             \caption{Comparison of Bremsstrahlung loss power}
             \label{tab:Brems_compare}
-            \begin{tabularx}{\textwidth}{XXX}
+            \begin{tabularx}{\textwidth}{@{}lXX@{}}
             \toprule
             \textbf{Reference} & \textbf{Formula} & \textbf{SI Conversion} \\ \midrule
-            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br} = 1.57 * 10^{-27} n_\mathrm{e} n_\mathrm{i} *Z^2 T^{1/2} \: \mathrm{ergs/(cm^3)(s)}$, with T in K. &   $P_\mathrm{br} = 1.57 * 10^{-28} n_\mathrm{e} n_\mathrm{i} *Z^2 T^{1/2} \: \mathrm{W/m^3}$  \\
-            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_{br} = 1.4 * 10^{-27} n_\mathrm{e} n_\mathrm{i} *Z^2 T^{1/2} \bar{g}_\mathrm{B} \: \mathrm{ergs/(cm^3)(s)}$, with T in K. &  $P_\mathrm{br} = 1.68 * 10^{-28} n_\mathrm{e} n_\mathrm{i} *Z^2 T^{1/2} \: \mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
+            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br} = 1.57 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K. &   $P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$  \\
+            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_\mathrm{br} = 1.4 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \bar{g}_\mathrm{B}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K.&  $P_\mathrm{br} = 1.68 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
             \bottomrule          
             \end{tabularx}
         \end{table}
@@ -113,14 +113,33 @@
 
         \begin{enumerate}
             \item The volume and the mass of a cone of pure argon is found at the initial temperature (\qty{300}{K}) and pressure (\qty{20}{bar}). This mass will remain fixed for the rest of the problem
+                \begin{equation}
+                    huh
+                \end{equation}
             \item Energy from the laser pulse is added to the cone at constant pressure and the new temperature at this step is found ($T_2$)
+                \begin{equation}
+                    E_\mathrm{plasma} = E_\mathrm{plasma} + P_\mathrm{laser} \times \mathrm{timestep} - P_\mathrm{loss} \times \mathrm{timestep}
+                \end{equation}
+                \begin{equation}
+                    m_{plasma} (h_2 - h_1) = E_{laser}
+                \end{equation}
+                Where this equation is solved for 
             \item The number of moles in the LSP are found by minimizing the Gibbs free energy at the temperature and pressure of step 2. The new volume of the cone ($V_2$) is then found with the ideal gas law.
             \item The pressure increase in the chamber due to the isentropic expansion of the gas in the LSP cone is calculated ($p_4$)
-            \item The radiated power from the LSP cone to the larger argon volume is determined using the Bremsstrahlung equation from \autoref{tab:Brems_compare}.
-            \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues.
+                \begin{equation}
+                    p_4 = p_\mathrm{ini} ((V_\mathrm{chamber} - V_\mathrm{plasma})/(V_\mathrm{chamber} - V_2))^k
+                \end{equation}
+            \item The radiated power from the LSP cone to the larger argon volume is determined using the Bremsstrahlung total power loss equation from \textcite{glasstoneControlledThermonuclearReactions1975}.
+                \begin{equation}
+                    P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}
+                \end{equation}
+            \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation then becomes:
+                \begin{equation}
+                    E_\mathrm{plasma} = E_\mathrm{plasma} - P_\mathrm{loss} \times \mathrm{timestep}
+                \end{equation}
         \end{enumerate}
         
-        To determine an upper bound on power loss, a similar procedure was also implemented with blackbody radiation loss instead of Bremsstrahlung.
+        To determine an upper bound on power loss, a switch was implemented to change Bremsstrahlung loss to blackbody radiation loss.
 
     \section{Model results}
 
@@ -131,4 +150,4 @@
             \label{fig:Model results}
         \end{figure}
 
-        \todo{Add blackbody radiation loss, add laser pulse "on" area.} From these iterations, \autoref{fig:Model results} was drawn. Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. However, once the gas cools down enough and stops being ionized, Bremsstrahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. The second peak could be explained by the fact that the energy in the cone is then communicated to the rest of the argon volume, equalizing temperatures and pressures.
+        \todo{Add blackbody radiation loss, add laser pulse "on" area.} From these iterations, \autoref{fig:Model results} was drawn. Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremsstrahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. The second peak could be explained by the fact that the energy in the cone is then communicated to the rest of the argon volume, equalizing temperatures and pressures.

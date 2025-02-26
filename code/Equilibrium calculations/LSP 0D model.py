@@ -173,11 +173,11 @@ plt.ylabel('Pressure [Pa]')
 #plt.ylim([0,5e11])
 plt.title("Pressure change over time when laser turns off, with bremsstrahlung radiation loss")
 
-#%% STEP 7: Pressure with time, with t=0 laser turns on, t = 10 ms laser turns off
+#%% Final version of calculations: Pressure with time. At t=0 laser turns on, at t = 10 ms laser turns off. Brems continues after laser off.
 start_time = time.time()
 
 # Initialize variables
-timestep = 10e-6 # or 100e-6  or 1 us timestep
+timestep = 1e-6                # timestep [s]
 time_array = np.array([0])      # time [s]
 T_ini = 300.0                   # Initial temperature of the chamber (K)
 p_ini = 19.91e5                 # Pressure of the chamber (20 bar to Pa)
@@ -186,14 +186,14 @@ T = np.array([T_ini])           # Temperature [K]
 T_2_guess = T_ini               # First temperature guess is the initial temp
 p_2 = p_ini                     # For step 6.2: Plasma cone is at the same pressure as the surrounding gas
 V = np.array([0])               # Volume of plasma cone [m^3]
-E_plasma_array = np.array([0])  # Energy in the plasma [J]
-E_plasma = 0
+E_plasma_array = np.array([0])  # Array of energy in the plasma [J]
+E_plasma = 0                    # Energy in the plasma [J]
 i = 0                           # iteration index
 time_end = 10e-3                # end of the laser pulse at 10 ms
 P_loss = 0                      # Brems dissipation power [W]
 P_laser = 1540                  # laser power [W]
 fast_forward_tripped = 0        # Trip so fast forward only happens once on pressure rise
-loss = "brems" # "brems" or "blackbody"
+loss = "brems"                  # Switch that takes either "brems" or "blackbody"
 
 
 while time_array[i] < 0.02:
@@ -205,7 +205,7 @@ while time_array[i] < 0.02:
     
 
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
-    T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
+    T_2 = solve_for_T2(E_plasma, m_plasma, T[i], p[i], T_2_guess, p_2)[0]  # ----TEST IN PROGRESS # Temperature of plasma after energy addition (K)
     T_2_guess = T_2          # Take the last calculated temperature as the guess for the next polynomials
 
     # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
@@ -254,11 +254,11 @@ p += 500
 end_time = time.time()
 
 # Save curves from model for each run
-np.save('LSP179_SPRK50_brems_time', time_array)
-np.save('LSP179_SPRK50_brems_p', p)
-np.save('LSP179_SPRK50_brems_T', T)
-np.save('LSP179_SPRK50_brems_V', V)
-np.save('LSP179_SPRK50_brems_E_plasma_array', E_plasma_array)
+np.save('LSP179_SPRK50_brems_time_2', time_array)
+np.save('LSP179_SPRK50_brems_p_2', p)
+np.save('LSP179_SPRK50_brems_T_2', T)
+np.save('LSP179_SPRK50_brems_V_2', V)
+np.save('LSP179_SPRK50_brems_E_plasma_array_2', E_plasma_array)
 print(i)
 print(end_time-start_time)
 
@@ -294,7 +294,7 @@ print(end_time-start_time)
 # Plot experimental data #2
 #LSP179_SPRK50
 plt.figure()
-df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19014.csv', header =2, names=['time','Volts']) # Experimental data from LSP183_SPRK54
+df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19014.csv', header =2, names=['time','Volts']) # Experimental data from LSP179
 experiment_time = df[["time"]].to_numpy()
 experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini # Pa, with P_ini added so this is pressure rise
 plt.plot(experiment_time, experiment_pressure, '.')
