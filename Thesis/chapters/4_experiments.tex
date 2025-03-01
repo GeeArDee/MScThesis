@@ -1,3 +1,4 @@
+\setcounter{chapter}{2}
 \chapter{Experiments}
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the propellant in all cases, due to its low cost, safety and ease of ionization.
@@ -6,7 +7,7 @@
 
         \subsection{V1 LSP spark initiation}
 
-            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser beam during an LSP shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during an LSP shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
 
             \begin{figure}[!ht]
                 \centering
@@ -44,7 +45,8 @@
 
         \subsection{\ce{NO2} seeding}
 
-            \textcolor{red}{TO-DO from Prof. Higgins: If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
+            \todo{Add context to this section}
+            % If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
             
             As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to a rough vacuum before introducing the gasses.
 
@@ -91,7 +93,7 @@
 
         \subsection{Optical experiments: going from QCW to CW LSP}
 
-            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W). 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
+            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W), which does not scale directly to lower powers. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
 
             \begin{table}[!ht]
                 \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
@@ -111,15 +113,15 @@
             Extrapolating from these results, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
             %first V1 test
-            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presented a problem, as the maximum CW power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level. \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the beam diameter at the focus:
+            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presented a problem, as the maximum continuous wave (CW) power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level. \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the beam diameter at the focus:
             
             \begin{equation}\label{eqn: spot diameter}
                 \text{Spot diameter}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
             \end{equation}
 
-            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 (\textcite{hechtUnderstandingLasersEntry2019}). The YLR-300/3000 laser has a Beam Parameter Product (BPP) of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot diameter, increasing laser flux. \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at the focus.
+            The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 (\textcite{hechtUnderstandingLasersEntry2019}). The YLR-300/3000 laser has a Beam Parameter Product (BPP) of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot diameter, increasing laser flux. The \textit{Thorlabs} \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at the focus.
 
-            A single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C) was then used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the focus was before the electrodes, even when pressing the lens against V1's front window. \autoref{fig: 125mm focus threshold} shows a record of LSP initiation attempts at various power settings and lens axial positions with the \qty{125}{mm} focal length lens. \qty{20}{bar} of argon was used for these shots.
+            A single plano-convex lens with a \qty{125}{mm} focal length (Thorlabs LA1384-C) was then used, as it was the lowest focal length lens that could focus at V1's initiation plug position. A \qty{100}{mm} focal length lens was available, but the position of the focus was before the electrodes, even when pressing the lens against V1's front window. \autoref{fig: 125mm focus threshold} shows a record of LSP initiation attempts at various power settings and lens axial positions with the \qty{125}{mm} focal length lens. An argon pressure of \qty{20}{bar} was used for these shots.
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/125mm_focus_threshold.pdf}
@@ -169,7 +171,7 @@
                 \caption{Spot diagrams of the three lens systems studied}
                 \label{fig:spot diagrams}
             \end{figure}
-            From these three spot diagrams, the average laser flux at \qtylist{342}{W} was calculated (see \autoref{tab:laser flux}). It is assumed that the laser energy is evenly distributed in a circle as wide as the farthest ray from the center.
+            From these three spot diagrams, the average laser flux at \qtylist{342}{W} was calculated (see \autoref{tab:laser flux}). It is assumed that the laser energy is evenly distributed in a circle as wide as the farthest ray from the center, which gives a lower bound for the laser flux.
             \begin{table}[!ht]
                 \centering
                 \caption{Simulated focal length and spot diameter of various lens assemblies in WinLens3D. The average laser flux is calculated for \qty{342}{W} of incident power}
@@ -200,7 +202,7 @@
 
         \subsection{V2 CW LSP}
 
-            A \qty{100}{\%} power CW shot was then attempted with \qty{20}{bar} of static argon. 
+            A \qty{100}{\%} power CW shot was then attempted with static argon at \qty{20}{bar}. 
 
             \input{assets/4 experiments/CW LSP frames webcam/igntionFrames.tex}
 
@@ -291,7 +293,7 @@
                 \caption{Multiple cold flow thrust tests in succession}
                 \label{fig:hysteresis}
             \end{figure}
-            Significant hysteresis of the thrust stand was seen in \autoref{fig:hysteresis}. The final thrust was sometimes higher than the initial thrust, sometimes lower. The discontinuities at \qtylist{10;35}{s} were due to the accidental shutoff of the gas supply.
+            Significant hysteresis of the thrust stand is seen in \autoref{fig:hysteresis}. The final thrust was sometimes higher than the initial thrust, sometimes lower. The discontinuities at \qtylist{10;35}{s} were due to the accidental shutoff of the gas supply.
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
@@ -320,11 +322,11 @@
                 \label{fig:saad blowdown}
             \end{figure}
 
-            The best match was found to be an area of \qty{3.46e-8}{m^2}, giving a diameter of \qty{0.21}{mm}.
+            The best match was found to be an area of \qty{3.46e-8}{m^2}, giving a nozzle diameter of \qty{0.21}{mm}.
 
         \subsection{Needle valve effective sonic area $A^*$}
 
-            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}). The bubble flow meter and experiment methodology were presented in \textcite{barigouFluidMechanicsSoap1993}.
+            The WL14H-320P needle valve (see \autoref{fig:Needle valve}) \todo{?? Links to design chapter} was calibrated to relate its rotation increments to its flow rate. This was undertaken by connecting the valve's input to a gas supply, while the valve's output was connected to a bubble flow meter constructed for this experiment (\autoref{fig:bubble meter}). The bubble flow meter and experiment methodology were presented in \textcite{barigouFluidMechanicsSoap1993}.
 
             A uniform bubble created at the base of the tube rises upwards towards the top of the tube as it is displaced by the pressurizing gas. This end of the tube is open to the atmosphere. A stopwatch is started when the bubble passes the base of the green tape line and stopped once the bubble passes the base of the red tape line. These stopwatch measurements are repeated three times and averaged. This enables precise measurement of the volumetric flow rate.
 

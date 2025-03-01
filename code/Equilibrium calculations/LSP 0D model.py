@@ -205,7 +205,7 @@ while time_array[i] < 0.02:
     
 
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
-    T_2 = solve_for_T2(E_plasma, m_plasma, T[i], p[i], T_2_guess, p_2)[0]  # ----TEST IN PROGRESS # Temperature of plasma after energy addition (K)
+    T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # ----TEST IN PROGRESS # Temperature of plasma after energy addition (K)
     T_2_guess = T_2          # Take the last calculated temperature as the guess for the next polynomials
 
     # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
