@@ -68,7 +68,7 @@
     
     \section{Bremsstrahlung}
         
-        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \todo{source}. The total radiated power of the collisions can then be calculated with the formulas presented in \autoref{tab:Brems_compare}.
+        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power of the collisions can then be calculated with the formulas presented in \autoref{tab:Brems_compare}.
 
         \begin{table}[!ht]
             \footnotesize
@@ -96,23 +96,23 @@
 
         With $n_\mathrm{e}$ the plasma electron density, $e$ the elementary charge, $\epsilon_\mathrm{0}$ the vacuum permittivity and $m_\mathrm{e}$ the electron mass.
 
-        At \todo{todo} XX K and \todo{todo} XX Pa, an electron density of \todo{todo} XX is found. This results in $\omega_p =$ \qty{3.10e12}{Hz}. Considering visible light and above (> \qty{1e14}{Hz}) as the wavelengths of interest, the LSP is indeed a volume emitter.
+        In the worst case scenario (highest temperature and pressure) of \qty{20000}{K} and \qty{20}{bar}, an electron density of \num{3.05e21} is found. This results in $\omega_p =$ \qty{3.11e12}{Hz}. Considering visible light and above (> \qty{1e14}{Hz}) as the wavelengths of interest, the LSP is indeed a volume emitter.
 
     \section{Model setup}
         
-        Finally, a simple 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung\todo{Have the arrow go from cone to volume, not outside!}. \todo{A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost.} The LSP is treated as an ideal gas.
+        Finally, a simple 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung. A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost, but this was not modelled. The LSP is treated as an ideal gas.
 
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.85\textwidth]{assets/2 models/Modeling figure.pdf}
-            \caption{0D model of an LSP inside a volume of pressurized argon}
+            \caption{Model of an LSP inside a volume of pressurized argon}
             \label{fig:0D model}
         \end{figure}
 
         The calculation procedure that was implemented is as follows:
 
         \begin{enumerate}
-            \item The volume and the mass of a cone of pure argon is found at the initial temperature (\qty{300}{K}) and pressure (\qty{20}{bar}). This mass will remain fixed for the rest of the problem
+            \item The volume and the mass of a cone of pure argon is found at the initial temperature (\qty{300}{K}) and pressure (\qty{20}{bar}). This will be the mass of argon plasma $m_\mathrm{plasma}$ and will remain fixed for the rest of the problem \todo{This could be source of error, as plasma mass increases}
                 \begin{equation}
                     huh
                 \end{equation}
@@ -121,7 +121,7 @@
                     E_\mathrm{plasma} = E_\mathrm{plasma} + P_\mathrm{laser} \times \mathrm{timestep} - P_\mathrm{loss} \times \mathrm{timestep}
                 \end{equation}
                 \begin{equation}
-                    m_{plasma} (h_2 - h_1) = E_{laser}
+                    m_\mathrm{plasma} (h_2 - h_1) = E_\mathrm{laser}
                 \end{equation}
                 Where this equation is solved for 
             \item The number of moles in the LSP are found by minimizing the Gibbs free energy at the temperature and pressure of step 2. The new volume of the cone ($V_2$) is then found with the ideal gas law.
@@ -133,7 +133,7 @@
                 \begin{equation}
                     P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}
                 \end{equation}
-            \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation then becomes:
+            \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation thus becomes:
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} - P_\mathrm{loss} \times \mathrm{timestep}
                 \end{equation}
