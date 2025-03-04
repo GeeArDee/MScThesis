@@ -68,18 +68,18 @@
     
     \section{Bremsstrahlung}
         
-        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power of the collisions can then be calculated with the formulas presented in \autoref{tab:Brems_compare}.
+        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power density $P_\mathrm{br}/V$ of the collisions can be estimated with the formulas presented in \autoref{tab:Brems_compare}.
 
         \begin{table}[!ht]
             \footnotesize
             \centering
-            \caption{Comparison of Bremsstrahlung loss power}
+            \caption{Comparison of Bremsstrahlung power density loss}
             \label{tab:Brems_compare}
             \begin{tabularx}{\textwidth}{@{}lXX@{}}
             \toprule
             \textbf{Reference} & \textbf{Formula} & \textbf{SI Conversion} \\ \midrule
-            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br} = 1.57 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K. &   $P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$  \\
-            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_\mathrm{br} = 1.4 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \bar{g}_\mathrm{B}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K.&  $P_\mathrm{br} = 1.68 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
+            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br}/V = 1.57 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K. &   $P_\mathrm{br}/V = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$  \\
+            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_\mathrm{br}/V = 1.4 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \bar{g}_\mathrm{B}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K.&  $P_\mathrm{br}/V = 1.68 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
             \bottomrule          
             \end{tabularx}
         \end{table}
@@ -112,35 +112,62 @@
         The calculation procedure that was implemented is as follows:
 
         \begin{enumerate}
-            \item The volume and the mass of a cone of pure argon is found at the initial temperature (\qty{300}{K}) and pressure (\qty{20}{bar}). This will be the mass of argon plasma $m_\mathrm{plasma}$ and will remain fixed for the rest of the problem \todo{This could be source of error, as plasma mass increases}
+            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} = \qty{20}{bar}$). This will be the mass of argon plasma and will remain fixed for the rest of the problem \todo{This could be source of error, as plasma mass increases} The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a}.
                 \begin{equation}
-                    huh
-                \end{equation}
-            \item Energy from the laser pulse is added to the cone at constant pressure and the new temperature at this step is found ($T_2$)
-                \begin{equation}
-                    E_\mathrm{plasma} = E_\mathrm{plasma} + P_\mathrm{laser} \times \mathrm{timestep} - P_\mathrm{loss} \times \mathrm{timestep}
+                    l_\mathrm{plasma} = \qty{0.02}{m}, \: r_\mathrm{plasma} = \qty{0.001}{m}
                 \end{equation}
                 \begin{equation}
-                    m_\mathrm{plasma} (h_2 - h_1) = E_\mathrm{laser}
+                    V_\mathrm{plasma} = \frac{\pi r_\mathrm{plasma}^2}{3}
                 \end{equation}
-                Where this equation is solved for 
-            \item The number of moles in the LSP are found by minimizing the Gibbs free energy at the temperature and pressure of step 2. The new volume of the cone ($V_2$) is then found with the ideal gas law.
-            \item The pressure increase in the chamber due to the isentropic expansion of the gas in the LSP cone is calculated ($p_4$)
                 \begin{equation}
-                    p_4 = p_\mathrm{ini} ((V_\mathrm{chamber} - V_\mathrm{plasma})/(V_\mathrm{chamber} - V_2))^k
+                    m_\mathrm{plasma} = V_\mathrm{plasma}\rho(T_\mathrm{ini}, p_\mathrm{ini})
                 \end{equation}
-            \item The radiated power from the LSP cone to the larger argon volume is determined using the Bremsstrahlung total power loss equation from \textcite{glasstoneControlledThermonuclearReactions1975}.
+            \item The energy in the plasma $E_\mathrm{plasma}$ is calculated, starting at 0. Energy from the laser pulse is added to the cone while the energy lost from radiation, calculated at the previous iteration, is subtracted.
                 \begin{equation}
-                    P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}
+                    E_\mathrm{plasma} = E_\mathrm{plasma} + \underbrace{P_\mathrm{laser} \times \mathrm{timestep}}_\textrm{Energy from the laser pulse} - \underbrace{P_\mathrm{loss} \times \mathrm{timestep}}_\textrm{Energy lost by radiation}
                 \end{equation}
+                The new temperature ($T_2$) of the cone at this step is found at constant pressure,
+                \begin{equation}
+                    E_\mathrm{plasma} = m_\mathrm{plasma} \left(h_2 (T_2, p_\mathrm{ini}) - h_1(T_\mathrm{ini}, p_\mathrm{ini})\right)
+                \end{equation}
+                where this equation is solved for $T_2$. The enthalpy of the argon is found with the relations implemented in \autoref{sec:equilibrium calcs}.
+            \item The number of moles $n$ in the cone is found by minimizing the Gibbs free energy (see again \autoref{sec:equilibrium calcs}) at the temperature and pressure of step 2 ($T_2, p_2$). This gives the ionization fraction $x$.
+                \begin{equation}
+                    n = \frac{m_\mathrm{plasma}}{M_\mathrm{Ar}}(x + 1)
+                \end{equation}
+                The atomic mass of argon is $M_\mathrm{Ar} = \qty{39.948}{u}$. The new volume of the cone ($V_2$) is then found with the ideal gas law.
+                \begin{equation}
+                    V_2 = \frac{n \bar{R} T_2}{p_2}
+                \end{equation}
+                With the universal gas constant $\bar{R}$.
+            \item The pressure increase $p_4$ in the larger argon volume in the chamber due to the isentropic expansion of the gas in the LSP cone is calculated.
+                \begin{equation}
+                    p_4 = p_\mathrm{ini} \left(\frac{V_\mathrm{chamber} - V_\mathrm{plasma}}{V_\mathrm{chamber} - V_2}\right)^\kappa
+                \end{equation}
+                With the heat capacity ratio of argon at \qty{300}{K} $\kappa=1.67$. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
+            \item The radiated power from the LSP cone to the larger argon volume is determined for the next iteration. The Bremsstrahlung power density loss equation from \textcite{glasstoneControlledThermonuclearReactions1975} is used, multiplied by the volume $V_2$ of the LSP.
+                \begin{equation}
+                    P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T_2^{1/2} V_2
+                \end{equation}
+                With $Z = 1$, as the argon is singly ionized.
             \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation thus becomes:
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} - P_\mathrm{loss} \times \mathrm{timestep}
                 \end{equation}
         \end{enumerate}
         
-        To determine an upper bound on power loss, a switch was implemented to change Bremsstrahlung loss to blackbody radiation loss.
-
+        To determine an upper bound for power loss, a switch was implemented to change Bremss-trahlung loss to blackbody radiation loss. It is computed by first finding the area of the cone $A_\mathrm{plasma}$. The length is found from the volume of the cone (which is known), while the radius is considered fixed at $r_\mathrm{plasma, fixed} = \qty{0.001}{m}$.
+        \begin{equation}
+            l_\mathrm{plasma} = \frac{3 V_\mathrm{plasma}}{\pi r_\mathrm{plasma, fixed}^2}
+        \end{equation}
+        The area of the cone and the power loss are then found. 
+        \begin{equation}
+            A_\mathrm{plasma} = \pi r_\mathrm{plasma, fixed} ( r_\mathrm{plasma, fixed} + \sqrt{l_\mathrm{plasma}^2 + r_\mathrm{plasma, fixed}^2})
+        \end{equation}
+        \begin{equation}
+            P_\mathrm{loss} = \sigma T_2^4 A_\mathrm{plasma}
+        \end{equation}
+        With the Stefan-Boltzmann constant $\sigma$.
     \section{Model results}
 
         \begin{figure}[!ht]

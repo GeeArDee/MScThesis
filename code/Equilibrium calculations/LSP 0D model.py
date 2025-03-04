@@ -205,12 +205,12 @@ while time_array[i] < 0.02:
     
 
     # STEP 6.2: Have XX J of energy to m_plasma, while keeping constant pressure
-    T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # ----TEST IN PROGRESS # Temperature of plasma after energy addition (K)
+    T_2 = solve_for_T2(E_plasma, m_plasma, T_ini, p_ini, T_2_guess, p_2)[0]  # Temperature of plasma after energy addition (K)
     T_2_guess = T_2          # Take the last calculated temperature as the guess for the next polynomials
 
-    # STEP 6.3: Volume of the cone contracts; find new volume (V_2) of cone
-    n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles 
-    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T_2, p_2)          # Get dissociation x and mole fractions at temp and press of step 2
+    # STEP 6.3: Volume of the cone expands/contracts; find new volume (V_2) of cone
+    n_tot_ini = m_plasma/MW_Ar                                          # Calculate initial number of moles, should be outside of the loop oops
+    (Gibbs, x, y_Ar, y_ArII, y_e) = MinimizeGibbs_Ar(T_2, p_2)          # Get ionization fraction x and mole fractions at temp and press of step 2
     n_tot = n_tot_ini*(x + 1)
     V_2 = V_final(p_2, n_tot, T_2)
     
