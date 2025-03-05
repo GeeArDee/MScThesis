@@ -1,3 +1,4 @@
+\setcounter{chapter}{3}
 \chapter{0D LSP Model} \label{chp:models}
 
     To predict experimental data, namely the pressure increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. A zero-dimensional (0D) heat transfer model was then written in Python to compare to experimental data. Argon and hydrogen were used to validate initial equilibrium calculations, while the 0D model was solely implemented using argon. Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in a full-scale LTP engine for its increased $I_\mathrm{sp}$ due to its lower molecular weight.
@@ -100,7 +101,7 @@
 
     \section{Model setup}
         
-        Finally, a simple 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung. A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost, but this was not modelled. The LSP is treated as an ideal gas.
+        Finally, a 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung. A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost, but this was not modelled. The LSP is treated as an ideal gas.
 
         \begin{figure}[!ht]
             \centering
@@ -109,10 +110,21 @@
             \label{fig:0D model}
         \end{figure}
 
-        The calculation procedure that was implemented is as follows:
+        The LSP growth mechanism (\autoref{fig:Mechanism of LSP growth}) is not modelled, but it is useful to understand the physics at play.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.85\textwidth]{assets/2 models/Mechanism of LSP growth.pdf}
+            \caption{Mechanism of LSP growth}
+            \label{fig:Mechanism of LSP growth}
+        \end{figure}
+
+        The laser creates at first a small LSP volume near the focus, where the power density is highest. As the plasma radiates via Bremsstrahlung, the argon around the plasma is heated. Being exposed to the laser beam, the argon in front of the LSP ionizes. This causes the plasma to propagate towards the laser collimator until equilibrium is reached between radiation and heat dissipation. This reduces the absorption efficiency of the plasma, as the thicker part of the cone is no longer at the laser's focus, where the highest power density, and therefore temperature, can be reached. Gas flow up to a certain velocity can be used to push the plasma back into the focus, as was explained in \textcite{chenEmissionSpectroscopyCw1989a}. Too high a gas flow speed, and the plasma is blown out. Future experimental investigation of the V2 thruster could determine what the ideal flow speed is.
+
+        The calculation procedure implemented in the 0D model is as follows:
 
         \begin{enumerate}
-            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} = \qty{20}{bar}$). This will be the mass of argon plasma and will remain fixed for the rest of the problem \todo{This could be source of error, as plasma mass increases} The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a}.
+            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} \approx \qty{20}{bar}$, set to experimental measurement done before each shot). This will be the mass of argon plasma and will remain fixed for the rest of the problem. This fixed mass could be a source of error, as the plasma propagates as described in \autoref{fig:Mechanism of LSP growth}. The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a} when the cone reaches equilibrium near the end of a laser pulse.
                 \begin{equation}
                     l_\mathrm{plasma} = \qty{0.02}{m}, \: r_\mathrm{plasma} = \qty{0.001}{m}
                 \end{equation}
@@ -170,11 +182,58 @@
         With the Stefan-Boltzmann constant $\sigma$.
     \section{Model results}
 
+        From these iterations, pressure rise curves with Bremsstrahlung loss and blackbody radiation loss were determined. These curves were overlaid on experimental data from LSP178\_SPRK49, a \qty{10}{ms} QCW LSP shot at \qty{3080}{W} and \qty{19.91}{bar} of argon to give \autoref{fig:LSP178_SPRK49}.
+        
         \begin{figure}[!ht]
             \centering
-            \includegraphics[width=0.85\textwidth]{assets/2 models/Brems vs exp graph.png}
+            \includegraphics[width=0.85\textwidth]{assets/2 models/LSP178_SPRK49.pdf}
             \caption{Experimental data compared to the 0D model, with both Bremsstrahlung and blackbody losses}
-            \label{fig:Model results}
+            \label{fig:LSP178_SPRK49}
+        \end{figure}
+        
+        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is larger. The second, higher, peak could be explained by the fact that after the laser pulse, the energy in the cone is then communicated to the bulk argon volume. This equalization of temperatures and pressures could be due to natural convection. To test this hypothesis in future studies, the timescale of radiation and convection should be determined with the geometry of the problem.
+
+        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}. A potential cause for this is that laser energy transmission was not taken into account in the model, and a measurement of this transmission was not taken experimentally. As the laser power goes down, the fraction of laser energy that is absorbed by the plasma (laser absorption efficiency) also goes down.
+
+        \begin{figure}[!ht]
+            \centering
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/2 models/LSP179_SPRK50.pdf}
+                \caption{LSP179\_SPRK50, \qty{1540}{W} (50\% power) and initial pressure of \qty{19.91}{bar}}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/2 models/LSP183_SPRK54.pdf}
+                \caption{LSP183\_SPRK54, \qty{345}{W} (15\% power) and initial pressure of \qty{20.03}{bar}}
+            \end{subfigure}
+            \caption{Pressure change over time during two further LSPs, with Bremsstrahlung loss}
+            \label{fig:Two further LSPs}
         \end{figure}
 
-        \todo{Add blackbody radiation loss, add laser pulse "on" area.} From these iterations, \autoref{fig:Model results} was drawn. Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremsstrahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. The second peak could be explained by the fact that the energy in the cone is then communicated to the rest of the argon volume, equalizing temperatures and pressures.
+        Finally, \autoref{fig:powerVSdeltaP} shows how the pressure rise increases as the laser power is increased.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.85\textwidth]{assets/2 models/powerVSdeltaP.pdf}
+            \caption{Pressure increase from 0D model as a function of laser power, with initial pressure of approximately \qty{20}{bar}}
+            \label{fig:powerVSdeltaP}
+        \end{figure}
+
+        For reference, \autoref{tab:Initial values for model} contains the initial values of each model run used for \autoref{fig:powerVSdeltaP}. Each run took around \qty{15}{minutes} to compute on a laptop. \todo{?? in table refers to Experiments chapter}
+
+        \begin{table}[!ht]
+            \centering
+            \caption{Initial values for 0D model}
+            \label{tab:Initial values for model}
+            \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}@{}}
+            \toprule
+            Shot ID & $P_\mathrm{laser}$ (\unit{W}) & $P_\mathrm{laser}$ (\unit{\%}) & $p_\mathrm{ini}$ (\unit{bar}) & Time step (\unit{s}) & Source of $P_\mathrm{laser}$ (\unit{W})\\ \midrule
+            LSP176\_SPRK47 & 2310      &  75     &    0.08   &  $50\times 10^{-6}$  & Maximum power multiplied by \% \\ 
+            LSP178\_SPRK49 & 3080      &  100    &    19.91   &  $10\times 10^{-6}$ & Maximum power\\
+            LSP179\_SPRK50 & 1540      &  50     &    19.91   &  $10\times 10^{-6}$ & Maximum power multiplied by \% \\
+            LSP183\_SPRK54 & 345       &  15     &    20.03   & $10\times 10^{-6}$  & Extrapolated from \autoref{tab:laser shot statistics}\\ 
+            \bottomrule
+            \end{tabularx}
+        \end{table}

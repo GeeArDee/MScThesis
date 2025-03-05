@@ -177,10 +177,10 @@ plt.title("Pressure change over time when laser turns off, with bremsstrahlung r
 start_time = time.time()
 
 # Initialize variables
-timestep = 1e-6                # timestep [s]
+timestep = 50e-6               # timestep [s]
 time_array = np.array([0])      # time [s]
 T_ini = 300.0                   # Initial temperature of the chamber (K)
-p_ini = 19.91e5                 # Pressure of the chamber (20 bar to Pa)
+p_ini = 19.96e5                 # Pressure of the chamber (20 bar to Pa)
 p = np.array([p_ini])           # pressure [Pa]
 T = np.array([T_ini])           # Temperature [K]
 T_2_guess = T_ini               # First temperature guess is the initial temp
@@ -191,7 +191,7 @@ E_plasma = 0                    # Energy in the plasma [J]
 i = 0                           # iteration index
 time_end = 10e-3                # end of the laser pulse at 10 ms
 P_loss = 0                      # Brems dissipation power [W]
-P_laser = 1540                  # laser power [W]
+P_laser = 925                  # laser power [W]
 fast_forward_tripped = 0        # Trip so fast forward only happens once on pressure rise
 loss = "brems"                  # Switch that takes either "brems" or "blackbody"
 
@@ -249,16 +249,16 @@ while time_array[i] < 0.02:
 
 # Manual zeroing of curves 
 time_array += 0.205
-p += 500
+# p += 500
 
 end_time = time.time()
 
 # Save curves from model for each run
-np.save('LSP179_SPRK50_brems_time_2', time_array)
-np.save('LSP179_SPRK50_brems_p_2', p)
-np.save('LSP179_SPRK50_brems_T_2', T)
-np.save('LSP179_SPRK50_brems_V_2', V)
-np.save('LSP179_SPRK50_brems_E_plasma_array_2', E_plasma_array)
+np.save('LSP176_SPRK47_brems_time', time_array)
+np.save('LSP176_SPRK47_brems_p', p)
+np.save('LSP176_SPRK47_brems_T', T)
+np.save('LSP176_SPRK47_brems_V', V)
+np.save('LSP176_SPRK47_brems_E_plasma_array', E_plasma_array)
 print(i)
 print(end_time-start_time)
 
@@ -276,53 +276,102 @@ print(end_time-start_time)
 #         'kPa_conversion': 14.51e-3,  # V/kPa
 #     }
 
-
+pressure_array = np.zeros((4))
+laser_power_array = np.array([3079, 1540, 345, 2310])
 
 # Plot experimental data #1
-# plt.figure()
-# df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19012.csv', header =2, names=['time','Volts']) # Experimental data from LSP178_SPRK49 (V1 100% power pulse shot, 19.91 bar)
-# experiment_time = df[["time"]].to_numpy()
-# experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini # Pa, with P_ini added so this is pressure rise
-# plt.plot(experiment_time, experiment_pressure, '.')
-# plt.plot(time_array, p)
-# plt.xlabel('Time [s]')
-# plt.ylabel('Pressure [Pa]')
-# #plt.xlim([0,20000])
-# #plt.ylim([0,5e11])
-# plt.title("Pressure change over time during laser pulse, with radiation loss")
+p_ini = 19.91e5 # Pa
+plt.figure()
+df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19012.csv', header =2, names=['time','Volts']) # Experimental data from LSP178_SPRK49 (V1 100% power pulse shot, 19.91 bar)
+experiment_time = df[["time"]].to_numpy()
+experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
+p = np.load('LSP178_SPRK49_brems_p.npy') - 500
+time_array = np.load('LSP178_SPRK49_brems_time.npy')
+plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP178_SPRK49)') # plot experimental data
+BB_time = np.load('LSP178_SPRK49_blackbody_time.npy')
+BB_p = np.load('LSP178_SPRK49_blackbody_p.npy')
+plt.plot(BB_time, BB_p, color='black', label = 'Blackbody radiation loss') # plot Blackbody
+plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.xlabel('Time [s]')
+plt.ylabel('Pressure [Pa]')
+plt.xlim([0,0.4])
+plt.ylim([19.90e5,20.0e5])
+#plt.title("Pressure change over time during laser pulse, with radiation loss")
+plt.legend()
+plt.savefig('../../Thesis/assets/2 models/LSP178_SPRK49.pdf')
+pressure_array[0] = np.max(p)-p_ini
 
 # Plot experimental data #2
 #LSP179_SPRK50
+p_ini = 19.91e5 # Pa
 plt.figure()
 df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData19014.csv', header =2, names=['time','Volts']) # Experimental data from LSP179
 experiment_time = df[["time"]].to_numpy()
-experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini # Pa, with P_ini added so this is pressure rise
-plt.plot(experiment_time, experiment_pressure, '.')
-plt.plot(time_array, p)
+experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
+p = np.load('LSP179_SPRK50_brems_p.npy') - 500
+time_array = np.load('LSP179_SPRK50_brems_time.npy')
+plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP179_SPRK50)') # plot experimental data
+plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
 plt.xlabel('Time [s]')
 plt.ylabel('Pressure [Pa]')
-#plt.xlim([0,20000])
-#plt.ylim([0,5e11])
-plt.title("Pressure change over time during laser pulse, with radiation loss")
-
-
-plt.legend(['Experimental', '0D model']) # add Brems too
+plt.xlim([0,0.4])
+plt.ylim([19.90e5,19.96e5])
+#plt.title("Pressure change over time during laser pulse, with radiation loss")
+plt.legend()
+plt.savefig('../../Thesis/assets/2 models/LSP179_SPRK50.pdf')
+pressure_array[1] = np.max(p)-p_ini
 
 
 # Plot experimental data #3
 #LSP183_SPRK54
-# plt.figure()
-# df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData1913.csv', header =2, names=['time','Volts']) # Experimental data from LSP183_SPRK54
-# experiment_time = df[["time"]].to_numpy()
-# experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini # Pa, with P_ini added so this is pressure rise
-# plt.plot(experiment_time, experiment_pressure, '.')
-# plt.plot(time_array, p)
-# plt.xlabel('Time [s]')
-# plt.ylabel('Pressure [Pa]')
-# #plt.xlim([0,20000])
-# #plt.ylim([0,5e11])
-# plt.title("Pressure change over time during laser pulse, with radiation loss")
+p_ini = 20.03e5
+plt.figure()
+df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData1913.csv', header =2, names=['time','Volts']) # Experimental data from LSP183_SPRK54
+experiment_time = df[["time"]].to_numpy()
+experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
+p = np.load('LSP183_SPRK54_brems_p.npy') - 500
+time_array = np.load('LSP183_SPRK54_brems_time.npy')
+plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP183_SPRK54)') # plot experimental data
+plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.xlabel('Time [s]')
+plt.ylabel('Pressure [Pa]')
+plt.xlim([0,0.4])
+plt.ylim([20.02e5,20.07e5])
+#plt.title("Pressure change over time during laser pulse, with radiation loss")
+plt.legend()
+plt.savefig('../../Thesis/assets/2 models/LSP183_SPRK54.pdf')
+pressure_array[2] = np.max(p)-p_ini
 
+
+# Plot delta_p vs laser power
+pressure_array[3] = 3709.97 #(from LSP176_SPRK47 run)
+#pressure_array[4] = 
+plt.figure()
+plt.plot(laser_power_array, pressure_array, 'o',color='red')
+plt.xlabel('Laser power [W]')
+plt.ylabel('Pressure increase [Pa]')
+plt.xlim([0,3500])
+# plt.ylim([0,4000])
+plt.savefig('../../Thesis/assets/2 models/powerVSdeltaP.pdf')
+
+
+# Plot 60% laser absorption
+p_ini = 20.03e5 # Pa
+plt.figure()
+df = pd.read_csv('C:/Users/gdub5/OneDrive/McGill/Thesis/Experimental things/LSP pressure data 2024-04-05/WaveData1913.csv', header =2, names=['time','Volts']) # Experimental data from LSP183_SPRK54
+experiment_time = df[["time"]].to_numpy()
+experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
+p = np.load('LSP183_SPRK54_brems60_p.npy') 
+time_array = np.load('LSP183_SPRK54_brems60_time.npy')
+plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Experimental data') # plot experimental data
+plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.xlabel('Time [s]')
+plt.ylabel('Pressure [Pa]')
+plt.xlim([0,0.4])
+plt.ylim([20.02e5,20.07e5])
+plt.title("Pressure change over time during laser pulse, with radiation loss")
+plt.legend()
+plt.savefig('../../Thesis/assets/2 models/LSP183_SPRK54_60p_absorption.pdf')
 
 # plt.legend(['Experimental', '0D model']) # add Brems too
 # %%
