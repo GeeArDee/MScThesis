@@ -21,11 +21,11 @@
             \label{fig:V1 setup}
         \end{figure}
 
-        298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high speed camera (Photron Fastcam SA5).
+        A total of 298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high speed camera (Photron Fastcam SA5).
 
     \section{Version 2} \label{sec:design_v2}
 
-        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster at the end of April 2024, seen in \autoref{fig:V2 render}.
+        To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster, seen in \autoref{fig:V2 render}.
 
         \begin{figure}[!ht]
             \centering
@@ -51,49 +51,49 @@
             \begin{enumerate}
                 \item Laser thruster
                 \begin{enumerate}
-                    \item A \qty{300}{W} Continuous Wave (CW) \qty{1070}{nm} laser shall sustain the plasma (Nominal power \qty{300}{W}, actual max power \qty{350}{W})
-                    \item The thruster shall have a minimum safe “hot” operation time of \qty{30}{s}
+                    \item A \qty{300}{W} Continuous Wave (CW) \qty{1070}{nm} laser will be used to sustain the plasma (Nominal power \qty{300}{W}, actual max power \qty{350}{W})
+                    \item The thruster should have a minimum safe “hot” operation time of \qty{30}{s}
                     \begin{enumerate}
-                        \item In the event of failed LSP initiation, the thruster shall safely absorb the total laser power for at least \qty{10}{s}
+                        \item In the event of failed LSP initiation, the thruster will safely absorb the total laser power for at least \qty{10}{s}
                     \end{enumerate}
-                    \item An optical path shall be present to let the laser into the thruster, utilizing a \qty{100}{mm} focal length lens at minimum and a collimated beam with a maximum diameter of \qty{30}{mm}
+                    \item An optical path is required to be present to let the laser into the thruster, utilizing a \qty{100}{mm} focal length lens at minimum and a collimated beam with a maximum diameter of \qty{30}{mm}
                     \begin{enumerate}
-                        \item The optical components shall not be damaged by the laser flux
+                        \item The optical components will not be damaged by the laser flux
                     \end{enumerate}
-                    \item Argon shall be used as the working fluid
+                    \item Argon will be used as the working fluid
                     \begin{enumerate}
-                        \item The argon feed gas shall be at room temperature
+                        \item The argon feed gas will be at room temperature
                     \end{enumerate}
-                    \item A gas feed path shall bring argon gas into the thruster
+                    \item A gas feed path brings argon gas into the thruster
                     \begin{enumerate}
-                        \item The gas feed shall be choked at the thruster inlet
-                        \item The gas feed shall be evenly distributed in the thruster
+                        \item The gas feed is choked at the thruster inlet
+                        \item The gas feed will be evenly distributed in the thruster
                     \end{enumerate}
-                    \item The mass flow rate of the argon gas shall be measured and controlled by interchangeable upstream choked orifices
-                    \item The maximum allowable operating pressure (MAOP) of the thruster shall be 50 bar
+                    \item The mass flow rate of the argon gas will be measured and controlled by interchangeable upstream choked orifices
+                    \item The maximum allowable operating pressure (MAOP) of the thruster will be 50 bar
                     \begin{enumerate}
-                        \item The nominal pressure of the thruster shall be 25 bar
+                        \item The nominal pressure of the thruster will be 25 bar
                     \end{enumerate}
-                    \item A converging-diverging exhaust nozzle shall be designed to accelerate the gas to a supersonic speed
+                    \item A converging-diverging exhaust nozzle will be designed to accelerate the gas to a supersonic speed
                     \begin{enumerate}
-                        \item The nozzle shall be easily changeable
+                        \item The nozzle will be easily changeable
                     \end{enumerate}
-                    \item A 1/8" NPT port for a pressure transducer shall be present along the thruster
-                    \item An optical port shall be present for spectrometry measurements of the plasma
-                    \item The thruster shall be installed on a thrust stand (See requirements section 3. Thrust stand)
+                    \item A 1/8" NPT port for a pressure transducer will be present along the thruster
+                    \item An optical port will be present for spectrometry measurements of the plasma
+                    \item The thruster will be installed on a thrust stand (See requirements section 3. Thrust stand)
                 \end{enumerate}
                 \item Initiation system/electrical
                 \begin{enumerate}
-                    \item The LSP shall be initiated by an electrical spark
-                    \item The spark gap shall be measurable, controllable, and repeatable
-                    \item The spark shall be generated by an AEM 30-2853 High Output Smart Coil, supplying \qty{41}{kV} with up to \qty{118}{mJ}
-                    \item All parts of the thruster and thrust stand shall be directly or indirectly connected to a common electrical ground
+                    \item The LSP is initiated by an electrical spark
+                    \item The spark gap will be measurable, controllable, and repeatable
+                    \item The spark is to be generated by an AEM 30-2853 High Output Smart Coil, supplying \qty{41}{kV} with up to \qty{118}{mJ}
+                    \item All parts of the thruster and thrust stand should be directly or indirectly connected to a common electrical ground
                 \end{enumerate}
                 \item Thrust stand
                 \begin{enumerate}
-                    \item The thrust stand shall measure thrust on the order of \qtyrange{0.1}{5}{N}
-                    \item The thrust stand shall minimize friction losses
-                    \item The thrust stand shall be securely fixed using standard optical breadboard mounting hardware
+                    \item The thrust stand measures thrust on the order of \qtyrange{0.1}{5}{N}
+                    \item The thrust stand minimizes friction losses
+                    \item The thrust stand will be securely fixed using standard optical breadboard mounting hardware
                 \end{enumerate}
             \end{enumerate}
 
@@ -118,9 +118,29 @@
             
             The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). The gas mass flow rate and the diameter of the two orifices needed to choke the flow will be determined.
 
-            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as we have no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is our main performance parameter, is therefore \qty{646}{m/s}.
+            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as there is no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is the main performance parameter, is therefore \qty{646}{m/s}.
             
-            Laser on (hot) operation will now be examined. Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is assumed that the thruster's efficiency is doubled. This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. What nozzle throat size is therefore necessary for this $\dot m$ with $p_\mathrm{chamber} = \qty{25}{bar}$? $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ and the speed of sound is $c = \sqrt{\gamma R T}$. As the speed of sound will be doubled, the temperature is multiplied by 4.
+            %---BEFORE
+            Laser on (hot) operation will now be examined. 
+            
+            Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is assumed that the thruster's efficiency is doubled. 
+            
+            This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. 
+            
+            The nozzle throat size will therefore be found for this $\dot m$, with $p_\mathrm{chamber} = \qty{25}{bar}$. 
+            
+            $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ and the speed of sound is $c = \sqrt{\gamma R T}$. 
+            
+            As the speed of sound will be doubled, the temperature is multiplied by 4.
+            % ---AFTER
+            As the laser power is fixed, 
+
+            
+
+            To see an effect on thrust that was significant, the mass flow was set such that the thrust would be doubled with mass flow rate kept fixed. Perfect conversion of laser power to gas heating was assumed.
+
+            % ---
+
             \[\text{Power} = \dot m (h_2-h_1)
             = \dot m c_p (T_2-T_1)\]
             Using a constant $c_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}. Fliegner's formula describes the mass flow rate of an isentropic flow:
