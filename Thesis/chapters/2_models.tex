@@ -46,22 +46,22 @@
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.7\textwidth]{assets/2 models/Gibbs.pdf}
-            \caption{Gibbs free energy (G) plotted against the degree of dissociation (x) of hydrogen under three different pressures}
+            \caption{Gibbs free energy ($G$) plotted against the degree of dissociation ($x$) of hydrogen under three different pressures}
             \label{fig:Gibbs}
         \end{figure}
 
-        A similar dissociation graph can be found with argon, but with three species. The Gibbs energy is then minimized to determine the molar fractions $y_i$ at which the mixture reaches equilibrium. From this, the enthalpy $H$ of the mixture was found. The $C_p$ of the mixture was then calculated from the enthalpy with:
+        A similar dissociation graph can be found with argon, but with three species. The Gibbs energy is then minimized to determine the molar fractions $y_i$ at which the mixture reaches equilibrium. From this, the enthalpy $H$ of the mixture was found. The $c_p$ of the mixture was then calculated from the enthalpy with:
 
         \begin{equation}
-            C_p = \frac{\partial H}{\partial T}\bigg|_{p = const.}
+            c_p = \frac{\partial h}{\partial T}\bigg|_{p = const.}
         \end{equation}
         
-        For argon, these calculated $C_p$ values were validated against values from CEA \cite{CEARUNRev4} in \autoref{fig:Cp_compare}.
+        For argon, these calculated $c_p$ values were validated against values from CEA \cite{CEARUNRev4} in \autoref{fig:Cp_compare}.
         
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.7\textwidth]{assets/2 models/Cp_compare.pdf}
-            \caption{Comparing calculated $C_p$ values of argon to those from CEA}
+            \caption{Comparing calculated $c_p$ values of argon to those from CEA}
             \label{fig:Cp_compare}
         \end{figure}
 
@@ -69,18 +69,18 @@
     
     \section{Bremsstrahlung}
         
-        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This elastic collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power density $P_\mathrm{br}/V$ of the collisions can be estimated with the formulas presented in \autoref{tab:Brems_compare}.
+        The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power density $P_\mathrm{br}/V$ of the collisions can be estimated with the formulas presented in \autoref{tab:Brems_compare}.
 
         \begin{table}[!ht]
             \footnotesize
             \centering
             \caption{Comparison of Bremsstrahlung power density loss}
             \label{tab:Brems_compare}
-            \begin{tabularx}{\textwidth}{@{}lXX@{}}
+            \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}@{}X<{\raggedright}@{}}
             \toprule
             \textbf{Reference} & \textbf{Formula} & \textbf{SI Conversion} \\ \midrule
-            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br}/V = 1.57 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K. &   $P_\mathrm{br}/V = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$  \\
-            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_\mathrm{br}/V = 1.4 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \bar{g}_\mathrm{B}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K.&  $P_\mathrm{br}/V = 1.68 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \: \mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
+            \textcite{glasstoneControlledThermonuclearReactions1975}  & $P_\mathrm{br}/V = 1.57 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K. &   $P_\mathrm{br}/V = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \: $\mathrm{W/m^3}$  \\
+            \textcite{rybickiRadiativeProcessesAstrophysics2004}      & $P_\mathrm{br}/V = 1.4 \times 10^{-27} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2} \bar{g}_\mathrm{B}$ \: $\mathrm{ergs/(cm^3\cdot s)}$, with T in K.&  $P_\mathrm{br}/V = 1.68 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T^{1/2}$ \:  $\mathrm{W/m^3}$, using $\bar{g}_\mathrm{B} (T)$ = 1.2\\
             \bottomrule          
             \end{tabularx}
         \end{table}
@@ -124,7 +124,7 @@
         The calculation procedure implemented in the 0D model is as follows:
 
         \begin{enumerate}
-            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} \approx \qty{20}{bar}$, set to experimental measurement done before each shot). This will be the mass of argon plasma and will remain fixed for the rest of the problem. This fixed mass could be a source of error, as the plasma propagates as described in \autoref{fig:Mechanism of LSP growth}. The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a} when the cone reaches equilibrium near the end of a laser pulse.
+            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} \approx \qty{20}{bar}$, set to experimental measurement done before each shot). This will be the mass of argon plasma and will remain fixed for the rest of the problem. This fixed mass could be a source of error, as the plasma propagates as described in \autoref{fig:Mechanism of LSP growth}. The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a} when the cone reaches equilibrium near the end of a laser pulse. The argon volume contained in the V1 test section is \qty{0.4}{L}.
                 \begin{equation}
                     l_\mathrm{plasma} = \qty{0.02}{m}, \: r_\mathrm{plasma} = \qty{0.001}{m}
                 \end{equation}
@@ -152,17 +152,17 @@
                     V_2 = \frac{n \bar{R} T_2}{p_2}
                 \end{equation}
                 With the universal gas constant $\bar{R}$.
-            \item The pressure increase $p_4$ in the larger argon volume in the chamber due to the isentropic expansion of the gas in the LSP cone is calculated.
+            \item The pressure increase $p_4$ in the larger argon volume in the V1 chamber (\qty{0.4}{L}) due to the isentropic expansion of the gas in the LSP cone is calculated.
                 \begin{equation}
                     p_4 = p_\mathrm{ini} \left(\frac{V_\mathrm{chamber} - V_\mathrm{plasma}}{V_\mathrm{chamber} - V_2}\right)^\kappa
                 \end{equation}
-                With the heat capacity ratio of argon at \qty{300}{K} $\kappa=1.67$. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
+                With $\kappa=1.67$, the heat capacity ratio of argon at \qty{300}{K}. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
             \item The radiated power from the LSP cone to the larger argon volume is determined for the next iteration. The Bremsstrahlung power density loss equation from \textcite{glasstoneControlledThermonuclearReactions1975} is used, multiplied by the volume $V_2$ of the LSP.
                 \begin{equation}
                     P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T_2^{1/2} V_2
                 \end{equation}
                 With $Z = 1$, as the argon is singly ionized.
-            \item Steps 2 to 5 are looped until \qty{10}{ms}, when the laser shuts off. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation thus becomes:
+            \item Steps 2 to 5 are looped until \qty{10}{ms}, when laser energy deposition ends. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation thus becomes:
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} - P_\mathrm{loss} \times \mathrm{timestep}
                 \end{equation}
@@ -182,7 +182,7 @@
         With the Stefan-Boltzmann constant $\sigma$.
     \section{Model results}
 
-        From these iterations, pressure rise curves with Bremsstrahlung loss and blackbody radiation loss were determined. These curves were overlaid on experimental data from LSP178\_SPRK49, a \qty{10}{ms} QCW LSP shot at \qty{3080}{W} and \qty{19.91}{bar} of argon to give \autoref{fig:LSP178_SPRK49}.
+        From these iterations, pressure rise curves with Bremsstrahlung loss and blackbody radiation loss were determined. These curves were overlaid on experimental data from LSP178\_SPRK49, a \qty{10}{ms} QCW LSP experiment at \qty{3080}{W} and \qty{19.91}{bar} of argon to give \autoref{fig:LSP178_SPRK49}.
         
         \begin{figure}[!ht]
             \centering
@@ -191,9 +191,9 @@
             \label{fig:LSP178_SPRK49}
         \end{figure}
         
-        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is larger. The second, higher, peak could be explained by the fact that after the laser pulse, the energy in the cone is then communicated to the bulk argon volume. This equalization of temperatures and pressures could be due to natural convection. To test this hypothesis in future studies, the timescale of radiation and convection should be determined with the geometry of the problem.
+        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is greater. The second, higher, peak could be explained by the fact that after the laser pulse, the energy in the cone is then communicated to the bulk argon volume. This equalization of temperatures and pressures could be due to natural convection. To test this hypothesis in future studies, the timescale of radiation and convection should be determined with the geometry of the problem.
 
-        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}. A potential cause for this is that laser energy transmission was not taken into account in the model, and a measurement of this transmission was not taken experimentally. As the laser power goes down, the fraction of laser energy that is absorbed by the plasma (laser absorption efficiency) also goes down.
+        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}. A potential cause for this is that laser energy transmission was not taken into account in the model, and a measurement of this transmission was not taken experimentally. As the laser power is lowered, the fraction of laser energy that is absorbed by the plasma (laser absorption efficiency) also decreases.
 
         \begin{figure}[!ht]
             \centering
@@ -217,11 +217,11 @@
         \begin{figure}[!ht]
             \centering
             \includegraphics[width=0.85\textwidth]{assets/2 models/powerVSdeltaP.pdf}
-            \caption{Pressure increase from 0D model as a function of laser power, with initial pressure of approximately \qty{20}{bar}}
+            \caption{Pressure increase from 0D model as a function of laser power, with initial pressure of \qty{20}{bar}}
             \label{fig:powerVSdeltaP}
         \end{figure}
 
-        For reference, \autoref{tab:Initial values for model} contains the initial values of each model run used for \autoref{fig:powerVSdeltaP}. Each run took around \qty{15}{minutes} to compute on a laptop. \todo{?? in table refers to Experiments chapter}
+        For reference, \autoref{tab:Initial values for model} contains the initial values of each model run used for \autoref{fig:powerVSdeltaP}. Each run took around \qty{15}{minutes} to compute on a laptop.
 
         \begin{table}[!ht]
             \centering
@@ -230,7 +230,7 @@
             \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}X<{\raggedright}@{}}
             \toprule
             Shot ID & $P_\mathrm{laser}$ (\unit{W}) & $P_\mathrm{laser}$ (\unit{\%}) & $p_\mathrm{ini}$ (\unit{bar}) & Time step (\unit{s}) & Source of $P_\mathrm{laser}$ (\unit{W})\\ \midrule
-            LSP176\_SPRK47 & 2310      &  75     &    0.08   &  $50\times 10^{-6}$  & Maximum power multiplied by \% \\ 
+            LSP176\_SPRK47 & 2310      &  75     &    19.91   &  $50\times 10^{-6}$ & Maximum power multiplied by \% \\ 
             LSP178\_SPRK49 & 3080      &  100    &    19.91   &  $10\times 10^{-6}$ & Maximum power\\
             LSP179\_SPRK50 & 1540      &  50     &    19.91   &  $10\times 10^{-6}$ & Maximum power multiplied by \% \\
             LSP183\_SPRK54 & 345       &  15     &    20.03   & $10\times 10^{-6}$  & Extrapolated from \autoref{tab:laser shot statistics}\\ 

@@ -2,7 +2,7 @@
 
     \section{Version 1 test section} \label{sec:design_v1}
 
-        The design process of the first generation thruster, called Version 1 (V1, see \autoref{fig:V1 setup}), can be found in \textcite{duplayArgonLaserPlasmaThruster2024a}. It proved to be a dependable prototype, repurposed from a previous unrelated experiment. However, it presented problems that required a second generation prototype to be designed and manufactured.
+        The design process of the first generation thruster, called Version 1 (V1, see \autoref{fig:V1 setup}), can be found in \textcite{duplayArgonLaserPlasmaThruster2024a}. It proved to be a dependable prototype for studying LSP initiation, repurposed from a previous unrelated experiment. However, it presented problems related to operation as a thruster. Indeed, it was too heavy for thrust measurement and its length put fragile rubber seals in the path of the laser beam. Its large internal volume also meant that the increase in thrust and chamber pressure with LSP would be minimal. This required a second generation prototype to be designed and manufactured.
 
         \begin{figure}[!ht]
             \centering
@@ -21,7 +21,7 @@
             \label{fig:V1 setup}
         \end{figure}
 
-        A total of 298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high speed camera (Photron Fastcam SA5).
+        A total of 298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high-speed camera (Photron Fastcam SA5).
 
     \section{Version 2} \label{sec:design_v2}
 
@@ -116,30 +116,11 @@
                 \label{fig:double choke sizing}
             \end{figure}
             
-            The starting assumptions were the following: a \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). The gas mass flow rate and the diameter of the two orifices needed to choke the flow will be determined.
+            The starting assumptions were the following: a fixed \qty{300}{W} power input (the laser) supplies energy to an LTP experiment that has an internal pressure of \qty{25}{bar}, with a \qty{50}{bar} feed pressure. It is required that the hot gas operation (laser on) increases the gas' exit velocity to twice that of the cold gas operation (laser off). The gas mass flow rate and the diameter of the two orifices needed to choke the flow will be determined.
 
-            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature (\qty{300}{K}), as there is no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is the main performance parameter, is therefore \qty{646}{m/s}.
+            Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature $T_1 = \qty{300}{K}$, as there is no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is the main performance parameter, is therefore \qty{646}{m/s}.
             
-            %---BEFORE
-            Laser on (hot) operation will now be examined. 
-            
-            Taking the previous $v_\mathrm{exit}$ and ionizing the whole flow, it is assumed that the thruster's efficiency is doubled. 
-            
-            This gives a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. 
-            
-            The nozzle throat size will therefore be found for this $\dot m$, with $p_\mathrm{chamber} = \qty{25}{bar}$. 
-            
-            $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ and the speed of sound is $c = \sqrt{\gamma R T}$. 
-            
-            As the speed of sound will be doubled, the temperature is multiplied by 4.
-            % ---AFTER
-            As the laser power is fixed, 
-
-            
-
-            To see an effect on thrust that was significant, the mass flow was set such that the thrust would be doubled with mass flow rate kept fixed. Perfect conversion of laser power to gas heating was assumed.
-
-            % ---
+            Laser on (hot) operation will now be examined, with the assumption that there is perfect conversion of laser power to gas heating. To see an effect on thrust that was significant, the mass flow was set such that the thrust would be doubled with a fixed mass flow rate. The exit velocity is therefore doubled, giving a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. The nozzle throat size will then be found for this $\dot m$, with $p_\mathrm{chamber} = \qty{25}{bar}$. $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ is known and the speed of sound is $c = \sqrt{\gamma R T}$. The temperature after ionization ($T_2$) is estimated to be four times larger than $T_1$, as the speed of sound was doubled.
 
             \[\text{Power} = \dot m (h_2-h_1)
             = \dot m c_p (T_2-T_1)\]
@@ -185,7 +166,7 @@
                 \label{fig:V2 IRL setup}
             \end{figure}
 
-            The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). The rail is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell, and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
+            The thrust stand is a ball bearing carriage (McMaster-Carr 6709K12) on a \qty{15}{mm} wide, \qty{160}{mm} long guide rail (McMaster-Carr 6709K33). The rail is mounted on the optical breadboard using acrylic spacers. A string through a pulley holds a variable weight, adding a preload to the test section. This ensures adequate contact between the test section and the load cell and allows calibration of the load cell. Two load cells are used with different force sensing range: Honeywell FSG020WNPB (\qtyrange{0}{20}{N}) and Honeywell FSG005WNPB (\qtyrange{0}{5}{N}).
 
         \subsection{Laser and optics}
 
@@ -232,7 +213,7 @@
 
         \subsection{Data acquisition (DAQ) system and oscilloscope}
 
-            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used: a PCB Model 113B28 and an Omega PX119A-1KG5V. Refer to \autoref{chp:omega calibration} for the Omega pressure sensor calibration.
+            Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used. A PCB Model 113B28 was used for dynamic (transient) pressure measurements, while an Omega PX119A-1KG5V was used for quasi-static measurements. Refer to \autoref{chp:omega calibration} for the Omega pressure sensor calibration.
 
             \begin{figure}[!ht]
                 \centering
@@ -243,7 +224,7 @@
 
         \subsection{Cameras}
 
-            A Photron SA5 high speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to no side windows being present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's lenses and its sensor were protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
+            A Photron SA5 high-speed camera was used during certain LSP shots to determine if LSP initiation had happened and how long the plasma had lasted. Due to no side windows being present on V2, the Photron camera looked at an angle from the side into the front window, seeing the reflection of the plasma core (as in \autoref{fig:V2 setup}). During LSP shots, the camera's lenses and its sensor were protected by an Aurora PowerXND-II Variable Neutral Density Filter and a Hoya \qty{58}{mm} UV and IR cut filter.
 
             A generic USB webcam was also connected to the data acquisition laptop, giving a live wide-angle view of the entire experiment. As these cameras are sensitive to IR, it gave an additional confirmation that the laser emission was turned off before opening the laser safety curtain.
 
@@ -283,3 +264,5 @@
             \includegraphics[width=\textwidth]{assets/3 design/V1 V2 comparison.png}
             \caption{Size comparison between V1 (top, on extrusion rails) and V2 (bottom, mounted in front of laser collimator). V2 is in static configuration, without the extension cylinder.}
         \end{figure} 
+
+In summary, the V1 and V2 test sections were presented, with an emphasis on V2's design. The various systems enabling LSP generation, control and measurement with the V2 test section were also explained. The next chapter will present the results of the experiments conducted with these facilities.

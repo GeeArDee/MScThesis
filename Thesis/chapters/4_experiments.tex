@@ -1,20 +1,20 @@
 \setcounter{chapter}{2}
 \chapter{Experiments}
 
-    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the propellant in all cases, due to its low cost, safety and ease of ionization.
+    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the propellant in all cases, due to its low cost, safety, and ease of ionization.
 
     \section{Static LSP validation}
 
         \subsection{V1 LSP spark initiation}
 
-            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during an LSP shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during a Laser-Supported Plasma (LSP) shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
 
             \begin{figure}[!ht]
                 \centering
                 \begin{subfigure}[t]{0.25\textwidth}
                     \centering
                     \includegraphics[width=\textwidth]{assets/4 experiments/Composite photo spark.png}
-                    \caption{Composite photo showing spark between two electrodes. The spark gap is approximately \qty{0.79}{mm}.}
+                    \caption{Composite photo showing spark between two electrodes. The spark gap is approximately \qty{0.8}{mm}.}
                     \label{fig:spark composite}
                 \end{subfigure}
                 \hfill
@@ -27,7 +27,7 @@
                 \caption{V1 spark alignment}
             \end{figure}
             
-            Using the thickness of the electrode (\qty{1.55}{mm}) as a reference, the spark gap's length is \qty{0.79}{mm} and the average spark is \qty{0.23}{mm} wide. Timing data was also recorded for the spark by the high speed camera. To align the laser focus to the spark in time, the laser was reinstalled, and the camera was placed back to its normal position looking into the side of the test section (seen in \autoref{fig: standard view of electrodes}). The beam was then focused on one of the electrodes at low power. This caused the electrode to glow white-hot when the laser was on. The timings presented in \autoref{fig: Signal timing diagram} were determined by this investigation.
+            Using the thickness of the electrode (\qty{1.55}{mm}) as a reference, the spark gap's length is \qty{0.8}{mm} and the average spark is \qty{0.2}{mm} wide. Timing data was also recorded for the spark by the high-speed camera. To align the laser focus to the spark in time, the laser was reinstalled, and the camera was placed back to its normal position looking into the side of the test section (seen in \autoref{fig: standard view of electrodes}). The beam was then focused on one of the electrodes at low power. This caused the electrode to glow white-hot when the laser was on. The timings presented in \autoref{fig: Signal timing diagram} were determined by this investigation.
 
             \begin{figure}[!ht]
                 \centering
@@ -52,12 +52,12 @@
 
             %[Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
 
-            Three control QCW LSP shots were done in pure argon and their dynamic pressure trace from the PCB transducer was recorded. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, was introduced into the chamber. V1 was then pressurized with argon to 20 bar. With the spark active, three LSPs were generated in the seeded atmosphere. The dynamic pressure rise of the seeded argon was approximately double the one seen in pure argon. The next two LSP shots were conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar with argon. Again, higher pressure rises were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar} with argon. This would have brought the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Two LSPs were initiated, with a higher pressure rise than pure argon, but less than the higher concentration \ce{NO2} shots. \autoref{fig:NO2_shots_analysis} presents the averages of these recorded pressure traces.
+            Three control QCW LSP shots were done in pure argon and their dynamic pressure trace from the PCB transducer was recorded. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, was introduced into the chamber. V1 was then pressurized with argon to 20 bar. With the spark active, three LSPs were generated in the seeded atmosphere. The dynamic pressure rise of the seeded argon was approximately double the one seen in pure argon. The next two LSP shots were conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar with argon. Again, higher pressure increases were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar} with argon. This would have brought the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Two LSPs were initiated, with a higher pressure increase than pure argon, but less than the higher concentration \ce{NO2} shots. \autoref{fig:NO2_shots_analysis} presents the averages of these recorded pressure traces.
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.75\textwidth]{assets/4 experiments/NO2_shots_analysis.pdf}
-                \caption{Average dynamic pressure rise of QCW LSP shots in a mixture of \ce{NO2} and argon compared to that of pure argon QCW LSP}
+                \caption{Average dynamic pressure rise of QCW LSP shots in a mixture of \ce{NO2} and argon compared to that of pure argon QCW LSP. Initial pressure was \qty{20.15}{bar}. Values given in the legend are the partial pressure of \ce{NO2} seeding in the gas.}
                 \label{fig:NO2_shots_analysis}
             \end{figure}
 
@@ -99,7 +99,7 @@
                 \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
                 \label{tab:laser shot statistics}
                 \begin{tabular}{lll}
-                \textbf{Value {[}Unit{]}} & \textbf{10x 50 ms shots at 10\% power} & \textbf{10x 50 ms shots at 12\% power} \\ \hline
+                \textbf{Value {[}Unit{]}} & \textbf{10 $\times$ \qty{50}{ms} shots at 10\% power} & \textbf{10 $\times$ \qty{50}{ms} shots at 12\% power} \\ \hline
                 Average energy value {[}J{]}  & 9.985 & 12.89 \\
                 Maximum energy value {[}J{]}  & 10.2  & 13.3  \\
                 Minimum energy value {[}J{]}  & 9.63  & 12.0  \\
@@ -113,10 +113,10 @@
             Extrapolating from these results, \qty{300}{W} is achieved at \qty{13.5}{\%}.
 
             %first V1 test
-            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presented a problem, as the maximum continuous wave (CW) power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was started in February 2024 to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level. \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the beam diameter at the focus:
+            Pulsed shots at lower power levels with a \qty{200}{mm} focal length lens (Thorlabs LA1979-C) revealed a difficulty to initiate QCW LSP below \qty{30}{\%} power, around \qty{1}{kW}. This presented a problem, as the maximum continuous wave (CW) power of the laser is significantly lower at \qty{342}{W} (see \autoref{chp:app_YLR}). A test campaign was initiated to determine if LSP initiation in the V1 thruster was possible under this maximum CW power level. \autoref{eqn: spot diameter} \cite{LaserSpotSize} can be used to estimate the beam diameter at the focus:
             
             \begin{equation}\label{eqn: spot diameter}
-                \text{Spot diameter}(mm) = \frac{4 \times \text{Focal length}(mm) \times \text{Wavelength}(mm) \times M^2}{\pi \times \text{Beam diameter at lens}(mm)}
+                \text{Spot diameter (mm)} = \frac{4 \times \text{Focal length (mm)} \times \text{Wavelength (mm)}\times M^2}{\pi \times \text{Beam diameter at lens (mm)}}
             \end{equation}
 
             The beam propagation factor $M^2$ is a scale to measure beam quality. A diffraction-limited Gaussian beam has the minimum $M^2$ of 1 (\textcite{hechtUnderstandingLasersEntry2019}). The YLR-300/3000 laser has a Beam Parameter Product (BPP) of \qty{2}{mm.mrad}, as found in \autoref{chp:app_YLR}. As $M^2 = \frac{\pi}{\lambda} \text{BPP}$ \cite{paschottaBeamParameterProduct}, this corresponds to an $M^2$ of 5.87. From \autoref{eqn: spot diameter}, lowering the focal length of the lens lowers the spot diameter, increasing laser flux. The \textit{Thorlabs} \textcite{LensTutorial} also mentions that a dual-lens system can lower the beam diameter at the focus.
@@ -210,7 +210,7 @@
 
             \input{assets/4 experiments/CW LSP frames Photron/igntionFrames.tex}
 
-            Observation of the high speed camera footage (\autoref{fig:CW_V2_Photron_frames}), recorded at 10000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms} at this power. The brightness of the plasma increases regularly after initiation, to reach its maximum intensity around \qty{50}{ms}. The maximum brightness is constant for \qty{10}{ms}. A flickering of the LSP is seen at \qty{70.0}{ms}, before it died down and was completely extinguished after \qty{88.3}{ms}. This was the first CW LSP generated in the lab.
+            Observation of the high-speed camera footage (\autoref{fig:CW_V2_Photron_frames}), recorded at 10,000 frames per second, showed the CW LSP starting at frame 32 (\qty{3.2}{ms}) and ending at frame 883 (\qty{88.3}{ms}), lasting \qty{85.1}{ms}. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of \qty{50.0}{ms} at this power. The brightness of the plasma increases regularly after initiation, to reach its maximum intensity around \qty{50}{ms}. The maximum brightness is constant for \qty{10}{ms}. A flickering of the LSP is seen at \qty{70.0}{ms}, before it died down and was completely extinguished after \qty{88.3}{ms}. This was the first CW LSP generated in the lab.
 
             \begin{figure}[!ht]
                 \centering
@@ -305,7 +305,7 @@
         
             To characterize the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was done based upon the theory in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega transducer.
 
-            The internal volume of the V2 thruster in flowing configuration was determined by weighing it before and after it was filled with isopropyl alcohol. Using a density of \qty{785.09}{kg/m^3}, the volume was found to be \qty{9.68e-6}{m^3}, or \qty{9.68}{ml}.
+            The internal volume of the V2 thruster in flowing configuration was determined by weighing it before and after it was filled with isopropyl alcohol. Using a density of \qty{785}{kg/m^3}, the volume was found to be \qty{9.68e-6}{m^3}, or \qty{9.68}{ml}.
 
             The following expression for the pressure-time history of a blow down choked orifice flow \cite{saadCompressibleFluidFlow} was then implemented in Python. As the timescale is short (less than 10 seconds), the process is considered adiabatic, and the isentropic case is used:
 

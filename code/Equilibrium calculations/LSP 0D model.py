@@ -287,19 +287,19 @@ experiment_time = df[["time"]].to_numpy()
 experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
 p = np.load('LSP178_SPRK49_brems_p.npy') - 500
 time_array = np.load('LSP178_SPRK49_brems_time.npy')
-plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP178_SPRK49)') # plot experimental data
+plt.plot(experiment_time, experiment_pressure/1000, 'o', markersize=1, label='Data (LSP178_SPRK49)') # plot experimental data
 BB_time = np.load('LSP178_SPRK49_blackbody_time.npy')
 BB_p = np.load('LSP178_SPRK49_blackbody_p.npy')
-plt.plot(BB_time, BB_p, color='black', label = 'Blackbody radiation loss') # plot Blackbody
-plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.plot(BB_time, BB_p/1000, color='black', label = 'Blackbody radiation loss') # plot Blackbody
+plt.plot(time_array, p/1000, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
 plt.xlabel('Time [s]')
-plt.ylabel('Pressure [Pa]')
+plt.ylabel('Pressure [kPa]')
 plt.xlim([0,0.4])
-plt.ylim([19.90e5,20.0e5])
+plt.ylim([1990,2000])
 #plt.title("Pressure change over time during laser pulse, with radiation loss")
 plt.legend()
 plt.savefig('../../Thesis/assets/2 models/LSP178_SPRK49.pdf')
-pressure_array[0] = np.max(p)-p_ini
+pressure_array[0] = (np.max(p)-p_ini)/1000
 
 # Plot experimental data #2
 #LSP179_SPRK50
@@ -310,16 +310,16 @@ experiment_time = df[["time"]].to_numpy()
 experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
 p = np.load('LSP179_SPRK50_brems_p.npy') - 500
 time_array = np.load('LSP179_SPRK50_brems_time.npy')
-plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP179_SPRK50)') # plot experimental data
-plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.plot(experiment_time, experiment_pressure/1000, 'o', markersize=1, label='Data (LSP179_SPRK50)') # plot experimental data
+plt.plot(time_array, p/1000, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
 plt.xlabel('Time [s]')
-plt.ylabel('Pressure [Pa]')
+plt.ylabel('Pressure [kPa]')
 plt.xlim([0,0.4])
-plt.ylim([19.90e5,19.96e5])
+plt.ylim([1990,1996])
 #plt.title("Pressure change over time during laser pulse, with radiation loss")
 plt.legend()
 plt.savefig('../../Thesis/assets/2 models/LSP179_SPRK50.pdf')
-pressure_array[1] = np.max(p)-p_ini
+pressure_array[1] = (np.max(p)-p_ini)/1000
 
 
 # Plot experimental data #3
@@ -331,27 +331,27 @@ experiment_time = df[["time"]].to_numpy()
 experiment_pressure = df[["Volts"]].to_numpy()* 1e3 / 14.94e-3 + p_ini -500# Pa, with P_ini added so this is pressure rise
 p = np.load('LSP183_SPRK54_brems_p.npy') - 500
 time_array = np.load('LSP183_SPRK54_brems_time.npy')
-plt.plot(experiment_time, experiment_pressure, 'o', markersize=1, label='Data (LSP183_SPRK54)') # plot experimental data
-plt.plot(time_array, p, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
+plt.plot(experiment_time, experiment_pressure/1000, 'o', markersize=1, label='Data (LSP183_SPRK54)') # plot experimental data
+plt.plot(time_array, p/1000, color = 'red', label = 'Bremsstrahlung loss') # plot Brems
 plt.xlabel('Time [s]')
-plt.ylabel('Pressure [Pa]')
+plt.ylabel('Pressure [kPa]')
 plt.xlim([0,0.4])
-plt.ylim([20.02e5,20.07e5])
+plt.ylim([2002,2007])
 #plt.title("Pressure change over time during laser pulse, with radiation loss")
 plt.legend()
 plt.savefig('../../Thesis/assets/2 models/LSP183_SPRK54.pdf')
-pressure_array[2] = np.max(p)-p_ini
+pressure_array[2] = (np.max(p)-p_ini)/1000
 
 
 # Plot delta_p vs laser power
-pressure_array[3] = 3709.97 #(from LSP176_SPRK47 run)
+pressure_array[3] = 3.70997 #(from LSP176_SPRK47 run)
 #pressure_array[4] = 
 plt.figure()
 plt.plot(laser_power_array, pressure_array, 'o',color='red')
 plt.xlabel('Laser power [W]')
-plt.ylabel('Pressure increase [Pa]')
+plt.ylabel('Pressure increase [kPa]')
 plt.xlim([0,3500])
-# plt.ylim([0,4000])
+plt.ylim([3.300,3.800])
 plt.savefig('../../Thesis/assets/2 models/powerVSdeltaP.pdf')
 
 
