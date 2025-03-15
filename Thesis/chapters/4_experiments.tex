@@ -1,7 +1,7 @@
 \setcounter{chapter}{2}
 \chapter{Experiments}
 
-    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the propellant in all cases, due to its low cost, safety, and ease of ionization.
+    The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the main propellant due to its low cost, safety, and ease of ionization.
 
     \section{Static LSP validation}
 
@@ -27,7 +27,7 @@
                 \caption{V1 spark alignment}
             \end{figure}
             
-            Using the thickness of the electrode (\qty{1.55}{mm}) as a reference, the spark gap's length is \qty{0.8}{mm} and the average spark is \qty{0.2}{mm} wide. Timing data was also recorded for the spark by the high-speed camera. To align the laser focus to the spark in time, the laser was reinstalled, and the camera was placed back to its normal position looking into the side of the test section (seen in \autoref{fig: standard view of electrodes}). The beam was then focused on one of the electrodes at low power. This caused the electrode to glow white-hot when the laser was on. The timings presented in \autoref{fig: Signal timing diagram} were determined by this investigation.
+            Using the thickness of the electrode (\qty{1.55}{mm}) as a reference, the spark gap's length is \qty{0.8}{mm} and the average spark is \qty{0.2}{mm} wide. Timing data was also recorded for the spark by the high-speed camera. To align the laser focus to the spark in time, the laser was reinstalled, and the camera was placed back to its normal position looking into the side of the test section (as in \autoref{fig: standard view of electrodes}). The beam was then focused on one of the electrodes at low power. This caused the electrode to glow white-hot when the laser was on. The timings presented in \autoref{fig: Signal timing diagram} were determined by this investigation.
 
             \begin{figure}[!ht]
                 \centering
@@ -45,7 +45,6 @@
 
         \subsection{\ce{NO2} seeding}
 
-            \todo{Add context to this section}
             % If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
             
             As the plasma emits in the ultraviolet (UV) range, it is necessary to seed with a gas that absorbs UV but not the infrared (IR) laser. \textcite{khanGasDetectionUsing2019} shows that \ce{NO2} and \ce{SO2} are two candidates. \ce{NO2} was first used as it was easy to produce in-house in significant quantities. The V1 system was set up with a vacuum pump connected to an outside air exhaust to safely vent the \ce{NO2} gas. The pump was also used to bring the pressure in the test section down to a rough vacuum before introducing the gasses.
@@ -93,7 +92,7 @@
 
         \subsection{Optical experiments: going from QCW to CW LSP}
 
-            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W), which does not scale directly to lower powers. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
+            Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W), which does not scale directly at lower powers. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
 
             \begin{table}[!ht]
                 \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
@@ -148,7 +147,7 @@
                 \label{fig:modeled lenses}
             \end{figure}
 
-            With a dual-lens system, the longest focal length lens should be placed first in this case, as the diameter of the beam entering the second lens is maximized. This would lead to a tighter focus, but it was placed after as it was impossible to mount before with the available mounting hardware. The difference in spot size is minimal. A practical consideration for the experiments is that the LSP will be formed upstream of the laser focus when there is no gas flow because the plasma's radiation pre-heats the gas. Therefore, the focus needs to be slightly after the initiation system.
+            With a dual-lens system, the longest focal length lens should be placed first, contrary to what is shown. This would lead to a tighter focus, as the diameter of the beam entering the second lens is maximized. In this case, the \qty{500}{mm} focal length lens was placed after the \qty{150}{mm} lens as it was impossible to mount before with the available mounting hardware. WinLens3D showed that the difference in spot size was minimal. A practical consideration for the experiments is that the LSP will be formed upstream of the laser focus when there is no gas flow because the plasma's radiation pre-heats the gas. Therefore, the focus needs to be slightly after the initiation system.
 
             \autoref{fig:spot diagrams} presents the spot diagrams that were then produced with WinLens3D. Note the difference in scales and spacing used throughout.
             \begin{figure}[!ht]

@@ -40,7 +40,7 @@
                 \includegraphics[width=0.85\textwidth]{assets/3 design/V2 render cutout.png}
                 \caption{Cutaway view of the inside of the thruster}
             \end{subfigure}
-            \caption{Render of the V2 LTP thruster}
+            \caption{Renders of the V2 LTP thruster}
             \label{fig:V2 render}
         \end{figure}
 
@@ -51,7 +51,7 @@
             \begin{enumerate}
                 \item Laser thruster
                 \begin{enumerate}
-                    \item A \qty{300}{W} Continuous Wave (CW) \qty{1070}{nm} laser will be used to sustain the plasma (Nominal power \qty{300}{W}, actual max power \qty{350}{W})
+                    \item A \qty{300}{W} Continuous Wave (CW) \qty{1070}{nm} laser will be used to sustain the plasma (nominal power \qty{300}{W}, actual max power \qty{350}{W})
                     \item The thruster should have a minimum safe “hot” operation time of \qty{30}{s}
                     \begin{enumerate}
                         \item In the event of failed LSP initiation, the thruster will safely absorb the total laser power for at least \qty{10}{s}
@@ -103,9 +103,7 @@
 
             The minimum diameter of the cylinder that will contain the LSP core must be larger than the diameter of the plasma itself, which is \qty{2}{mm} according to observations from \textcite{duplayArgonLaserPlasmaThruster2024a}. An arbitrary factor of safety of 2.5 was used, which set the innermost diameter to \qty{5}{mm}.
 
-            The argon gas enters radially near the end of the thruster. A channel around the inner cylinder directs the gas to the front of the thruster, where it turns \qty{180}{\degree} through the plasma region and out the nozzle (see \autoref{fig:double choke sizing}). This ``cylinder-inside-a-cylinder" design was inspired by \textcite{toyodaThrustPerformanceCW2002}, allowing the gas to cool the inner cylinder and straightening the flow.
-
-            The thickness of the exterior wall of the thruster was determined by the minimum engagement depth (\qty{14}{mm}) of the 1/4 inch Ultra-Torr NPT fittings.
+            The argon gas enters radially near the end of the thruster. A channel around the inner cylinder directs the gas to the front of the thruster, where it turns \qty{180}{\degree} through the plasma region and out the nozzle (see \autoref{fig:double choke sizing}). This ``cylinder-inside-a-cylinder" design was inspired by \textcite{toyodaThrustPerformanceCW2002}, allowing the gas to cool the inner cylinder and straightening the flow. The thickness of the exterior wall of the thruster was determined by the minimum engagement depth (\qty{14}{mm}) of the 1/4 inch Ultra-Torr NPT fittings.
 
             The required metering valve and nozzle orifice sizes were then estimated. When adding energy to the thruster chamber with a laser, it is useful to choke the inflow upstream of the chamber. Indeed, this keeps the $P_0$ and $\dot{m}_\mathrm{in}$ constant, so the increase in chamber pressure can be interpreted as a measure of energy deposition. The second choke happens at the nozzle to accelerate the hot gas to a supersonic speed. Therefore, this configuration is double choked (see \autoref{fig:double choke sizing}), a classic problem in compressible fluid mechanics.
 
@@ -120,17 +118,20 @@
 
             Starting with a cold gas thruster using argon, the speed of sound of argon ($c_0$) is \qty{323}{m/s}. This is at ambient temperature $T_1 = \qty{300}{K}$, as there is no laser energy to heat the gas in this case. With a nozzle, the gas is accelerated to approximately twice this speed. The exit velocity of the gas $v_\mathrm{exit}$, which is the main performance parameter, is therefore \qty{646}{m/s}.
             
-            Laser on (hot) operation will now be examined, with the assumption that there is perfect conversion of laser power to gas heating. To see an effect on thrust that was significant, the mass flow was set such that the thrust would be doubled with a fixed mass flow rate. The exit velocity is therefore doubled, giving a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. The nozzle throat size will then be found for this $\dot m$, with $p_\mathrm{chamber} = \qty{25}{bar}$. $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ is known and the speed of sound is $c = \sqrt{\gamma R T}$. The temperature after ionization ($T_2$) is estimated to be four times larger than $T_1$, as the speed of sound was doubled.
+            Laser on (hot) operation will now be examined, with the assumption that there is perfect conversion of laser power to gas heating. To see an effect on thrust that was significant, the mass flow was set such that the thrust would be doubled with a fixed mass flow rate. The exit velocity is therefore doubled, giving a $v_\mathrm{exit}\approx \qty{1300}{m/s}$. With a fixed nozzle and mass flow, the speed of sound in the gas must increase by a factor of two. As the speed of sound is $c = \sqrt{\gamma R T}$, the temperature after ionization ($T_2$) is estimated to be four times larger than $T_1$.
 
             \[\text{Power} = \dot m (h_2-h_1)
             = \dot m c_p (T_2-T_1)\]
-            Using a constant $c_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}. Fliegner's formula describes the mass flow rate of an isentropic flow:
+            
+            Using a constant $c_p$ of argon of \qty{0.520}{kJ.kg^{-1}.K^{-1}}, the calculated $\dot m$ is \qty{0.641}{g/s}. The nozzle throat size will then be found for this $\dot m$, with $p_0 = \qty{25}{bar}$. $\mathrm{MW_{Ar}} = \qty{40}{g/mol}$ is known. Fliegner's formula describes the mass flow rate of an isentropic flow:
+            
             \[\frac{\dot m}{A} = p_0\sqrt{\frac{\gamma}{T_0 R}}\frac{M}{(1+\frac{\gamma-1}{2}M^2)^{(\frac{\gamma+1}{2(\gamma-1)})}}\]
-            With $\gamma = \frac{c_p}{c_v} = 1.67$ for argon and choked flow at the nozzle, the area and the diameter of the circular nozzle are \qty{0.176}{mm^2} and \qty{0.473}{mm}, respectively. The V2 test section was built with this nozzle diameter. These calculations can be repeated for the feed orifice, with the same $\dot m$, a pressure of \qty{50}{bar} and ambient temperature. This gives us an orifice diameter of about 0.2 mm.
+
+            With $\gamma = \frac{c_p}{c_v} = 1.67$ for argon and choked flow at the nozzle ($M=1$), the area and the diameter of the circular nozzle are \qty{0.176}{mm^2} and \qty{0.473}{mm}, respectively. The V2 test section was built with this nozzle diameter. These calculations can be repeated for the feed orifice, with the same $\dot m$, a pressure of \qty{50}{bar} and ambient temperature. This gives us an orifice diameter of about 0.2 mm.
         
         \subsection{Test section and thrust stand}
             
-            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity, enabling static and flowing tests with argon propellant. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting, but was replaced by a pipe plug after excessive rod breakage. After flowing through the test section, used argon propellant was vented to the ambient air. \autoref{fig:V2 IRL setup} shows the two final configurations that were used.
+            As can be seen in \autoref{fig:V2 setup}, the V2 test section was designed with multiple ports for modularity, enabling static and flowing tests with argon propellant. Ports that were not in use were fitted with pipe plugs. In all tests, the two opposing electrode ports and one argon inlet port were used. The second argon inlet, intended to offer a more uniform flow if needed, was not used. The optical access port was initially fitted with a quartz rod in an Ultra-Torr fitting, but was replaced by a pipe plug after excessive rod breakage due to pressure cycling. After flowing through the test section, used argon propellant was vented to the ambient air. \autoref{fig:V2 IRL setup} shows the two final configurations that were used.
 
             \begin{figure}[!ht]
                 \centering
