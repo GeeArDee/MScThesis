@@ -1,4 +1,3 @@
-\setcounter{chapter}{3}
 \chapter{0D LSP Model} \label{chp:models}
 
     To predict experimental data, namely the pressure increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. A zero-dimensional (0D) heat transfer model was then written in Python to compare to experimental data. Argon and hydrogen were used to validate initial equilibrium calculations, while the 0D model was solely implemented using argon. Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in a full-scale LTP engine for its increased $I_\mathrm{sp}$ due to its lower molecular weight.
@@ -87,7 +86,7 @@
 
         The first relation, from \textcite{glasstoneControlledThermonuclearReactions1975} converted to SI, was used for the remainder of the calculations.
 
-        There is also a question regarding whether the plasma is a surface emitter or a volume emitter. This is determined by calculating the plasma frequency at a typical electron density and comparing it to the wavelength of the light emitted by Bremsstrahlung. If the plasma frequency is higher than the wavelength of emitted Bremsstrahlung light, then it is cut off by the plasma; no light can escape the volume of the LSP cone, and it is a surface emitter. If it is lower, then the emitted photons are not blocked by the LSP and the cone is a volumetric emitter.
+        There is also a question regarding whether the plasma is a surface emitter or a volume emitter. This is determined by calculating the plasma frequency at a typical electron density and comparing it to the wavelength of the light emitted by Bremsstrahlung. If the plasma frequency is higher than the wavelength of emitted Bremsstrahlung light, then it is cut off by the plasma; no light can escape directly from the inside of the LSP cone, and it is a surface emitter. If it is lower, then the emitted photons are not blocked by the LSP and the cone is a volumetric emitter.
         
         The plasma frequency $\omega_\mathrm{p}$ is found with: 
 
@@ -110,17 +109,6 @@
             \label{fig:0D model}
         \end{figure}
 
-        The LSP growth mechanism (\autoref{fig:Mechanism of LSP growth}) is not modelled, but it is useful to understand the physics at play.
-
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics[width=0.85\textwidth]{assets/2 models/Mechanism of LSP growth.pdf}
-            \caption{Mechanism of LSP growth}
-            \label{fig:Mechanism of LSP growth}
-        \end{figure}
-
-        The laser creates at first a small LSP volume near the focus, where the power density is highest. As the plasma radiates via Bremsstrahlung, the argon around the plasma is heated. Being exposed to the laser beam, the argon in front of the LSP ionizes. This causes the plasma to propagate towards the laser collimator until equilibrium is reached between radiation and heat dissipation. This reduces the absorption efficiency of the plasma, as the thicker part of the cone is no longer at the laser's focus, where the highest power density, and therefore temperature, can be reached. Gas flow up to a certain velocity can be used to push the plasma back into the focus, as was explained in \textcite{chenEmissionSpectroscopyCw1989a}. Too high a gas flow speed, and the plasma is blown out. Future experimental investigation of the V2 thruster could determine what the ideal flow speed is.
-
         The calculation procedure implemented in the 0D model is as follows:
 
         \begin{enumerate}
@@ -134,7 +122,7 @@
                 \begin{equation}
                     m_\mathrm{plasma} = V_\mathrm{plasma}\rho(T_\mathrm{ini}, p_\mathrm{ini})
                 \end{equation}
-            \item The energy in the plasma $E_\mathrm{plasma}$ is calculated, starting at 0. Energy from the laser pulse is added to the cone while the energy lost from radiation, calculated at the previous iteration, is subtracted.
+            \item The energy in the plasma $E_\mathrm{plasma}$ is calculated, starting at 0. Energy from the laser pulse is added to the cone while the energy lost from radiation, calculated at the previous iteration, is subtracted. These are calculated from their respective powers $P$.
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} + \underbrace{P_\mathrm{laser} \times \mathrm{timestep}}_\textrm{Energy from the laser pulse} - \underbrace{P_\mathrm{loss} \times \mathrm{timestep}}_\textrm{Energy lost by radiation}
                 \end{equation}
@@ -152,11 +140,11 @@
                     V_2 = \frac{n \bar{R} T_2}{p_2}
                 \end{equation}
                 With the universal gas constant $\bar{R}$.
-            \item The pressure increase $p_4$ in the larger argon volume in the V1 chamber (\qty{0.4}{L}) due to the isentropic expansion of the gas in the LSP cone is calculated.
+            \item The pressure increase $p_4$ of the larger argon volume in the V1 chamber (\qty{0.4}{L}) due to the isentropic expansion of the gas in the LSP cone is calculated.
                 \begin{equation}
-                    p_4 = p_\mathrm{ini} \left(\frac{V_\mathrm{chamber} - V_\mathrm{plasma}}{V_\mathrm{chamber} - V_2}\right)^\kappa
+                    p_4 = p_\mathrm{ini} \left(\frac{V_\mathrm{chamber} - V_\mathrm{plasma}}{V_\mathrm{chamber} - V_2}\right)^\gamma
                 \end{equation}
-                With $\kappa=1.67$, the heat capacity ratio of argon at \qty{300}{K}. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
+                With $\gamma=1.67$, the heat capacity ratio of argon at \qty{300}{K}. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
             \item The radiated power from the LSP cone to the larger argon volume is determined for the next iteration. The Bremsstrahlung power density loss equation from \textcite{glasstoneControlledThermonuclearReactions1975} is used, multiplied by the volume $V_2$ of the LSP.
                 \begin{equation}
                     P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T_2^{1/2} V_2
@@ -168,7 +156,7 @@
                 \end{equation}
         \end{enumerate}
         
-        To determine an upper bound for power loss, a switch was implemented to change Bremss-trahlung loss to blackbody radiation loss. It is computed by first finding the area of the cone $A_\mathrm{plasma}$. The length is found from the volume of the cone (which is known), while the radius is considered fixed at $r_\mathrm{plasma, fixed} = \qty{0.001}{m}$.
+        To determine an upper bound for power loss, a switch was implemented to change Bremss-trahlung loss to blackbody radiation loss. This would be the case where the LSP is a surface emitter. The power loss is computed by first finding the area of the cone $A_\mathrm{plasma}$. The length is found from the volume of the cone (which is known), while the radius is considered fixed at $r_\mathrm{plasma, fixed} = \qty{0.001}{m}$.
         \begin{equation}
             l_\mathrm{plasma} = \frac{3 V_\mathrm{plasma}}{\pi r_\mathrm{plasma, fixed}^2}
         \end{equation}
@@ -182,7 +170,7 @@
         With the Stefan-Boltzmann constant $\sigma$.
     \section{Model results}
 
-        From these iterations, pressure rise curves with Bremsstrahlung loss and blackbody radiation loss were determined. These curves were overlaid on experimental data from LSP178\_SPRK49, a \qty{10}{ms} QCW LSP experiment at \qty{3080}{W} and \qty{19.91}{bar} of argon to give \autoref{fig:LSP178_SPRK49}.
+        From these iterations, pressure rise curves with Bremsstrahlung loss and blackbody radiation loss were determined. These curves were overlaid on experimental data from LSP178\_SPRK49, a \qty{10}{ms} QCW LSP experiment at \qty{3079}{W} and \qty{19.91}{bar} of argon to give \autoref{fig:LSP178_SPRK49}.
         
         \begin{figure}[!ht]
             \centering
@@ -191,9 +179,9 @@
             \label{fig:LSP178_SPRK49}
         \end{figure}
         
-        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is greater. The second, higher, peak could be explained by the fact that after the laser pulse, the energy in the cone is then communicated to the bulk argon volume. This equalization of temperatures and pressures could be due to natural convection. To test this hypothesis in future studies, the timescale of radiation and convection should be determined with the geometry of the problem.
+        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is greater.
 
-        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}. A potential cause for this is that laser energy transmission was not taken into account in the model, and a measurement of this transmission was not taken experimentally. As the laser power is lowered, the fraction of laser energy that is absorbed by the plasma (laser absorption efficiency) also decreases.
+        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}.
 
         \begin{figure}[!ht]
             \centering
@@ -231,7 +219,7 @@
             \toprule
             Shot ID & $P_\mathrm{laser}$ (\unit{W}) & $P_\mathrm{laser}$ (\unit{\%}) & $p_\mathrm{ini}$ (\unit{bar}) & Time step (\unit{s}) & Source of $P_\mathrm{laser}$ (\unit{W})\\ \midrule
             LSP176\_SPRK47 & 2310      &  75     &    19.91   &  $50\times 10^{-6}$ & Maximum power multiplied by \% \\ 
-            LSP178\_SPRK49 & 3080      &  100    &    19.91   &  $10\times 10^{-6}$ & Maximum power\\
+            LSP178\_SPRK49 & 3079      &  100    &    19.91   &  $10\times 10^{-6}$ & Maximum power\\
             LSP179\_SPRK50 & 1540      &  50     &    19.91   &  $10\times 10^{-6}$ & Maximum power multiplied by \% \\
             LSP183\_SPRK54 & 345       &  15     &    20.03   & $10\times 10^{-6}$  & Extrapolated from \autoref{tab:laser shot statistics}\\ 
             \bottomrule
