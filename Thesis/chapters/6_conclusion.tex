@@ -1,7 +1,7 @@
 \chapter{Conclusion}
-    \subsection{Summary}
+    \section{Summary}
 
-        This thesis lays the groundwork for future Laser Thermal Propulsion (LTP) thrust tests with longer plasma lifetimes and better thrust measurement, which would show the thrust added by the laser.
+        This thesis lays the groundwork for future Laser Thermal Propulsion (LTP) thrust tests with longer plasma lifetimes and better thrust measurement, which would show the thrust added by the laser. A 0D heat transfer model was also written to interpret the experimental data.
 
         Static LSP tests showed successful spark initiation of QCW LSP in V1 and V2, and an \qty{85.1}{ms} CW LSP. A new window mount for V2 was designed and used in static tests. \ce{NO2} seeding was also investigated in V1 as a way to increase energy retention by the gas, and resulted in a twofold increase in argon dynamic pressure. 
 
@@ -9,11 +9,24 @@
         
         Measurements of the mass flow rate $\dot m$ of V2 with the bubble flow meter are still to be completed. Once the new parts for V2 are installed and pressure tested, CW LSP tests can restart to explore longer plasma lifetimes.
 
-    \subsection{Future work}
+    \section{Future work}
 
-        Long term, to ultimately test if LTP is a viable means of space propulsion:
+        The following recommendations for future work are further discussed in \autoref{chp:discussion}.
+        
+        On the experiment:
         \begin{itemize}
+            \item Implement a new thrust stand that reduces friction to obtain reliable thrust measurements
+            \item Validate that the new parts fabricated for V2 solve the problems they were designed to solve
+            \item Determine the ideal propellant flow speed to obtain the highest thermal efficiency (power retained by the gas divided by incident laser power)
             \item Use a more powerful laser
-            \item Move to hydrogen as a propellant
-            \item Complete thrust tests in vacuum
+            \item Investigate using hydrogen as a propellant instead of argon
+            \item Start thrust tests in a vacuum
         \end{itemize}
+
+        On the model:
+        \begin{itemize}
+            \item Determine the timescales of radiation and convection with the geometry of the LSP to explain the second pressure peak
+            \item Account for the fraction of laser energy that was absorbed by the plasma, as the present model uses \qty{100}{\%} absorption
+            \item Develop a 1D model to explain the growth of the LSP through time
+        \end{itemize}
+        
