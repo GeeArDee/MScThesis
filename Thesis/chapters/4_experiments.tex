@@ -96,16 +96,18 @@
             \begin{table}[!ht]
                 \caption{Statistics from the power meter after 10 times \qty{50}{ms} laser shots at \qty{10}{\%} and \qty{12}{\%} power}
                 \label{tab:laser shot statistics}
-                \begin{tabular}{lll}
-                \textbf{Value {[}Unit{]}} & \textbf{10 $\times$ \qty{50}{ms} shots at 10\% power} & \textbf{10 $\times$ \qty{50}{ms} shots at 12\% power} \\ \hline
+                \begin{tabularx}{\textwidth}{@{}lX<{\raggedright}X<{\raggedright}@{}}
+                \toprule
+                Value {[}Unit{]} & 10 $\times$ \qty{50}{ms} shots at 10\% power & 10 $\times$ \qty{50}{ms} shots at 12\% power \\ \midrule
                 Average energy value {[}J{]}  & 9.985 & 12.89 \\
                 Maximum energy value {[}J{]}  & 10.2  & 13.3  \\
                 Minimum energy value {[}J{]}  & 9.63  & 12.0  \\
                 RMS Stability {[}\%{]} & 1.690 & 2.811 \\
                 PTP Stability {[}\%{]} & 5.599 & 10.31 \\
                 Std deviation {[}J{]}  & 0.169 & 0.362 \\
-                Average power {[}W{]}  & 200 & 258  \\ \hline
-                \end{tabular}
+                Average power {[}W{]}  & 200 & 258  \\ 
+                \bottomrule
+                \end{tabularx}
             \end{table}
             
             Extrapolating from these results, \qty{300}{W} is achieved at \qty{13.5}{\%}.
@@ -280,9 +282,9 @@
             \end{figure}
 
             The empirical relation of pressure versus thrust is given by:
-            \[
-            \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
-            \]
+            \begin{equation}
+                \text{Thrust (N)} = 0.0394*\text{Pressure (bar)} + 0.0318
+            \end{equation}
 
             Repeatability of the thrust measurements was then examined with the Honeywell FSG005WNPB \qtyrange{0}{5}{N} load cell and a \qty{200}{g} preload, with an argon inlet pressure of \qty{20}{bar}. The raw voltage of the load cell was recorded, as the hysteresis was the point of interest and not the thrust.
             \begin{figure}[h]
@@ -339,17 +341,18 @@
 
             \begin{table}[!ht]
                 \centering
-                \caption{Calculated Opening Area for Needle Valve at Different Rotations (Upstream Pressure = \qty{5000}{kPa} and Outlet Pressure = \qty{100}{kPa}), adapted from \autoref{chp:app Thariq}}
+                \caption{Calculated opening area for needle valve at different rotations (upstream pressure = \qty{5000}{kPa} and outlet pressure = \qty{100}{kPa}), adapted from \autoref{chp:app Thariq}}
                 \label{tab:opening_area}
-                \begin{tabular}{|c|c|c|c|c|}
-                \hline
-                \textbf{Increment} & \textbf{Volume Flow (L/s)} & \textbf{Mass Flow (g/s)} & \textbf{Area (mm²)} & \textbf{Diameter (mm)} \\ \hline
-                0.5 & 0.25 & 0.410 & 0.028 & 0.188 \\ \hline
-                1.0 & 0.37 & 0.607 & 0.041 & 0.229 \\ \hline
-                1.1 & 0.51 & 0.836 & 0.057 & 0.269 \\ \hline
-                1.2 & 0.67 & 1.099 & 0.075 & 0.308 \\ \hline
-                1.3 & 0.97 & 1.591 & 0.108 & 0.371 \\ \hline
-                1.4 & 1.24 & 2.033 & 0.138 & 0.419 \\ \hline
+                \begin{tabular}{ccccc}
+                \toprule
+                Increment & Volume Flow (L/s) & Mass Flow (g/s) & Area (mm²) & Diameter (mm) \\ \midrule
+                0.5 & 0.25 & 0.410 & 0.028 & 0.188 \\
+                1.0 & 0.37 & 0.607 & 0.041 & 0.229 \\
+                1.1 & 0.51 & 0.836 & 0.057 & 0.269 \\
+                1.2 & 0.67 & 1.099 & 0.075 & 0.308 \\
+                1.3 & 0.97 & 1.591 & 0.108 & 0.371 \\
+                1.4 & 1.24 & 2.033 & 0.138 & 0.419 \\
+                \bottomrule
                 \end{tabular}
             \end{table}
 
@@ -363,7 +366,7 @@
                 \centering
                 \caption{Summary of the studied V2 thruster characteristics}
                 \label{tab:characteristics}
-                \begin{tabularx}{\textwidth}{XX}
+                \begin{tabularx}{\textwidth}{lX}
                 \toprule
                 Characteristic                                          &     Value and unit          \\ \midrule
                 Needle valve $A^*$ with predicted experiment conditions   &     \qty{0.147e-6}{m^2}     \\

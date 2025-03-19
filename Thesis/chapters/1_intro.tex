@@ -66,13 +66,17 @@
             \label{fig:Krier apparatus}
         \end{figure}
         With the two-dimensional temperature map, the change in enthalpy at the exit plane was calculated, giving the amount of laser energy retained by the gas. Thermal efficiency was between \qtyrange{6}{25}{\%}, with radiative losses of \qty{64}{\%} and \qty{30}{\%}, respectively. Thermal efficiency was defined as:
-        \[\eta_\mathrm{th} =  \frac{\text{Power retained by the gas}}{\text{Incident laser power}}\]
+        \begin{equation}
+            \eta_\mathrm{th} = \frac{\text{Power retained by the gas}}{\text{Incident laser power}}
+        \end{equation}
         The minimum maintenance intensity of the plasma was also estimated at \qtyrange{0.1}{0.3}{MW/cm^2}.
 
         Further work by \textcite{zerkleLasersustainedArgonPlasmas1990} with the apparatus shown in \autoref{fig:Krier apparatus} reported absorption from \qtyrange{55}{97}{\%} and thermal efficiency from \qtyrange{11}{46}{\%}. This was done in \qtylist{1 2.5}{atm} of flowing argon, with laser powers up to \qty{7}{kW}. \textcite{chenEmissionSpectroscopyCw1989a} again increased the thermal efficiency of this apparatus, with \qtyrange{41}{62}{\%} of the laser energy being retained by the gas as thermal energy. This was among the highest thermal efficiencies measured by an LSP experiment. Here, \qty{86}{\%} of the laser's energy is absorbed by the LSP. This was attained with a \qty{5}{kW} \ce{CO2} laser, with flow speeds between \qtyrange{2}{10}{m/s}. They discuss that greater thermal efficiency is due to greater laser power, a high enough flow speed, and a greater laser focusing $f$ number.
 
         Based on work by the Illinois group, an LTP engine demonstrator was tested in 1995 by \textcite{blackLaserPropulsion10kW1995} with a \qty{10}{kW} \ce{CO2} laser. This was planned to be a step towards a full-scale thruster. More than 100 thruster firings were completed, lasting 1 to 2 minutes each. The \qty{10}{kW} thruster is presented in \autoref{fig:Black apparatus}. It is mounted in a vacuum chamber to a thrust measurement assembly. Efficiency was calculated from:
-        \[ \eta = \frac{F^2}{2 \dot{m} P_\mathrm{L}} \]
+        \begin{equation} 
+            \eta = \frac{F^2}{2 \dot{m} P_\mathrm{L}}
+        \end{equation}
         with $P_\mathrm{L}$ the input laser power at the thruster window. Both argon and hydrogen were used. Argon propellant produced \qty{200}{s} of $I_\mathrm{sp}$ and a peak efficiency of 0.24. With hydrogen propellant, an $I_\mathrm{sp}$ of \qty{350}{s} and a peak efficiency of 0.37 were reported.
         \begin{figure}[!ht]
             \centering
@@ -97,8 +101,10 @@
         %Chinese and Japanese work: 1980s-2020s
 
         In the early 2000s, \textcite{toyodaThrustPerformanceCW2002} built and tested two different thruster models, presented in \autoref{fig:Toyoda apparatussies}. These thrusters, using argon or nitrogen heated by LSP, were powered by a \qty{2}{kW} \ce{CO2} laser. The LSPs were initiated by a retractable tungsten rod at the laser's focus. Thrust measurements were done both in atmospheric pressure and in vacuum. This comparative study showed that confining the plasma into a smaller chamber increased thrust and therefore, efficiency. \textcite{toyodaThrustPerformanceCW2002} defined the energy conversion efficiency as the amount of laser power that is converted into usable kinetic energy for thrust. It is calculated as\footnote{As mentioned by \textcite{duplayArgonLaserPlasmaThruster2024a}, there appears to be a typographical error in the reference as the units are inconsistent. The corrected equation is presented here.}:
-        \[ \eta_\mathrm{e} =  \frac{F^2_\mathrm{hot} -F^2_\mathrm{cold}}{2 \dot{m} P}\]
-        Where $F_\mathrm{hot}$ is the thrust with laser on, $F_\mathrm{cold}$ is the cold flow thrust (laser off) and $P$ is incident laser power. An energy conversion efficiency of 37\% and an $I_\mathrm{sp}$ of \qty{113}{s} were measured with the second model \autoref{fig:Toyoda apparatus 2} in vacuum with argon propellant. The pressure ratio, defined as the chamber pressure divided by the nozzle exit pressure, was 420. A water cooling system measured the heat loss to the walls to be 55\% of incident laser power, with a final 8\% being ``other loss". Heat loss to the walls was expected to be recycled with regenerative cooling in a real-world application.
+        \begin{equation} 
+            \eta_\mathrm{e} = \frac{F^2_\mathrm{hot} -F^2_\mathrm{cold}}{2 \dot{m} P}
+        \end{equation}
+        Where $F_\mathrm{hot}$ is the thrust with laser on, $F_\mathrm{cold}$ is the cold flow thrust (laser off) and $P$ is incident laser power. An energy conversion efficiency of 37\% and an $I_\mathrm{sp}$ of \qty{113}{s} were measured with the second model \autoref{fig:Toyoda apparatus 2} in vacuum with argon propellant. The pressure ratio, defined as the chamber pressure divided by the nozzle exit pressure, was 420. A water cooling system measured the heat loss to the walls to be 55\% of incident laser power, with a final 8\% being ``other loss”. Heat loss to the walls was expected to be recycled with regenerative cooling in a real-world application.
 
         \begin{figure}[!ht]
             \centering
@@ -133,9 +139,9 @@
         In methane at \qty{0.1}{MPa}, soot formation between the electrodes prevented LSP initiation. The spectrometer confirmed the dissociation of methane, as line spectra of carbon and hydrogen were observed at the initiation arc. Initiation was also unsuccessful in argon-methane with a pressure between \qtyrange{0.1}{0.3}{MPa} and a methane volume fraction between \qtyrange{20}{60}{\%}. LSP was successfully generated in methane-xenon, with a lower threshold power (\qty{850}{W}) than in pure xenon. The partial pressure of methane was between \qtyrange{0.02}{0.6}{MPa}, with a partial pressure of xenon of \qty{0.10}{MPa}.
 
         \textcite{takanoDemonstrationDiodeLasersustained} used a diode laser emitting simultaneously at \qty{927}{nm} and \qty{951}{nm} to generate LSPs in argon. This resulted in an $I_\mathrm{sp}$ of \qty{105}{s} and a thrust efficiency of \qty{8}{\%}. This $I_\mathrm{sp}$ was calculated from the plenum pressure when the laser was on. They define thrust efficiency as:
-        \[
-        \eta = \frac{g_0 I_\mathrm{sp} (F_\mathrm{hot}-F_\mathrm{cold})}{2 P_\mathrm{laser}}
-        \]
+        \begin{equation}
+            \eta = \frac{g_0 I_\mathrm{sp} (F_\mathrm{hot}-F_\mathrm{cold})}{2 P_\mathrm{laser}}
+        \end{equation}
         Two setups were used: the LSP generation chamber previously used by \textcite{kameiMethaneMethaneXenon2020} (\autoref{fig:Takano LSP generation chamber}) and an LSP thruster (\autoref{fig:Takano LSP thruster}).
         \begin{figure}[!ht]
             \centering
@@ -164,9 +170,9 @@
     \section{Summary and direction of work in this thesis}
         
         From the literature review, \autoref{tab:lit review summary} and \autoref{tab:efficiencies} were compiled. Most studies have used \ce{CO2} lasers with a wavelength of \qty{10.6}{μm}. As a laser beam advances in space, it diffracts. This leads to a larger spot size the farther it is focused, even with ideal optics. The range $L$ at which the laser's spot size is equal to its emitter size is derived by \textcite{lubinRoadmapInterstellarFlight2016}:
-        \[
+        \begin{equation}
             L = \frac{dD}{2\lambda\alpha}
-        \]
+        \end{equation}
         With $d$ the diameter of the laser aperture, $D$ the diameter of the laser receiver, and $\alpha = 1.22$ for a circular array, deriving from the first zero of the $J_1$ Bessel function. A smaller wavelength ($\lambda$) gives a larger value of $L$, as the beam diverges less. Use of a \ce{CO2} laser for power beaming to a remote target for propulsion applications is limited to ground-to-orbit launch. However, high power fiber lasers emitting near \qty{1}{μm} have recently become readily available. Being able to beam energy ten times farther than \ce{CO2} lasers, fiber lasers make laser propulsion more feasible.
 
         \begin{table}[!ht]
