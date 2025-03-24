@@ -6,7 +6,7 @@
 
         \subsection{V1 LSP spark initiation}
 
-            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during a Laser-Supported Plasma (LSP) shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
+            For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during a Laser-Sustained Plasma (LSP) shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
 
             \begin{figure}[!ht]
                 \centering
@@ -50,7 +50,7 @@
 
             %[Add absorption spectrum of NO2 from Gas Detection Using Portable Deep-UV Absorption Spectrophotometry: A Review or other place]
 
-            Three control QCW LSP shots were done in pure argon and their dynamic pressure trace from the PCB transducer was recorded. Next, 0.55 bar of \ce{NO2}, or 200 mL at STP, was introduced into the chamber. V1 was then pressurized with argon to 20 bar. With the spark active, three LSPs were generated in the seeded atmosphere. The dynamic pressure rise of the seeded argon was approximately double the one seen in pure argon. The next two LSP shots were conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar with argon. Again, higher pressure increases were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar} with argon. This would have brought the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Two LSPs were initiated, with a higher pressure increase than pure argon, but less than the higher concentration \ce{NO2} shots. \autoref{fig:NO2_shots_analysis} presents the averages of these recorded pressure traces.
+            Three control QCW LSP shots were done in pure argon and their dynamic pressure trace from the PCB transducer was recorded. Next, 0.55 bar of \ce{NO2}, or 200 mL at Standard Temperature and Pressure (STP), was introduced into the chamber. V1 was then pressurized with argon to 20 bar. With the spark active, three LSPs were generated in the seeded atmosphere. The dynamic pressure rise of the seeded argon was approximately double the one seen in pure argon. The next two LSP shots were conducted with 0.24 bar (\qty{85}{ml} at STP) of \ce{NO2} and filled to 20.2 bar with argon. Again, higher pressure increases were observed, but slightly less than the \qty{0.55}{bar} shots. The chamber was finally half evacuated to 10.17 bar and then filled back to \qty{20.15}{bar} with argon. This would have brought the partial pressure of \ce{NO2} to \qty{0.12}{bar}. Two LSPs were initiated, with a higher pressure increase than pure argon, but less than the higher concentration \ce{NO2} shots. \autoref{fig:NO2_shots_analysis} presents the averages of these recorded pressure traces.
 
             \begin{figure}[!ht]
                 \centering
@@ -61,7 +61,7 @@
 
         \subsection{V2 LSP spark initiation and QCW LSP}
 
-            For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen to project the visible (red) alignment laser. By moving the V2 test section back and forth on the thrust stand rail, the field of view (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. The laser focus can then be moved with the translation stages, so the brightest spot matches the center of the electrodes' shadow.
+            For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen to project the visible (red) alignment laser. By moving the V2 test section back and forth on the thrust stand rail, the Field Of View (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. The laser focus can then be moved with the translation stages, so the brightest spot matches the center of the electrodes' shadow.
             
             \begin{figure}[!ht]
                 \centering
@@ -297,11 +297,12 @@
 
         \subsection{Thruster nozzle effective sonic area $A^*$}
 
-            To determine the mass flow rate $\dot{m}$ of the thruster, sonic isentropic flow at the nozzle throat was assumed. The following equation can then be used:
+            To determine the argon mass flow rate $\dot{m}$ of the thruster, sonic isentropic flow at the nozzle throat was assumed. The following equation can then be used:
             \begin{equation}
-                \dot{m} = \frac{A^* p}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^{\frac{-(\gamma + 1)}{2(\gamma-1)}}
+                \dot{m} = \frac{A^* p_0}{\sqrt{T}}\sqrt{\frac{\gamma}{R}}\left(\frac{\gamma + 1}{2}\right)^{\frac{-(\gamma + 1)}{2(\gamma-1)}}
+                \label{eqn:massflow}
             \end{equation}
-            Where $A^*$, the nozzle effective sonic area, is an unknown, $p$ is pressure, $T$ is temperature, $\gamma$ is the specific heat ratio, and $R$ is the gas constant.
+            Where $A^*$, the nozzle effective sonic area, is an unknown, $p_0$ is the stagnation pressure, $T$ is temperature, $\gamma$ is the specific heat ratio, and $R$ is the specific gas constant.
         
             To characterize the effective sonic area, $A^*$, of the thruster nozzle, a choked orifice blow-down test was done based upon the solution found in \textcite{saadCompressibleFluidFlow}. V2 in flowing configuration was pressurized to \qty{20}{bar} of argon. The argon flow was then closed. The pressure curve was recorded by the Omega transducer.
 
@@ -337,15 +338,15 @@
                 \label{fig:bubble meter}
             \end{figure}
 
-            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.5 rotations to 2.0 rotations. The calculated opening area of the valve is presented in \autoref{tab:opening_area}.
+            First, the valve was calibrated with air at \qtylist{3.45;6.89}{bar}. The valve was then calibrated with \qtylist{20;50}{bar} of argon. The volumetric flow rate was measured in both cases for increments of 0.5 rotations to 2.0 rotations. \autoref{eqn:massflow} can again be used to calculate the critical area $A^*$ of the valve, which is presented in \autoref{tab:opening_area}.
 
             \begin{table}[!ht]
                 \centering
-                \caption{Calculated opening area for needle valve at different rotations (upstream pressure = \qty{5000}{kPa} and outlet pressure = \qty{100}{kPa}), adapted from \autoref{chp:app Thariq}}
+                \caption{Calculated opening area for needle valve at different rotations (upstream pressure = \qty{5000}{kPa} and outlet pressure = \qty{100}{kPa})}
                 \label{tab:opening_area}
                 \begin{tabular}{ccccc}
                 \toprule
-                Increment & Volume Flow (L/s) & Mass Flow (g/s) & Area (mm²) & Diameter (mm) \\ \midrule
+                Increment & Volume Flow (L/s) & Mass Flow (g/s) & $A^*$ (mm²) & Diameter (mm) \\ \midrule
                 0.5 & 0.25 & 0.410 & 0.028 & 0.188 \\
                 1.0 & 0.37 & 0.607 & 0.041 & 0.229 \\
                 1.1 & 0.51 & 0.836 & 0.057 & 0.269 \\
@@ -356,7 +357,7 @@
                 \end{tabular}
             \end{table}
 
-            Assuming that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and the mass flow rate is \qty{0.641}{g/s}, \autoref{chp:app Thariq} recommends a rotation increment of approximately 1.33 to produce an $A^*$ of \qty{0.147}{mm^2}.
+            Assuming that the temperature inside V2 during CW LSP thrust tests is \qty{1200}{K} and the mass flow rate is \qty{0.641}{g/s}, a rotation increment of approximately 1.33 produces an $A^*$ of \qty{0.147}{mm^2}.
 
         \subsection{Summary of results}
 
