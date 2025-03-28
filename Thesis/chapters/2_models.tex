@@ -1,10 +1,10 @@
 \chapter{0D LSP Model} \label{chp:models}
 
-    To predict experimental data, namely the pressure increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. A zero-dimensional (0D) heat transfer model was then written in Python to compare to experimental data. Argon and hydrogen were used to validate initial equilibrium calculations, while the 0D model was solely implemented using argon. Argon is the current gas used in experiments, as it is economical and easy to ionize. Hydrogen is projected to be used in a full-scale LTP engine for its increased $I_\mathrm{sp}$ due to its lower molecular weight.
+    To predict experimental data, namely the pressure increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. A zero-dimensional (0D) heat transfer model was then written in Python to compare to experimental data. Argon and hydrogen were used to validate initial equilibrium calculations, while the 0D model was solely implemented using argon. Argon was the main gas used in experiments, as it was economical and easy to ionize. Hydrogen is projected to be used in a full-scale LTP engine for its increased $I_\mathrm{sp}$ due to its lower molecular weight.
 
     \section{Equilibrium calculations} \label{sec:equilibrium calcs}
         
-        The following seventh order polynomials and their coefficients ($a_1$ to $a_7$, $b_1$, and $b_2$), from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{Ar}, \ce{Ar+}, and electrons \ce{e-}. Plasma temperatures studied allowed us to treat the argon as singly ionized, and the hydrogen as dissociated. The heat capacity at constant pressure, as well as the temperature ($T$) dependent part of enthalpy and entropy of each species are given by $c_p^0$, $h^0$ and $s^0$, respectively. $\bar R$ is the universal gas constant.
+        The following seventh order polynomials and their coefficients ($a_1$ to $a_7$, $b_1$, and $b_2$), from \textcite{mcbrideNASAGlennCoefficients2002}, were implemented in Python. Species of interest were \ce{H}, \ce{H2}, \ce{Ar}, \ce{Ar+}, and electrons \ce{e-}. Plasma temperatures studied allowed us to treat the argon as singly ionized, and the hydrogen as dissociated. The heat capacity at constant pressure, as well as the temperature ($T$) dependent part of enthalpy and entropy of each species are given by $c_p^0$, $h^0$, and $s^0$, respectively. $\bar R$ is the universal gas constant.
 
         \begin{equation}
             c_p^0 (T)/\bar R = a_1 T^{-2} + a_2 T^{-1} + a_3 + a_4   T + a_5 T^2 + a_6 T^3 + a_7 T^4
@@ -28,7 +28,7 @@
             \bar g_i = \bar h_i - T \bar s_i
         \end{equation}
 
-        Considering the number of moles $n_i$, expressions of the Gibbs energy of the two mixtures $G_\mathrm{mixture}$ are found:
+        Considering the number of moles $n_i$, expressions of the Gibbs energy of the two mixtures $G_\mathrm{mixture}$ were found:
 
         Starting with \qty{1}{kmol} argon,
         \begin{equation}
@@ -49,7 +49,7 @@
             \label{fig:Gibbs}
         \end{figure}
 
-        A similar dissociation graph can be found with argon, but with three species. The Gibbs energy is then minimized to determine the molar fractions $y_i$ at which the mixture reaches equilibrium. From this, the enthalpy $H$ of the mixture was found. The $c_p$ of the mixture was then calculated from the enthalpy with:
+        A similar dissociation graph can be found with argon, but with three species. The Gibbs energy was then minimized to determine the molar fractions $y_i$ at which the mixture reaches equilibrium. From this, the enthalpy $H$ of the mixture was found. The $c_p$ of the mixture was then calculated from the enthalpy with:
 
         \begin{equation}
             c_p = \frac{\partial h}{\partial T}\bigg|_{p = const.}
@@ -86,21 +86,21 @@
 
         The first relation, from \textcite{glasstoneControlledThermonuclearReactions1975} converted to SI, was used for the remainder of the calculations.
 
-        There is also a question regarding whether the plasma is a surface emitter or a volume emitter. This is determined by calculating the plasma frequency at a typical electron density and comparing it to the wavelength of the light emitted by Bremsstrahlung. If the plasma frequency is higher than the wavelength of emitted Bremsstrahlung light, then it is cut off by the plasma; no light can escape directly from the inside of the LSP cone, and it is a surface emitter. If it is lower, then the emitted photons are not blocked by the LSP and the cone is a volumetric emitter.
+        There was also a question regarding whether this plasma was a surface emitter or a volume emitter. This was determined by calculating the plasma frequency at a typical electron density and comparing it to the wavelength of the light emitted by Bremsstrahlung. If the plasma frequency was higher than the wavelength of emitted Bremsstrahlung light, then it was cut off by the plasma; no light could escape directly from the inside of the LSP cone, and it was a surface emitter. If it was lower, then the emitted photons were not blocked by the LSP and the cone was a volumetric emitter.
         
-        The plasma frequency $\omega_\mathrm{p}$ is found with: 
+        The plasma frequency $\omega_\mathrm{p}$ was found with: 
 
         \begin{equation}
             \omega_\mathrm{p} = \sqrt{\frac{n_\mathrm{e} e^2}{\epsilon_\mathrm{0} m_\mathrm{e}}}
         \end{equation}
 
-        With $n_\mathrm{e}$ the plasma electron density, $e$ the elementary charge, $\epsilon_\mathrm{0}$ the vacuum permittivity and $m_\mathrm{e}$ the electron mass.
+        With $n_\mathrm{e}$ the plasma electron density, $e$ the elementary charge, $\epsilon_\mathrm{0}$ the vacuum permittivity, and $m_\mathrm{e}$ the electron mass.
 
-        In the worst case scenario (highest temperature and pressure) of \qty{20000}{K} and \qty{20}{bar}, an electron density of \num{3.05e21} is found. This results in $\omega_p =$ \qty{3.11e12}{Hz}. Considering visible light and above (> \qty{1e14}{Hz}) as the wavelengths of interest, the LSP is indeed a volume emitter.
+        In the worst case scenario (highest temperature and pressure) of \qty{20000}{K} and \qty{20}{bar}, an electron density of \num{3.05e21} was found. This resulted in $\omega_p =$ \qty{3.11e12}{Hz}. Considering visible light and above (> \qty{1e14}{Hz}) as the wavelengths of interest, the LSP was indeed a volume emitter.
 
     \section{Model setup}
         
-        Finally, a 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung. A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost, but this was not modelled. The LSP is treated as an ideal gas.
+        Finally, a 0D model was written in Python to attempt to explain the pressure rise seen in the LTP experiments. \autoref{fig:0D model} illustrates this model. Laser energy is focused into a volume of argon, creating an LSP cone. Energy is transferred from the LSP cone to the larger argon volume by Bremsstrahlung. A part of the laser energy is also transmitted through the cone to the outside of the argon volume and lost, but this was not modelled. The LSP was treated as an ideal gas.
 
         \begin{figure}[!ht]
             \centering
@@ -109,10 +109,10 @@
             \label{fig:0D model}
         \end{figure}
 
-        The calculation procedure implemented in the 0D model is as follows:
+        The calculation procedure implemented in the 0D model was as follows:
 
         \begin{enumerate}
-            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon is found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} \approx \qty{20}{bar}$, set to experimental measurement done before each shot). This will be the mass of argon plasma and will remain fixed for the rest of the problem. This fixed mass could be a source of error, as the plasma propagates as described in \autoref{fig:Mechanism of LSP growth}. The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone are taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a} when the cone reaches equilibrium near the end of a laser pulse. The argon volume contained in the V1 test section is \qty{0.4}{L}.
+            \item The volume $V_\mathrm{plasma}$ and the mass $m_\mathrm{plasma}$ of a cone of pure argon were found at the initial temperature ($T_\mathrm{ini} = \qty{300}{K}$) and pressure ($p_\mathrm{ini} \approx \qty{20}{bar}$, set to the experimental measurement done before each shot). This was the mass of argon plasma and will remain fixed for the rest of the problem. This fixed mass could be a source of error, as the plasma propagates as described in \autoref{fig:Mechanism of LSP growth}. The length ($l_\mathrm{plasma}$) and radius ($r_\mathrm{plasma}$) of the plasma cone were taken from previous observations in \textcite{duplayArgonLaserPlasmaThruster2024a} when the cone reached equilibrium near the end of a laser pulse. The argon volume contained in the V1 test section was \qty{0.4}{L}.
                 \begin{equation}
                     l_\mathrm{plasma} = \qty{0.02}{m}, \: r_\mathrm{plasma} = \qty{0.001}{m}
                 \end{equation}
@@ -122,41 +122,41 @@
                 \begin{equation}
                     m_\mathrm{plasma} = V_\mathrm{plasma}\rho(T_\mathrm{ini}, p_\mathrm{ini})
                 \end{equation}
-            \item The energy in the plasma $E_\mathrm{plasma}$ is calculated, starting at 0. Energy from the laser pulse is added to the cone while the energy lost from radiation, calculated at the previous iteration, is subtracted. These are calculated from their respective powers $P$.
+            \item The energy in the plasma $E_\mathrm{plasma}$ was calculated, starting at \qty{0}{J}. Energy from the laser pulse was added to the cone while the energy lost from radiation, calculated at the previous iteration, was subtracted. These were calculated from their respective powers $P$.
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} + \underbrace{P_\mathrm{laser} \times \mathrm{timestep}}_\textrm{Energy from the laser pulse} - \underbrace{P_\mathrm{loss} \times \mathrm{timestep}}_\textrm{Energy lost by radiation}
                 \end{equation}
-                The new temperature ($T_2$) of the cone at this step is found at constant pressure,
+                The new temperature ($T_2$) of the cone at this step was found at constant pressure,
                 \begin{equation}
                     E_\mathrm{plasma} = m_\mathrm{plasma} \left(h_2 (T_2, p_\mathrm{ini}) - h_1(T_\mathrm{ini}, p_\mathrm{ini})\right)
                 \end{equation}
-                where this equation is solved for $T_2$. The enthalpy of the argon is found with the relations implemented in \autoref{sec:equilibrium calcs}.
-            \item The number of moles $n$ in the cone is found by minimizing the Gibbs free energy (see again \autoref{sec:equilibrium calcs}) at the temperature and pressure of step 2 ($T_2, p_2$). This gives the ionization fraction $x$.
+                where this equation was solved for $T_2$. The enthalpy of the argon was found with the relations implemented in \autoref{sec:equilibrium calcs}.
+            \item The number of moles $n$ in the cone was found by minimizing the Gibbs free energy (see again \autoref{sec:equilibrium calcs}) at the temperature and pressure of step 2 ($T_2, p_2$). This gave the ionization fraction $x$.
                 \begin{equation}
                     n = \frac{m_\mathrm{plasma}}{M_\mathrm{Ar}}(x + 1)
                 \end{equation}
-                The atomic mass of argon is $M_\mathrm{Ar} = \qty{39.948}{u}$. The new volume of the cone ($V_2$) is then found with the ideal gas law.
+                The atomic mass of argon is $M_\mathrm{Ar} = \qty{39.948}{u}$. The new volume of the cone ($V_2$) was then found with the ideal gas law.
                 \begin{equation}
                     V_2 = \frac{n \bar{R} T_2}{p_2}
                 \end{equation}
                 With the universal gas constant $\bar{R}$.
-            \item The pressure increase $p_4$ of the larger argon volume in the V1 chamber (\qty{0.4}{L}) due to the isentropic expansion of the gas in the LSP cone is calculated.
+            \item The pressure increase $p_4$ of the larger argon volume in the V1 chamber (\qty{0.4}{L}) due to the isentropic expansion of the gas in the LSP cone was calculated.
                 \begin{equation}
                     p_4 = p_\mathrm{ini} \left(\frac{V_\mathrm{chamber} - V_\mathrm{plasma}}{V_\mathrm{chamber} - V_2}\right)^\gamma
                 \end{equation}
-                With $\gamma=1.67$, the heat capacity ratio of argon at \qty{300}{K}. $p_2$ is set equal to $p_4$ at this point, so that the LSP cone will be at the same pressure as the surrounding gas for the next iteration.
-            \item The radiated power from the LSP cone to the larger argon volume is determined for the next iteration. The Bremsstrahlung power density loss equation from \textcite{glasstoneControlledThermonuclearReactions1975} is used, multiplied by the volume $V_2$ of the LSP.
+                With $\gamma=1.67$, the heat capacity ratio of argon at \qty{300}{K}. $p_2$ was set equal to $p_4$ at this point, so that the LSP cone would be at the same pressure as the surrounding gas for the next iteration.
+            \item The radiated power from the LSP cone to the larger argon volume was determined for the next iteration. The Bremsstrahlung power density loss equation from \textcite{glasstoneControlledThermonuclearReactions1975} was used, multiplied by the volume $V_2$ of the LSP.
                 \begin{equation}
                     P_\mathrm{br} = 1.57 \times 10^{-28} n_\mathrm{e} n_\mathrm{i} Z^2 T_2^{1/2} V_2
                 \end{equation}
-                With $Z = 1$, as the argon is singly ionized.
-            \item Steps 2 to 5 are looped until \qty{10}{ms}, when laser energy deposition ends. No more energy is added but Bremsstrahlung loss continues. The conservation of energy equation thus becomes:
+                With $Z = 1$, as the argon was singly ionized.
+            \item Steps 2 to 5 were looped until \qty{10}{ms}, when laser energy deposition ended. No more energy was added but Bremsstrahlung loss continued. The conservation of energy equation thus became:
                 \begin{equation}
                     E_\mathrm{plasma} = E_\mathrm{plasma} - P_\mathrm{loss} \times \mathrm{timestep}
                 \end{equation}
         \end{enumerate}
         
-        To determine an upper bound for power loss, a switch was implemented to change Bremss-trahlung loss to blackbody radiation loss. This would be the case where the LSP is a surface emitter. The power loss is computed by first finding the area of the cone $A_\mathrm{plasma}$. The length is found from the volume of the cone (which is known), while the radius is considered fixed at $r_\mathrm{plasma, fixed} = \qty{0.001}{m}$.
+        To determine an upper bound for power loss, a switch was implemented to change Bremss-trahlung loss to blackbody radiation loss. This would be the case if the LSP was a surface emitter. The power loss was computed by first finding the area of the cone $A_\mathrm{plasma}$. The length was found from the volume of the cone (which is known), while the radius was considered fixed at $r_\mathrm{plasma, fixed} = \qty{0.001}{m}$.
         \begin{equation}
             l_\mathrm{plasma} = \frac{3 V_\mathrm{plasma}}{\pi r_\mathrm{plasma, fixed}^2}
         \end{equation}
@@ -179,9 +179,9 @@
             \label{fig:LSP178_SPRK49}
         \end{figure}
         
-        Using Bremsstrahlung loss, the model appropriately approximates the first peak seen in the experimental data. Once the gas cools down enough and stops being ionized, Bremss-trahlung loss stops. The LSP cone in the model is then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise is lower with blackbody radiation, as the loss is greater.
+        Using Bremsstrahlung loss, the model appropriately approximated the first peak seen in the experimental data. Once the gas cooled down enough and stopped being ionized, Bremss-trahlung loss also stopped. The LSP cone in the model was then stable at approximately a temperature of \qty{5200}{K} and a pressure of \qty{2.003}{MPa}. As expected, the pressure rise was lower with blackbody radiation, as the loss was greater.
 
-        Further investigation has shown that the model is not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}.
+        Further investigation has shown that the model was not as sensitive as the experiments to a decrease in laser power, as can be seen in \autoref{fig:Two further LSPs}.
 
         \begin{figure}[!ht]
             \centering
@@ -200,7 +200,7 @@
             \label{fig:Two further LSPs}
         \end{figure}
 
-        Finally, \autoref{fig:powerVSdeltaP} shows how the pressure rise increases as the laser power is increased.
+        Finally, \autoref{fig:powerVSdeltaP} shows how the pressure rise increased as the laser power was increased.
 
         \begin{figure}[!ht]
             \centering
