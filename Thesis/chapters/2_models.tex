@@ -1,4 +1,4 @@
-\chapter{0D LSP Model} \label{chp:models}
+\chapter{Zero-dimensional laser-sustained plasma model} \label{chp:models}
 
     To predict experimental data, namely the pressure increase of the gas that should be expected when laser energy is input, the heat capacity of argon and hydrogen was modelled. A zero-dimensional (0D) heat transfer model was then written in Python to compare to experimental data. Argon and hydrogen were used to validate initial equilibrium calculations, while the 0D model was solely implemented using argon. Argon was the main gas used in experiments, as it was economical and easy to ionize. Hydrogen is projected to be used in a full-scale LTP engine for its increased $I_\mathrm{sp}$ due to its lower molecular weight.
 
@@ -66,7 +66,7 @@
 
         The properties of the argon plasma will be used as the basis of the 0D LSP model.
     
-    \section{Bremsstrahlung}
+    \section{Bremsstrahlung energy loss}
         
         The main source of radiation found in LSP is Bremsstrahlung, or braking radiation. When an electron passes close to a heavier ion, it is deflected by the ion's electric field. This collision releases a photon \autocite{glasstoneControlledThermonuclearReactions1975}. The total radiated power density $P_\mathrm{br}/V$ of the collisions can be estimated with the formulas presented in \autoref{tab:Brems_compare}.
 

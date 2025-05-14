@@ -2,9 +2,9 @@
 
     The following chapter will explain the methodology and the results of the various experiments undertaken to develop, validate, and characterize the V2 thruster. Argon gas was used as the main propellant due to its low cost, safety, and ease of ionization.
 
-    \section{Static LSP validation}
+    \section{Static laser-sustained plasma validation}
 
-        \subsection{V1 LSP spark initiation}
+        \subsection{Spark initiation of plasma in version 1}
 
             For spark initiation to work reliably, the laser focus and the spark must both be aligned in space and in time. To resolve the spark spatially, the Photron SA5 camera was placed in front of the V1 test section instead of the laser, looking axially into the test section. This would be the point of view of the laser collimator during a Laser-Sustained Plasma (LSP) shot. \autoref{fig:spark composite} shows a composite photo of the added opacities of five spark discharges (without laser). Each frame of the video has an opacity of $1/N$, with $N$ being the total number of frames to add. This gave an average position of the spark, which is slightly to the left of the electrodes' centerline.
 
@@ -42,7 +42,7 @@
             The LSP is initiated at \qty{3.2}{ms}, as soon as the spark is discharged. The front of the LSP moves towards the left (upstream, towards the laser), until the end of the QCW laser pulse at \qty{13}{ms}. Once the laser ends its emission, the LSP dies down within two frames (\qty{0.2}{ms}).
             % I could include here the dynamic pressure rise of the LSP.
 
-        \subsection{\ce{NO2} seeding}
+        \subsection{Seeding argon with \ce{NO2}}
 
             % If you want to present the NO2 work, you'll need to: Explain attenuation/absorption coefficient as it appears in Beer-Lambert law and how this defines the length scale over which absorption occurs. Explain how absorption coefficient is derived from the cross-section of the molecule, which will involve using the HITRAN database, etc. It is not acceptable to just say "we added NO2" and reference it off to some paper.}
             
@@ -59,7 +59,7 @@
                 \label{fig:NO2_shots_analysis}
             \end{figure}
 
-        \subsection{V2 LSP spark initiation and QCW LSP}
+        \subsection{Spark initiation of plasma in version 2 and quasi-continuous wave laser-sustained plasma}
 
             For V2, the timings of the spark and laser pulse were kept the same as \autoref{fig: Signal timing diagram}. To align the laser focus spatially, the power meter was used as a screen to project the visible (red) alignment laser. By moving the V2 test section back and forth on the thrust stand rail, the Field Of View (FOV) of the shadows projected on the power meter can be modified, as seen in \autoref{fig:FOV}. The laser focus can then be moved with the translation stages, so the brightest spot matches the center of the electrodes' shadow.
             
@@ -89,7 +89,7 @@
                 \label{fig: big flash}
             \end{figure}
 
-        \subsection{Optical experiments: going from QCW to CW LSP}
+        \subsection{Optical experiments: going from quasi-continuous wave to continuous wave laser-sustained plasma}
 
             Due to the low continuous laser power in this experiment compared to others in the literature, increasing the laser flux with a small focus is critical. The real amount of power in the pulsed shots was measured to get a conversion between the laser power setting (in \%) to power (W), which does not scale directly at lower powers. 10 shots each at \qtylist{10; 12}{\%} were measured with the power meter, with statistics compiled by the power meter software (\autoref{tab:laser shot statistics}). The average power was calculated by dividing the average pulse energy (J) by the pulse duration (\qty{50}{ms}).
 
@@ -206,7 +206,7 @@
                 \label{fig:V2 threshold graph}
             \end{figure}
 
-        \subsection{V2 CW LSP}
+        \subsection{Version 2 continuous wave laser-sustained plasma}
 
             A \qty{100}{\%} power (\qty{342}{W}) CW shot was then attempted with static argon at \qty{20.00}{bar}. 
 
@@ -263,7 +263,7 @@
         %     \end{table}
 
 
-    \section{V2 Cold flow thruster characterization}
+    \section{Version 2 cold flow thruster characterization}
 
         \subsection{Cold flow thrust tests}
 
@@ -386,9 +386,9 @@
 
         
 
-    \section{Initial QCW LSP thrust tests (hot fire)}
+    \section{Initial quasi-continuous wave laser-sustained plasma thrust tests (hot fire)}
  
-        With V2 CW LSP achieved, and the cold flow thrust tests completed, initial QCW LSP thrust tests were attempted. The needle valve was not installed as it was not yet procured. 
+        With V2 CW LSP achieved, and the cold flow thrust tests completed, initial QCW LSP thrust tests were attempted. The needle valve was not installed as it was not yet procured.
 
         \begin{figure}[!ht]
             \centering

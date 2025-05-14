@@ -1,6 +1,6 @@
 \chapter{Facility design}
 
-    \section{Version 1 test section} \label{sec:design_v1}
+    \section{Version 1 test section design} \label{sec:design_v1}
 
         The design process of the first generation thruster, called Version 1 (V1, see \autoref{fig:V1 setup}), can be found in \textcite{duplayArgonLaserPlasmaThruster2024a}. It proved to be a dependable prototype for studying LSP initiation, repurposed from a previous unrelated experiment. However, it presented problems related to operation as a thruster. Indeed, it was too heavy for thrust measurement and its length put fragile rubber seals in the path of the laser beam. Its large internal volume also meant that the increase in thrust and chamber pressure with LSP would be minimal. This required a second generation prototype to be designed and manufactured.
 
@@ -23,7 +23,7 @@
 
         A total of 298 recorded pulsed laser shots were conducted with V1, exploring the power-pressure threshold, wire initiation and spark initiation. A side window permitted direct visualization of the LSP with a high-speed camera (Photron Fastcam SA5).
 
-    \section{Version 2} \label{sec:design_v2}
+    \section{Version 2 test section design} \label{sec:design_v2}
 
         To improve upon the V1 facility, an entire LTP thruster redesign was done. This resulted in the much smaller Version 2 (V2) purpose-built LTP thruster, seen in \autoref{fig:V2 render}. The part and assembly drawings for V2 are found in \autoref{chp:V2 Test Section Drawings}.
 
@@ -44,7 +44,7 @@
             \label{fig:V2 render}
         \end{figure}
 
-        \subsection{Requirements}
+        \subsection{Requirements for the version 2 test section}
 
             The following requirements were developed for the design of the V2 thruster. The objective was to detect a measurable difference in thrust between an argon cold gas thruster and an argon “hot gas” thruster, heated by LSP.
 
@@ -99,7 +99,7 @@
 
             With these requirements, preliminary geometric dimensions of the V2 thruster could commence. It was expected to be much smaller than V1, as the goal was to isolate the LSP region and increase heat flux to the gas.
 
-        \subsection{Initial sizing of the double choked LTP thruster}
+        \subsection{Initial sizing of the double choked laser-thermal propulsion thruster}
 
             The minimum diameter of the cylinder that will contain the LSP core must be larger than the diameter of the plasma itself, which is \qty{2}{mm} according to observations from \textcite{duplayArgonLaserPlasmaThruster2024a}. An arbitrary factor of safety of 2.5 was used, which set the innermost diameter to \qty{5}{mm}.
 
@@ -216,14 +216,14 @@
                 \label{fig:timing section and oscilloscope}
             \end{figure} 
 
-        \subsection{Data acquisition (DAQ) system and oscilloscope}
+        \subsection{Data acquisition system and oscilloscope}
 
             Load cell and pressure transducer voltage is sent to a DATAQ Instruments DI-2018, on \autoref{fig:DAQ}. This data is streamed to a personal computer by USB, where the thrust and pressure traces can be saved for analysis. Two pressure sensors were used. A PCB Model 113B28 was used for dynamic (transient) pressure measurements, while an Omega PX119A-1KG5V was used for quasi-static measurements. Refer to \autoref{chp:omega calibration} for the Omega pressure sensor calibration.
 
             \begin{figure}[!ht]
                 \centering
                 \includegraphics[width=0.50\textwidth]{assets/3 design/DAQ electronics.jpg}
-                \caption{DAQ system}
+                \caption{Data acquisition (DAQ) system}
                 \label{fig:DAQ}
             \end{figure}
 
