@@ -1,7 +1,7 @@
 \chapter{Conclusion}
     \section{Summary}
 
-        This thesis lays the groundwork for future Laser Thermal Propulsion (LTP) thrust tests with longer plasma lifetimes and better thrust measurement, which would show the thrust added by the laser. A 0D heat transfer model was also written to interpret the experimental data.
+        Using a \qty{1.07}{μm} fiber laser, a Version 1 (V1) lab-scale Laser Thermal Propulsion (LTP) thruster was tested, while an improved Version 2 (V2) thruster was designed and tested. This thesis lays the groundwork for future LTP thrust tests with longer plasma lifetimes and better thrust measurement, which would show the thrust added by the laser. A 0D heat transfer model was also written to interpret the experimental data.
 
         Static LSP tests showed successful spark initiation of QCW LSP in V1 and V2, and an \qty{85.1}{ms} CW LSP. A new window mount for V2 was designed and used in static tests. \ce{NO2} seeding was also investigated in V1 as a way to increase energy retention by the gas and resulted in a twofold increase in argon dynamic pressure. 
 
@@ -15,18 +15,18 @@
         
         On the experiment:
         \begin{itemize}
-            \item Implement a new thrust stand that reduces friction to obtain reliable thrust measurements
-            \item Validate that the new parts fabricated for V2 solve the problems they were designed to solve
-            \item Determine the ideal propellant flow speed to obtain the highest thermal efficiency (power retained by the gas divided by incident laser power)
-            \item Use a more powerful laser
-            \item Investigate using hydrogen as a propellant instead of argon
-            \item Start thrust tests in a vacuum chamber
+            \item Implement a new type of thrust stand that would reduce friction to obtain reliable thrust measurements: high friction between the rail and the ball bearing carriage created significant hysteresis in the thrust data. The load cell value corresponding to zero thrust was different before and after cold gas flow.
+            \item Validate that the new parts fabricated for V2 solve the problems they were designed to solve: the new nozzle insert and retention plate were designed to minimize throat ablation from the laser. An extension cylinder was designed to move the rear window to where the laser flux would be low enough to not damage it. It should also hold pressure.
+            \item Determine the ideal propellant flow speed to obtain the highest thermal efficiency (power retained by the gas divided by incident laser power): the LSP grows towards the laser source. An optimum flow speed would be where the core of the LSP is pushed by the gas flow back to the laser focus, but not beyond. 
+            \item Use a more powerful laser: higher laser power generates higher thermal efficiency. This is also necessary to validate scaling of the technology towards operation in space.
+            \item Investigate using hydrogen as a propellant instead of argon: as the lightest element, hydrogen would have the greatest $I_\mathrm{sp}$ of all propellants. Due to this, hydrogen is the propellant that is projected to be used in a full-scale LTP engine.
+            \item Start thrust tests in a vacuum chamber: necessary if hydrogen is used due to its flammability. This will validate the technology in an environment similar to space.
         \end{itemize}
 
         On the model:
         \begin{itemize}
-            \item Determine the timescales of radiation and convection with the geometry of the LSP to explain the second pressure peak
-            \item Account for the fraction of laser energy that was absorbed by the plasma, as the present model uses \qty{100}{\%} absorption
-            \item Develop a 1D model to explain the growth of the LSP through time
+            \item Determine the timescales of radiation and convection with the geometry of the LSP to explain the second pressure peak: as the 0D model shows, the first peak seen on pressure measurements is explained by Bremsstrahlung (braking radiation) loss of the LSP. Given that radiation is faster to communicate energy than convection, the second peak could be due to convection.
+            \item Account for the fraction of laser energy that was absorbed by the plasma, as the present model uses \qty{100}{\%} absorption: from previous measurements, it was found that a significant amount of laser energy passes through the plasma without being absorbed. Modeling this efficiency could be a simple way to improve the model's accuracy.
+            \item Develop a 1D model to explain the lengthwise growth of the LSP through time: as time progresses, the LSP grows towards the laser source. This reduces absorption efficiency in a static gas, as the plasma core moves away from the laser focus.
         \end{itemize}
         
