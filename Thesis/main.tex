@@ -2,8 +2,8 @@
 \let\pdfcreationdate=\creationdate
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[12pt,letterpaper,twoside]{report}
-\usepackage{colorprofiles}
-\usepackage[a-2b,mathxmp]{pdfx}
+%\usepackage{colorprofiles}
+%\usepackage[a-2b,mathxmp]{pdfx}
 \usepackage[todonotes={textsize=scriptsize}, final]{changes}
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 \usepackage{setspace}
@@ -71,7 +71,13 @@
     anchorcolor=cyan,
     citecolor=cyan,
     filecolor=cyan,
-    urlcolor=cyan
+    urlcolor=cyan,
+    pdftitle={Design and Validation of a Laser Thermal Propulsion Thruster Powered by a Fiber Laser},
+    pdfauthor={Gabriel Roland Dubé},
+    pdflang={en-CA},
+    pdfsubject={For ambitious space missions like rapid human transit to Mars, conventional propulsion methods fall short. Laser-Thermal Propulsion (LTP) utilizes lasers to heat propellant gas, generating thrust with potentially greater specific impulse than traditional rocket engines. Two lab-scale LTP thrusters were tested in this thesis, denoted Version 1 (V1) and Version 2 (V2). Version 1 permitted initial testing and visualization of the Laser-Sustained Plasma (LSP) wave propagation. As a prototype for an actual thruster, Version 2 was optimized for thrust measurements. The design process of the improved V2 thruster is also presented. These thrusters were powered by a 300 W Continuous Wave (CW), 3 kW Quasi-Continuous Wave (QCW) 1.07 μm fiber laser. Argon was used as the propellant at a pressure of 20 bar, selected for its ease of ionization. Using an automotive-type coil, spark initiation of QCW LSP was successfully implemented in V1 and V2. Seeding of the argon with nitrogen dioxide (NO₂) at partial pressures between 0.12 bar to 0.55 bar showed the gas absorbed more than double the laser energy compared to pure argon propellant. To increase laser flux to the plasma, an optical system of two lenses was designed. Different lenses were compared using ray tracing software (WinLens3D). A CW LSP was achieved in V2, lasting 85.1 ms. This represents a 1.7 times longer lifetime than the maximum QCW pulse length of 50.0 ms at this power. Average cold flow thrust of V2 was approximately 1 N. In order to interpret the experimental results, a zero-dimensional (0D) heat transfer model was written in Python, using Bremsstrahlung as the mechanism of radiation. Finally, paths to further improve the V2 thruster and thrust stand are presented to eventually enable accurate thrust measurements with CW operation.},
+    pdfkeywords={Laser thermal propulsion, Directed energy, Advanced propulsion, Interplanetary spaceflight, Space technologies},
+    pdfstartview=
 }
 \setdeletedmarkup{\textcolor{McGillRed}{\sout{#1}}}
 % \setdeletedmarkup{\textcolor{McGillRed}{#1}}
